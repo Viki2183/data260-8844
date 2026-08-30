@@ -4,17 +4,18 @@ import sys
 from pathlib import Path
 
 
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).resolve().parent.parent
 
 REQUIRED_FILES = [
-    "DOMAIN_SCHEMA.md",
-    "index.html",
-    "app.js",
-    "Dockerfile",
-    "agents_demo.py",
-    "run_nondeterminism.py",
-    "calculate_metrics.py",
-    "hw1_client.py",
+    "code/web_application/index.html",
+    "code/web_application/app.js",
+    "code/Dockerfile",
+    "code/agents_demo.py",
+    "code/run_nondeterminism.py",
+    "code/calculate_metrics.py",
+    "code/hw1_client.py",
+    "code/verify_hw01.py",
+    "code/__init__.py",
     "AGENT.md",
     "README.md",
     "requirements.txt",
@@ -64,7 +65,7 @@ def main() -> None:
         ),
     )
 
-    html = (ROOT / "index.html").read_text(
+    html = (ROOT / "code/web_application/index.html").read_text(
         encoding="utf-8"
     )
 
@@ -95,7 +96,9 @@ def main() -> None:
         ),
     )
 
-    javascript = (ROOT / "app.js").read_text(
+    javascript = (
+    ROOT / "code/web_application/app.js"
+).read_text(
         encoding="utf-8"
     )
 
@@ -211,11 +214,11 @@ def main() -> None:
         sys.executable,
         "-m",
         "py_compile",
-        "agents_demo.py",
-        "run_nondeterminism.py",
-        "calculate_metrics.py",
-        "hw1_client.py",
-        "verify_hw01.py",
+        "code/agents_demo.py",
+        "code/run_nondeterminism.py",
+        "code/calculate_metrics.py",
+        "code/hw1_client.py",
+        "code/verify_hw01.py",
         "src/model_client.py",
     ]
 
@@ -268,7 +271,7 @@ def main() -> None:
     )
 
     verification = {
-        "student": "Vrishin KP",
+        "student": "Vrishin Dharmesh Kunnatham Parambath",
         "sid4": 8844,
         "port_base": 8744,
         "prefix": "s8844",
