@@ -1,0 +1,642 @@
+[
+  {
+    "temperature": 0.7,
+    "run": 1,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests package",
+      "unauthorized access"
+    ],
+    "summary": "Authentication bypass in Requests Package allows unauthorized access and data retrieval.",
+    "latency_ms": 951182.2,
+    "turn_count": 3,
+    "input_tokens": 3876,
+    "output_tokens": 399,
+    "total_tokens": 4275,
+    "timestamp": "2026-08-30T07:23:09Z"
+  },
+  {
+    "temperature": 0.7,
+    "run": 2,
+    "tags": [
+      "critical authentication bypass",
+      "unauthorized access",
+      "authentication bypass requests"
+    ],
+    "summary": "Critical authentication bypass enables unauthorized access to protected resources and sensitive data.",
+    "latency_ms": 732801.44,
+    "turn_count": 3,
+    "input_tokens": 3321,
+    "output_tokens": 213,
+    "total_tokens": 3534,
+    "timestamp": "2026-08-30T07:35:21Z"
+  },
+  {
+    "temperature": 0.7,
+    "run": 3,
+    "tags": [
+      "authentication bypass",
+      "unauthorized access",
+      "critical authentication bypass"
+    ],
+    "summary": "Authentication bypass enables unauthorized access to protected resources and sensitive data retrieval.",
+    "latency_ms": 988706.56,
+    "turn_count": 3,
+    "input_tokens": 4262,
+    "output_tokens": 243,
+    "total_tokens": 4505,
+    "timestamp": "2026-08-30T07:51:50Z"
+  },
+  {
+    "temperature": 0.7,
+    "run": 4,
+    "tags": [
+      "critical authentication bypass",
+      "requests package",
+      "authentication bypass"
+    ],
+    "summary": "An authentication bypass allows unauthorized remote users to access protected resources and retrieve sensitive application data.",
+    "latency_ms": 960667.67,
+    "turn_count": 3,
+    "input_tokens": 3455,
+    "output_tokens": 393,
+    "total_tokens": 3848,
+    "timestamp": "2026-08-30T08:07:51Z"
+  },
+  {
+    "temperature": 0.7,
+    "run": 5,
+    "tags": [
+      "authentication bypass",
+      "critical authentication bypass",
+      "authentication bypass requests"
+    ],
+    "summary": "Critical authentication bypass in Requests Package enables unauthorized access to sensitive application data.",
+    "latency_ms": 761916.9,
+    "turn_count": 3,
+    "input_tokens": 3351,
+    "output_tokens": 256,
+    "total_tokens": 3607,
+    "timestamp": "2026-08-30T08:20:33Z"
+  },
+  {
+    "temperature": 0.7,
+    "run": 6,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "Requests package's authentication bypass enables unauthorized access to sensitive data.",
+    "latency_ms": 430487.44,
+    "turn_count": 3,
+    "input_tokens": 2211,
+    "output_tokens": 248,
+    "total_tokens": 2459,
+    "timestamp": "2026-08-30T08:27:43Z"
+  },
+  {
+    "temperature": 0.7,
+    "run": 7,
+    "tags": [
+      "authentication bypass",
+      "unauthorized access",
+      "critical authentication bypass"
+    ],
+    "summary": "Authentication bypass enables unauthorized remote access to protected resources and sensitive data.",
+    "latency_ms": 1035148.04,
+    "turn_count": 3,
+    "input_tokens": 4205,
+    "output_tokens": 240,
+    "total_tokens": 4445,
+    "timestamp": "2026-08-30T08:44:58Z"
+  },
+  {
+    "temperature": 0.7,
+    "run": 8,
+    "tags": [
+      "authentication bypass",
+      "critical authentication bypass",
+      "package authentication bypass"
+    ],
+    "summary": "Critical authentication bypass in Requests package allows unauthorized access to protected resources, risking data exposure.",
+    "latency_ms": 1017359.69,
+    "turn_count": 3,
+    "input_tokens": 3856,
+    "output_tokens": 225,
+    "total_tokens": 4081,
+    "timestamp": "2026-08-30T09:01:56Z"
+  },
+  {
+    "temperature": 0.7,
+    "run": 9,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "Authentication bypass allows unauthorized remote users to access protected resources and retrieve sensitive data.",
+    "latency_ms": 1064567.06,
+    "turn_count": 3,
+    "input_tokens": 3240,
+    "output_tokens": 428,
+    "total_tokens": 3668,
+    "timestamp": "2026-08-30T09:19:40Z"
+  },
+  {
+    "temperature": 0.7,
+    "run": 10,
+    "tags": [
+      "authentication bypass",
+      "unauthorized access",
+      "critical authentication bypass"
+    ],
+    "summary": "Critical authentication bypass allows unauthorized access to sensitive data.",
+    "latency_ms": 1172896.67,
+    "turn_count": 3,
+    "input_tokens": 3481,
+    "output_tokens": 225,
+    "total_tokens": 3706,
+    "timestamp": "2026-08-30T09:39:13Z"
+  },
+  {
+    "temperature": 0.7,
+    "run": 11,
+    "tags": [
+      "authentication bypass",
+      "critical authentication bypass",
+      "package authentication bypass"
+    ],
+    "summary": "Authentication bypass in Requests Package allows unauthorized access to sensitive data.",
+    "latency_ms": 1467537.78,
+    "turn_count": 3,
+    "input_tokens": 3768,
+    "output_tokens": 286,
+    "total_tokens": 4054,
+    "timestamp": "2026-08-30T10:03:41Z"
+  },
+  {
+    "temperature": 0.7,
+    "run": 12,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "An authentication bypass allows unauthorized remote users to access protected resources and retrieve sensitive application data.",
+    "latency_ms": 685869.44,
+    "turn_count": 3,
+    "input_tokens": 2918,
+    "output_tokens": 417,
+    "total_tokens": 3335,
+    "timestamp": "2026-08-30T10:15:07Z"
+  },
+  {
+    "temperature": 0.7,
+    "run": 13,
+    "tags": [
+      "authentication bypass",
+      "unauthorized access",
+      "critical authentication bypass"
+    ],
+    "summary": "Authentication bypass allows unauthorized access to protected resources and data retrieval.",
+    "latency_ms": 1062087.79,
+    "turn_count": 3,
+    "input_tokens": 4428,
+    "output_tokens": 300,
+    "total_tokens": 4728,
+    "timestamp": "2026-08-30T10:32:49Z"
+  },
+  {
+    "temperature": 0.7,
+    "run": 14,
+    "tags": [
+      "unauthorized access",
+      "critical authentication bypass",
+      "authentication bypass requests"
+    ],
+    "summary": "Critical authentication bypass allows unauthorized access to protected resources and data retrieval.",
+    "latency_ms": 764100.48,
+    "turn_count": 3,
+    "input_tokens": 3419,
+    "output_tokens": 214,
+    "total_tokens": 3633,
+    "timestamp": "2026-08-30T10:45:33Z"
+  },
+  {
+    "temperature": 0.7,
+    "run": 15,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass",
+      "unauthorized access"
+    ],
+    "summary": "Authentication bypass in Requests Package allows unauthorized access to sensitive data.",
+    "latency_ms": 1211929.05,
+    "turn_count": 3,
+    "input_tokens": 4740,
+    "output_tokens": 408,
+    "total_tokens": 5148,
+    "timestamp": "2026-08-30T11:05:45Z"
+  },
+  {
+    "temperature": 0.7,
+    "run": 16,
+    "tags": [
+      "authentication bypass",
+      "critical authentication bypass",
+      "authentication bypass requests"
+    ],
+    "summary": "A critical vulnerability in the Requests package allows unauthorized remote access, compromising application security.",
+    "latency_ms": 905145.96,
+    "turn_count": 3,
+    "input_tokens": 3437,
+    "output_tokens": 249,
+    "total_tokens": 3686,
+    "timestamp": "2026-08-30T11:20:50Z"
+  },
+  {
+    "temperature": 0.7,
+    "run": 17,
+    "tags": [
+      "authentication bypass",
+      "critical authentication bypass",
+      "authentication bypass requests"
+    ],
+    "summary": "A critical vulnerability in the Requests Package allows unauthorized access to protected resources and data exposure.",
+    "latency_ms": 1030586.23,
+    "turn_count": 3,
+    "input_tokens": 4015,
+    "output_tokens": 283,
+    "total_tokens": 4298,
+    "timestamp": "2026-08-30T11:38:01Z"
+  },
+  {
+    "temperature": 0.7,
+    "run": 18,
+    "tags": [
+      "authentication bypass",
+      "unauthorized access",
+      "critical authentication bypass"
+    ],
+    "summary": "A critical authentication bypass flaw in the Requests Package allows unauthorized access to sensitive data.",
+    "latency_ms": 620889.27,
+    "turn_count": 3,
+    "input_tokens": 2858,
+    "output_tokens": 283,
+    "total_tokens": 3141,
+    "timestamp": "2026-08-30T11:48:22Z"
+  },
+  {
+    "temperature": 0.7,
+    "run": 19,
+    "tags": [
+      "authentication bypass",
+      "critical authentication bypass",
+      "authentication bypass requests"
+    ],
+    "summary": "A critical authentication bypass in the Requests package allows unauthorized access to sensitive data.",
+    "latency_ms": 532016.38,
+    "turn_count": 3,
+    "input_tokens": 2550,
+    "output_tokens": 282,
+    "total_tokens": 2832,
+    "timestamp": "2026-08-30T11:57:14Z"
+  },
+  {
+    "temperature": 0.7,
+    "run": 20,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass",
+      "requests package"
+    ],
+    "summary": "Authentication bypass in Requests package allows unauthorized access to sensitive data.",
+    "latency_ms": 855558.39,
+    "turn_count": 3,
+    "input_tokens": 3716,
+    "output_tokens": 276,
+    "total_tokens": 3992,
+    "timestamp": "2026-08-30T12:11:29Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 1,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "Authentication bypass in Requests package enables unauthorized access and data retrieval.",
+    "latency_ms": 588639.6,
+    "turn_count": 3,
+    "input_tokens": 2776,
+    "output_tokens": 200,
+    "total_tokens": 2976,
+    "timestamp": "2026-08-30T12:21:18Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 2,
+    "tags": [
+      "authentication bypass",
+      "unauthorized access",
+      "critical authentication bypass"
+    ],
+    "summary": "Authentication bypass enables unauthorized access to protected resources and sensitive data.",
+    "latency_ms": 708109.22,
+    "turn_count": 3,
+    "input_tokens": 2931,
+    "output_tokens": 421,
+    "total_tokens": 3352,
+    "timestamp": "2026-08-30T12:33:06Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 3,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "An authentication bypass allows unauthorized remote users to access protected resources and retrieve sensitive application data.",
+    "latency_ms": 875055.03,
+    "turn_count": 3,
+    "input_tokens": 3623,
+    "output_tokens": 385,
+    "total_tokens": 4008,
+    "timestamp": "2026-08-30T12:47:41Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 4,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "An authentication bypass allows unauthorized remote users to access protected resources and retrieve sensitive application data.",
+    "latency_ms": 516956.91,
+    "turn_count": 3,
+    "input_tokens": 2334,
+    "output_tokens": 426,
+    "total_tokens": 2760,
+    "timestamp": "2026-08-30T12:56:18Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 5,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "Authentication bypass allows unauthorized access to protected resources and sensitive data.",
+    "latency_ms": 444938.36,
+    "turn_count": 3,
+    "input_tokens": 2072,
+    "output_tokens": 424,
+    "total_tokens": 2496,
+    "timestamp": "2026-08-30T13:03:43Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 6,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "Authentication bypass in Requests package allows unauthorized access to sensitive data via unprotected resources.",
+    "latency_ms": 519954.26,
+    "turn_count": 3,
+    "input_tokens": 2332,
+    "output_tokens": 427,
+    "total_tokens": 2759,
+    "timestamp": "2026-08-30T13:12:23Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 7,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "An authentication bypass allows unauthorized remote users to access protected resources and retrieve sensitive application data.",
+    "latency_ms": 502618.17,
+    "turn_count": 3,
+    "input_tokens": 2502,
+    "output_tokens": 195,
+    "total_tokens": 2697,
+    "timestamp": "2026-08-30T13:20:46Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 8,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "An authentication bypass allows unauthorized remote users to access protected resources and retrieve sensitive application data.",
+    "latency_ms": 410499.72,
+    "turn_count": 3,
+    "input_tokens": 2184,
+    "output_tokens": 195,
+    "total_tokens": 2379,
+    "timestamp": "2026-08-30T13:27:36Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 9,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "An authentication bypass allows unauthorized remote users to access protected resources and retrieve sensitive application data.",
+    "latency_ms": 579316.23,
+    "turn_count": 3,
+    "input_tokens": 2767,
+    "output_tokens": 198,
+    "total_tokens": 2965,
+    "timestamp": "2026-08-30T13:37:15Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 10,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "An authentication bypass allows unauthorized remote users to access protected resources and retrieve sensitive application data.",
+    "latency_ms": 609544.1,
+    "turn_count": 3,
+    "input_tokens": 3000,
+    "output_tokens": 154,
+    "total_tokens": 3154,
+    "timestamp": "2026-08-30T13:47:25Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 11,
+    "tags": [
+      "authentication bypass",
+      "critical authentication bypass",
+      "authentication bypass requests"
+    ],
+    "summary": "Authentication bypass allows unauthorized remote users to access protected resources and retrieve sensitive data.",
+    "latency_ms": 935201.65,
+    "turn_count": 3,
+    "input_tokens": 3524,
+    "output_tokens": 379,
+    "total_tokens": 3903,
+    "timestamp": "2026-08-30T14:03:00Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 12,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "Authentication bypass in Requests package allows unauthorized access to sensitive data via unprotected resources.",
+    "latency_ms": 680511.07,
+    "turn_count": 3,
+    "input_tokens": 3025,
+    "output_tokens": 271,
+    "total_tokens": 3296,
+    "timestamp": "2026-08-30T14:14:21Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 13,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "An authentication bypass allows unauthorized remote users to access protected resources and retrieve sensitive application data.",
+    "latency_ms": 1057682.02,
+    "turn_count": 3,
+    "input_tokens": 3855,
+    "output_tokens": 430,
+    "total_tokens": 4285,
+    "timestamp": "2026-08-30T14:31:58Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 14,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "An authentication bypass allows unauthorized remote users to access protected resources and retrieve sensitive application data.",
+    "latency_ms": 909496.89,
+    "turn_count": 3,
+    "input_tokens": 3719,
+    "output_tokens": 386,
+    "total_tokens": 4105,
+    "timestamp": "2026-08-30T14:47:08Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 15,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "An authentication bypass allows unauthorized remote users to access protected resources and retrieve sensitive application data.",
+    "latency_ms": 932268.67,
+    "turn_count": 3,
+    "input_tokens": 3441,
+    "output_tokens": 390,
+    "total_tokens": 3831,
+    "timestamp": "2026-08-30T15:02:40Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 16,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "An authentication bypass allows unauthorized remote users to access protected resources and retrieve sensitive application data.",
+    "latency_ms": 949000.67,
+    "turn_count": 3,
+    "input_tokens": 3840,
+    "output_tokens": 423,
+    "total_tokens": 4263,
+    "timestamp": "2026-08-30T15:18:29Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 17,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "An authentication bypass allows unauthorized remote users to access protected resources and retrieve sensitive application data.",
+    "latency_ms": 560177.75,
+    "turn_count": 3,
+    "input_tokens": 2729,
+    "output_tokens": 286,
+    "total_tokens": 3015,
+    "timestamp": "2026-08-30T15:27:49Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 18,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "An authentication bypass allows unauthorized remote users to access protected resources and retrieve sensitive application data.",
+    "latency_ms": 1002726.98,
+    "turn_count": 3,
+    "input_tokens": 4035,
+    "output_tokens": 385,
+    "total_tokens": 4420,
+    "timestamp": "2026-08-30T15:44:32Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 19,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "An authentication bypass allows unauthorized remote users to access protected resources and retrieve sensitive application data.",
+    "latency_ms": 474357.35,
+    "turn_count": 3,
+    "input_tokens": 2176,
+    "output_tokens": 425,
+    "total_tokens": 2601,
+    "timestamp": "2026-08-30T15:52:26Z"
+  },
+  {
+    "temperature": 0.0,
+    "run": 20,
+    "tags": [
+      "critical authentication bypass",
+      "authentication bypass requests",
+      "bypass requests package"
+    ],
+    "summary": "An authentication bypass allows unauthorized remote users to access protected resources and retrieve sensitive application data.",
+    "latency_ms": 449802.12,
+    "turn_count": 3,
+    "input_tokens": 2321,
+    "output_tokens": 195,
+    "total_tokens": 2516,
+    "timestamp": "2026-08-30T15:59:56Z"
+  }
+]

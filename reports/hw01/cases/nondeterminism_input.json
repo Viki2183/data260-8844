@@ -1,0 +1,5 @@
+{
+  "title": "Critical Authentication Bypass in Requests Package",
+  "content": "An authentication bypass allows unauthorized remote users to access protected resources and retrieve sensitive application data.",
+  "email": "vrishindharmesh.kunnathamparambath@sjsu.edu"
+}

@@ -1,0 +1,32 @@
+{
+  "input_file": "reports\\hw01\\raw\\nondeterminism_results.json",
+  "total_runs": 40,
+  "temperature_0.7": {
+    "temperature": 0.7,
+    "run_count": 20,
+    "distinct_tag_sets": 7,
+    "tags_in_all_20_runs": [
+      "critical authentication bypass"
+    ],
+    "tags_in_exactly_one_run": [
+      "authentication bypass requests package"
+    ],
+    "latency_p50_ms": 955924.94,
+    "latency_p95_ms": 1224709.49,
+    "latency_p99_ms": 1418972.12
+  },
+  "temperature_0.0": {
+    "temperature": 0.0,
+    "run_count": 20,
+    "distinct_tag_sets": 3,
+    "tags_in_all_20_runs": [
+      "critical authentication bypass"
+    ],
+    "tags_in_exactly_one_run": [
+      "unauthorized access"
+    ],
+    "latency_p50_ms": 599091.85,
+    "latency_p95_ms": 1005474.73,
+    "latency_p99_ms": 1047240.56
+  }
+}

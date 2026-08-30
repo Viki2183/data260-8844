@@ -1,0 +1,82 @@
+[2026-08-30T07:07:17Z] Started or resumed the nondeterminism experiment.
+[2026-08-30T07:07:17Z] Starting temperature=0.7, run=1.
+[2026-08-30T07:23:09Z] Completed temperature=0.7, run=1, latency_ms=951182.20, tags=['critical authentication bypass', 'authentication bypass requests package', 'unauthorized access'].
+[2026-08-30T07:23:09Z] Starting temperature=0.7, run=2.
+[2026-08-30T07:35:21Z] Completed temperature=0.7, run=2, latency_ms=732801.44, tags=['critical authentication bypass', 'unauthorized access', 'authentication bypass requests'].
+[2026-08-30T07:35:21Z] Starting temperature=0.7, run=3.
+[2026-08-30T07:51:50Z] Completed temperature=0.7, run=3, latency_ms=988706.56, tags=['authentication bypass', 'unauthorized access', 'critical authentication bypass'].
+[2026-08-30T07:51:50Z] Starting temperature=0.7, run=4.
+[2026-08-30T08:07:51Z] Completed temperature=0.7, run=4, latency_ms=960667.67, tags=['critical authentication bypass', 'requests package', 'authentication bypass'].
+[2026-08-30T08:07:51Z] Starting temperature=0.7, run=5.
+[2026-08-30T08:20:33Z] Completed temperature=0.7, run=5, latency_ms=761916.90, tags=['authentication bypass', 'critical authentication bypass', 'authentication bypass requests'].
+[2026-08-30T08:20:33Z] Starting temperature=0.7, run=6.
+[2026-08-30T08:27:43Z] Completed temperature=0.7, run=6, latency_ms=430487.44, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T08:27:43Z] Starting temperature=0.7, run=7.
+[2026-08-30T08:44:58Z] Completed temperature=0.7, run=7, latency_ms=1035148.04, tags=['authentication bypass', 'unauthorized access', 'critical authentication bypass'].
+[2026-08-30T08:44:58Z] Starting temperature=0.7, run=8.
+[2026-08-30T09:01:56Z] Completed temperature=0.7, run=8, latency_ms=1017359.69, tags=['authentication bypass', 'critical authentication bypass', 'package authentication bypass'].
+[2026-08-30T09:01:56Z] Starting temperature=0.7, run=9.
+[2026-08-30T09:19:40Z] Completed temperature=0.7, run=9, latency_ms=1064567.06, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T09:19:40Z] Starting temperature=0.7, run=10.
+[2026-08-30T09:39:13Z] Completed temperature=0.7, run=10, latency_ms=1172896.67, tags=['authentication bypass', 'unauthorized access', 'critical authentication bypass'].
+[2026-08-30T09:39:13Z] Starting temperature=0.7, run=11.
+[2026-08-30T10:03:41Z] Completed temperature=0.7, run=11, latency_ms=1467537.78, tags=['authentication bypass', 'critical authentication bypass', 'package authentication bypass'].
+[2026-08-30T10:03:41Z] Starting temperature=0.7, run=12.
+[2026-08-30T10:15:07Z] Completed temperature=0.7, run=12, latency_ms=685869.44, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T10:15:07Z] Starting temperature=0.7, run=13.
+[2026-08-30T10:32:49Z] Completed temperature=0.7, run=13, latency_ms=1062087.79, tags=['authentication bypass', 'unauthorized access', 'critical authentication bypass'].
+[2026-08-30T10:32:49Z] Starting temperature=0.7, run=14.
+[2026-08-30T10:45:33Z] Completed temperature=0.7, run=14, latency_ms=764100.48, tags=['unauthorized access', 'critical authentication bypass', 'authentication bypass requests'].
+[2026-08-30T10:45:33Z] Starting temperature=0.7, run=15.
+[2026-08-30T11:05:45Z] Completed temperature=0.7, run=15, latency_ms=1211929.05, tags=['critical authentication bypass', 'authentication bypass', 'unauthorized access'].
+[2026-08-30T11:05:45Z] Starting temperature=0.7, run=16.
+[2026-08-30T11:20:50Z] Completed temperature=0.7, run=16, latency_ms=905145.96, tags=['authentication bypass', 'critical authentication bypass', 'authentication bypass requests'].
+[2026-08-30T11:20:50Z] Starting temperature=0.7, run=17.
+[2026-08-30T11:38:01Z] Completed temperature=0.7, run=17, latency_ms=1030586.23, tags=['authentication bypass', 'critical authentication bypass', 'authentication bypass requests'].
+[2026-08-30T11:38:01Z] Starting temperature=0.7, run=18.
+[2026-08-30T11:48:22Z] Completed temperature=0.7, run=18, latency_ms=620889.27, tags=['authentication bypass', 'unauthorized access', 'critical authentication bypass'].
+[2026-08-30T11:48:22Z] Starting temperature=0.7, run=19.
+[2026-08-30T11:57:14Z] Completed temperature=0.7, run=19, latency_ms=532016.38, tags=['authentication bypass', 'critical authentication bypass', 'authentication bypass requests'].
+[2026-08-30T11:57:14Z] Starting temperature=0.7, run=20.
+[2026-08-30T12:11:29Z] Completed temperature=0.7, run=20, latency_ms=855558.39, tags=['critical authentication bypass', 'authentication bypass', 'requests package'].
+[2026-08-30T12:11:29Z] Starting temperature=0.0, run=1.
+[2026-08-30T12:21:18Z] Completed temperature=0.0, run=1, latency_ms=588639.60, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T12:21:18Z] Starting temperature=0.0, run=2.
+[2026-08-30T12:33:06Z] Completed temperature=0.0, run=2, latency_ms=708109.22, tags=['authentication bypass', 'unauthorized access', 'critical authentication bypass'].
+[2026-08-30T12:33:06Z] Starting temperature=0.0, run=3.
+[2026-08-30T12:47:41Z] Completed temperature=0.0, run=3, latency_ms=875055.03, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T12:47:41Z] Starting temperature=0.0, run=4.
+[2026-08-30T12:56:18Z] Completed temperature=0.0, run=4, latency_ms=516956.91, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T12:56:18Z] Starting temperature=0.0, run=5.
+[2026-08-30T13:03:43Z] Completed temperature=0.0, run=5, latency_ms=444938.36, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T13:03:43Z] Starting temperature=0.0, run=6.
+[2026-08-30T13:12:23Z] Completed temperature=0.0, run=6, latency_ms=519954.26, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T13:12:23Z] Starting temperature=0.0, run=7.
+[2026-08-30T13:20:46Z] Completed temperature=0.0, run=7, latency_ms=502618.17, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T13:20:46Z] Starting temperature=0.0, run=8.
+[2026-08-30T13:27:36Z] Completed temperature=0.0, run=8, latency_ms=410499.72, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T13:27:36Z] Starting temperature=0.0, run=9.
+[2026-08-30T13:37:15Z] Completed temperature=0.0, run=9, latency_ms=579316.23, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T13:37:15Z] Starting temperature=0.0, run=10.
+[2026-08-30T13:47:25Z] Completed temperature=0.0, run=10, latency_ms=609544.10, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T13:47:25Z] Starting temperature=0.0, run=11.
+[2026-08-30T14:03:00Z] Completed temperature=0.0, run=11, latency_ms=935201.65, tags=['authentication bypass', 'critical authentication bypass', 'authentication bypass requests'].
+[2026-08-30T14:03:00Z] Starting temperature=0.0, run=12.
+[2026-08-30T14:14:21Z] Completed temperature=0.0, run=12, latency_ms=680511.07, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T14:14:21Z] Starting temperature=0.0, run=13.
+[2026-08-30T14:31:58Z] Completed temperature=0.0, run=13, latency_ms=1057682.02, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T14:31:58Z] Starting temperature=0.0, run=14.
+[2026-08-30T14:47:08Z] Completed temperature=0.0, run=14, latency_ms=909496.89, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T14:47:08Z] Starting temperature=0.0, run=15.
+[2026-08-30T15:02:40Z] Completed temperature=0.0, run=15, latency_ms=932268.67, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T15:02:40Z] Starting temperature=0.0, run=16.
+[2026-08-30T15:18:29Z] Completed temperature=0.0, run=16, latency_ms=949000.67, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T15:18:29Z] Starting temperature=0.0, run=17.
+[2026-08-30T15:27:49Z] Completed temperature=0.0, run=17, latency_ms=560177.75, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T15:27:49Z] Starting temperature=0.0, run=18.
+[2026-08-30T15:44:32Z] Completed temperature=0.0, run=18, latency_ms=1002726.98, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T15:44:32Z] Starting temperature=0.0, run=19.
+[2026-08-30T15:52:26Z] Completed temperature=0.0, run=19, latency_ms=474357.35, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T15:52:26Z] Starting temperature=0.0, run=20.
+[2026-08-30T15:59:56Z] Completed temperature=0.0, run=20, latency_ms=449802.12, tags=['critical authentication bypass', 'authentication bypass requests', 'bypass requests package'].
+[2026-08-30T15:59:56Z] Completed all 40 nondeterminism runs.
