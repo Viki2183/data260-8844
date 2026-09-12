@@ -1,5 +1,8 @@
 "use strict";
 
+// API endpoint used to create vulnerability reports.
+const API_URL = "/api/vulnerability-reports";
+
 // Closure that remembers the number of successful submissions.
 const submissionCounter = (() => {
     let count = 0;
@@ -10,7 +13,7 @@ const submissionCounter = (() => {
     };
 })();
 
-// Arrow function used to validate the description and terms checkbox.
+// Validate the fields that need browser-side checking.
 const validateForm = () => {
     const description = document
         .getElementById("vulnerabilityDescription")
@@ -37,15 +40,17 @@ const validateForm = () => {
     return true;
 };
 
+// Listen for the form submission.
 document
     .getElementById("vulnerabilityForm")
-    .addEventListener("submit", (event) => {
+    .addEventListener("submit", async (event) => {
         event.preventDefault();
 
         if (!validateForm()) {
             return;
         }
 
+        // Collect the form values into one JavaScript object.
         const formData = {
             packageName: document
                 .getElementById("packageName")
@@ -73,34 +78,54 @@ document
                 document.getElementById("termsAccepted").checked
         };
 
-        // Convert the form object into a JSON string.
+        // Convert the object to JSON and back to demonstrate JSON handling.
         const jsonString = JSON.stringify(formData);
-
-        console.log("JSON string:");
-        console.log(jsonString);
-
-        // Convert the JSON string back into a JavaScript object.
         const parsedObject = JSON.parse(jsonString);
 
-        // Extract the primary field and email using object destructuring.
+        // Extract selected values using object destructuring.
         const { packageName, submitterEmail } = parsedObject;
 
         console.log("Package name:", packageName);
         console.log("Submitter email:", submitterEmail);
 
-        // Add the current date and time using the spread operator.
-        const updatedObject = {
-            ...parsedObject,
-            submissionDate: new Date().toISOString()
-        };
+        try {
+            // Send the JSON data to the FastAPI POST endpoint.
+            const response = await fetch(API_URL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(parsedObject)
+            });
 
-        console.log("Updated object:");
-        console.log(updatedObject);
+            const responseData = await response.json();
 
-        // Increase and display the closure-based submission count.
-        const submissionCount = submissionCounter();
+            // Display validation errors returned by FastAPI.
+            if (!response.ok) {
+                const errorMessage = responseData.detail
+                    ? JSON.stringify(responseData.detail)
+                    : "The report could not be submitted.";
 
-        console.log("Successful submission count:", submissionCount);
+                throw new Error(errorMessage);
+            }
 
-        alert("Vulnerability report submitted successfully!");
+            // Count only successful backend submissions.
+            const submissionCount = submissionCounter();
+
+            console.log("Created API record:", responseData);
+            console.log(
+                "Successful submission count:",
+                submissionCount
+            );
+
+            alert(
+                `Vulnerability report submitted successfully! API ID: ${responseData.id}`
+            );
+
+            // Clear the form after a successful submission.
+            document.getElementById("vulnerabilityForm").reset();
+        } catch (error) {
+            console.error("Submission error:", error);
+            alert(`Submission failed: ${error.message}`);
+        }
     });
