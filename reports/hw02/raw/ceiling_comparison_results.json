@@ -1,0 +1,1382 @@
+[
+  {
+    "experiment": "ceiling_2",
+    "run_number": 1,
+    "started_at": "2026-09-13T10:08:38.440119+00:00",
+    "elapsed_ms": 75207.19,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 73312 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_2",
+    "run_number": 2,
+    "started_at": "2026-09-13T10:09:53.650304+00:00",
+    "elapsed_ms": 69464.51,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 67486 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_2",
+    "run_number": 3,
+    "started_at": "2026-09-13T10:11:03.116361+00:00",
+    "elapsed_ms": 72954.96,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 71130 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_2",
+    "run_number": 4,
+    "started_at": "2026-09-13T10:12:16.073281+00:00",
+    "elapsed_ms": 67006.89,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 65058 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_2",
+    "run_number": 5,
+    "started_at": "2026-09-13T10:13:23.081750+00:00",
+    "elapsed_ms": 73549.05,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 71659 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_2",
+    "run_number": 6,
+    "started_at": "2026-09-13T10:14:36.635478+00:00",
+    "elapsed_ms": 72264.82,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 69534 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_2",
+    "run_number": 7,
+    "started_at": "2026-09-13T10:15:48.902568+00:00",
+    "elapsed_ms": 73879.95,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 72254 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_2",
+    "run_number": 8,
+    "started_at": "2026-09-13T10:17:02.784253+00:00",
+    "elapsed_ms": 70391.11,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 68438 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_2",
+    "run_number": 9,
+    "started_at": "2026-09-13T10:18:13.177453+00:00",
+    "elapsed_ms": 74304.17,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 72574 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_2",
+    "run_number": 10,
+    "started_at": "2026-09-13T10:19:27.483239+00:00",
+    "elapsed_ms": 73228.12,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 71194 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_2",
+    "run_number": 11,
+    "started_at": "2026-09-13T10:20:40.712741+00:00",
+    "elapsed_ms": 71365.5,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 69258 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_2",
+    "run_number": 12,
+    "started_at": "2026-09-13T10:21:52.080333+00:00",
+    "elapsed_ms": 80153.78,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 78074 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_2",
+    "run_number": 13,
+    "started_at": "2026-09-13T10:23:12.238669+00:00",
+    "elapsed_ms": 84100.07,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 81683 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_2",
+    "run_number": 14,
+    "started_at": "2026-09-13T10:24:36.341012+00:00",
+    "elapsed_ms": 75306.92,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 72562 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_2",
+    "run_number": 15,
+    "started_at": "2026-09-13T10:25:51.650788+00:00",
+    "elapsed_ms": 68012.95,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 65893 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_2",
+    "run_number": 16,
+    "started_at": "2026-09-13T10:26:59.665083+00:00",
+    "elapsed_ms": 70011.96,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 68531 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_2",
+    "run_number": 17,
+    "started_at": "2026-09-13T10:28:09.678276+00:00",
+    "elapsed_ms": 67309.3,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 65552 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_2",
+    "run_number": 18,
+    "started_at": "2026-09-13T10:29:16.988799+00:00",
+    "elapsed_ms": 66043.61,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 64632 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_2",
+    "run_number": 19,
+    "started_at": "2026-09-13T10:30:23.034022+00:00",
+    "elapsed_ms": 66490.23,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 65067 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_2",
+    "run_number": 20,
+    "started_at": "2026-09-13T10:31:29.525559+00:00",
+    "elapsed_ms": 66346.84,
+    "status": "ceiling",
+    "classification": "Hit turn ceiling",
+    "max_turns": 2,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 2,
+      "turn_count": 2,
+      "completed": false,
+      "final_output": {},
+      "reviewer_feedback": {},
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 1,
+        "cumulative_input_tokens": 160,
+        "cumulative_output_tokens": 273,
+        "cumulative_total_tokens": 433,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/2) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 64632 ms.\n--- NODE: Supervisor (turn 2/2) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 1,
+    "started_at": "2026-09-13T10:32:35.874829+00:00",
+    "elapsed_ms": 157469.27,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 90471.4
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 65489 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 90471.4\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 2,
+    "started_at": "2026-09-13T10:35:13.345072+00:00",
+    "elapsed_ms": 156503.6,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 91599.98
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 63070 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 91599.98\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 3,
+    "started_at": "2026-09-13T10:37:49.850233+00:00",
+    "elapsed_ms": 157420.75,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 92377.18
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 63423 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 92377.18\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 4,
+    "started_at": "2026-09-13T10:40:27.273181+00:00",
+    "elapsed_ms": 159817.13,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 92508.12
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 65913 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 92508.12\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 5,
+    "started_at": "2026-09-13T10:43:07.091302+00:00",
+    "elapsed_ms": 154522.1,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 89910.11
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 63207 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 89910.11\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 6,
+    "started_at": "2026-09-13T10:45:41.615265+00:00",
+    "elapsed_ms": 156255.7,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 91287.4
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 63411 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 91287.4\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 7,
+    "started_at": "2026-09-13T10:48:17.873102+00:00",
+    "elapsed_ms": 156716.5,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 91450.66
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 63478 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 91450.66\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 8,
+    "started_at": "2026-09-13T10:50:54.590711+00:00",
+    "elapsed_ms": 157899.58,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 90991.08
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 65439 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 90991.08\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 9,
+    "started_at": "2026-09-13T10:53:32.491356+00:00",
+    "elapsed_ms": 157211.65,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 92903.53
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 62899 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 92903.53\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 10,
+    "started_at": "2026-09-13T10:56:09.704902+00:00",
+    "elapsed_ms": 159385.76,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 93873.04
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 63849 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 93873.04\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 11,
+    "started_at": "2026-09-13T10:58:49.092072+00:00",
+    "elapsed_ms": 157854.36,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 91805.32
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 64297 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 91805.32\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 12,
+    "started_at": "2026-09-13T11:01:26.949717+00:00",
+    "elapsed_ms": 156900.14,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 91621.02
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 63419 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 91621.02\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 13,
+    "started_at": "2026-09-13T11:04:03.851717+00:00",
+    "elapsed_ms": 165902.39,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 98680.43
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 65684 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 98680.43\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 14,
+    "started_at": "2026-09-13T11:06:49.757560+00:00",
+    "elapsed_ms": 160482.82,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 93327.65
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 65086 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 93327.65\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 15,
+    "started_at": "2026-09-13T11:09:30.242899+00:00",
+    "elapsed_ms": 157049.46,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 90500.85
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 64922 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 90500.85\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 16,
+    "started_at": "2026-09-13T11:12:07.293927+00:00",
+    "elapsed_ms": 157441.5,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 91262.36
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 64765 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 91262.36\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 17,
+    "started_at": "2026-09-13T11:14:44.737088+00:00",
+    "elapsed_ms": 156362.35,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 90228.74
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 64764 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 90228.74\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 18,
+    "started_at": "2026-09-13T11:17:21.101461+00:00",
+    "elapsed_ms": 157231.02,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 89321.94
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 65975 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 89321.94\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 19,
+    "started_at": "2026-09-13T11:19:58.334394+00:00",
+    "elapsed_ms": 156174.79,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 89930.04
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 64623 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 89930.04\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "ceiling_10",
+    "run_number": 20,
+    "started_at": "2026-09-13T11:22:34.511130+00:00",
+    "elapsed_ms": 156333.37,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "Critical Authentication Bypass in Requests Package",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "AuthenticationBypass",
+          "RequestsPackage",
+          "UnauthorizedAccess"
+        ],
+        "summary": "Critical authentication bypass allows unauthorized access to protected resources and sensitive data via the Requests package."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 89559.96
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 329,
+        "cumulative_output_tokens": 661,
+        "cumulative_total_tokens": 990,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=160, output=273, total=433\nPlanner produced valid output in 65397 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=169, output=388, total=557\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 89559.96\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  }
+]

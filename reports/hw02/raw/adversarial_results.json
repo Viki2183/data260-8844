@@ -1,0 +1,202 @@
+[
+  {
+    "experiment": "adversarial",
+    "run_number": 1,
+    "started_at": "2026-09-13T11:25:10.859572+00:00",
+    "elapsed_ms": 161073.68,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "???",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "MissingInfo",
+          "NoData",
+          "IncompleteReport"
+        ],
+        "summary": "The vulnerability report contains no meaningful package or vulnerability information, making it impossible to assess the issue accurately."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 89229.57
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 317,
+        "cumulative_output_tokens": 626,
+        "cumulative_total_tokens": 943,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=153, output=269, total=422\nPlanner produced valid output in 70359 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=164, output=357, total=521\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 89229.57\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "adversarial",
+    "run_number": 2,
+    "started_at": "2026-09-13T11:27:51.935546+00:00",
+    "elapsed_ms": 130335.3,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "???",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "UnknownVuln",
+          "MissingInfo",
+          "NoData"
+        ],
+        "summary": "The vulnerability report contains no meaningful package or vulnerability details, making analysis impossible."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 66299.57
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 314,
+        "cumulative_output_tokens": 529,
+        "cumulative_total_tokens": 843,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=153, output=262, total=415\nPlanner produced valid output in 62234 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=161, output=267, total=428\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 66299.57\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "adversarial",
+    "run_number": 3,
+    "started_at": "2026-09-13T11:30:02.272636+00:00",
+    "elapsed_ms": 129660.49,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "???",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "UnknownVuln",
+          "MissingInfo",
+          "NoData"
+        ],
+        "summary": "The vulnerability report contains no meaningful package or vulnerability details, making analysis impossible."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 66703.97
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 314,
+        "cumulative_output_tokens": 532,
+        "cumulative_total_tokens": 846,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=153, output=262, total=415\nPlanner produced valid output in 61216 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=161, output=270, total=431\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 66703.97\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "adversarial",
+    "run_number": 4,
+    "started_at": "2026-09-13T11:32:11.935178+00:00",
+    "elapsed_ms": 126465.24,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "???",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "UnknownVuln",
+          "MissingInfo",
+          "NoData"
+        ],
+        "summary": "The vulnerability report contains no meaningful package or vulnerability details, making analysis impossible."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 64125.8
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 314,
+        "cumulative_output_tokens": 532,
+        "cumulative_total_tokens": 846,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=153, output=262, total=415\nPlanner produced valid output in 60749 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=161, output=270, total=431\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 64125.8\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  },
+  {
+    "experiment": "adversarial",
+    "run_number": 5,
+    "started_at": "2026-09-13T11:34:18.401988+00:00",
+    "elapsed_ms": 126922.36,
+    "status": "pass",
+    "classification": "Valid first attempt",
+    "max_turns": 10,
+    "result": {
+      "title": "???",
+      "email": "vrishindharmesh.kunnathamparambath@sjsu.edu",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "max_turns": 10,
+      "turn_count": 3,
+      "completed": true,
+      "final_output": {
+        "tags": [
+          "UnknownVuln",
+          "MissingInfo",
+          "NoData"
+        ],
+        "summary": "The vulnerability report contains no meaningful package or vulnerability details, making analysis impossible."
+      },
+      "reviewer_feedback": {
+        "approved": true,
+        "issues": [],
+        "latency_ms": 63535.73
+      },
+      "validation_error": "",
+      "token_stats": {
+        "turn_count": 2,
+        "cumulative_input_tokens": 314,
+        "cumulative_output_tokens": 532,
+        "cumulative_total_tokens": 846,
+        "serialized_history_length": 2
+      }
+    },
+    "console_output": "--- NODE: Supervisor (turn 1/10) ---\n--- NODE: Planner ---\nTurn token usage: input=153, output=262, total=415\nPlanner produced valid output in 61302 ms.\n--- NODE: Supervisor (turn 2/10) ---\n--- NODE: Reviewer ---\nTurn token usage: input=161, output=270, total=431\n{\n  \"approved\": true,\n  \"issues\": [],\n  \"latency_ms\": 63535.73\n}\n--- NODE: Supervisor (turn 3/10) ---\n"
+  }
+]

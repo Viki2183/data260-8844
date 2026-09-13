@@ -1,0 +1,38 @@
+{
+  "schema_validation": {
+    "run_count": 30,
+    "completion_count": 30,
+    "completion_rate": 1.0,
+    "mean_latency_ms": 178399.88,
+    "classifications": {
+      "Valid first attempt": 30
+    }
+  },
+  "ceiling_2": {
+    "run_count": 20,
+    "completion_count": 0,
+    "completion_rate": 0.0,
+    "mean_latency_ms": 71869.6,
+    "classifications": {
+      "Hit turn ceiling": 20
+    }
+  },
+  "ceiling_10": {
+    "run_count": 20,
+    "completion_count": 20,
+    "completion_rate": 1.0,
+    "mean_latency_ms": 157746.71,
+    "classifications": {
+      "Valid first attempt": 20
+    }
+  },
+  "adversarial": {
+    "run_count": 5,
+    "completion_count": 5,
+    "completion_rate": 1.0,
+    "mean_latency_ms": 134891.41,
+    "classifications": {
+      "Valid first attempt": 5
+    }
+  }
+}
