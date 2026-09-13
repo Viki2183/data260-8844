@@ -12,7 +12,7 @@
 * Assigned domain: Open-source package vulnerabilities
 * Local model: qwen3:8b
 * Python version: 3.12
-* Container server: Nginx on Alpine Linux
+* Container server: Python 3.12 with FastAPI and Uvicorn
 
 ## Project Overview
 
@@ -246,3 +246,70 @@ reports/hw01/report.pdf
 ```
 
 at the tagged commit.
+
+
+## Homework 2 — FastAPI Vulnerability Reports
+
+HW2 extends the HW1 vulnerability-submission form with a FastAPI backend and REST API.
+
+### Local API
+
+Run the application locally:
+
+```powershell
+.\.venv\Scripts\python.exe .\code\web_application\main.py
+```
+
+Open the application:
+
+```text
+http://127.0.0.1:8744
+```
+
+### API Endpoints
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/api/vulnerability-reports` | List all reports |
+| GET | `/api/vulnerability-reports/{id}` | Get one report |
+| GET | `/api/vulnerability-reports?search=requests` | Search reports |
+| POST | `/api/vulnerability-reports` | Create a report |
+| PUT | `/api/vulnerability-reports/{id}` | Update a report |
+| DELETE | `/api/vulnerability-reports/{id}` | Delete a report |
+
+### Docker
+
+Build the image:
+
+```powershell
+docker build -f .\code\Dockerfile -t data260-8844-hw2 .
+```
+
+Run the container:
+
+```powershell
+docker run -d -p 8744:80 --name data260-8844-hw2-container data260-8844-hw2
+```
+
+Open the Dockerized application:
+
+```text
+http://127.0.0.1:8744
+```
+
+View container logs:
+
+```powershell
+docker logs data260-8844-hw2-container
+```
+
+Stop and remove the container:
+
+```powershell
+docker stop data260-8844-hw2-container
+docker rm data260-8844-hw2-container
+```
+
+The API validates required fields, email format, description length, allowed severity values, and terms acceptance. Reports are stored in memory while the application is running.
+
+
