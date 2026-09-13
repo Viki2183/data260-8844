@@ -1,10 +1,18 @@
-FROM nginx:alpine
+# Use Python because the application runs FastAPI and Uvicorn.
+FROM python:3.12-slim
 
-RUN rm -rf /usr/share/nginx/html/*
+# Keep application files inside the container's /app directory.
+WORKDIR /app
 
-COPY code/web_application/index.html /usr/share/nginx/html/index.html
-COPY code/web_application/app.js /usr/share/nginx/html/app.js
+# Install the exact project dependencies.
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy the FastAPI application and frontend files.
+COPY code/web_application ./web_application
+
+# The container will expose FastAPI on port 80.
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+# Start the FastAPI server when the container launches.
+CMD ["uvicorn", "web_application.main:app", "--host", "0.0.0.0", "--port", "80"]
