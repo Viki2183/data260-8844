@@ -223,3 +223,7 @@ docker run -d -p 8744:80 --name data260-8844-hw2-container data260-8844-hw2
 ## Conclusion
 
 This homework extended the HW1 vulnerability-report application into a Dockerized FastAPI application with CRUD operations, search, responsive styling, visible interface states, and a stateful LangGraph agent workflow. The measured experiments showed that a turn ceiling of 10 was reliable for the tested input, while a ceiling of 2 was insufficient.
+
+
+- Final tag: hw2
+- Tagged commit hash: a3fcc78ceb5efc75a7d38041403365837d7f25b3
