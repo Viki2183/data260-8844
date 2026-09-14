@@ -73,6 +73,8 @@ Searching for `requests` returned only the matching report.
 
 The sequential HW1 workflow was extended into a stateful LangGraph workflow in `code/hw2_graph.py`.
 
+All LLM calls in `hw2_graph.py`, including the Planner and Reviewer nodes, are routed through the shared HW1 adapter in `src/model_client.py`. This preserves the common Ollama configuration and token-accounting behavior.
+
 The graph contains:
 
 - `AgentState`, which stores shared workflow memory
@@ -150,7 +152,9 @@ Observed ceiling rate: 0%
 
 Mean latency: 134,891.41 ms
 
-The adversarial input did not reach the turn ceiling. This observed result is reported honestly rather than claiming that the input reliably causes failure.
+The adversarial input was designed to create difficulty by combining ambiguous wording, conflicting instructions, and content that could cause the Planner or Reviewer to produce output that violates the required schema. Such input could lead to invalid tags, an overly long summary, repeated correction attempts, or a turn-ceiling failure.
+
+In the five observed runs, the graph completed successfully every time and did not reach the turn ceiling. This observed result is reported honestly rather than claiming that the input reliably causes failure. One improvement would be to add stronger schema-aware retry feedback that explicitly identifies the invalid field and requires the next model response to correct only that field. A separate maximum retry limit would also prevent repeated correction loops.
 
 ![Experiment summary](screenshots/experiment_summary.png)
 
