@@ -1,0 +1,29 @@
+[
+  {
+    "technique": "Token",
+    "chunks": 2260,
+    "avg_chunk_length": 362.36,
+    "top1_cosine": 0.655152,
+    "mean_at_k_cosine": 0.527624,
+    "recall_at_k_mean": 1,
+    "mean_retrieval_latency_ms": 153.062
+  },
+  {
+    "technique": "Semantic",
+    "chunks": 142,
+    "avg_chunk_length": 4856.94,
+    "top1_cosine": 0.629102,
+    "mean_at_k_cosine": 0.414521,
+    "recall_at_k_mean": 1,
+    "mean_retrieval_latency_ms": 31.038
+  },
+  {
+    "technique": "Sentence-window",
+    "chunks": 727,
+    "avg_chunk_length": 947.94,
+    "top1_cosine": 0.651468,
+    "mean_at_k_cosine": 0.495669,
+    "recall_at_k_mean": 1,
+    "mean_retrieval_latency_ms": 61.474
+  }
+]

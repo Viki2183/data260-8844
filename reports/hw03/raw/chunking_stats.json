@@ -1,0 +1,17 @@
+[
+  {
+    "technique": "Token",
+    "chunks": 2260,
+    "avg_chunk_length": 362.36
+  },
+  {
+    "technique": "Semantic",
+    "chunks": 142,
+    "avg_chunk_length": 4856.94
+  },
+  {
+    "technique": "Sentence-window",
+    "chunks": 727,
+    "avg_chunk_length": 947.94
+  }
+]

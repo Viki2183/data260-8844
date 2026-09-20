@@ -1,0 +1,131 @@
+{
+  "timestamp_utc": "2026-09-20T05:46:10.570788+00:00",
+  "passed": true,
+  "checks": [
+    {
+      "name": "file:SOURCES.md",
+      "passed": true,
+      "details": "reports\\hw03\\SOURCES.md exists and is non-empty"
+    },
+    {
+      "name": "file:CORPUS_MANIFEST.json",
+      "passed": true,
+      "details": "reports\\hw03\\CORPUS_MANIFEST.json exists and is non-empty"
+    },
+    {
+      "name": "file:questions.yaml",
+      "passed": true,
+      "details": "reports\\hw03\\questions.yaml exists and is non-empty"
+    },
+    {
+      "name": "file:METRICS.md",
+      "passed": true,
+      "details": "reports\\hw03\\METRICS.md exists and is non-empty"
+    },
+    {
+      "name": "file:RUN_LOG.txt",
+      "passed": true,
+      "details": "reports\\hw03\\RUN_LOG.txt exists and is non-empty"
+    },
+    {
+      "name": "file:secure_cookie_header.png",
+      "passed": true,
+      "details": "reports\\hw03\\screenshots\\secure_cookie_header.png exists and is non-empty"
+    },
+    {
+      "name": "file:idle_timeout_redirect.png",
+      "passed": true,
+      "details": "reports\\hw03\\screenshots\\idle_timeout_redirect.png exists and is non-empty"
+    },
+    {
+      "name": "file:retrieval_results.jsonl",
+      "passed": true,
+      "details": "reports\\hw03\\raw\\retrieval_results.jsonl exists and is non-empty"
+    },
+    {
+      "name": "file:retrieval_results.csv",
+      "passed": true,
+      "details": "reports\\hw03\\raw\\retrieval_results.csv exists and is non-empty"
+    },
+    {
+      "name": "file:query_embeddings.jsonl",
+      "passed": true,
+      "details": "reports\\hw03\\raw\\query_embeddings.jsonl exists and is non-empty"
+    },
+    {
+      "name": "file:chunking_stats.json",
+      "passed": true,
+      "details": "reports\\hw03\\raw\\chunking_stats.json exists and is non-empty"
+    },
+    {
+      "name": "file:metrics.json",
+      "passed": true,
+      "details": "reports\\hw03\\raw\\metrics.json exists and is non-empty"
+    },
+    {
+      "name": "file:wrong_retrieval_candidates.json",
+      "passed": true,
+      "details": "reports\\hw03\\raw\\wrong_retrieval_candidates.json exists and is non-empty"
+    },
+    {
+      "name": "file:main.py",
+      "passed": true,
+      "details": "code\\web_application\\main.py exists and is non-empty"
+    },
+    {
+      "name": "file:auth.py",
+      "passed": true,
+      "details": "code\\web_application\\routers\\auth.py exists and is non-empty"
+    },
+    {
+      "name": "file:index.html",
+      "passed": true,
+      "details": "code\\web_application\\templates\\index.html exists and is non-empty"
+    },
+    {
+      "name": "file:login.html",
+      "passed": true,
+      "details": "code\\web_application\\templates\\login.html exists and is non-empty"
+    },
+    {
+      "name": "file:dashboard.html",
+      "passed": true,
+      "details": "code\\web_application\\templates\\dashboard.html exists and is non-empty"
+    },
+    {
+      "name": "questions_count",
+      "passed": true,
+      "details": "Found 5 questions."
+    },
+    {
+      "name": "corpus_size",
+      "passed": true,
+      "details": "Corpus contains 507649 bytes."
+    },
+    {
+      "name": "corpus_document_count",
+      "passed": true,
+      "details": "Manifest contains 69 documents."
+    },
+    {
+      "name": "retrieval_row_count",
+      "passed": true,
+      "details": "Found 75 retrieval rows; expected 75."
+    },
+    {
+      "name": "three_techniques",
+      "passed": true,
+      "details": "Found techniques: ['Semantic', 'Sentence-window', 'Token']"
+    },
+    {
+      "name": "incorrect_retrieval_evidence",
+      "passed": true,
+      "details": "Found 2 incorrect top-1 candidates."
+    },
+    {
+      "name": "selected_corpus_files",
+      "passed": true,
+      "details": "Found 69 selected JSON documents."
+    }
+  ]
+}

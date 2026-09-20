@@ -6,3 +6,4 @@ Thumbs.db
 # Large OSV source archive and full extracted dump
 data/hw03_corpus/pypi_osv_all.zip
 data/hw03_corpus/pypi_records/
+.hf_cache/

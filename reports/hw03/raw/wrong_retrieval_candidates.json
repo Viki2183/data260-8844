@@ -1,0 +1,36 @@
+[
+  {
+    "technique": "Semantic",
+    "question_id": "q4",
+    "query": "Why can Open WebUI's OAuth profile-picture processing be exploited for SSRF?\n",
+    "rank": 1,
+    "expected_source_file": "GHSA-226f-f24g-524w.json",
+    "source_file": "GHSA-24c9-2m8q-qhmh.json",
+    "source_match": false,
+    "store_score": 0.5570291399453919,
+    "cosine_sim": 0.7008324,
+    "chunk_len": 5105,
+    "preview": "{ \"schema_version\": \"1.9.0\", \"id\": \"GHSA-24c9-2m8q-qhmh\", \"published\": \"2026-05-14T20:19:56Z\", \"modified\": \"2026-07-13T16:43:44.833658698Z\", \"aliases\": [ \"CVE-2",
+    "context_preview": "{ \"schema_version\": \"1.9.0\", \"id\": \"GHSA-24c9-2m8q-qhmh\", \"published\": \"2026-05-14T20:19:56Z\", \"modified\": \"2026-07-13T16:43:44.833658698Z\", \"aliases\": [ \"CVE-2",
+    "query_shape": "[384]",
+    "document_shape": "[384]",
+    "retrieval_latency_ms": 27.808
+  },
+  {
+    "technique": "Token",
+    "question_id": "q4",
+    "query": "Why can Open WebUI's OAuth profile-picture processing be exploited for SSRF?\n",
+    "rank": 1,
+    "expected_source_file": "GHSA-226f-f24g-524w.json",
+    "source_file": "GHSA-24c9-2m8q-qhmh.json",
+    "source_match": false,
+    "store_score": 0.6390733063891997,
+    "cosine_sim": 0.67904045,
+    "chunk_len": 850,
+    "preview": "`DECODED: SSRF_CONFIRMED_OPEN_WEBUI`\\n\\nThe server fetched the attacker-controlled URL, base64-encoded the response, stored it as `profile_image_url`, and the a",
+    "context_preview": "`DECODED: SSRF_CONFIRMED_OPEN_WEBUI`\\n\\nThe server fetched the attacker-controlled URL, base64-encoded the response, stored it as `profile_image_url`, and the a",
+    "query_shape": "[384]",
+    "document_shape": "[384]",
+    "retrieval_latency_ms": 167.846
+  }
+]
