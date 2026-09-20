@@ -1,3 +1,4 @@
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Literal
@@ -5,15 +6,42 @@ from typing import Literal
 from fastapi import FastAPI, HTTPException, Query, Response
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field, field_validator
+from starlette.middleware.sessions import SessionMiddleware
+
+try:
+    from .routers.auth import router as auth_router
+except ImportError:
+    from routers.auth import router as auth_router
 
 
-# Keep all shared web application files in the HW1 application folder.
+# Location of the shared web application files.
 WEB_ROOT = Path(__file__).resolve().parent
 
+# Create the FastAPI application.
 app = FastAPI(
     title="Open-Source Package Vulnerability API",
-    version="2.0.0",
+    version="3.0.0",
 )
+
+
+# Secret key used to sign session cookies.
+SECRET_KEY = os.getenv(
+    "SECRET_KEY",
+    "hw3-development-secret-key",
+)
+
+# Enable secure browser sessions.
+app.add_middleware(
+    SessionMiddleware,
+    secret_key=SECRET_KEY,
+    https_only=True,
+    same_site="lax",
+    max_age=3600,
+)
+
+# Register authentication routes:
+# /, /login, /dashboard, and /logout
+app.include_router(auth_router)
 
 
 Severity = Literal["Critical", "High", "Medium", "Low"]
@@ -48,9 +76,11 @@ class VulnerabilityReportInput(BaseModel):
     @field_validator("submitterEmail")
     @classmethod
     def validate_email_format(cls, value: str) -> str:
-        """Apply a simple email-format check without extra dependencies."""
+        """Apply a simple email-format check."""
         if "@" not in value or "." not in value.split("@")[-1]:
-            raise ValueError("submitterEmail must be a valid email address.")
+            raise ValueError(
+                "submitterEmail must be a valid email address."
+            )
 
         return value
 
@@ -71,7 +101,7 @@ class VulnerabilityReport(VulnerabilityReportInput):
     submissionDate: datetime
 
 
-# Keep sample records in memory while the FastAPI process is running.
+# Sample records stored in memory while the server is running.
 reports: list[VulnerabilityReport] = [
     VulnerabilityReport(
         id=1,
@@ -102,12 +132,8 @@ reports: list[VulnerabilityReport] = [
 ]
 
 
-@app.get("/", include_in_schema=False)
-async def read_home() -> FileResponse:
-    """Serve the shared HW2 web application."""
-    return FileResponse(WEB_ROOT / "index.html")
-
-
+# The / route is now handled by auth_router.
+# These routes continue serving the HW2 frontend files.
 @app.get("/styles.css", include_in_schema=False)
 async def read_stylesheet() -> FileResponse:
     """Serve the shared stylesheet."""
@@ -127,7 +153,7 @@ async def read_javascript() -> FileResponse:
 async def list_vulnerability_reports(
     search: str | None = Query(default=None),
 ) -> list[VulnerabilityReport]:
-    """Return all reports or only reports matching either domain field."""
+    """Return all reports or matching search results."""
     if not search or not search.strip():
         return reports
 
@@ -147,9 +173,14 @@ async def list_vulnerability_reports(
     "/api/vulnerability-reports/{report_id}",
     response_model=VulnerabilityReport,
 )
-async def get_vulnerability_report(report_id: int) -> VulnerabilityReport:
+async def get_vulnerability_report(
+    report_id: int,
+) -> VulnerabilityReport:
     """Return one vulnerability report by ID."""
-    report = next((item for item in reports if item.id == report_id), None)
+    report = next(
+        (item for item in reports if item.id == report_id),
+        None,
+    )
 
     if report is None:
         raise HTTPException(
@@ -169,7 +200,10 @@ async def create_vulnerability_report(
     report_data: VulnerabilityReportInput,
 ) -> VulnerabilityReport:
     """Validate and add a new vulnerability report."""
-    new_id = max((report.id for report in reports), default=0) + 1
+    new_id = max(
+        (report.id for report in reports),
+        default=0,
+    ) + 1
 
     new_report = VulnerabilityReport(
         id=new_id,
@@ -189,7 +223,7 @@ async def update_vulnerability_report(
     report_id: int,
     report_data: VulnerabilityReportInput,
 ) -> VulnerabilityReport:
-    """Validate and replace an existing vulnerability report."""
+    """Validate and replace an existing report."""
     report_index = next(
         (
             index
@@ -219,8 +253,10 @@ async def update_vulnerability_report(
     "/api/vulnerability-reports/{report_id}",
     status_code=204,
 )
-async def delete_vulnerability_report(report_id: int) -> Response:
-    """Delete one vulnerability report by ID."""
+async def delete_vulnerability_report(
+    report_id: int,
+) -> Response:
+    """Delete one vulnerability report."""
     report_index = next(
         (
             index
@@ -244,8 +280,8 @@ if __name__ == "__main__":
     import uvicorn
 
     uvicorn.run(
-    app,
-    host="127.0.0.1",
-    port=8744,
-    reload=False,
-)
+        "main:app",
+        host="127.0.0.1",
+        port=8744,
+        reload=False,
+    )
