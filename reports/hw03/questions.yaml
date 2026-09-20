@@ -1,0 +1,49 @@
+questions:
+  - id: q1
+    question: >
+      What fix does the Poetry advisory recommend for the wheel path-traversal
+      vulnerability, and which Poetry versions contain the fix?
+    expected_answer: >
+      Poetry 2.3.3 and newer resolve extracted paths and verify that they remain
+      inside the target directory; installation is aborted otherwise.
+    expected_source_file: GHSA-2599-h6xx-hpxp.json
+
+  - id: q2
+    question: >
+      How can the amazon-redshift-python-driver vulnerability lead to remote
+      code execution?
+    expected_answer: >
+      A rogue server or man-in-the-middle can send specially crafted query
+      responses that the driver processes unsafely during query-result handling.
+      The affected versions are 2.1.13 and earlier.
+    expected_source_file: GHSA-29h4-r29x-hchv.json
+
+  - id: q3
+    question: >
+      What behavior causes the Starlette multipart-form denial-of-service
+      condition?
+    expected_answer: >
+      Parsing multipart forms containing large files can block the main thread
+      while the file is rolled over to disk, preventing the event thread from
+      accepting new connections.
+    expected_source_file: GHSA-2c2j-9gv5-cj73.json
+
+  - id: q4
+    question: >
+      Why can Open WebUI's OAuth profile-picture processing be exploited for
+      SSRF?
+    expected_answer: >
+      The initial URL is validated, but aiohttp follows redirects by default
+      without disabling redirects or revalidating the destination, allowing a
+      public URL to redirect the server to an internal address.
+    expected_source_file: GHSA-226f-f24g-524w.json
+
+  - id: q5
+    question: >
+      Under what application condition can Pydantic AI's URL-download
+      functionality make SSRF requests?
+    expected_answer: >
+      The issue affects applications that accept message history from
+      untrusted external users, because attacker-controlled URLs can cause the
+      server to request internal network resources or cloud metadata services.
+    expected_source_file: GHSA-2jrp-274c-jhv3.json
