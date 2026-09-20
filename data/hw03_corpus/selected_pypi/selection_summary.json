@@ -1,0 +1,422 @@
+{
+  "source_directory": "data\\hw03_corpus\\pypi_records",
+  "selected_record_count": 69,
+  "selected_total_bytes": 507649,
+  "minimum_required_bytes": 200000,
+  "records": [
+    {
+      "id": "GHSA-226f-f24g-524w",
+      "filename": "GHSA-226f-f24g-524w.json",
+      "bytes": 10085,
+      "summary": "Open WebUI: Redirect-Bypass SSRF in OAuth `_process_picture_url` (incomplete-fix sibling of CVE-2026-45401)"
+    },
+    {
+      "id": "GHSA-22cj-m4wf-fv2c",
+      "filename": "GHSA-22cj-m4wf-fv2c.json",
+      "bytes": 12732,
+      "summary": "PraisonAI Dynamic Context history and terminal tools read files outside configured storage via path traversal"
+    },
+    {
+      "id": "GHSA-22fp-mf44-f2mq",
+      "filename": "GHSA-22fp-mf44-f2mq.json",
+      "bytes": 9789,
+      "summary": "youtube-dl vulnerable to file system modification and RCE through improper file-extension sanitization"
+    },
+    {
+      "id": "GHSA-22gh-3r9q-xf38",
+      "filename": "GHSA-22gh-3r9q-xf38.json",
+      "bytes": 3433,
+      "summary": "Lacking Protection against HTTP Request Smuggling in mitmproxy"
+    },
+    {
+      "id": "GHSA-22m3-c7vp-49fj",
+      "filename": "GHSA-22m3-c7vp-49fj.json",
+      "bytes": 4683,
+      "summary": "IRRd: web UI host header injection allows password reset poisoning via attacker-controlled email links"
+    },
+    {
+      "id": "GHSA-22p3-qrh9-cx32",
+      "filename": "GHSA-22p3-qrh9-cx32.json",
+      "bytes": 6178,
+      "summary": "URL previews of unusual or maliciously-crafted pages can crash Synapse media repositories or Synapse monoliths"
+    },
+    {
+      "id": "GHSA-22p9-r2f5-22mf",
+      "filename": "GHSA-22p9-r2f5-22mf.json",
+      "bytes": 11431,
+      "summary": "OnionShare follows symlinks in shared directories, allowing unintended disclosure of local files"
+    },
+    {
+      "id": "GHSA-23hm-7w47-xw72",
+      "filename": "GHSA-23hm-7w47-xw72.json",
+      "bytes": 7759,
+      "summary": "Out of bounds read in Tensorflow"
+    },
+    {
+      "id": "GHSA-23j4-mw76-5v7h",
+      "filename": "GHSA-23j4-mw76-5v7h.json",
+      "bytes": 3539,
+      "summary": "Scrapy allows redirect following in protocols other than HTTP"
+    },
+    {
+      "id": "GHSA-23m2-mghx-vqmf",
+      "filename": "GHSA-23m2-mghx-vqmf.json",
+      "bytes": 3658,
+      "summary": "Wagtail: Reflected XSS in dynamic image URL generator view"
+    },
+    {
+      "id": "GHSA-246w-56m2-5899",
+      "filename": "GHSA-246w-56m2-5899.json",
+      "bytes": 4514,
+      "summary": "Cross-site scripting (XSS) vulnerability in the password reset endpoint"
+    },
+    {
+      "id": "GHSA-2473-9hgq-j7xw",
+      "filename": "GHSA-2473-9hgq-j7xw.json",
+      "bytes": 5163,
+      "summary": "Cross-Site Scripting in Wagtail"
+    },
+    {
+      "id": "GHSA-2475-53vw-vp25",
+      "filename": "GHSA-2475-53vw-vp25.json",
+      "bytes": 7058,
+      "summary": "TensorFlow vulnerable to `CHECK` fail in `AvgPoolGrad`"
+    },
+    {
+      "id": "GHSA-247x-2f9f-5wp7",
+      "filename": "GHSA-247x-2f9f-5wp7.json",
+      "bytes": 6975,
+      "summary": "Stack overflow in TensorFlow"
+    },
+    {
+      "id": "GHSA-24c9-2m8q-qhmh",
+      "filename": "GHSA-24c9-2m8q-qhmh.json",
+      "bytes": 10117,
+      "summary": "Open WebUI Vulnerable to SSRF via OAuth Profile Picture URL in _process_picture_url (oauth.py)"
+    },
+    {
+      "id": "GHSA-24p2-j2jr-386w",
+      "filename": "GHSA-24p2-j2jr-386w.json",
+      "bytes": 8114,
+      "summary": "psd-tools: Compression module has unguarded zlib decompression, missing dimension validation, and hardening gaps"
+    },
+    {
+      "id": "GHSA-24x4-6qmh-88qg",
+      "filename": "GHSA-24x4-6qmh-88qg.json",
+      "bytes": 7007,
+      "summary": "Use after free in `DecodePng` kernel"
+    },
+    {
+      "id": "GHSA-24x6-8c7m-hv3f",
+      "filename": "GHSA-24x6-8c7m-hv3f.json",
+      "bytes": 8186,
+      "summary": "Heap OOB read in TFLite's implementation of `Minimum` or `Maximum`"
+    },
+    {
+      "id": "GHSA-2599-h6xx-hpxp",
+      "filename": "GHSA-2599-h6xx-hpxp.json",
+      "bytes": 4120,
+      "summary": "Poetry Has Wheel Path Traversal Which Can Lead to Arbitrary File Write"
+    },
+    {
+      "id": "GHSA-25g8-2mcf-fcx9",
+      "filename": "GHSA-25g8-2mcf-fcx9.json",
+      "bytes": 5867,
+      "summary": "changedetection.io has Zip Slip vulnerability in the backup restore functionality"
+    },
+    {
+      "id": "GHSA-2679-6mx9-h9xc",
+      "filename": "GHSA-2679-6mx9-h9xc.json",
+      "bytes": 9319,
+      "summary": "Marimo: Pre-Auth Remote Code Execution via Terminal WebSocket Authentication Bypass"
+    },
+    {
+      "id": "GHSA-2689-5p89-6j3j",
+      "filename": "GHSA-2689-5p89-6j3j.json",
+      "bytes": 2594,
+      "summary": "UEFI Firmware Parser has a stack out-of-bounds write in tiano decompressor MakeTable"
+    },
+    {
+      "id": "GHSA-26c5-ppr8-f33p",
+      "filename": "GHSA-26c5-ppr8-f33p.json",
+      "bytes": 6984,
+      "summary": "Synapse has improper checks for deactivated users during login"
+    },
+    {
+      "id": "GHSA-26g9-27vm-x3q8",
+      "filename": "GHSA-26g9-27vm-x3q8.json",
+      "bytes": 9235,
+      "summary": "Open WebUI: shared-chat branch ignores access_type, allowing unauthorized file deletion"
+    },
+    {
+      "id": "GHSA-26gm-93rw-cchf",
+      "filename": "GHSA-26gm-93rw-cchf.json",
+      "bytes": 5410,
+      "summary": "Open WebUI has unauthorized deletion of knowledge files"
+    },
+    {
+      "id": "GHSA-26j7-6w8w-7922",
+      "filename": "GHSA-26j7-6w8w-7922.json",
+      "bytes": 7867,
+      "summary": "Division by zero in optimized pooling implementations in TFLite"
+    },
+    {
+      "id": "GHSA-26jh-r8g2-6fpr",
+      "filename": "GHSA-26jh-r8g2-6fpr.json",
+      "bytes": 7150,
+      "summary": "Gradio's dropdown component pre-process step does not limit the values to those in the dropdown list"
+    },
+    {
+      "id": "GHSA-2724-6cpj-gf3v",
+      "filename": "GHSA-2724-6cpj-gf3v.json",
+      "bytes": 6012,
+      "summary": "Open WebUI: Non-admin users can delete admin-owned external knowledge connections via knowledge base deletion"
+    },
+    {
+      "id": "GHSA-2763-cj5r-c79m",
+      "filename": "GHSA-2763-cj5r-c79m.json",
+      "bytes": 20818,
+      "summary": "PraisonAI Vulnerable to OS Command Injection"
+    },
+    {
+      "id": "GHSA-278g-rq84-9hmg",
+      "filename": "GHSA-278g-rq84-9hmg.json",
+      "bytes": 6934,
+      "summary": "`CHECK`-fail in `MapStage`"
+    },
+    {
+      "id": "GHSA-279j-x4gx-hfrh",
+      "filename": "GHSA-279j-x4gx-hfrh.json",
+      "bytes": 7312,
+      "summary": "Gradio uses insecure communication between the FRP client and server"
+    },
+    {
+      "id": "GHSA-27j5-4p9v-pp67",
+      "filename": "GHSA-27j5-4p9v-pp67.json",
+      "bytes": 6986,
+      "summary": "`std::abort` raised from `TensorListReserve`"
+    },
+    {
+      "id": "GHSA-27p4-pjqv-whgj",
+      "filename": "GHSA-27p4-pjqv-whgj.json",
+      "bytes": 7648,
+      "summary": "praisonai-platform: list_issue_activity returns activity log for any issue regardless of workspace ownership"
+    },
+    {
+      "id": "GHSA-27qf-jwm8-g7f3",
+      "filename": "GHSA-27qf-jwm8-g7f3.json",
+      "bytes": 6810,
+      "summary": "FPE in LSH in TFLite"
+    },
+    {
+      "id": "GHSA-27rc-728f-x5w2",
+      "filename": "GHSA-27rc-728f-x5w2.json",
+      "bytes": 8062,
+      "summary": "`CHECK` fail via inputs in `SdcaOptimizer`"
+    },
+    {
+      "id": "GHSA-284h-m62q-gf8w",
+      "filename": "GHSA-284h-m62q-gf8w.json",
+      "bytes": 19491,
+      "summary": "GitPython: Dormant multi-line git-config values are corrupted into live injected directives (e.g. core.hooksPath) on any unrelated GitConfigParser write, enabling RCE"
+    },
+    {
+      "id": "GHSA-28jp-44vh-q42h",
+      "filename": "GHSA-28jp-44vh-q42h.json",
+      "bytes": 3349,
+      "summary": "Duplicate Advisory: Keras keras.utils.get_file API is vulnerable to a path traversal attack"
+    },
+    {
+      "id": "GHSA-2956-977x-2w3r",
+      "filename": "GHSA-2956-977x-2w3r.json",
+      "bytes": 9111,
+      "summary": "Flyto2 Core: Arbitrary file write via image.download (and other file-writing modules)"
+    },
+    {
+      "id": "GHSA-29gw-9793-fvw7",
+      "filename": "GHSA-29gw-9793-fvw7.json",
+      "bytes": 4479,
+      "summary": "IPython vulnerable to command injection via set_term_title"
+    },
+    {
+      "id": "GHSA-29h4-r29x-hchv",
+      "filename": "GHSA-29h4-r29x-hchv.json",
+      "bytes": 3652,
+      "summary": "amazon-redshift-python-driver vulnerable to Remote Code Execution via eval() Injection"
+    },
+    {
+      "id": "GHSA-29pf-2h5f-8g72",
+      "filename": "GHSA-29pf-2h5f-8g72.json",
+      "bytes": 4101,
+      "summary": "HuggingFace transformers vulnerable to remote code execution"
+    },
+    {
+      "id": "GHSA-29pr-6jr8-q5jm",
+      "filename": "GHSA-29pr-6jr8-q5jm.json",
+      "bytes": 5571,
+      "summary": "Sentry SDK leaks sensitive session information when `sendDefaultPII` is set to `True`"
+    },
+    {
+      "id": "GHSA-29w2-fq35-v728",
+      "filename": "GHSA-29w2-fq35-v728.json",
+      "bytes": 4576,
+      "summary": "AWS API MCP Server Security Policy Bypass via Startup Initialization Failure"
+    },
+    {
+      "id": "GHSA-29w3-p9w9-wc47",
+      "filename": "GHSA-29w3-p9w9-wc47.json",
+      "bytes": 12599,
+      "summary": "PraisonAI: Arbitrary File Read/Write via `multiedit` Tool Without Path Validation"
+    },
+    {
+      "id": "GHSA-2c2j-9gv5-cj73",
+      "filename": "GHSA-2c2j-9gv5-cj73.json",
+      "bytes": 4926,
+      "summary": "Starlette has possible denial-of-service vector when parsing large files in multipart forms"
+    },
+    {
+      "id": "GHSA-2c9q-c2q9-qgqv",
+      "filename": "GHSA-2c9q-c2q9-qgqv.json",
+      "bytes": 7393,
+      "summary": "langgraph-api: Relative webhook targets in LangGraph Server can reach in-process routes without authentication"
+    },
+    {
+      "id": "GHSA-2cp2-2r3c-7p7r",
+      "filename": "GHSA-2cp2-2r3c-7p7r.json",
+      "bytes": 5167,
+      "summary": "Hydra: hydra.utils.instantiate with untrusted config can lead to code execution"
+    },
+    {
+      "id": "GHSA-2cpp-j2fc-qhp7",
+      "filename": "GHSA-2cpp-j2fc-qhp7.json",
+      "bytes": 3611,
+      "summary": "AWS API MCP File Access Restriction Bypass"
+    },
+    {
+      "id": "GHSA-2cpx-427x-q2c6",
+      "filename": "GHSA-2cpx-427x-q2c6.json",
+      "bytes": 9954,
+      "summary": "CHECK-fail in AddManySparseToTensorsMap"
+    },
+    {
+      "id": "GHSA-2f54-p244-32q6",
+      "filename": "GHSA-2f54-p244-32q6.json",
+      "bytes": 5354,
+      "summary": "Open WebUI: Any authenticated user can stall a worker via a knowledge-search pattern that backtracks catastrophically"
+    },
+    {
+      "id": "GHSA-2f96-g7mh-g2hx",
+      "filename": "GHSA-2f96-g7mh-g2hx.json",
+      "bytes": 8428,
+      "summary": "GitPython: Command Injection via git long-option prefix abbreviation bypass of CVE-2026-42215 blocklist"
+    },
+    {
+      "id": "GHSA-2fjj-qqg8-fg7x",
+      "filename": "GHSA-2fjj-qqg8-fg7x.json",
+      "bytes": 6916,
+      "summary": "praisonai-platform: Authorization Bypass Through User-Controlled Key"
+    },
+    {
+      "id": "GHSA-2fqm-m4r2-fh98",
+      "filename": "GHSA-2fqm-m4r2-fh98.json",
+      "bytes": 3293,
+      "summary": "kiwitcms vulnerable to stored cross-site scripting via unrestricted file upload"
+    },
+    {
+      "id": "GHSA-2g3w-cpc4-chr4",
+      "filename": "GHSA-2g3w-cpc4-chr4.json",
+      "bytes": 10896,
+      "summary": "PraisonAI Vulnerable to Implicit Execution of Arbitrary Code via Automatic `tools.py` Loading"
+    },
+    {
+      "id": "GHSA-2g5w-29q9-w6hx",
+      "filename": "GHSA-2g5w-29q9-w6hx.json",
+      "bytes": 9829,
+      "summary": "mindsdb arbitrary file write when extracting a remotely retrieved Tarball"
+    },
+    {
+      "id": "GHSA-2g6r-c272-w58r",
+      "filename": "GHSA-2g6r-c272-w58r.json",
+      "bytes": 6262,
+      "summary": "LangChain affected by SSRF via image_url token counting in ChatOpenAI.get_num_tokens_from_messages"
+    },
+    {
+      "id": "GHSA-2gfx-95x2-5v3x",
+      "filename": "GHSA-2gfx-95x2-5v3x.json",
+      "bytes": 8406,
+      "summary": "Heap buffer overflow in `QuantizedReshape`"
+    },
+    {
+      "id": "GHSA-2ggp-cmvm-f62f",
+      "filename": "GHSA-2ggp-cmvm-f62f.json",
+      "bytes": 6489,
+      "summary": "ScanCode.io command injection in docker image fetch process"
+    },
+    {
+      "id": "GHSA-2gh4-jmwq-rr8w",
+      "filename": "GHSA-2gh4-jmwq-rr8w.json",
+      "bytes": 10814,
+      "summary": "piccolo-admin has a privilege escalation issue - admin to superuser via session-token disclosure in GET /api/tables/sessions/."
+    },
+    {
+      "id": "GHSA-2gmv-2r3v-jxj2",
+      "filename": "GHSA-2gmv-2r3v-jxj2.json",
+      "bytes": 3027,
+      "summary": "Stored XSS in PySpector HTML Report Generation leads to Javascript Code Execution"
+    },
+    {
+      "id": "GHSA-2gxp-6r36-m97r",
+      "filename": "GHSA-2gxp-6r36-m97r.json",
+      "bytes": 5401,
+      "summary": "Cadwyn vulnerable to XSS on the docs page"
+    },
+    {
+      "id": "GHSA-2h46-8gf5-fmxv",
+      "filename": "GHSA-2h46-8gf5-fmxv.json",
+      "bytes": 8400,
+      "summary": "Timing-Based Username Enumeration Vulnerability in Fides Webserver Authentication"
+    },
+    {
+      "id": "GHSA-2h4p-vjrc-8xpq",
+      "filename": "GHSA-2h4p-vjrc-8xpq.json",
+      "bytes": 4318,
+      "summary": "Mako vulnerable to path traversal via backslash URI on Windows in TemplateLookup"
+    },
+    {
+      "id": "GHSA-2hm2-hc3v-44h9",
+      "filename": "GHSA-2hm2-hc3v-44h9.json",
+      "bytes": 8986,
+      "summary": "Mistune toc / TableOfContents directive: heading IDs use predictable `toc_N` numbering with no slugification, allowing collision with attacker-controlled `id=\"toc_N\"` content"
+    },
+    {
+      "id": "GHSA-2j5p-7p5m-cvqr",
+      "filename": "GHSA-2j5p-7p5m-cvqr.json",
+      "bytes": 2532,
+      "summary": "Docling: Potential Path Traversal via LaTeX \\includegraphics and \\input Commands"
+    },
+    {
+      "id": "GHSA-2jgc-f764-c5r2",
+      "filename": "GHSA-2jgc-f764-c5r2.json",
+      "bytes": 17449,
+      "summary": "PraisonAI: [Auth Bypass] PraisonAI async Jobs API (`/api/v1/runs`) has no authentication \u2014 unauthenticated job execution, result theft, cancel and delete"
+    },
+    {
+      "id": "GHSA-2jq4-q6vv-4cp3",
+      "filename": "GHSA-2jq4-q6vv-4cp3.json",
+      "bytes": 4150,
+      "summary": "Crawl4AI: Arbitrary file write (path traversal) in crawler downloads can lead to RCE"
+    },
+    {
+      "id": "GHSA-2jrp-274c-jhv3",
+      "filename": "GHSA-2jrp-274c-jhv3.json",
+      "bytes": 11313,
+      "summary": "Pydantic AI has Server-Side Request Forgery (SSRF) in URL Download Handling"
+    },
+    {
+      "id": "GHSA-2jv5-9r88-3w3p",
+      "filename": "GHSA-2jv5-9r88-3w3p.json",
+      "bytes": 7857,
+      "summary": "python-multipart vulnerable to Content-Type Header ReDoS"
+    }
+  ]
+}

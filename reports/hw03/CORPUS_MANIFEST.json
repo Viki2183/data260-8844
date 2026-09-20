@@ -1,0 +1,355 @@
+{
+  "domain_id": 4,
+  "domain": "Open-source package vulnerabilities",
+  "source_url": "https://storage.googleapis.com/osv-vulnerabilities/PyPI/all.zip",
+  "access_date": "2026-09-19",
+  "selected_document_count": 69,
+  "selected_total_bytes": 507649,
+  "documents": [
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-226f-f24g-524w.json",
+      "bytes": 10085,
+      "sha256": "3f69d77a47180f91008b428b22a14fc2321fa6d14a75193058a6b2a7b5ff7b40"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-22cj-m4wf-fv2c.json",
+      "bytes": 12732,
+      "sha256": "728c426a6f1fc6d0d8cd4e59b2ed0e1782543ef55633f52c851439abd6492487"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-22fp-mf44-f2mq.json",
+      "bytes": 9789,
+      "sha256": "fc21893c57de15632505f40a1a6d9ed4a34ad1763fc804a3d7c568027fc8d373"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-22gh-3r9q-xf38.json",
+      "bytes": 3433,
+      "sha256": "54d6f5bac116435e7f6cdacc32772ca7c0285c91b9a1559a8e5696c00ba5ba3a"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-22m3-c7vp-49fj.json",
+      "bytes": 4683,
+      "sha256": "0674ae90bf4a8586b5145fac90cb6c1ad4fb510f0b2a4f41b7d6b919b01cb39b"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-22p3-qrh9-cx32.json",
+      "bytes": 6178,
+      "sha256": "1b0f70711b2d24cab47a7cd7bbed2a5dbffd8d03ce3ede376f1271a4dabbe6b0"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-22p9-r2f5-22mf.json",
+      "bytes": 11431,
+      "sha256": "65617a35f6f6a6f2f0562bb76cb09e8041fad09d7be6343a7f7efde0511508f3"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-23hm-7w47-xw72.json",
+      "bytes": 7759,
+      "sha256": "13684492e13e7a86c00db2ed60d48baca76033e5e4dcfb122fd0676573076b3e"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-23j4-mw76-5v7h.json",
+      "bytes": 3539,
+      "sha256": "da24b429229dabfc7215228a3768cb4ccf8a3bebdb6be083bc3d4d04f81cd680"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-23m2-mghx-vqmf.json",
+      "bytes": 3658,
+      "sha256": "c01bff1b44dce1d78663bbf0fe4a6a6969d1b80cf6ea33778b9588a42091b3c8"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-246w-56m2-5899.json",
+      "bytes": 4514,
+      "sha256": "19a213af9a8863229892628b3e124509ad39b68735832600275d965bdd7ce003"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2473-9hgq-j7xw.json",
+      "bytes": 5163,
+      "sha256": "1e6582e19f1b8677dc09ca0a832d7b4cc5e367f258c798c2c0bd15cef0bea5bb"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2475-53vw-vp25.json",
+      "bytes": 7058,
+      "sha256": "638c9052c4d6a76fbbf853a418d01e91525ca148d26361e888c172d5747dba2d"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-247x-2f9f-5wp7.json",
+      "bytes": 6975,
+      "sha256": "13819c52e5bc3e22e0342388bd658eb7f9a3e24a5d88a3a741bc78a1aa6d5560"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-24c9-2m8q-qhmh.json",
+      "bytes": 10117,
+      "sha256": "18bac94f527f621fcc7e5fbeeabe44aa99abe4ac4add2c7bf74e2b6583013f92"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-24p2-j2jr-386w.json",
+      "bytes": 8114,
+      "sha256": "30a902c720259bdc199e5c468be7e7d2b411914a0d6f4ce6007ad5c0aa6bd4cf"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-24x4-6qmh-88qg.json",
+      "bytes": 7007,
+      "sha256": "6226b5138f9312e75b6d4cf0d4bb35786dd36e1fa8b6df9483ceb79e49b67ff5"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-24x6-8c7m-hv3f.json",
+      "bytes": 8186,
+      "sha256": "e8645fb7ad8ede1afb272392000466db6101209adcee34149416de36152276d6"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2599-h6xx-hpxp.json",
+      "bytes": 4120,
+      "sha256": "376e935cc6d6f7b6c72623e423e8cffae796fabbe26a8215eca1c95bff458c7c"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-25g8-2mcf-fcx9.json",
+      "bytes": 5867,
+      "sha256": "0f20041defdf0331e22113df9cd634b2050c790cb5f226880e821751715bcfde"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2679-6mx9-h9xc.json",
+      "bytes": 9319,
+      "sha256": "0b509f022f4bb7c44535a27ff24cea426f8c1c166e36189efd47f23e8325dc11"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2689-5p89-6j3j.json",
+      "bytes": 2594,
+      "sha256": "96efa8f1f32b8ca102b8d02bb6444df867699e1f8bb51a6f0d2c8705e3131a20"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-26c5-ppr8-f33p.json",
+      "bytes": 6984,
+      "sha256": "2947bb00e786d897953ce5c584ecfa2e9996bb548497c20856774a414ecde6a2"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-26g9-27vm-x3q8.json",
+      "bytes": 9235,
+      "sha256": "b06041af7412fefdc5cf8fb45fa86112a895b626d51c1b43abaeda1e21cbc242"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-26gm-93rw-cchf.json",
+      "bytes": 5410,
+      "sha256": "8f519245484df763c8ef5c4165eb8e730830ebecb1e3f460957f818a3fcd45ea"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-26j7-6w8w-7922.json",
+      "bytes": 7867,
+      "sha256": "734c2ca8755592eeab1c2eb3fecfdf7a0c92eeb49b001b9356040b2548df3d5b"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-26jh-r8g2-6fpr.json",
+      "bytes": 7150,
+      "sha256": "ec9774c874f9aa7532d5f7fa5d881f631919648b02e14b09ee0177559507978a"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2724-6cpj-gf3v.json",
+      "bytes": 6012,
+      "sha256": "f40d5a2bf0b94c140c66ed453cf4cc15f651abd9ae509d45e6426ef05e3b7305"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2763-cj5r-c79m.json",
+      "bytes": 20818,
+      "sha256": "3a6aa5c331d06cb44b06d45dc7a34a278d522e7a3224606055459af08e97dabf"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-278g-rq84-9hmg.json",
+      "bytes": 6934,
+      "sha256": "4df12e4b4f7a3e01c06d10a7ab146ae1da02bd1c1fdad417a9a238d950b7c914"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-279j-x4gx-hfrh.json",
+      "bytes": 7312,
+      "sha256": "05fe9d9924de27d814aef9c61709a85e8d01d5cd0af442d393a60d4586d03022"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-27j5-4p9v-pp67.json",
+      "bytes": 6986,
+      "sha256": "eb763d5dd868058f27e109b310e78c40c7f51c0ce8827fc0bf8a6ce1476aad75"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-27p4-pjqv-whgj.json",
+      "bytes": 7648,
+      "sha256": "e84d0c355c58c021fb8ebf99d3c51a530b536d621238dd1716fa3e8670afbd7c"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-27qf-jwm8-g7f3.json",
+      "bytes": 6810,
+      "sha256": "f213b5545db7a48cab2a4f263ce4ca98cb39e946a05866cc0e5f3e38bf53b7c2"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-27rc-728f-x5w2.json",
+      "bytes": 8062,
+      "sha256": "68a6d83f687035074d4ea041dac31846dc872174d40fbda397224a9cff69c909"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-284h-m62q-gf8w.json",
+      "bytes": 19491,
+      "sha256": "fefc580de97cbb5685c8bc1f45196d34d9b8e0916c67aab202f6f720cabdbbd3"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-28jp-44vh-q42h.json",
+      "bytes": 3349,
+      "sha256": "f52d8acab6bee9a96e71a214294a9fa5e24abbe076a1cc2b4c627a6c555c5a8a"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2956-977x-2w3r.json",
+      "bytes": 9111,
+      "sha256": "d6c048afb9bca22e238eda14275a77720453a1f6ff16b754ad151beb155d4f39"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-29gw-9793-fvw7.json",
+      "bytes": 4479,
+      "sha256": "b4b8bbe68cc8a6361bbc24592457600578ea7617f81917d1d6e19b3026171e68"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-29h4-r29x-hchv.json",
+      "bytes": 3652,
+      "sha256": "90d6a447927abd61be7cf201adbef0d49770136d1857666724ae697966bf90d7"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-29pf-2h5f-8g72.json",
+      "bytes": 4101,
+      "sha256": "ff86daf8a879098041ea5aa2fa790e288079a2d71bb0574fd6649504123e1fcf"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-29pr-6jr8-q5jm.json",
+      "bytes": 5571,
+      "sha256": "6156e55904cbb728d4e1457df10b04ff6c6c4b07645e08a2a40f3ff2b63b9ddd"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-29w2-fq35-v728.json",
+      "bytes": 4576,
+      "sha256": "81fa183ff63f6cc2d7a2aaddf51417913c9eaf4560e94f7a50218b83dd5d5a01"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-29w3-p9w9-wc47.json",
+      "bytes": 12599,
+      "sha256": "82efcc5494ea627fc5027d486ea655bf12f18e7beba2c7a5bba06d599bd9c455"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2c2j-9gv5-cj73.json",
+      "bytes": 4926,
+      "sha256": "eefe0bdfcb35fd01469d0e4ad7d798d233764338b1cbe3dfd6714103f2e17bda"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2c9q-c2q9-qgqv.json",
+      "bytes": 7393,
+      "sha256": "88b255c18b853fa88052d06e808ea2e68a77fed3b800a2aef7975e9df332e931"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2cp2-2r3c-7p7r.json",
+      "bytes": 5167,
+      "sha256": "b46c9d28f1a35e4d2fb5795f204231588692ca91b018f6a0d8aa92e3bbc3af7a"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2cpp-j2fc-qhp7.json",
+      "bytes": 3611,
+      "sha256": "0e4bd6821afd349d814dad00a858b54ce398be440b76f4ea586f6a4644f4cdc3"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2cpx-427x-q2c6.json",
+      "bytes": 9954,
+      "sha256": "e66b17fafa000a1b6745dc05f30c944dbca2b847d479b858206010b8f8a6045e"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2f54-p244-32q6.json",
+      "bytes": 5354,
+      "sha256": "faab2f71843f846b20b0b6910aa35e73b4b37126714c67beed569306a9db566c"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2f96-g7mh-g2hx.json",
+      "bytes": 8428,
+      "sha256": "7367de270360f1cbd962befa97046e9f0e01da587640ac897d54bfcf1d9e508b"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2fjj-qqg8-fg7x.json",
+      "bytes": 6916,
+      "sha256": "1c04fad18ec7641b5b923102a8c445d346194b909f2d1110ad8e9ebfc743d994"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2fqm-m4r2-fh98.json",
+      "bytes": 3293,
+      "sha256": "05ea5e1fdd1194e6b924066667aea0b3ec482e60640c9c6b354684cff5212ca5"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2g3w-cpc4-chr4.json",
+      "bytes": 10896,
+      "sha256": "c0c0f84600784d8b98b5e55509d871d0fbff576f1cc321f5fec32256716b3e91"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2g5w-29q9-w6hx.json",
+      "bytes": 9829,
+      "sha256": "73c9d6ecd68f4fdff977ab0db0f8c6f65125eed2485b763c84077886cfc761b1"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2g6r-c272-w58r.json",
+      "bytes": 6262,
+      "sha256": "d4a66217a5c6d80d0efd82972c5a2069282450a95994845353641fa3366f32d3"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2gfx-95x2-5v3x.json",
+      "bytes": 8406,
+      "sha256": "921e73c3018501bf9f779e6c9e516b65cb865e428891116a6f935ce46544b046"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2ggp-cmvm-f62f.json",
+      "bytes": 6489,
+      "sha256": "82eb22cb0e34907a1b0fc5684c4763c3286d854664d4db450ab17525d3eaec4e"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2gh4-jmwq-rr8w.json",
+      "bytes": 10814,
+      "sha256": "e1210c9d850b1e103a698a41910d1f511c033769d07d9ffdab8d4e441e4f17f1"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2gmv-2r3v-jxj2.json",
+      "bytes": 3027,
+      "sha256": "013a0e843b851eb3e2c06f9d8438ae72e83fa5a5d17c39c83158c5482d0e4df6"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2gxp-6r36-m97r.json",
+      "bytes": 5401,
+      "sha256": "e042a95fb3b8cf0c9998d00171aa09ffd9c64b5e1111ec44994f7166cd4d5425"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2h46-8gf5-fmxv.json",
+      "bytes": 8400,
+      "sha256": "743b9ad0509cb46e34dbaa715d33562c7b03fa22a1051f9ee5aef6e78888cf3c"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2h4p-vjrc-8xpq.json",
+      "bytes": 4318,
+      "sha256": "3639491d59097c527ab20e40adb3c2fc5be09ce75a1a908600945dbed1ec64a8"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2hm2-hc3v-44h9.json",
+      "bytes": 8986,
+      "sha256": "b9de853b7ba06af0da78597e1bb0cd8bbdbe3d319d8a0856d414e5d1aa334ce3"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2j5p-7p5m-cvqr.json",
+      "bytes": 2532,
+      "sha256": "1a989b66cfdea08f6ba8294a3e90d8b326b5f89f43d16f5ca99ce1ab62d8c15e"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2jgc-f764-c5r2.json",
+      "bytes": 17449,
+      "sha256": "f02cfbe1c2a92aa2d7c2a3009ef26042f27c20ef58c6d21930773ab15bfc7a6d"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2jq4-q6vv-4cp3.json",
+      "bytes": 4150,
+      "sha256": "f6698f0ac8e6370160fb62513637a3873771876f1da44b7e0456c8eae74f7596"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2jrp-274c-jhv3.json",
+      "bytes": 11313,
+      "sha256": "f88323c62d8e436c49422a587bbd403d00d954b8c5bb428c05f136aa7c53a6ab"
+    },
+    {
+      "filename": "data/hw03_corpus/selected_pypi/GHSA-2jv5-9r88-3w3p.json",
+      "bytes": 7857,
+      "sha256": "2978eadbdfa593808e51db635c3915480402b120d6209ba6a23e7750fcc15e7a"
+    }
+  ]
+}
