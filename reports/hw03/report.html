@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DATA 260 Homework 3 Report</title>
+
+    <style>
+    @page {
+        size: Letter;
+        margin: 0.65in;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        background: #e9eef4;
+    }
+
+    body {
+        width: min(850px, calc(100% - 40px));
+        margin: 30px auto;
+        padding: 42px 55px;
+        background: white;
+        color: #202938;
+        font-family: Arial, sans-serif;
+        font-size: 10.5pt;
+        line-height: 1.55;
+        box-shadow: 0 0 18px rgba(0, 0, 0, 0.12);
+    }
+
+    h1,
+    h2,
+    h3 {
+        color: #123b63;
+        page-break-after: avoid;
+    }
+
+    h1 {
+        font-size: 21pt;
+        text-align: center;
+        margin: 0 0 5px;
+    }
+
+    h2 {
+        font-size: 15pt;
+        margin-top: 25px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #d8e4ef;
+    }
+
+    h3 {
+        font-size: 11.5pt;
+        margin-top: 18px;
+    }
+
+    p {
+        margin: 8px 0 11px;
+    }
+
+    .subtitle {
+        color: #5b6572;
+        text-align: center;
+        margin-bottom: 22px;
+    }
+
+    .summary,
+    table {
+        width: 100%;
+        margin: 14px auto 20px;
+        border-collapse: collapse;
+    }
+
+    .summary td,
+    table th,
+    table td {
+        padding: 8px;
+        border: 1px solid #cbd5e1;
+        vertical-align: top;
+    }
+
+    .summary td:first-child {
+        width: 28%;
+        color: #123b63;
+        font-weight: bold;
+        background: #eaf1f8;
+    }
+
+    table th {
+        color: white;
+        text-align: left;
+        background: #123b63;
+    }
+
+    table tr:nth-child(even) td {
+        background: #f6f8fb;
+    }
+
+    pre {
+        padding: 12px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        border: 1px solid #d5dce5;
+        border-radius: 5px;
+        background: #f5f7fa;
+        font: 8.5pt/1.45 Consolas, monospace;
+        page-break-inside: avoid;
+    }
+
+    code {
+        font-family: Consolas, monospace;
+        font-size: 0.92em;
+    }
+
+    figure {
+        margin: 18px auto 22px;
+        text-align: center;
+        page-break-inside: avoid;
+    }
+
+    figure img {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        max-height: 6.2in;
+        margin: 0 auto;
+        object-fit: contain;
+    }
+
+    figcaption {
+        margin-top: 6px;
+        color: #5b6572;
+        font-size: 9pt;
+        text-align: center;
+    }
+
+    .small-image img {
+        max-height: 3.8in;
+    }
+
+    .metrics th,
+    .metrics td {
+        font-size: 8.5pt;
+        text-align: center;
+    }
+
+    .metrics th:first-child,
+    .metrics td:first-child {
+        text-align: left;
+    }
+
+    .page-break {
+        page-break-before: always;
+    }
+
+    .footer-note {
+        margin-top: 25px;
+        color: #687385;
+        font-size: 9pt;
+        text-align: center;
+    }
+
+    @media print {
+        html {
+            background: white;
+        }
+
+        body {
+            width: auto;
+            margin: 0;
+            padding: 0;
+            box-shadow: none;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+    <section class="cover">
+        <h1>DATA 260 Homework 3</h1>
+        <div class="subtitle">
+            Authentication, Session Management, and Retrieval-Only RAG
+        </div>
+
+        <p><strong>Student:</strong> Vrishin Dharmesh Kunnatham Parambath</p>
+        <p><strong>Repository:</strong> https://github.com/Viki2183/data260-8844</p>
+        <p><strong>Course:</strong> DATA 260</p>
+        <p><strong>Submission tag:</strong> hw3</p>
+        <p><strong>Final tagged commit:</strong> To be updated after the final report commit</p>
+
+        <div class="summary-box">
+            <strong>Project summary.</strong>
+            In this homework, I extended my previous vulnerability-report application
+            with authentication and protected sessions. I also built a retrieval-only
+            experiment that compares token, semantic, and sentence-window chunking
+            techniques over a local corpus of open-source package vulnerability records.
+        </div>
+
+        <h2>Personal configuration</h2>
+
+        <table>
+            <tr>
+                <th>Value</th>
+                <th>Configuration</th>
+            </tr>
+            <tr><td>SID4</td><td>8844</td></tr>
+            <tr><td>PORT_BASE</td><td>8744</td></tr>
+            <tr><td>PREFIX</td><td>s8844</td></tr>
+            <tr><td>SEED</td><td>8844</td></tr>
+            <tr><td>VERIFY_SEED</td><td>268844</td></tr>
+            <tr><td>DOMAIN_ID</td><td>4</td></tr>
+            <tr><td>Assigned domain</td><td>Open-source package vulnerabilities</td></tr>
+            <tr><td>Python</td><td>3.14.0</td></tr>
+            <tr><td>Device</td><td>CPU</td></tr>
+            <tr><td>Embedding model</td><td>sentence-transformers/all-MiniLM-L6-v2</td></tr>
+        </table>
+    </section>
+
+    <h2>1. Project objective</h2>
+
+    <p>
+        The first part of the homework required me to add a simple authentication
+        system to the FastAPI application I had already built in HW1 and HW2.
+        The application is designed around open-source package vulnerability reports.
+        The goal was not to replace the earlier application, but to extend it with
+        login, logout, session management, a protected dashboard, and Bootstrap styling.
+    </p>
+
+    <p>
+        The second part focused on retrieval-only RAG. I used public OSV PyPI
+        vulnerability records as the corpus and compared three different ways of
+        splitting documents before embedding and retrieval. The comparison measured
+        both retrieval quality and practical characteristics such as chunk count,
+        chunk length, and latency.
+    </p>
+
+    <h2>2. Part 1: FastAPI authentication application</h2>
+
+    <h3>2.1 Application structure</h3>
+
+    <p>
+        I kept the original FastAPI vulnerability-report API in
+        <code>code/web_application/main.py</code>. I added a separate router in
+        <code>code/web_application/routers/auth.py</code> and moved the HTML pages
+        into the templates directory. This structure keeps the authentication routes
+        separate from the vulnerability-report API routes.
+    </p>
+
+    <table>
+        <tr>
+            <th>Route</th>
+            <th>Purpose</th>
+            <th>Expected behavior</th>
+        </tr>
+        <tr>
+            <td>/</td>
+            <td>Domain application home page</td>
+            <td>Shows the vulnerability-report interface and session-aware navigation</td>
+        </tr>
+        <tr>
+            <td>/login</td>
+            <td>Login page and credential validation</td>
+            <td>Valid credentials redirect to the dashboard; invalid credentials show an alert</td>
+        </tr>
+        <tr>
+            <td>/dashboard</td>
+            <td>Protected page</td>
+            <td>Only an active logged-in session can access it</td>
+        </tr>
+        <tr>
+            <td>/logout</td>
+            <td>Session destruction</td>
+            <td>Clears the session and redirects to the home page</td>
+        </tr>
+    </table>
+
+    <h3>2.2 Authentication logic</h3>
+
+    <p>
+        For this homework demonstration, I used the credentials
+        <code>admin</code> and <code>password</code>. In a production system,
+        credentials would be stored securely in a database and passwords would be
+        hashed. The important part for this assignment was demonstrating the route
+        behavior and session lifecycle.
+    </p>
+
+    <pre><code>if username == VALID_USERNAME and password == VALID_PASSWORD:
+    request.session["user"] = username
+    request.session["last_activity"] = time.time()
+
+    return RedirectResponse(
+        url="/dashboard",
+        status_code=HTTP_302_FOUND,
+    )</code></pre>
+
+    <p>
+        Invalid credentials do not create a session. Instead, the login template is
+        rendered again with an error message. The message appears as a Bootstrap
+        danger alert.
+    </p>
+
+    <pre><code>return templates.TemplateResponse(
+    request=request,
+    name="login.html",
+    context={
+        "user": None,
+        "error": "Invalid username or password.",
+    },
+    status_code=401,
+)</code></pre>
+
+    <h3>2.3 Session middleware and secure cookie</h3>
+
+    <p>
+        Starlette's SessionMiddleware signs the browser session cookie. I configured
+        a secret key, a one-hour cookie lifetime, SameSite protection, and the Secure
+        flag. The Secure flag is important because it prevents the browser from
+        sending the cookie over an ordinary insecure connection in normal deployments.
+    </p>
+
+    <pre><code>app.add_middleware(
+    SessionMiddleware,
+    secret_key=SECRET_KEY,
+    https_only=True,
+    same_site="lax",
+    max_age=3600,
+)</code></pre>
+
+    <p>
+        I captured the POST login response in Chrome DevTools. The response returned
+        status 302 and redirected to the dashboard. The Set-Cookie header contained
+        Max-Age, HttpOnly, SameSite=Lax, and Secure attributes. I redacted the
+        session value in the screenshot because the value itself should not be shared.
+    </p>
+
+    <figure>
+        <img src="screenshots/secure_cookie_header.png" alt="Secure session cookie response header">
+        <figcaption>Secure session cookie and redirect after a successful login.</figcaption>
+    </figure>
+
+    <h3>2.4 Idle session timeout</h3>
+
+    <p>
+        In addition to the cookie lifetime, I implemented an application-level idle
+        timeout. Each session stores the time of the user's latest activity. When a
+        protected route is requested, the application compares the current time with
+        the stored activity time. If the idle period is longer than 900 seconds, the
+        session is cleared.
+    </p>
+
+    <pre><code>if elapsed_time &gt; IDLE_TIMEOUT_SECONDS:
+    request.session.clear()
+    return None
+
+request.session["last_activity"] = time.time()</code></pre>
+
+    <p>
+        To test the behavior without waiting fifteen minutes, I temporarily changed
+        the timeout to ten seconds. After logging in, I waited longer than ten seconds
+        and then opened the dashboard directly. The application redirected me to the
+        login page, showing that an expired session could not be reused.
+    </p>
+
+    <figure>
+        <img src="screenshots/idle_timeout_redirect.png" alt="Login page after idle session expiration">
+        <figcaption>Expired session redirected to the login page.</figcaption>
+    </figure>
+
+    <h3>2.5 Bootstrap styling</h3>
+
+    <p>
+        I used Bootstrap navigation bars, cards, alerts, buttons, form controls,
+        and responsive containers. The home page preserves the HW2 vulnerability
+        report functionality while adding a session-aware navigation bar. The login
+        page uses a centered card, and the dashboard uses a protected-route card
+        that displays the authenticated username.
+    </p>
+
+    <figure>
+        <img src="screenshots/home_page.png" alt="Home page of the vulnerability report application">
+        <figcaption>Home page showing the vulnerability-report application.</figcaption>
+    </figure>
+
+    <figure>
+        <img src="screenshots/login_page.png" alt="Login page">
+        <figcaption>Bootstrap login page.</figcaption>
+    </figure>
+
+    <figure>
+        <img src="screenshots/dashboard_page.png" alt="Protected dashboard">
+        <figcaption>Protected dashboard after successful authentication.</figcaption>
+    </figure>
+
+    <figure>
+        <img src="screenshots/templates_directory.png" alt="Templates directory in VS Code">
+        <figcaption>Templates directory containing index.html, login.html, and dashboard.html.</figcaption>
+    </figure>
+
+    <h2>3. Part 2: Retrieval-only RAG experiment</h2>
+
+    <h3>3.1 Corpus construction</h3>
+
+    <p>
+        My assigned domain was open-source package vulnerabilities. I downloaded the
+        official OSV PyPI vulnerability dump and extracted the JSON records locally.
+        The full source contained 25,641 records, so I created a deterministic subset
+        rather than embedding the entire dump. The selection required a non-empty
+        summary, at least 800 characters of details, and affected package information.
+    </p>
+
+    <p>
+        The final local corpus contains 69 JSON records and 507,649 bytes. Each record
+        retains advisory identifiers, aliases, summaries, detailed descriptions,
+        affected packages, version ranges, references, severity information, and
+        other OSV metadata. The source URL, access date, file sizes, and SHA-256
+        hashes are documented in SOURCES.md and CORPUS_MANIFEST.json.
+    </p>
+
+    <h3>3.2 Questions and evaluation design</h3>
+
+    <p>
+        I wrote five questions before generating retrieval results and committed
+        questions.yaml first. This prevents changing the expected answers after
+        seeing which chunks were retrieved. The questions cover SSRF, path traversal,
+        remote code execution, denial of service, affected versions, and remediation.
+    </p>
+
+    <p>
+        For each question, I retrieved the top five results from each technique.
+        Recall@5 was counted as successful when the expected source document appeared
+        in the five retrieved source files.
+    </p>
+
+    <h3>3.3 Chunking techniques</h3>
+
+    <table>
+        <tr>
+            <th>Technique</th>
+            <th>Configuration</th>
+            <th>Reason for using it</th>
+        </tr>
+        <tr>
+            <td>Token</td>
+            <td>Chunk size 256 tokens, overlap 40 tokens</td>
+            <td>Creates focused pieces with controlled overlap</td>
+        </tr>
+        <tr>
+            <td>Semantic</td>
+            <td>Buffer size 1, breakpoint percentile 95</td>
+            <td>Attempts to place boundaries where the topic changes</td>
+        </tr>
+        <tr>
+            <td>Sentence-window</td>
+            <td>One sentence with a three-sentence surrounding window</td>
+            <td>Preserves local context around a sentence-level match</td>
+        </tr>
+    </table>
+
+    <p>
+        All three pipelines used the same public
+        <code>sentence-transformers/all-MiniLM-L6-v2</code> model. The model produced
+        384-dimensional vectors. Each technique used an in-memory SimpleVectorStore,
+        so the experiment did not require an external database or hosted vector store.
+    </p>
+
+    <pre><code>embed_model = HuggingFaceEmbedding(
+    model_name="sentence-transformers/all-MiniLM-L6-v2"
+)
+
+index = VectorStoreIndex(
+    nodes,
+    storage_context=storage_context,
+    embed_model=embed_model,
+)
+
+retriever = index.as_retriever(
+    similarity_top_k=5
+)</code></pre>
+
+    <h3>3.4 Retrieval output</h3>
+
+    <p>
+        For every retrieved result, the program recorded the rank, LlamaIndex store
+        score, explicitly recomputed cosine similarity, source filename, chunk
+        length, preview text, vector shapes, and retrieval latency. The query
+        embedding dimension and first eight values were also saved.
+    </p>
+
+    <figure>
+        <img src="screenshots/retrieval_metrics_output.png" alt="Retrieval metrics output">
+        <figcaption>Official retrieval metrics output.</figcaption>
+    </figure>
+
+    <h2>4. Retrieval results and discussion</h2>
+
+    <table>
+        <tr>
+            <th>Technique</th>
+            <th>Chunks</th>
+            <th>Average chunk length</th>
+            <th>Top-1 cosine</th>
+            <th>Mean@5 cosine</th>
+            <th>Recall@5</th>
+            <th>Latency ms</th>
+        </tr>
+        <tr>
+            <td>Token</td>
+            <td>2,260</td>
+            <td>362.36</td>
+            <td>0.655152</td>
+            <td>0.527624</td>
+            <td>1.000000</td>
+            <td>153.062</td>
+        </tr>
+        <tr>
+            <td>Semantic</td>
+            <td>142</td>
+            <td>4,856.94</td>
+            <td>0.629102</td>
+            <td>0.414521</td>
+            <td>1.000000</td>
+            <td>31.038</td>
+        </tr>
+        <tr>
+            <td>Sentence-window</td>
+            <td>727</td>
+            <td>947.94</td>
+            <td>0.651468</td>
+            <td>0.495669</td>
+            <td>1.000000</td>
+            <td>61.474</td>
+        </tr>
+    </table>
+
+    <p>
+        All three approaches retrieved the expected source document for every question
+        within the top five results. This is why each technique has a Recall@5 mean of
+        1.0. That result is encouraging, but it does not mean the first result was
+        always the best answer. The top result can still be a related advisory rather
+        than the exact document required by the question.
+    </p>
+
+    <p>
+        Token chunking performed best overall on the similarity measurements. Its
+        smaller chunks separated facts such as affected versions, fixed versions, and
+        vulnerability mechanisms. The 40-token overlap also reduced the chance that
+        an important statement would be split across two unrelated chunks.
+    </p>
+
+    <p>
+        Sentence-window chunking was close to token chunking. Its main advantage is
+        context: a sentence-level match can be interpreted with nearby sentences.
+        Semantic chunking was the fastest to search because it produced only 142
+        chunks, but those chunks were very large. A single embedding represented many
+        different facts, which reduced the average similarity across the top five
+        results.
+    </p>
+
+    <h3>4.1 High-scoring incorrect retrieval</h3>
+
+    <p>
+        The strongest incorrect result occurred for question q4, which asked why
+        Open WebUI OAuth profile-picture processing could be exploited for SSRF.
+        The expected document was GHSA-226f-f24g-524w.json, but Semantic chunking
+        ranked GHSA-24c9-2m8q-qhmh.json first with a cosine similarity of 0.7008324.
+    </p>
+
+    <p>
+        The incorrect document was not random. It was a closely related Open WebUI
+        SSRF advisory and shared terms such as Open WebUI, OAuth, profile pictures,
+        and SSRF. The embedding therefore judged it highly similar. However, the
+        question asked about the specific redirect-bypass behavior: the initial URL
+        is validated, but the redirect destination is not revalidated. The related
+        advisory did not contain that exact answer.
+    </p>
+
+    <p>
+        A similar incorrect top-1 result occurred with Token chunking at cosine
+        similarity 0.67904045. This example shows why a high embedding score should
+        not automatically be treated as proof that the retrieved chunk contains the
+        requested answer.
+    </p>
+
+    <h2>5. Verification and reproducibility</h2>
+
+    <p>
+        I created a self-check script that verifies the application files, screenshots,
+        corpus size, question count, manifest, raw retrieval outputs, three techniques,
+        and incorrect-retrieval evidence. The verification passed all checks.
+    </p>
+
+    <figure>
+        <img src="screenshots/verification_output.png" alt="Verification output">
+        <figcaption>Self-check output showing Overall verification: True.</figcaption>
+    </figure>
+
+    <p>
+        The repository includes exact instructions in reports/hw03/README.md.
+        The experiment can be rerun with the project virtual environment, the local
+        corpus, the fixed questions, and the saved scripts. The results are stored as
+        JSONL, CSV, JSON metrics, and a timestamped run log.
+    </p>
+
+    <h2>6. AI use disclosure</h2>
+
+    <p>
+        I used an AI assistant to understand the homework requirements, plan the
+        repository structure, explain authentication and retrieval concepts, draft
+        starter code, and troubleshoot errors. I personally created the branch,
+        downloaded and selected the corpus, wrote the questions, tested the FastAPI
+        application, captured screenshots, ran the retrieval experiment, and reviewed
+        the results.
+    </p>
+
+    <p>
+        One unsuitable suggestion was the first import of MetadataMode directly from
+        llama_index.core. My installed LlamaIndex version required the import from
+        llama_index.core.schema. I detected this from the ImportError produced by the
+        smoke test. I also independently verified the Hugging Face cache problem
+        when the model download failed with an access-denied error.
+    </p>
+
+    <p>
+        I fixed the import path and redirected the Hugging Face cache to a writable
+        .hf_cache directory inside the repository. After those changes, the smoke
+        test passed and the full retrieval experiment completed successfully.
+        The longer AI-use explanation is also included in reports/hw03/AI_USE.md.
+    </p>
+
+    <h2>7. Conclusion</h2>
+
+    <p>
+        This homework connected application security with information retrieval.
+        The authentication portion demonstrated how sessions, protected routes, secure
+        cookies, and timeout checks work in a FastAPI application. The retrieval
+        portion showed that chunking choices affect both the quality and speed of
+        vector search.
+    </p>
+
+    <p>
+        For this vulnerability corpus, I consider Token chunking the strongest overall
+        choice because it produced the highest top-1 and Mean@5 cosine scores while
+        still achieving perfect Recall@5. Sentence-window chunking was a close
+        alternative when preserving nearby context is especially important. Semantic
+        chunking was the fastest, but its very large chunks made the similarity results
+        less focused.
+    </p>
+
+    <p class="small">
+        Supporting files, raw outputs, source documentation, screenshots, and
+        verification results are committed in the GitHub repository.
+    </p>
+
+</body>
+</html>
