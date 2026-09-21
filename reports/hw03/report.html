@@ -190,10 +190,13 @@
         </div>
 
         <p><strong>Student:</strong> Vrishin Dharmesh Kunnatham Parambath</p>
-        <p><strong>Repository:</strong> https://github.com/Viki2183/data260-8844</p>
+        <p>
+    <strong>Final GitHub repository:</strong><br>
+    https://github.com/Viki2183/data260-8844/tree/hw3
+</p>
         <p><strong>Course:</strong> DATA 260</p>
         <p><strong>Submission tag:</strong> hw3</p>
-        <p><strong>Final tagged commit:</strong> To be updated after the final report commit</p>
+        <p><strong>Final tagged commit:</strong>d14ba5afe7d7586d220db8c9de320362c0bfaea8</p>
 
         <div class="summary-box">
             <strong>Project summary.</strong>
@@ -240,6 +243,8 @@
         both retrieval quality and practical characteristics such as chunk count,
         chunk length, and latency.
     </p>
+
+    
 
     <h2>2. Part 1: FastAPI authentication application</h2>
 
@@ -341,7 +346,7 @@
     </p>
 
     <figure>
-        <img src="screenshots/secure_cookie_header.png" alt="Secure session cookie response header">
+        <img src="./screenshots/secure_cookie_header.png" alt="Secure session cookie response header">
         <figcaption>Secure session cookie and redirect after a successful login.</figcaption>
     </figure>
 
@@ -369,7 +374,7 @@ request.session["last_activity"] = time.time()</code></pre>
     </p>
 
     <figure>
-        <img src="screenshots/idle_timeout_redirect.png" alt="Login page after idle session expiration">
+        <img src="./screenshots/idle_timeout_redirect.png" alt="Login page after idle session expiration">
         <figcaption>Expired session redirected to the login page.</figcaption>
     </figure>
 
@@ -384,22 +389,22 @@ request.session["last_activity"] = time.time()</code></pre>
     </p>
 
     <figure>
-        <img src="screenshots/home_page.png" alt="Home page of the vulnerability report application">
+        <img src="./screenshots/home_page.png" alt="Home page of the vulnerability report application">
         <figcaption>Home page showing the vulnerability-report application.</figcaption>
     </figure>
 
     <figure>
-        <img src="screenshots/login_page.png" alt="Login page">
+        <img src="./screenshots/login_page.png" alt="Login page">
         <figcaption>Bootstrap login page.</figcaption>
     </figure>
 
     <figure>
-        <img src="screenshots/dashboard_page.png" alt="Protected dashboard">
+        <img src="./screenshots/dashboard_page.png" alt="Protected dashboard">
         <figcaption>Protected dashboard after successful authentication.</figcaption>
     </figure>
 
     <figure>
-        <img src="screenshots/templates_directory.png" alt="Templates directory in VS Code">
+        <img src="./screenshots/templates_directory.png" alt="Templates directory in VS Code">
         <figcaption>Templates directory containing index.html, login.html, and dashboard.html.</figcaption>
     </figure>
 
@@ -494,11 +499,17 @@ retriever = index.as_retriever(
     </p>
 
     <figure>
-        <img src="screenshots/retrieval_metrics_output.png" alt="Retrieval metrics output">
+        <img src="./screenshots/retrieval_metrics_output.png" alt="Retrieval metrics output">
         <figcaption>Official retrieval metrics output.</figcaption>
     </figure>
 
     <h2>4. Retrieval results and discussion</h2>
+
+    <p>
+    The values in this table are averages across the five evaluation questions.
+    The individual cosine values discussed later belong to specific query results
+    and are not table averages.
+</p>
 
     <table>
         <tr>
@@ -597,7 +608,7 @@ retriever = index.as_retriever(
     </p>
 
     <figure>
-        <img src="screenshots/verification_output.png" alt="Verification output">
+        <img src="./screenshots/verification_output.png" alt="Verification output">
         <figcaption>Self-check output showing Overall verification: True.</figcaption>
     </figure>
 
