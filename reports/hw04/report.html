@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DATA 260 Homework 4</title>
+<style>
+  @page { size: Letter; margin: 0.7in; }
+  body { font-family: Arial, sans-serif; color:#222; line-height:1.45; max-width:900px; margin:0 auto; }
+  h1 { text-align:center; color:#183b56; margin-bottom:8px; }
+  h2 { color:#183b56; border-bottom:1px solid #b9c7d3; padding-bottom:4px; margin-top:28px; }
+  .subtitle { text-align:center; color:#555; margin-bottom:24px; }
+  table { border-collapse:collapse; width:100%; margin:12px 0 20px; }
+  td, th { border:1px solid #aaa; padding:7px; text-align:left; vertical-align:top; }
+  th { background:#e9eef5; }
+  img { display:block; max-width:100%; max-height:8.7in; margin:14px auto; border:1px solid #bbb; }
+  .page { page-break-after:always; }
+  .small { font-size:0.9em; color:#555; }
+  .note { background:#f4f7f9; border-left:4px solid #557a95; padding:10px 14px; }
+  @media print { body { max-width:none; } a { color:inherit; text-decoration:none; } }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <h1>DATA 260 Homework 4</h1>
+  <p class="subtitle">Database-backed vulnerability reports, an N+1 query comparison, indexing, and a small RAG experiment</p>
+  <table>
+    <tr><th>Student</th><td>Vrishin Dharmesh Kunnatham Parambath</td></tr>
+    <tr><th>SID4 / Seed</th><td>8844</td></tr>
+    <tr><th>Domain</th><td>Open-source package vulnerabilities</td></tr>
+    <tr><th>Environment</th><td>Windows 11, Python 3.14, MySQL 8.0, CPU</td></tr>
+    <tr><th>Model</th><td>Ollama qwen3:8b</td></tr>
+  </table>
+
+  <h2>1. What I built</h2>
+  <p>For this homework I extended the vulnerability-report application with a MySQL-backed API and a React frontend. The API uses login protection, sessions, and CRUD operations for reports. I also added benchmark routes so I could compare a naive loading pattern with a fixed version that avoids repeated database queries.</p>
+  <p>The second part was a small retrieval-augmented generation experiment. I used the documents selected in HW3, split them into chunks, retrieved relevant chunks for six questions, and compared No-RAG, Basic-RAG, and Context-RAG behavior.</p>
+</section>
+
+<section class="page">
+  <h2>2. Database and API checks</h2>
+  <p>The database was seeded with 5,000 vulnerability reports and 200 references. Unauthenticated report access returned HTTP 401, while login and authenticated CRUD requests worked. The screenshot below shows the authenticated dashboard and seeded records.</p>
+  <img src="screenshots/dashboard_authenticated.png" alt="Authenticated dashboard">
+</section>
+
+<section class="page">
+  <h2>3. N+1 benchmark</h2>
+  <p>The benchmark used two versions, page sizes of 10, 50, and 200, and 30 requests for each combination. This produced 180 requests in total. The naive version performs repeated lookups while building the response. The fixed version loads related information more efficiently, so the number of SQL statements does not grow in the same way.</p>
+  <img src="screenshots/nplus1_summary.png" alt="N plus one benchmark summary">
+</section>
+
+<section class="page">
+  <h2>4. Index and EXPLAIN comparison</h2>
+  <p>I compared the package-name query before and after adding an index. Before the index, MySQL estimated a much larger scan. After the index, the access type changed to an indexed reference lookup and the estimated rows dropped to about one for the tested lookup. This shows why indexing a column used in a filter matters even when the query itself is simple.</p>
+  <img src="screenshots/index_explain.png" alt="EXPLAIN before and after index">
+</section>
+
+<section class="page">
+  <h2>5. RAG experiment</h2>
+  <p>The corpus contained 69 documents and produced 850 chunks with 500-token chunks and 50-token overlap. I evaluated six questions across three configurations, giving 18 comparison rows. The raw evaluation table is heuristic, so I considered it together with the retrieved chunks and generated answers.</p>
+  <p>Questions 1 and 2 were answered correctly by the retrieval configurations. Question 3 showed a retrieval limitation because the relevant Pydantic AI source was not in the top three chunks. Question 4 was ambiguous. Questions 5 and 6 were correctly refused by Context-RAG, while No-RAG sometimes produced unsupported answers. Increasing <em>k</em> also brought in unrelated documents for Question 1, which shows that more context is not automatically better.</p>
+  <img src="screenshots/rag_evaluation.png" alt="RAG evaluation and k sweep">
+</section>
+
+<section>
+  <h2>6. Reflection and conclusion</h2>
+  <p>The main result of the database work was that authentication and CRUD behavior worked together with the seeded MySQL data. The benchmark made the N+1 issue visible instead of treating it as only a code-style concern. The index comparison showed a similar point: a small schema change can change how MySQL accesses the table.</p>
+  <p>The RAG results were mixed, which is expected for a small experiment. Retrieval helped when the right document was returned, but it could not answer a question reliably when the source was missing from the retrieved context. The refusal behavior was useful because it reduced unsupported answers. If I continued the experiment, I would improve document metadata, use a stronger retrieval evaluation set, and add clearer handling for ambiguous questions.</p>
+
+  <h2>7. Reproducibility files</h2>
+  <p>The repository includes the source code, questions, raw benchmark and RAG outputs, screenshots, <code>METRICS.md</code>, <code>RUN_LOG.txt</code>, <code>AI_USE.md</code>, and <code>verification.json</code>. The verification script completed with <strong>Overall verification: True</strong>.</p>
+  <p class="note">The measurements in this report came from my local Windows environment. They should be interpreted as results from this run rather than universal performance guarantees.</p>
+  <p class="small">AI assistance was used for technical tutoring, debugging, and organizing the report. The commands were run locally and the reported measurements came from the saved project outputs.</p>
+</section>
+
+</body>
+</html>

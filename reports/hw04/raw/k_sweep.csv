@@ -1,0 +1,4 @@
+﻿"question_id","top_k","sources","chunk_ids","scores"
+"q1","1","GHSA-2599-h6xx-hpxp.json","209","0.49261"
+"q1","3","GHSA-2599-h6xx-hpxp.json; GHSA-2599-h6xx-hpxp.json; GHSA-24x4-6qmh-88qg.json","209; 213; 179","0.49261; 0.362578; 0.300262"
+"q1","5","GHSA-2599-h6xx-hpxp.json; GHSA-2599-h6xx-hpxp.json; GHSA-24x4-6qmh-88qg.json; GHSA-247x-2f9f-5wp7.json; GHSA-24x6-8c7m-hv3f.json","209; 213; 179; 142; 194","0.49261; 0.362578; 0.300262; 0.296691; 0.294846"

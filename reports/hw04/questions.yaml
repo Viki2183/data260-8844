@@ -1,0 +1,68 @@
+﻿questions:
+  - id: q1
+    type: one_chunk
+    question: >
+      What fix does the Poetry advisory recommend for the wheel
+      path-traversal vulnerability, and which Poetry versions contain the fix?
+    expected_answer: >
+      Poetry 2.3.3 and newer resolve extracted paths and verify that they
+      remain inside the target directory; installation is aborted otherwise.
+    expected_source_files:
+      - GHSA-2599-h6xx-hpxp.json
+    must_refuse: false
+
+  - id: q2
+    type: two_chunks
+    question: >
+      How can the amazon-redshift-python-driver vulnerability lead to remote
+      code execution, and which versions are affected?
+    expected_answer: >
+      A rogue server or man-in-the-middle can send specially crafted query
+      responses that the driver processes unsafely during query-result handling.
+      Versions 2.1.13 and earlier are affected.
+    expected_source_files:
+      - GHSA-29h4-r29x-hchv.json
+    must_refuse: false
+
+  - id: q3
+    type: similar_across_documents
+    question: >
+      Compare why Open WebUI profile-picture processing and Pydantic AI
+      URL-download functionality can cause SSRF requests.
+    expected_answer: >
+      Both issues allow attacker-controlled or externally influenced URLs to
+      cause server-side requests to internal resources. Open WebUI is exposed
+      through redirect handling after initial validation, while Pydantic AI is
+      exposed when untrusted users can provide message history containing URLs.
+    expected_source_files:
+      - GHSA-226f-f24g-524w.json
+      - GHSA-2jrp-274c-jhv3.json
+    must_refuse: false
+
+  - id: q4
+    type: ambiguous
+    question: >
+      What is the fix for the vulnerability?
+    expected_answer: >
+      The question is ambiguous because it does not identify a package,
+      advisory, or vulnerability.
+    expected_source_files: []
+    must_refuse: true
+
+  - id: q5
+    type: not_in_documents
+    question: >
+      What is the university's spring-semester tuition refund policy?
+    expected_answer: >
+      I cannot answer this question from the provided documents
+    expected_source_files: []
+    must_refuse: true
+
+  - id: q6
+    type: unrelated
+    question: >
+      What is the weather in San Jose today?
+    expected_answer: >
+      I cannot answer this question from the provided documents
+    expected_source_files: []
+    must_refuse: true

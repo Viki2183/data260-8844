@@ -1,0 +1,31 @@
+﻿DATA 260 Homework 4 Run Log
+
+Student: Vrishin Dharmesh Kunnatham Parambath
+SID4: 8844
+Branch: hw4-development
+Domain: Open-source package vulnerabilities
+Seed: 8844
+Port: 8744
+
+Environment:
+- Windows 11
+- Python 3.14.0
+- CPU execution
+- MySQL 8.0
+- FastAPI/Uvicorn backend
+- React/Vite frontend
+- Local Ollama model qwen3:8b
+
+Completed work:
+
+1. Confirmed the MySQL80 service was running.
+2. Created and verified the HW4 MySQL tables.
+3. Seeded 5,000 vulnerability reports and 200 references.
+4. Verified authentication and protected CRUD operations.
+5. Verified the naive and fixed benchmark routes.
+6. Completed the 180-request N+1 benchmark.
+7. Captured before/after EXPLAIN output for the package_name index.
+8. Verified the HW3 corpus contained 69 documents.
+9. Ran the HW4 RAG experiment with 500-token chunks and 50-token overlap.
+10. Ran No-RAG, Basic-RAG, Context-RAG, and the k=1, 3, 5 sweep.
+11. Saved raw outputs in reports/hw04/raw/.

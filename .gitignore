@@ -7,3 +7,8 @@ Thumbs.db
 data/hw03_corpus/pypi_osv_all.zip
 data/hw03_corpus/pypi_records/
 .hf_cache/
+# Local secrets and generated frontend files
+.env
+*.env
+frontend/node_modules/
+frontend/dist/

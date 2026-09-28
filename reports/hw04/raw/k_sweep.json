@@ -1,0 +1,59 @@
+[
+  {
+    "question_id": "q1",
+    "top_k": 1,
+    "sources": [
+      "GHSA-2599-h6xx-hpxp.json"
+    ],
+    "chunk_ids": [
+      209
+    ],
+    "scores": [
+      0.49261
+    ]
+  },
+  {
+    "question_id": "q1",
+    "top_k": 3,
+    "sources": [
+      "GHSA-2599-h6xx-hpxp.json",
+      "GHSA-2599-h6xx-hpxp.json",
+      "GHSA-24x4-6qmh-88qg.json"
+    ],
+    "chunk_ids": [
+      209,
+      213,
+      179
+    ],
+    "scores": [
+      0.49261,
+      0.362578,
+      0.300262
+    ]
+  },
+  {
+    "question_id": "q1",
+    "top_k": 5,
+    "sources": [
+      "GHSA-2599-h6xx-hpxp.json",
+      "GHSA-2599-h6xx-hpxp.json",
+      "GHSA-24x4-6qmh-88qg.json",
+      "GHSA-247x-2f9f-5wp7.json",
+      "GHSA-24x6-8c7m-hv3f.json"
+    ],
+    "chunk_ids": [
+      209,
+      213,
+      179,
+      142,
+      194
+    ],
+    "scores": [
+      0.49261,
+      0.362578,
+      0.300262,
+      0.296691,
+      0.294846
+    ]
+  }
+]

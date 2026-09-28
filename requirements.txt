@@ -43,3 +43,9 @@ faiss-cpu==1.15.1
 numpy==2.5.3
 pandas==3.0.6
 PyYAML==6.0.3
+# HW4 database and authentication dependencies
+SQLAlchemy==2.0.54
+PyMySQL
+python-dotenv==1.2.3
+bcrypt
+email-validator

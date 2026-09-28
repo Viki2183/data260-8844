@@ -1,0 +1,182 @@
+[
+  {
+    "question_id": "q1",
+    "top_k": 3,
+    "chunks": [
+      {
+        "rank": 1,
+        "source_file": "GHSA-2599-h6xx-hpxp.json",
+        "chunk_id": 209,
+        "score": 0.49261,
+        "text": "{\n  \"schema_version\": \"1.9.0\",\n  \"id\": \"GHSA-2599-h6xx-hpxp\",\n  \"published\": \"2026-04-01T22:17:36Z\",\n  \"modified\": \"2026-09-10T03:50:42.075152286Z\",\n  \"aliases\": [\n    \"CVE-2026-34591\",\n    \"PYSEC-2026-2260\"\n  ],\n  \"summary\": \"Poetry Has Wheel Path Traversal Which Can Lead to Arbitrary File Write\",\n  \"details\": \"### Summary\\nA crafted wheel can contain ../ paths that Poetry writes to disk without containment checks, allowing arbitrary file write with the privileges of the Poetry process. \\n\\n### Impact\\nArbitrary file write (path traversal) from untrusted wheel content. Impacts users/CI/CD systems installing malicious or compromised packages.\\n\\n### Patches\\n\\nVersions 2.3.3 and newer of Poetry resolve the target paths and ensure that they are inside the target directory. Otherwise, installation is aborted.\\n\\n### Details\\nPoetry’s wheel destination path is built by directly joining an untrusted wheel entry path:\\n\\nsrc/poetry/installation/wheel_installer.py:47\\nsrc/poetry/installation/wheel_installer.py:59\\n\\nThe vulnerable sink is reachable in normal installation:\\nsrc/poetry/installation/executor.py:607\\n\\nNo resolve() + is_relative_to() style guard is enforced before writing.\\n\\n### POC\\n\\n```\\nfrom pathlib import Path\\nimport tempfile, zipfile, sys\\nfrom installer import install\\nfrom installer.sources import WheelFile\\nfrom poetry.installation.wheel_installer import WheelDestination\\n\\nroot = Path(tempfile.mkdtemp(prefix=\\\"poetry-poc-\\\"))\\nwheel = root / \\\"evil-0.1-py3-none-any.whl\\\"\\nbase = root / \\\"venv\\\" / \\\"lib\\\" / \\\"pythonX\\\" / \\\"site-packages\\\"\\nfor d in [base, root/\\\"venv/scripts\\\", root/\\\"venv/headers\\\", root/\\\"venv/data\\\"]:\\n    d.mkdir(parents=True, exist_ok=True)\\n\\nfiles = {\\n",
+        "cosine_similarity": 0.570016
+      },
+      {
+        "rank": 2,
+        "source_file": "GHSA-2599-h6xx-hpxp.json",
+        "chunk_id": 213,
+        "score": 0.362578,
+        "text": "\"type\": \"PACKAGE\",\n      \"url\": \"https://github.com/python-poetry/poetry\"\n    },\n    {\n      \"type\": \"WEB\",\n      \"url\": \"https://github.com/python-poetry/poetry/releases/tag/2.3.3\"\n    },\n    {\n      \"type\": \"WEB\",\n      \"url\": \"http://github.com/python-poetry/poetry/commit/ed59537ac3709cfbdbf95d957de801c13872991a\"\n    }\n  ],\n  \"database_specific\": {\n    \"cwe_ids\": [\n      \"CWE-22\"\n    ],\n    \"github_reviewed\": true,\n    \"github_reviewed_at\": \"2026-04-01T22:17:36Z\",\n    \"nvd_published_at\": \"2026-04-02T18:16:31Z\",\n    \"severity\": \"HIGH\"\n  },\n  \"severity\": [\n    {\n      \"type\": \"CVSS_V3\",\n      \"score\": \"CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N\"\n    },\n    {\n      \"type\": \"CVSS_V4\",\n      \"score\": \"CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N\"\n    }\n  ]\n}",
+        "cosine_similarity": 0.398557
+      },
+      {
+        "rank": 3,
+        "source_file": "GHSA-24x4-6qmh-88qg.json",
+        "chunk_id": 179,
+        "score": 0.300262,
+        "text": "fix will be included in TensorFlow 2.8.0. We will also cherrypick this commit on TensorFlow 2.7.1, TensorFlow 2.6.3, and TensorFlow 2.5.3, as these are also affected and still in supported range.\\n\\n### For more information\\nPlease consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md) for more information regarding the security model and how to contact us with issues and questions.\",\n  \"affected\": [\n    {\n      \"package\": {\n        \"name\": \"tensorflow\",\n        \"ecosystem\": \"PyPI\",\n        \"purl\": \"pkg:pypi/tensorflow\"\n      },\n      \"ranges\": [\n        {\n          \"type\": \"ECOSYSTEM\",\n          \"events\": [\n            {\n              \"introduced\": \"0\"\n            },\n            {\n              \"fixed\": \"2.5.3\"\n            }\n          ]\n        }\n      ],\n      \"versions\": [\n        \"0.12.0\",\n        \"0.12.1\",\n        \"1.0.0\",\n        \"1.0.1\",\n        \"1.1.0\",\n        \"1.10.0\",\n        \"1.10.1\",\n        \"1.11.0\",\n        \"1.12.0\",",
+        "cosine_similarity": 0.307302
+      }
+    ]
+  },
+  {
+    "question_id": "q2",
+    "top_k": 3,
+    "chunks": [
+      {
+        "rank": 1,
+        "source_file": "GHSA-29h4-r29x-hchv.json",
+        "chunk_id": 508,
+        "score": 0.664412,
+        "text": "{\n  \"schema_version\": \"1.9.0\",\n  \"id\": \"GHSA-29h4-r29x-hchv\",\n  \"published\": \"2026-05-29T19:32:28Z\",\n  \"modified\": \"2026-09-10T03:50:45.272536134Z\",\n  \"aliases\": [\n    \"CVE-2026-8838\",\n    \"PYSEC-2026-521\"\n  ],\n  \"summary\": \"amazon-redshift-python-driver vulnerable to Remote Code Execution via eval() Injection\",\n  \"details\": \"### Summary\\namazon-redshift-python-driver is the official Python connector for Amazon Redshift. In versions 2.1.13 and earlier, the driver insufficiently validates data received from the server during query result processing. A rogue server or man-in-the-middle could leverage this to execute arbitrary code on the client.\\n\\n### Impact\\nWhen a client connects to a rogue server implementing the PostgreSQL wire protocol, the server can send specially crafted query responses that the driver processes without adequate input validation. This could result in arbitrary code execution in the client process, potentially enabling command execution, file system access, or credential theft with the privileges of the client application.\\n\\nImpacted versions: <=2.1.13\\n\\n### Patches\\nThis has been addressed in amazon-redshift-python-driver version 2.1.14 (https://github.com/aws/amazon-redshift-python-driver/releases/tag/v2.1.14). Amazon Redshift recommends upgrading to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes.\\n\\n### References\\nIf there are any questions or comments about this advisory, contact AWS Security via the issue reporting page or directly via email to aws-security@amazon.com. Please do not create a public GitHub issue.\\n\\n### Acknowledgement\\nAmazon Redshift would like to thank Kexin Chen (@ckx-sec) for collaborating through the coordinated disclosure process.\",\n  \"affected\": [\n    {\n      \"package\": {\n        \"name\": \"redshift-connector\",\n        \"ecosystem\": \"PyPI\",\n        \"purl\":",
+        "cosine_similarity": 0.679407
+      },
+      {
+        "rank": 2,
+        "source_file": "GHSA-29h4-r29x-hchv.json",
+        "chunk_id": 512,
+        "score": 0.537933,
+        "text": "\"https://github.com/aws/amazon-redshift-python-driver/commit/69a69dfdead75918e20384da52bcd760ded8dbca\"\n    },\n    {\n      \"type\": \"WEB\",\n      \"url\": \"https://aws.amazon.com/security/security-bulletins/2026-033-aws\"\n    },\n    {\n      \"type\": \"PACKAGE\",\n      \"url\": \"https://github.com/aws/amazon-redshift-python-driver\"\n    },\n    {\n      \"type\": \"WEB\",\n      \"url\": \"https://github.com/aws/amazon-redshift-python-driver/releases/tag/v2.1.14\"\n    }\n  ],\n  \"database_specific\": {\n    \"cwe_ids\": [\n      \"CWE-94\"\n    ],\n    \"github_reviewed\": true,\n    \"github_reviewed_at\": \"2026-05-29T19:32:28Z\",\n    \"nvd_published_at\": \"2026-05-18T21:16:41Z\",\n    \"severity\": \"CRITICAL\"\n  },\n  \"severity\": [\n    {\n      \"type\": \"CVSS_V3\",\n      \"score\": \"CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H\"\n    },\n    {\n      \"type\": \"CVSS_V4\",\n      \"score\": \"CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N\"\n    }\n  ]\n}",
+        "cosine_similarity": 0.639747
+      },
+      {
+        "rank": 3,
+        "source_file": "GHSA-29w2-fq35-v728.json",
+        "chunk_id": 533,
+        "score": 0.419155,
+        "text": "upgrade:\\n\\n  - Use least-privilege IAM credentials (for example, a ReadOnlyAccess role) scoped to the task. IAM remains the primary access control and is enforced regardless of this issue.\\n  - If the server started during degraded connectivity, restart it once connectivity is restored so the policy enforcement data loads successfully.\\n\\n### Contact\\nIf you have any questions or comments about this advisory, AWS asks that you contact AWS Security via the [reporting page](https://aws.amazon.com/security/vulnerability-reporting) or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.\\n\\n### Acknowledgement\\nWe would like to thank Lav Kumar Vishwakarma (independent security researcher) for collaborating on this issue through the coordinated vulnerability disclosure process.\",\n  \"affected\": [\n    {\n      \"package\": {\n        \"name\": \"awslabs-aws-api-mcp-server\",\n        \"ecosystem\": \"PyPI\",\n        \"purl\": \"pkg:pypi/awslabs-aws-api-mcp-server\"\n      },\n      \"ranges\": [\n        {\n          \"type\": \"ECOSYSTEM\",\n          \"events\": [\n            {\n              \"introduced\": \"0.2.13\"\n            },\n            {\n              \"fixed\": \"1.3.47\"\n            }\n          ]\n        }\n      ],\n      \"versions\": [\n        \"0.2.13\",\n        \"0.2.14\",\n        \"0.3.0\",",
+        "cosine_similarity": 0.420193
+      }
+    ]
+  },
+  {
+    "question_id": "q3",
+    "top_k": 3,
+    "chunks": [
+      {
+        "rank": 1,
+        "source_file": "GHSA-24c9-2m8q-qhmh.json",
+        "chunk_id": 157,
+        "score": 0.532353,
+        "text": "codebase already uses `validate_url()` for the same SSRF protection pattern in other paths:\\n- `backend/open_webui/utils/files.py:38` - `validate_url(url)` before `requests.get(url)`\\n- `backend/open_webui/routers/images.py:800` - `validate_url(data)` before `requests.get(data)`\\n\\nThe omission in `_process_picture_url()` is inconsistent with the project's own security practices.\\n\\n## Affected Code Paths\\n\\n1. **New user OAuth signup** (line ~1556): `picture_url = await self._process_picture_url(picture_url, token.get('access_token'))`\\n2. **Existing user picture update on login** (line ~1536): when `OAUTH_UPDATE_PICTURE_ON_LOGIN=true`\\n\\n## Steps to Reproduce\\n\\n### Prerequisites\\n- Open WebUI instance with generic OIDC OAuth configured\\n- `ENABLE_OAUTH_SIGNUP=true`\\n\\n### Setup\\n\\n**1. Start a minimal OIDC server** that returns a malicious `picture` claim pointing to an internal canary endpoint:\\n```python\\n\\\"\\\"\\\"Minimal OIDC PoC server - save as poc_oidc.py\\\"\\\"\\\"\\nfrom http.server import HTTPServer, BaseHTTPRequestHandler\\nimport json, urllib.parse\\n\\nSSRF_TARGET = \\\"http://host.docker.internal:9000/canary\\\"\\nCANARY = \\\"SSRF_CONFIRMED_OPEN_WEBUI\\\"\\n\\nclass Handler(BaseHTTPRequestHandler):\\n    def do_GET(self):\\n        path = urllib.parse.urlparse(self.path).path\\n        query = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)\\n        if path == \\\"/.well-known/openid-configuration\\\":\\n            self._json({\\\"issuer\\\":\\\"http://host.docker.internal:9000\\\",\\n                \\\"authorization_endpoint\\\":\\\"http://localhost:9000/authorize\\\",\\n                \\\"token_endpoint\\\":\\\"http://host.docker.internal:9000/token\\\",\\n",
+        "cosine_similarity": 0.579701
+      },
+      {
+        "rank": 2,
+        "source_file": "GHSA-24c9-2m8q-qhmh.json",
+        "chunk_id": 156,
+        "score": 0.513489,
+        "text": "{\n  \"schema_version\": \"1.9.0\",\n  \"id\": \"GHSA-24c9-2m8q-qhmh\",\n  \"published\": \"2026-05-14T20:19:56Z\",\n  \"modified\": \"2026-07-13T16:43:44.833658698Z\",\n  \"aliases\": [\n    \"CVE-2026-45338\",\n    \"PYSEC-2026-2691\"\n  ],\n  \"summary\": \"Open WebUI Vulnerable to SSRF via OAuth Profile Picture URL in _process_picture_url (oauth.py)\",\n  \"details\": \"## Summary\\n\\nA Server-Side Request Forgery (SSRF) vulnerability exists in `_process_picture_url()` in `backend/open_webui/utils/oauth.py` (line ~1338). The function fetches arbitrary URLs from OAuth `picture` claims without applying `validate_url()`, allowing an attacker to force the server to make HTTP requests to internal resources and exfiltrate the full response.\\n\\n## Vulnerable Code\\n```python\\n# backend/open_webui/utils/oauth.py, line ~1337-1345\\nasync def _process_picture_url(self, picture_url: str, access_token: str = None) -> str:\\n    # No validate_url() call here\\n    async with aiohttp.ClientSession(trust_env=True) as session:\\n        async with session.get(picture_url, **get_kwargs, ssl=AIOHTTP_CLIENT_SESSION_SSL) as resp:\\n            if resp.ok:\\n                picture = await resp.read()\\n                base64_encoded_picture = base64.b64encode(picture).decode('utf-8')\\n                return f'data:{guessed_mime_type};base64,{base64_encoded_picture}'\\n```\\n\\nThe codebase already uses `validate_url()` for the same SSRF protection pattern in other paths:\\n- `backend/open_webui/utils/files.py:38` -",
+        "cosine_similarity": 0.615795
+      },
+      {
+        "rank": 3,
+        "source_file": "GHSA-24c9-2m8q-qhmh.json",
+        "chunk_id": 161,
+        "score": 0.476461,
+        "text": "fetched the attacker-controlled URL, base64-encoded the response, stored it as `profile_image_url`, and the attacker can read it back via the API.\\n\\n## Impact\\n\\nAn attacker can force the Open WebUI server to make HTTP requests to:\\n\\n- **Cloud metadata endpoints** (AWS IMDSv1 at `http://169.254.169.254/latest/meta-data/iam/security-credentials/`) to steal IAM credentials\\n- **Internal network services** not exposed to the internet\\n- **Localhost-bound services** (Redis, Elasticsearch, internal APIs)\\n\\nThis is a **full-read SSRF**: the complete HTTP response body is exfiltrated to the attacker via the base64-encoded `profile_image_url` field.\\n\\n## Configuration Note\\n\\nThis vulnerability requires `ENABLE_OAUTH_SIGNUP=true` (for the new-user path) or `OAUTH_UPDATE_PICTURE_ON_LOGIN=true` (for the existing-user path). While these are not default settings, they are standard in production deployments that use OAuth for user management, which is the primary use case for configuring OAuth at all.\\n\\n## Suggested Fix\\n\\nApply `validate_url()` before fetching, consistent with existing patterns in the codebase:\\n```python\\nfrom open_webui.retrieval.web.utils import validate_url\\n\\nasync def _process_picture_url(self, picture_url: str, access_token: str = None) -> str:\\n    if not picture_url:\\n        return '/user.png'\\n    try:\\n        validate_url(picture_url)  # Add this line\\n        # ... rest unchanged\\n```\",\n  \"affected\": [\n    {\n      \"package\": {\n        \"name\": \"open-webui\",\n        \"ecosystem\": \"PyPI\",\n        \"purl\": \"pkg:pypi/open-webui\"\n      },\n      \"ranges\": [\n        {\n          \"type\": \"ECOSYSTEM\",\n          \"events\": [",
+        "cosine_similarity": 0.585594
+      }
+    ]
+  },
+  {
+    "question_id": "q4",
+    "top_k": 3,
+    "chunks": [
+      {
+        "rank": 1,
+        "source_file": "GHSA-24x6-8c7m-hv3f.json",
+        "chunk_id": 194,
+        "score": 0.491461,
+        "text": "fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.\\n\\n### For more information\\nPlease consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md) for more information regarding the security model and how to contact us with issues and questions.\\n\\n### Attribution\\nThis vulnerability has been reported by members of the Aivul Team from Qihoo 360.\",\n  \"affected\": [\n    {\n      \"package\": {\n        \"name\": \"tensorflow\",\n        \"ecosystem\": \"PyPI\",\n        \"purl\": \"pkg:pypi/tensorflow\"\n      },\n      \"ranges\": [\n        {\n          \"type\": \"ECOSYSTEM\",\n          \"events\": [\n            {\n              \"introduced\": \"0\"\n            },\n            {\n              \"fixed\": \"2.1.4\"\n            }\n          ]\n        }\n      ],\n      \"versions\": [\n        \"0.12.0\",\n        \"0.12.1\",\n        \"1.0.0\",\n        \"1.0.1\",\n        \"1.1.0\",\n        \"1.10.0\",",
+        "cosine_similarity": 0.500196
+      },
+      {
+        "rank": 2,
+        "source_file": "GHSA-27j5-4p9v-pp67.json",
+        "chunk_id": 412,
+        "score": 0.471221,
+        "text": "fix will be included in TensorFlow 2.6.0. We will also cherrypick this commit on TensorFlow 2.5.1, TensorFlow 2.4.3, and TensorFlow 2.3.4, as these are also affected and still in supported range.\\n\\n### For more information \\nPlease consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md) for more information regarding the security model and how to contact us with issues and questions.\\n\\n### Attribution\\nThis vulnerability has been reported by members of the Aivul Team from Qihoo 360.\",\n  \"affected\": [\n    {\n      \"package\": {\n        \"name\": \"tensorflow\",\n        \"ecosystem\": \"PyPI\",\n        \"purl\": \"pkg:pypi/tensorflow\"\n      },\n      \"ranges\": [\n        {\n          \"type\": \"ECOSYSTEM\",\n          \"events\": [\n            {\n              \"introduced\": \"0\"\n            },\n            {\n              \"fixed\": \"2.3.4\"\n            }\n          ]\n        }\n      ],\n      \"versions\": [\n        \"0.12.0\",\n        \"0.12.1\",\n        \"1.0.0\",\n        \"1.0.1\",\n        \"1.1.0\",\n        \"1.10.0\",\n        \"1.10.1\",",
+        "cosine_similarity": 0.491312
+      },
+      {
+        "rank": 3,
+        "source_file": "GHSA-278g-rq84-9hmg.json",
+        "chunk_id": 376,
+        "score": 0.456093,
+        "text": "fix will be included in TensorFlow 2.6.0. We will also cherrypick this commit on TensorFlow 2.5.1, TensorFlow 2.4.3, and TensorFlow 2.3.4, as these are also affected and still in supported range.\\n\\n### For more information\\nPlease consult [our security  guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md) for more information regarding the security model and how to contact us with issues and questions.\\n\\n### Attribution\\nThis vulnerability has been reported by Ying Wang and Yakun Zhang of Baidu X-Team.\",\n  \"affected\": [\n    {\n      \"package\": {\n        \"name\": \"tensorflow\",\n        \"ecosystem\": \"PyPI\",\n        \"purl\": \"pkg:pypi/tensorflow\"\n      },\n      \"ranges\": [\n        {\n          \"type\": \"ECOSYSTEM\",\n          \"events\": [\n            {\n              \"introduced\": \"0\"\n            },\n            {\n              \"fixed\": \"2.3.4\"\n            }\n          ]\n        }\n      ],\n      \"versions\": [\n        \"0.12.0\",\n        \"0.12.1\",\n        \"1.0.0\",\n        \"1.0.1\",\n        \"1.1.0\",\n        \"1.10.0\",\n        \"1.10.1\",",
+        "cosine_similarity": 0.482114
+      }
+    ]
+  },
+  {
+    "question_id": "q5",
+    "top_k": 3,
+    "chunks": [
+      {
+        "rank": 1,
+        "source_file": "GHSA-23m2-mghx-vqmf.json",
+        "chunk_id": 105,
+        "score": 0.140956,
+        "text": "# Add this before the Wagtail admin URLs registration, with the same sub-path.\\n    path(\\\"admin/images/<int:image_id>/generate_url/output/\\\", disabled_output),\\n    path(\\\"admin/\\\", include(wagtailadmin_urls)),\\n]\\n```\\n\\n### Acknowledgements\\n\\nMany thanks to Thibaud Colas (@thibaudcolas) for reporting this issue.\\n\\n### For more information\\n\\nIf you have any questions or comments about this advisory:\\n\\n- Visit Wagtail's [support channels](https://docs.wagtail.org/en/stable/support.html)\\n- Email us at [security@wagtail.org](mailto:security@wagtail.org) (view our [security policy](https://github.com/wagtail/wagtail/security/policy) for more information).\",\n  \"affected\": [\n    {\n      \"package\": {\n        \"name\": \"wagtail\",\n        \"ecosystem\": \"PyPI\",\n        \"purl\": \"pkg:pypi/wagtail\"\n      },\n      \"ranges\": [\n        {\n          \"type\": \"ECOSYSTEM\",\n          \"events\": [\n            {\n              \"introduced\": \"7.3\"\n            },\n            {\n              \"fixed\": \"7.3.3\"\n            }\n          ]\n        }\n      ],\n      \"versions\": [\n        \"7.3\",\n        \"7.3.1\",\n        \"7.3.2\"\n      ],",
+        "cosine_similarity": 0.144064
+      },
+      {
+        "rank": 2,
+        "source_file": "GHSA-2c9q-c2q9-qgqv.json",
+        "chunk_id": 578,
+        "score": 0.136091,
+        "text": "by another user, beyond the requesting user's authorization scope.\\n- Confidentiality: limited exposure of another user's thread metadata, incorporated into the created run record.\\n\\n## Patches / mitigation\\n\\nThe webhook URL policy now denies loopback delivery by default: the `webhooks.url.disable_loopback` policy defaults to enabled. This covers relative webhook targets routed through the in-process transport, as well as localhost-style hostnames, loopback address ranges, and hostnames that resolve into the loopback range. Deployments that legitimately deliver webhooks to a route hosted on the same process can opt back in by setting `webhooks.url.disable_loopback: false` in `langgraph.json` (or the equivalent `LANGGRAPH_WEBHOOKS` configuration); do so only when you control the routes those webhooks reach, as they are delivered without authentication. Fixed in `langgraph-api` 0.10.0.\\n\\n## Operational guidance\\n\\n- Upgrade to a release containing this change and keep loopback webhook delivery disabled unless required.\\n- If loopback delivery is enabled, restrict it to routes you control and apply authorization within those routes.\",\n  \"affected\": [\n    {\n      \"package\": {\n        \"name\": \"langgraph-api\",\n        \"ecosystem\": \"PyPI\",\n        \"purl\": \"pkg:pypi/langgraph-api\"\n      },\n      \"ranges\": [\n        {\n          \"type\": \"ECOSYSTEM\",\n          \"events\": [\n            {\n              \"introduced\": \"0\"\n            },\n            {\n              \"fixed\": \"0.10.0\"\n            }\n          ]\n        }\n      ],\n      \"versions\": [",
+        "cosine_similarity": 0.123708
+      },
+      {
+        "rank": 3,
+        "source_file": "GHSA-22p9-r2f5-22mf.json",
+        "chunk_id": 77,
+        "score": 0.133566,
+        "text": "generally needs the OnionShare URL/private key unless the user intentionally runs public mode; `UI:R` because the OnionShare user must select/start sharing the affected directory; `S:U` because the same local process reads and serves the file; `C:H` because the symlink can point at high-value readable local secrets; `I:N/A:N` because the confirmed impact is unintended read/disclosure.\\n\\n### PoC\\nThe following safe local proof uses only temporary files and Flask's local test client. In this audit environment, several runtime dependencies were absent (`waitress`, `flask_compress`, `flask_socketio`, `unidecode`, `stem`, `qrcode`), so the harness stubbed those imports while executing the real `send_base_mode`, `website_mode`, and `share_mode` vulnerable code paths. No external network traffic was sent and no real secrets were read.\\n\\nMaintainer reproduction from a clean checkout with normal dependencies can omit the import stubs and run the same object/test-client setup, or can start OnionShare locally with a temporary directory containing the symlink.\\n\\nPositive setup and trigger:\\n```python\\nimport os, tempfile, shutil\\nfrom onionshare_cli.common import Common\\nfrom onionshare_cli.settings import Settings\\nfrom onionshare_cli.mode_settings import ModeSettings\\nfrom onionshare_cli.web import Web\\n\\nbase = tempfile.mkdtemp(prefix='os-symlink-final-poc-')\\noutside = os.path.join(base, 'outside-secret.txt')\\nroot = os.path.join(base, 'site')\\nos.mkdir(root)\\nopen(outside, 'w').write('OUTSIDE_SECRET_MARKER')\\nos.symlink(outside, os.path.join(root, 'link.txt'))\\n\\ncommon = Common()\\ncommon.settings = Settings(common)\\n\\nw = Web(common, False, ModeSettings(common), 'website')\\nw.app.testing = True\\nw.website_mode.set_file_info([root])\\nwith w.app.test_client() as c:\\n    print(c.get('/link.txt').status_code)\\n    print(c.get('/link.txt').get_data(as_text=True))\\n\\ns = Web(common, False, ModeSettings(common), 'share')\\ns.app.testing = True\\ns.share_mode.set_file_info([root])\\nwith",
+        "cosine_similarity": 0.108549
+      }
+    ]
+  },
+  {
+    "question_id": "q6",
+    "top_k": 3,
+    "chunks": [
+      {
+        "rank": 1,
+        "source_file": "GHSA-24c9-2m8q-qhmh.json",
+        "chunk_id": 168,
+        "score": 0.154742,
+        "text": "},\n    {\n      \"type\": \"WEB\",\n      \"url\": \"https://github.com/open-webui/open-webui/releases/tag/v0.9.0\"\n    }\n  ],\n  \"database_specific\": {\n    \"cwe_ids\": [\n      \"CWE-918\"\n    ],\n    \"github_reviewed\": true,\n    \"github_reviewed_at\": \"2026-05-14T20:19:56Z\",\n    \"nvd_published_at\": \"2026-05-15T22:16:54Z\",\n    \"severity\": \"HIGH\"\n  },\n  \"severity\": [\n    {\n      \"type\": \"CVSS_V3\",\n      \"score\": \"CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N\"\n    }\n  ]\n}",
+        "cosine_similarity": 0.176036
+      },
+      {
+        "rank": 2,
+        "source_file": "GHSA-2jgc-f764-c5r2.json",
+        "chunk_id": 817,
+        "score": 0.152458,
+        "text": "\"url\": \"https://github.com/MervinPraison/PraisonAI\"\n    },\n    {\n      \"type\": \"WEB\",\n      \"url\": \"https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58\"\n    }\n  ],\n  \"database_specific\": {\n    \"cwe_ids\": [\n      \"CWE-306\"\n    ],\n    \"github_reviewed\": true,\n    \"github_reviewed_at\": \"2026-08-25T15:14:27Z\",\n    \"nvd_published_at\": null,\n    \"severity\": \"HIGH\"\n  },\n  \"severity\": [\n    {\n      \"type\": \"CVSS_V3\",\n      \"score\": \"CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H\"\n    }\n  ]\n}",
+        "cosine_similarity": 0.155919
+      },
+      {
+        "rank": 3,
+        "source_file": "GHSA-247x-2f9f-5wp7.json",
+        "chunk_id": 155,
+        "score": 0.15073,
+        "text": "\"nvd_published_at\": \"2022-02-04T23:15:00Z\",\n    \"severity\": \"HIGH\"\n  },\n  \"severity\": [\n    {\n      \"type\": \"CVSS_V3\",\n      \"score\": \"CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H\"\n    },\n    {\n      \"type\": \"CVSS_V4\",\n      \"score\": \"CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N\"\n    }\n  ]\n}",
+        "cosine_similarity": 0.174274
+      }
+    ]
+  }
+]

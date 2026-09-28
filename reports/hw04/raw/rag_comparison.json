@@ -1,0 +1,312 @@
+[
+  {
+    "question_id": "q1",
+    "question_type": "one_chunk",
+    "configuration": "No-RAG",
+    "top_k": 3,
+    "latency_ms": 191664.052,
+    "error": null,
+    "correct_retrieval": true,
+    "correct_answer_heuristic": false,
+    "grounded": false,
+    "refused_when_needed": null,
+    "retrieved_sources": [
+      "GHSA-24x4-6qmh-88qg.json",
+      "GHSA-2599-h6xx-hpxp.json"
+    ],
+    "answer": "The Poetry advisory recommends upgrading to Poetry version 1.2.0 or later to fix the wheel path-traversal vulnerability. The fix involves sanitizing paths to prevent traversal attacks."
+  },
+  {
+    "question_id": "q1",
+    "question_type": "one_chunk",
+    "configuration": "Basic-RAG",
+    "top_k": 3,
+    "latency_ms": 131705.848,
+    "error": null,
+    "correct_retrieval": true,
+    "correct_answer_heuristic": true,
+    "grounded": false,
+    "refused_when_needed": null,
+    "retrieved_sources": [
+      "GHSA-24x4-6qmh-88qg.json",
+      "GHSA-2599-h6xx-hpxp.json"
+    ],
+    "answer": "The Poetry advisory recommends resolving target paths and ensuring they are within the target directory to prevent path traversal. This fix is included in Poetry versions **2.3.3 and newer**."
+  },
+  {
+    "question_id": "q1",
+    "question_type": "one_chunk",
+    "configuration": "Context-RAG",
+    "top_k": 3,
+    "latency_ms": 117212.967,
+    "error": null,
+    "correct_retrieval": true,
+    "correct_answer_heuristic": true,
+    "grounded": true,
+    "refused_when_needed": null,
+    "retrieved_sources": [
+      "GHSA-2599-h6xx-hpxp.json"
+    ],
+    "answer": "The Poetry advisory recommends that versions 2.3.3 and newer resolve target paths and ensure they are contained within the target directory to prevent arbitrary file writes via path traversal in wheels. This fix is included in Poetry versions 2.3.3 and newer.  \nSource: [Source 1](#source1)"
+  },
+  {
+    "question_id": "q2",
+    "question_type": "two_chunks",
+    "configuration": "No-RAG",
+    "top_k": 3,
+    "latency_ms": 200978.798,
+    "error": null,
+    "correct_retrieval": true,
+    "correct_answer_heuristic": false,
+    "grounded": false,
+    "refused_when_needed": null,
+    "retrieved_sources": [
+      "GHSA-29h4-r29x-hchv.json",
+      "GHSA-29w2-fq35-v728.json"
+    ],
+    "answer": "The amazon-redshift-python-driver vulnerability (CVE-2021-3485) allows remote code execution (RCE) via crafted queries that exploit improper input handling, enabling attackers to inject and execute arbitrary code. Affected versions are **before 2.0.0**, with patches available in **2.0.1 and later**."
+  },
+  {
+    "question_id": "q2",
+    "question_type": "two_chunks",
+    "configuration": "Basic-RAG",
+    "top_k": 3,
+    "latency_ms": 116789.272,
+    "error": null,
+    "correct_retrieval": true,
+    "correct_answer_heuristic": true,
+    "grounded": false,
+    "refused_when_needed": null,
+    "retrieved_sources": [
+      "GHSA-29h4-r29x-hchv.json",
+      "GHSA-29w2-fq35-v728.json"
+    ],
+    "answer": "The **amazon-redshift-python-driver** vulnerability allows remote code execution (RCE) via **eval() injection** when insufficiently validating data from a rogue server or man-in-the-middle. Attackers can craft malicious query responses to execute arbitrary code on the client. **Affected versions**: <= 2.1.13. The vulnerability is fixed in version **2.1.14**."
+  },
+  {
+    "question_id": "q2",
+    "question_type": "two_chunks",
+    "configuration": "Context-RAG",
+    "top_k": 3,
+    "latency_ms": 142332.12,
+    "error": null,
+    "correct_retrieval": true,
+    "correct_answer_heuristic": true,
+    "grounded": true,
+    "refused_when_needed": null,
+    "retrieved_sources": [
+      "GHSA-29h4-r29x-hchv.json"
+    ],
+    "answer": "The amazon-redshift-python-driver vulnerability allows remote code execution (RCE) via **eval() injection**. When a client connects to a rogue server or a man-in-the-middle intercepts communication, the server can send specially crafted query responses. The driver processes these responses without adequate input validation, enabling the execution of arbitrary code in the client process. This could lead to command execution, file system access, or credential theft with the client application's privileges (Source 1).  \n\n**Affected versions**: All versions **<= 2.1.13** (Source 1). The vulnerability is fixed in version 2.1.14."
+  },
+  {
+    "question_id": "q3",
+    "question_type": "similar_across_documents",
+    "configuration": "No-RAG",
+    "top_k": 3,
+    "latency_ms": 138576.132,
+    "error": null,
+    "correct_retrieval": false,
+    "correct_answer_heuristic": true,
+    "grounded": false,
+    "refused_when_needed": null,
+    "retrieved_sources": [
+      "GHSA-24c9-2m8q-qhmh.json"
+    ],
+    "answer": "Both Open WebUI and Pydantic AI can enable SSRF if they accept unvalidated user-provided URLs for processing (e.g., profile pictures or downloads). Open WebUI might process URLs without checking if they point to internal services, allowing attackers to craft URLs like `http://localhost/admin` to access internal resources. Similarly, Pydantic AI's URL-download functionality could blindly fetch user-supplied URLs, bypassing validation to trigger SSRF if the URL targets internal APIs or services. The core risk is trusting user input without validating origins, enabling malicious requests to internal systems."
+  },
+  {
+    "question_id": "q3",
+    "question_type": "similar_across_documents",
+    "configuration": "Basic-RAG",
+    "top_k": 3,
+    "latency_ms": 230273.826,
+    "error": null,
+    "correct_retrieval": false,
+    "correct_answer_heuristic": true,
+    "grounded": false,
+    "refused_when_needed": null,
+    "retrieved_sources": [
+      "GHSA-24c9-2m8q-qhmh.json"
+    ],
+    "answer": "Both Open WebUI's profile-picture processing and Pydantic AI's URL-download functionality can cause SSRF if they fetch unvalidated URLs. In Open WebUI, the `_process_picture_url()` function directly uses OAuth `picture` claims without validating the URL, allowing attackers to inject internal endpoints (e.g., cloud metadata or internal APIs). Similarly, Pydantic AI's URL-download feature might accept untrusted URLs from user inputs or APIs without validation, enabling SSRF by forcing the server to request internal resources. The core issue is the absence of URL validation, allowing malicious URLs to bypass SSRF protections."
+  },
+  {
+    "question_id": "q3",
+    "question_type": "similar_across_documents",
+    "configuration": "Context-RAG",
+    "top_k": 3,
+    "latency_ms": 176338.898,
+    "error": null,
+    "correct_retrieval": false,
+    "correct_answer_heuristic": false,
+    "grounded": true,
+    "refused_when_needed": null,
+    "retrieved_sources": [
+      "GHSA-24c9-2m8q-qhmh.json"
+    ],
+    "answer": "I cannot answer this question from the provided documents\n\nThe context only discusses the Open WebUI SSRF vulnerability in its OAuth profile-picture processing (Source 1, 2, 3) and does not mention Pydantic AI or its URL-download functionality. Without information about Pydantic AI's implementation, a comparison cannot be made."
+  },
+  {
+    "question_id": "q4",
+    "question_type": "ambiguous",
+    "configuration": "No-RAG",
+    "top_k": 3,
+    "latency_ms": 88525.035,
+    "error": null,
+    "correct_retrieval": null,
+    "correct_answer_heuristic": false,
+    "grounded": false,
+    "refused_when_needed": false,
+    "retrieved_sources": [
+      "GHSA-24x6-8c7m-hv3f.json",
+      "GHSA-278g-rq84-9hmg.json",
+      "GHSA-27j5-4p9v-pp67.json"
+    ],
+    "answer": "To provide a specific fix, please identify the vulnerability (e.g., SQL injection, XSS, buffer overflow, etc.). Without details, a general answer cannot be given."
+  },
+  {
+    "question_id": "q4",
+    "question_type": "ambiguous",
+    "configuration": "Basic-RAG",
+    "top_k": 3,
+    "latency_ms": 227796.028,
+    "error": null,
+    "correct_retrieval": null,
+    "correct_answer_heuristic": false,
+    "grounded": false,
+    "refused_when_needed": false,
+    "retrieved_sources": [
+      "GHSA-24x6-8c7m-hv3f.json",
+      "GHSA-278g-rq84-9hmg.json",
+      "GHSA-27j5-4p9v-pp67.json"
+    ],
+    "answer": "The fix for the vulnerability is included in TensorFlow 2.5.0 and cherry-picked into affected versions 2.4.2, 2.3.3, 2.2.3, 2.1.4, 2.5.1, 2.4.3, and 2.3.4. The specific fix details are not provided in the context."
+  },
+  {
+    "question_id": "q4",
+    "question_type": "ambiguous",
+    "configuration": "Context-RAG",
+    "top_k": 3,
+    "latency_ms": 320786.659,
+    "error": null,
+    "correct_retrieval": null,
+    "correct_answer_heuristic": false,
+    "grounded": false,
+    "refused_when_needed": false,
+    "retrieved_sources": [
+      "GHSA-24x6-8c7m-hv3f.json",
+      "GHSA-278g-rq84-9hmg.json",
+      "GHSA-27j5-4p9v-pp67.json"
+    ],
+    "answer": "The fix for the vulnerability is included in TensorFlow versions 2.5.0 and specific older versions (2.4.2, 2.3.3, 2.2.3, 2.1.4) as mentioned in the sources. Additionally, the fix is also included in TensorFlow 2.6.0 and cherrypicked for versions 2.5.1, 2.4.3, and 2.3.4. The exact nature of the fix is not detailed in the provided context."
+  },
+  {
+    "question_id": "q5",
+    "question_type": "not_in_documents",
+    "configuration": "No-RAG",
+    "top_k": 3,
+    "latency_ms": 63054.887,
+    "error": null,
+    "correct_retrieval": null,
+    "correct_answer_heuristic": false,
+    "grounded": false,
+    "refused_when_needed": false,
+    "retrieved_sources": [
+      "GHSA-22p9-r2f5-22mf.json",
+      "GHSA-23m2-mghx-vqmf.json",
+      "GHSA-2c9q-c2q9-qgqv.json"
+    ],
+    "answer": "The university's spring-semester tuition refund policy typically provides refunds based on withdrawal dates, with percentages decreasing as the semester progresses. For example, full refunds may be available within the first few weeks, partial refunds for later withdrawals, and no refunds after specific deadlines. Exact details vary by institution and should be confirmed on the university's financial aid or registration website."
+  },
+  {
+    "question_id": "q5",
+    "question_type": "not_in_documents",
+    "configuration": "Basic-RAG",
+    "top_k": 3,
+    "latency_ms": 60732.407,
+    "error": null,
+    "correct_retrieval": null,
+    "correct_answer_heuristic": false,
+    "grounded": false,
+    "refused_when_needed": false,
+    "retrieved_sources": [
+      "GHSA-22p9-r2f5-22mf.json",
+      "GHSA-23m2-mghx-vqmf.json",
+      "GHSA-2c9q-c2q9-qgqv.json"
+    ],
+    "answer": "The provided context does not contain information about a university's spring-semester tuition refund policy."
+  },
+  {
+    "question_id": "q5",
+    "question_type": "not_in_documents",
+    "configuration": "Context-RAG",
+    "top_k": 3,
+    "latency_ms": 60116.52,
+    "error": null,
+    "correct_retrieval": null,
+    "correct_answer_heuristic": true,
+    "grounded": true,
+    "refused_when_needed": true,
+    "retrieved_sources": [
+      "GHSA-22p9-r2f5-22mf.json",
+      "GHSA-23m2-mghx-vqmf.json",
+      "GHSA-2c9q-c2q9-qgqv.json"
+    ],
+    "answer": "I cannot answer this question from the provided documents"
+  },
+  {
+    "question_id": "q6",
+    "question_type": "unrelated",
+    "configuration": "No-RAG",
+    "top_k": 3,
+    "latency_ms": 37286.488,
+    "error": null,
+    "correct_retrieval": null,
+    "correct_answer_heuristic": false,
+    "grounded": false,
+    "refused_when_needed": false,
+    "retrieved_sources": [
+      "GHSA-247x-2f9f-5wp7.json",
+      "GHSA-24c9-2m8q-qhmh.json",
+      "GHSA-2jgc-f764-c5r2.json"
+    ],
+    "answer": "The weather in San Jose today is partly cloudy with a high of 72°F and a low of 58°F, and there is a chance of rain in the evening."
+  },
+  {
+    "question_id": "q6",
+    "question_type": "unrelated",
+    "configuration": "Basic-RAG",
+    "top_k": 3,
+    "latency_ms": 48498.369,
+    "error": null,
+    "correct_retrieval": null,
+    "correct_answer_heuristic": false,
+    "grounded": false,
+    "refused_when_needed": false,
+    "retrieved_sources": [
+      "GHSA-247x-2f9f-5wp7.json",
+      "GHSA-24c9-2m8q-qhmh.json",
+      "GHSA-2jgc-f764-c5r2.json"
+    ],
+    "answer": "The provided context does not contain any information about the weather in San Jose."
+  },
+  {
+    "question_id": "q6",
+    "question_type": "unrelated",
+    "configuration": "Context-RAG",
+    "top_k": 3,
+    "latency_ms": 45641.195,
+    "error": null,
+    "correct_retrieval": null,
+    "correct_answer_heuristic": true,
+    "grounded": true,
+    "refused_when_needed": true,
+    "retrieved_sources": [
+      "GHSA-247x-2f9f-5wp7.json",
+      "GHSA-24c9-2m8q-qhmh.json",
+      "GHSA-2jgc-f764-c5r2.json"
+    ],
+    "answer": "I cannot answer this question from the provided documents"
+  }
+]

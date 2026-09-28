@@ -1,0 +1,2 @@
+﻿id	select_type	table	partitions	type	possible_keys	key	key_len	ref	rows	filtered	Extra
+1	SIMPLE	vulnerability_reports	NULL	ref	idx_vulnerability_reports_package_name	idx_vulnerability_reports_package_name	1022	const	1	100.00	NULL
