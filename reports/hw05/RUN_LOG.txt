@@ -1,0 +1,68 @@
+DATA 260 Homework 5 Run Log
+Student: Vrishin KP
+Project: Package Vulnerability Reporting Platform
+
+Date:
+September 30, 2026
+
+1. Backend startup
+
+Command:
+uvicorn main:app --host 127.0.0.1 --port 8744
+
+Result:
+FastAPI started successfully on port 8744.
+
+2. Frontend startup
+
+Command:
+npm run dev
+
+Result:
+Vite frontend started successfully at http://localhost:5173.
+
+3. Frontend production build
+
+Command:
+npm run build
+
+Result:
+Build completed successfully.
+95 modules were transformed.
+
+4. Login and report loading
+
+Result:
+Logged in with the demo user and confirmed that vulnerability reports loaded on the Home page.
+
+5. Update test
+
+Result:
+Updated a vulnerability report and changed the affected versions count to 5.
+The value was saved by the backend and displayed correctly after reopening the report.
+
+6. Create test
+
+Result:
+Created a new vulnerability report using a unique vulnerability ID.
+The new report appeared on the Home page.
+
+7. Delete test
+
+Result:
+Opened the delete confirmation page, deleted the test report, and confirmed that it no longer appeared in the report list.
+
+8. Issue resolved during testing
+
+The affected versions count initially remained at zero after an update.
+The backend update function was corrected to save the value and update the timestamp.
+The backend was restarted and the update test was repeated successfully.
+
+9. Final status
+
+Frontend build: Passed
+Login: Passed
+Report loading: Passed
+Create: Passed
+Update: Passed
+Delete: Passed

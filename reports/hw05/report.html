@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KunnathamParambath_HW5</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 24px;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    h1,
+    h2 {
+      color: #17365d;
+    }
+
+    h1 {
+      border-bottom: 3px solid #17365d;
+      padding-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 36px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+    }
+
+    th,
+    td {
+      border: 1px solid #bbb;
+      padding: 9px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #eaf1f8;
+    }
+
+    figure {
+      margin: 28px 0;
+      page-break-inside: avoid;
+    }
+
+    figure img {
+      max-width: 100%;
+      border: 1px solid #aaa;
+      display: block;
+    }
+
+    figcaption {
+      margin-top: 8px;
+      font-weight: bold;
+    }
+
+    code {
+      background: #f1f1f1;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+
+    .result {
+      color: #176b32;
+      font-weight: bold;
+    }
+
+    .note {
+      background: #f5f8fb;
+      border-left: 4px solid #17365d;
+      padding: 12px 16px;
+      margin: 18px 0;
+    }
+
+    @media print {
+      body {
+        margin: 20px;
+      }
+
+      figure {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>DATA 260 Homework 5</h1>
+
+  <p>
+    <strong>Student:</strong> Vrishin KP<br>
+    <strong>Project:</strong> Package Vulnerability Reporting Platform<br>
+    <strong>Technology:</strong> FastAPI, SQLAlchemy, MySQL, React, Redux Toolkit, Axios, and Vite
+  </p>
+
+  <h2>1. Objective</h2>
+
+  <p>
+    The main goal of this homework was to improve the existing vulnerability
+    reporting application by connecting the React frontend to Redux Toolkit.
+    In the earlier version, some report information and CRUD actions were handled
+    directly inside individual pages. For this homework, I moved the main report
+    state and report operations into Redux so that the application has a more
+    organized and predictable data flow.
+  </p>
+
+  <p>
+    This change also helped connect the frontend and backend more clearly.
+    The React pages collect user input, Redux manages the application state,
+    Axios sends the request, and FastAPI performs the database operation.
+    I also added the new HW5 fields required by the backend, including the
+    package ID and affected versions count.
+  </p>
+
+  <h2>2. Implemented Features</h2>
+
+  <p>
+    I implemented the following features and checked each one through the
+    running application:
+  </p>
+
+  <ul>
+    <li>Connected the report list to the Redux store.</li>
+    <li>Added Redux thunks for loading, creating, updating, and deleting reports.</li>
+    <li>Added package ID support to the create and update forms.</li>
+    <li>Added affected-version count support.</li>
+    <li>Updated the backend update function to save affected-version counts.</li>
+    <li>Updated the backend timestamp when a report is modified.</li>
+    <li>Connected the delete screen to the Redux delete thunk.</li>
+    <li>Verified the production frontend build using Vite.</li>
+  </ul>
+
+  <p>
+    One important part of the work was making sure that the update form did not
+    only display the new fields but also sent them to the backend. During testing,
+    I found that the affected-version count was still being saved as zero.
+    I corrected the backend update function and then verified that the value
+    was saved and displayed correctly.
+  </p>
+
+  <h2>3. Redux Data Flow</h2>
+
+  <p>
+    Redux is now used as the central place for the report list and report
+    operations. When a user performs an action, the page calls a handler in
+    <code>App.jsx</code>. That handler dispatches a Redux thunk. The thunk calls
+    the Axios API function, and the result is stored back in the Redux state.
+  </p>
+
+  <p>
+    This structure keeps the page components focused on displaying forms and
+    collecting input. It also means that the report list can be updated after
+    creating, editing, or deleting a report without keeping separate copies of
+    the same data in multiple components.
+  </p>
+
+  <table>
+    <tr>
+      <th>Operation</th>
+      <th>Frontend flow</th>
+      <th>Backend result</th>
+    </tr>
+
+    <tr>
+      <td>Load</td>
+      <td><code>fetchReports()</code></td>
+      <td>GET vulnerability reports</td>
+    </tr>
+
+    <tr>
+      <td>Create</td>
+      <td><code>addReport(payload)</code></td>
+      <td>POST a new vulnerability report</td>
+    </tr>
+
+    <tr>
+      <td>Update</td>
+      <td><code>editReport({ id, payload })</code></td>
+      <td>PUT updated report data</td>
+    </tr>
+
+    <tr>
+      <td>Delete</td>
+      <td><code>removeReport(id)</code></td>
+      <td>DELETE the selected report</td>
+    </tr>
+  </table>
+
+  <div class="note">
+    The final request path is:
+    page component → App.jsx → Redux thunk → Axios API function →
+    FastAPI endpoint → database.
+  </div>
+
+  <h2>4. Verification Results</h2>
+
+  <p>
+    I tested the application through the browser using the local React frontend
+    and FastAPI backend. The tests were performed after logging in with the
+    demo account. The results below show what happened during each test.
+  </p>
+
+  <table>
+    <tr>
+      <th>Test</th>
+      <th>Result</th>
+      <th>Evidence</th>
+    </tr>
+
+    <tr>
+      <td>User login and report loading</td>
+      <td class="result">Passed</td>
+      <td>
+        The authenticated Home page opened and displayed vulnerability reports.
+      </td>
+    </tr>
+
+    <tr>
+      <td>Update report</td>
+      <td class="result">Passed</td>
+      <td>
+        The affected versions count was changed to 5 and displayed correctly
+        after the update.
+      </td>
+    </tr>
+
+    <tr>
+      <td>Create report</td>
+      <td class="result">Passed</td>
+      <td>
+        A new report with a unique vulnerability ID appeared in the report list.
+      </td>
+    </tr>
+
+    <tr>
+      <td>Delete report</td>
+      <td class="result">Passed</td>
+      <td>
+        The selected report was deleted and no longer appeared on the Home page.
+      </td>
+    </tr>
+
+    <tr>
+      <td>Production build</td>
+      <td class="result">Passed</td>
+      <td>
+        Vite completed successfully with 95 modules transformed.
+      </td>
+    </tr>
+  </table>
+
+  <h2>5. Test Evidence</h2>
+
+  <p>
+    The following screenshots document the main tests performed in the browser.
+    Sensitive information such as passwords and authentication tokens was not
+    included in the screenshots.
+  </p>
+
+  <figure>
+    <img
+      src="screenshots/01-home-reports.png"
+      alt="Home page showing vulnerability reports"
+    >
+    <figcaption>
+      Figure 1. Authenticated Home page showing the vulnerability reports.
+    </figcaption>
+  </figure>
+
+  <figure>
+    <img
+      src="screenshots/02-update-form.png"
+      alt="Update form showing affected versions count"
+    >
+    <figcaption>
+      Figure 2. Update form showing the affected versions count set to 5.
+    </figcaption>
+  </figure>
+
+  <figure>
+    <img
+      src="screenshots/03-created-report.png"
+      alt="Home page showing newly created report"
+    >
+    <figcaption>
+      Figure 3. Home page showing the newly created vulnerability report.
+    </figcaption>
+  </figure>
+
+  <figure>
+    <img
+      src="screenshots/04-delete-confirmation.png"
+      alt="Delete confirmation page"
+    >
+    <figcaption>
+      Figure 4. Delete confirmation page before removing the report.
+    </figcaption>
+  </figure>
+
+  <figure>
+    <img
+      src="screenshots/05-after-delete.png"
+      alt="Home page after deleting a report"
+    >
+    <figcaption>
+      Figure 5. Home page after deletion, showing that the report was removed.
+    </figcaption>
+  </figure>
+
+  <figure>
+    <img
+      src="screenshots/06-build-success.png"
+      alt="Successful Vite build output"
+    >
+    <figcaption>
+      Figure 6. Successful production build using
+      <code>npm run build</code>.
+    </figcaption>
+  </figure>
+
+  <h2>6. Important Project Files</h2>
+
+  <p>
+    The following files were important to the HW5 implementation. Each file
+    contributed to a different part of the frontend or backend workflow.
+  </p>
+
+  <ul>
+    <li>
+      <code>frontend/src/App.jsx</code> -
+      connects the application pages to Redux actions and selectors.
+    </li>
+
+    <li>
+      <code>frontend/src/features/reports/reportsSlice.js</code> -
+      stores report state and defines the asynchronous Redux thunks.
+    </li>
+
+    <li>
+      <code>frontend/src/store/store.js</code> -
+      configures the Redux store for the React application.
+    </li>
+
+    <li>
+      <code>frontend/src/pages/CreateRecord.jsx</code> -
+      collects the fields needed to create a vulnerability report.
+    </li>
+
+    <li>
+      <code>frontend/src/pages/UpdateRecord.jsx</code> -
+      loads an existing report and submits updated values.
+    </li>
+
+    <li>
+      <code>frontend/src/pages/DeleteRecord.jsx</code> -
+      displays the delete confirmation and calls the Redux delete handler.
+    </li>
+
+    <li>
+      <code>code/web_application/crud_hw4.py</code> -
+      performs the database create, read, update, and delete operations.
+    </li>
+
+    <li>
+      <code>code/web_application/schemas.py</code> -
+      validates the request and response data used by the API.
+    </li>
+  </ul>
+
+  <h2>7. Challenges and Fixes</h2>
+
+  <p>
+    The main issue found during testing was that the affected versions count
+    appeared as zero after updating a report. At first, the frontend form was
+    sending the value, but the backend update function was not assigning the
+    value to the database object.
+  </p>
+
+  <p>
+    I corrected the backend update logic so that it saves
+    <code>affected_versions_count</code> and updates the report timestamp.
+    After restarting the backend, I repeated the browser test and confirmed
+    that the value 5 was saved and displayed correctly.
+  </p>
+
+  <p>
+    Another small issue occurred while editing the delete page. The file was
+    accidentally opened from a nested frontend path. I moved the corrected file
+    into the actual <code>frontend/src/pages</code> directory, removed the
+    accidental duplicate folder, rebuilt the frontend, and confirmed that the
+    build still passed.
+  </p>
+
+  <h2>9. Submission Information</h2>
+
+<p>
+  This submission was prepared on the HW5 development branch. The final
+  version will be identified in Git using the annotated submission tag
+  <code>hw5</code>.
+</p>
+
+<table>
+  <tr>
+    <th>Repository</th>
+    <td>Viki2183/data260-8844</td>
+  </tr>
+  <tr>
+    <th>Branch</th>
+    <td><code>hw5-development</code></td>
+  </tr>
+  <tr>
+    <th>Submission tag</th>
+    <td><code>hw5</code></td>
+  </tr>
+  <tr>
+    <th>Report location</th>
+    <td><code>reports/hw05/</code></td>
+  </tr>
+</table>
+
+  <h2>8. Conclusion</h2>
+
+  <p>
+    Homework 5 was completed by integrating Redux Toolkit into the existing
+    vulnerability reporting application. The report list and CRUD operations
+    now follow a consistent Redux-based data flow.
+  </p>
+
+  <p>
+    The browser tests confirmed that a user can log in, view reports, create a
+    new report, update an existing report, save the affected versions count,
+    and delete a report. The final Vite production build also completed
+    successfully, confirming that the frontend code is valid and can be bundled
+    for deployment.
+  </p>
+
+</body>
+</html>

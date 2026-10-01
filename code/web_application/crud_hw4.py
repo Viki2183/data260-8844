@@ -140,33 +140,174 @@ def delete_session(
         db.delete(session)
         db.commit()
 
+def create_package(
+    db: Session,
+    payload: schemas.PackageCreate,
+) -> models.PackageDB:
+    """Create one package record."""
+    package = models.PackageDB(
+        name=payload.name.strip(),
+        ecosystem=payload.ecosystem.strip(),
+        package_code=payload.package_code.strip(),
+        created_at=datetime.utcnow(),
+        updated_at=datetime.utcnow(),
+    )
+
+    db.add(package)
+    db.commit()
+    db.refresh(package)
+
+    return package
+
+
+def list_packages(
+    db: Session,
+    skip: int = 0,
+    limit: int = 20,
+) -> list[models.PackageDB]:
+    """Return packages using offset-based pagination."""
+    return (
+        db.query(models.PackageDB)
+        .order_by(models.PackageDB.id.asc())
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+
+
+def get_package(
+    db: Session,
+    package_id: int,
+) -> models.PackageDB | None:
+    """Find one package by its primary key."""
+    return (
+        db.query(models.PackageDB)
+        .filter(models.PackageDB.id == package_id)
+        .first()
+    )
+
+
+def update_package(
+    db: Session,
+    package_id: int,
+    payload: schemas.PackageUpdate,
+) -> models.PackageDB | None:
+    """Update one package record."""
+    package = get_package(db, package_id)
+
+    if package is None:
+        return None
+
+    package.name = payload.name.strip()
+    package.ecosystem = payload.ecosystem.strip()
+    package.package_code = payload.package_code.strip()
+    package.updated_at = datetime.utcnow()
+
+    db.commit()
+    db.refresh(package)
+
+    return package
+
+
+def package_report_count(
+    db: Session,
+    package_id: int,
+) -> int:
+    """Count reports that currently reference a package."""
+    return (
+        db.query(models.VulnerabilityReportDB)
+        .filter(
+            models.VulnerabilityReportDB.package_id == package_id
+        )
+        .count()
+    )
+
+
+def delete_package(
+    db: Session,
+    package_id: int,
+) -> models.PackageDB | None:
+    """
+    Delete a package only when no vulnerability report uses it.
+
+    The route will convert the protected-delete condition into
+    an HTTP 409 Conflict response.
+    """
+    package = get_package(db, package_id)
+
+    if package is None:
+        return None
+
+    if package_report_count(db, package_id) > 0:
+        raise ValueError(
+            "This package cannot be deleted because vulnerability "
+            "reports still reference it."
+        )
+
+    db.delete(package)
+    db.commit()
+
+    return package
+
+
+def list_reports_by_package(
+    db: Session,
+    package_id: int,
+    skip: int = 0,
+    limit: int = 20,
+) -> list[models.VulnerabilityReportDB]:
+    """Return vulnerability reports associated with one package."""
+    return (
+        db.query(models.VulnerabilityReportDB)
+        .filter(
+            models.VulnerabilityReportDB.package_id == package_id
+        )
+        .order_by(models.VulnerabilityReportDB.id.asc())
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+
 
 def create_report(
     db: Session,
     payload: schemas.VulnerabilityReportCreate,
 ) -> models.VulnerabilityReportDB:
-    """Persist one vulnerability report."""
+    """Persist one vulnerability report with its package relationship."""
+    package = get_package(db, payload.package_id)
+
+    if package is None:
+        raise ValueError("The selected package does not exist.")
+
+    now = datetime.utcnow()
+
     report = models.VulnerabilityReportDB(
-        package_name=payload.package_name,
+        package_name=package.name,
+        package_id=payload.package_id,
         vulnerability_id=payload.vulnerability_id,
         submitter_email=str(payload.submitter_email),
         vulnerability_description=payload.vulnerability_description,
         severity=payload.severity,
         terms_accepted=payload.terms_accepted,
-        submission_date=datetime.utcnow(),
+        affected_versions_count=payload.affected_versions_count,
+        submission_date=now,
+        created_at=now,
+        updated_at=now,
     )
 
     db.add(report)
     db.commit()
     db.refresh(report)
-    return report
 
+    return report
 
 def list_reports(
     db: Session,
     search: str | None = None,
+    skip: int = 0,
+    limit: int = 20,
 ) -> list[models.VulnerabilityReportDB]:
-    """Return reports, optionally filtered by package or advisory ID."""
+    """Return reports with optional search and pagination."""
     query = db.query(models.VulnerabilityReportDB)
 
     if search and search.strip():
@@ -180,10 +321,12 @@ def list_reports(
             )
         )
 
-    return query.order_by(
-        models.VulnerabilityReportDB.id.asc()
-    ).all()
-
+    return (
+        query.order_by(models.VulnerabilityReportDB.id.asc())
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
 
 def get_report(
     db: Session,
@@ -208,15 +351,28 @@ def update_report(
     if report is None:
         return None
 
-    report.package_name = payload.package_name
+    package = get_package(db, payload.package_id)
+
+    if package is None:
+        raise ValueError("The selected package does not exist.")
+
+    report.package_name = package.name
+    report.package_id = payload.package_id
     report.vulnerability_id = payload.vulnerability_id
     report.submitter_email = str(payload.submitter_email)
-    report.vulnerability_description = payload.vulnerability_description
+    report.vulnerability_description = (
+        payload.vulnerability_description
+    )
     report.severity = payload.severity
     report.terms_accepted = payload.terms_accepted
+    report.affected_versions_count = (
+        payload.affected_versions_count
+    )
+    report.updated_at = datetime.utcnow()
 
     db.commit()
     db.refresh(report)
+
     return report
 
 

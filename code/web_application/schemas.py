@@ -2,6 +2,69 @@
 
 from pydantic import BaseModel, ConfigDict, EmailStr, Field, field_validator
 
+class PackageBase(BaseModel):
+    """Shared validation fields for package records."""
+
+    name: str = Field(
+        ...,
+        min_length=1,
+        max_length=255,
+    )
+
+    ecosystem: str = Field(
+        ...,
+        min_length=1,
+        max_length=100,
+    )
+
+    package_code: str = Field(
+        ...,
+        alias="packageCode",
+        min_length=3,
+        max_length=255,
+        pattern=r"^s8844-[A-Za-z0-9][A-Za-z0-9._-]*$",
+    )
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+    )
+
+    @field_validator("name", "ecosystem", "package_code")
+    @classmethod
+    def reject_blank_package_text(cls, value: str) -> str:
+        """Reject package fields containing only whitespace."""
+        cleaned = value.strip()
+
+        if not cleaned:
+            raise ValueError("This field cannot be blank.")
+
+        return cleaned
+
+
+class PackageCreate(PackageBase):
+    """Payload for creating a package."""
+
+
+class PackageUpdate(PackageBase):
+    """Payload for updating a package."""
+
+
+class PackageOut(PackageBase):
+    """Package response returned by the API."""
+
+    id: int
+    created_at: datetime = Field(
+        alias="createdAt",
+    )
+    updated_at: datetime = Field(
+        alias="updatedAt",
+    )
+
+    model_config = ConfigDict(
+        from_attributes=True,
+        populate_by_name=True,
+    )
+
 
 class VulnerabilityReportBase(BaseModel):
     """Shared fields for creating and updating vulnerability reports."""
@@ -10,6 +73,12 @@ class VulnerabilityReportBase(BaseModel):
         ...,
         alias="packageName",
         min_length=1,
+    )
+
+    package_id: int = Field(
+        ...,
+        alias="packageId",
+        gt=0,
     )
 
     vulnerability_id: str = Field(
@@ -32,6 +101,12 @@ class VulnerabilityReportBase(BaseModel):
     severity: str = Field(
         ...,
         pattern="^(Critical|High|Medium|Low)$",
+    )
+
+    affected_versions_count: int = Field(
+        default=0,
+        alias="affectedVersionsCount",
+        ge=0,
     )
 
     terms_accepted: bool = Field(
@@ -89,10 +164,20 @@ class VulnerabilityReportOut(VulnerabilityReportBase):
     """Normal vulnerability report response."""
 
     id: int
+
+    
     submission_date: datetime = Field(
         alias="submissionDate",
     )
 
+    created_at: datetime = Field(
+        alias="createdAt",
+    )
+
+    updated_at: datetime = Field(
+        alias="updatedAt",
+    )
+    
     model_config = ConfigDict(
         from_attributes=True,
         populate_by_name=True,

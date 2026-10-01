@@ -1,18 +1,23 @@
 ﻿import { useState } from "react";
 
+
 const initialForm = {
   packageName: "",
+  packageId: "",
   vulnerabilityId: "",
   submitterEmail: "",
   vulnerabilityDescription: "",
   severity: "Medium",
+  affectedVersionsCount: 0,
   termsAccepted: false,
 };
+
 
 export default function CreateRecord({ onCreate }) {
   const [form, setForm] = useState(initialForm);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
+
 
   function updateField(event) {
     const { name, value, type, checked } = event.target;
@@ -23,24 +28,40 @@ export default function CreateRecord({ onCreate }) {
     }));
   }
 
+
   async function handleSubmit(event) {
     event.preventDefault();
     setError("");
     setBusy(true);
 
+    const payload = {
+      ...form,
+      packageId: Number(form.packageId),
+      affectedVersionsCount: Number(
+        form.affectedVersionsCount,
+      ),
+    };
+
     try {
-      await onCreate(form);
+      await onCreate(payload);
     } catch (requestError) {
-      const detail = requestError.response?.data?.detail;
-      setError(detail || "Unable to create the vulnerability report.");
+      const detail =
+        requestError.response?.data?.detail ||
+        (typeof requestError === "string"
+          ? requestError
+          : "Unable to create the vulnerability report.");
+
+      setError(detail);
     } finally {
       setBusy(false);
     }
   }
 
+
   return (
     <section className="card">
       <h2>Add Vulnerability Report</h2>
+
       <p className="muted">
         Enter the package and advisory information.
       </p>
@@ -52,6 +73,18 @@ export default function CreateRecord({ onCreate }) {
             name="packageName"
             value={form.packageName}
             onChange={updateField}
+            required
+          />
+        </label>
+
+        <label>
+          Package ID
+          <input
+            type="number"
+            name="packageId"
+            value={form.packageId}
+            onChange={updateField}
+            min="1"
             required
           />
         </label>
@@ -100,6 +133,18 @@ export default function CreateRecord({ onCreate }) {
             <option value="Medium">Medium</option>
             <option value="Low">Low</option>
           </select>
+        </label>
+
+        <label>
+          Affected versions count
+          <input
+            type="number"
+            name="affectedVersionsCount"
+            value={form.affectedVersionsCount}
+            onChange={updateField}
+            min="0"
+            required
+          />
         </label>
 
         <label className="checkbox-label">

@@ -5,14 +5,19 @@ import {
   Routes,
   useNavigate,
 } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 import {
-  createReport,
-  deleteReport,
+  clearReports,
+  addReport,
+  editReport,
+  fetchReports,
+  removeReport,
+} from "./features/reports/reportsSlice";
+
+import {
   getCurrentUser,
-  listReports,
   logout,
-  updateReport,
 } from "./api";
 
 import Login from "./components/Login";
@@ -33,11 +38,18 @@ function RequireAuth({ user, children }) {
 
 export default function App() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const reports = useSelector(
+    (state) => state.reports.items,
+  );
+
+  const reportsStatus = useSelector(
+    (state) => state.reports.status,
+  );
 
   const [user, setUser] = useState(null);
-  const [reports, setReports] = useState([]);
   const [authLoading, setAuthLoading] = useState(true);
-  const [reportsLoading, setReportsLoading] = useState(false);
 
   useEffect(() => {
     async function restoreSession() {
@@ -55,29 +67,20 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    async function loadReports() {
-      if (!user) {
-        setReports([]);
-        return;
-      }
+    if (!user) {
+      dispatch(clearReports());
+      return;
+    }
 
-      setReportsLoading(true);
-
-      try {
-        const data = await listReports();
-        setReports(data);
-      } catch (requestError) {
-        if (requestError.response?.status === 401) {
+    dispatch(fetchReports())
+      .unwrap()
+      .catch((error) => {
+        if (String(error).toLowerCase().includes("401")) {
           setUser(null);
           navigate("/login");
         }
-      } finally {
-        setReportsLoading(false);
-      }
-    }
-
-    loadReports();
-  }, [user, navigate]);
+      });
+  }, [dispatch, navigate, user]);
 
   async function handleLogin(loggedInUser) {
     setUser(loggedInUser);
@@ -86,37 +89,38 @@ export default function App() {
 
   async function handleLogout() {
     await logout();
+    dispatch(clearReports());
     setUser(null);
-    setReports([]);
     navigate("/login");
   }
 
   async function handleCreate(payload) {
-    const created = await createReport(payload);
-    setReports((previous) => [...previous, created]);
+    await dispatch(addReport(payload)).unwrap();
     navigate("/");
   }
 
   async function handleUpdate(id, payload) {
-    const updated = await updateReport(id, payload);
-
-    setReports((previous) =>
-      previous.map((report) =>
-        report.id === Number(id) ? updated : report,
-      ),
-    );
+    await dispatch(
+      editReport({
+        id,
+        payload,
+      }),
+    ).unwrap();
 
     navigate("/");
   }
 
-  function handleDeleted(id) {
-    setReports((previous) =>
-      previous.filter((report) => report.id !== id),
-    );
+  async function handleDeleted(id) {
+    await dispatch(removeReport(id)).unwrap();
+    navigate("/");
   }
 
   if (authLoading) {
-    return <main className="app-shell">Checking login session...</main>;
+    return (
+      <main className="app-shell">
+        Checking login session...
+      </main>
+    );
   }
 
   return (
@@ -125,7 +129,7 @@ export default function App() {
         <div>
           <h1>Package Vulnerability Reports</h1>
           <p className="muted">
-            DATA 260 Homework 4
+            DATA 260 Homework 5
           </p>
         </div>
 
@@ -154,7 +158,7 @@ export default function App() {
             <Home
               user={user}
               reports={reports}
-              loading={reportsLoading}
+              loading={reportsStatus === "loading"}
               onLogout={handleLogout}
             />
           }

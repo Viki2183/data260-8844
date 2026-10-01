@@ -8,7 +8,7 @@ from sqlalchemy import (
     String,
     Text,
 )
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 try:
     from .database import Base
@@ -16,8 +16,55 @@ except ImportError:
     from database import Base
 
 
+class PackageDB(Base):
+    """Related package entity for HW5 vulnerability reports."""
+
+    __tablename__ = "packages"
+
+    id: Mapped[int] = mapped_column(
+        Integer,
+        primary_key=True,
+        autoincrement=True,
+    )
+
+    # The package's display name, such as package-00001.
+    name: Mapped[str] = mapped_column(
+        String(255),
+        nullable=False,
+    )
+
+    # The package ecosystem, such as PyPI.
+    ecosystem: Mapped[str] = mapped_column(
+        String(100),
+        nullable=False,
+    )
+
+    # A stable unique identifier for the package.
+    package_code: Mapped[str] = mapped_column(
+        String(255),
+        nullable=False,
+        unique=True,
+    )
+
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime,
+        nullable=False,
+    )
+
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime,
+        nullable=False,
+    )
+
+    # A package can be associated with multiple vulnerability reports.
+    reports: Mapped[list["VulnerabilityReportDB"]] = relationship(
+        back_populates="package",
+        passive_deletes=True,
+    )
+
+
 class VulnerabilityReportDB(Base):
-    """Primary HW4 domain entity stored in MySQL."""
+    """Primary HW5 domain entity stored in MySQL."""
 
     __tablename__ = "vulnerability_reports"
 
@@ -27,9 +74,20 @@ class VulnerabilityReportDB(Base):
         autoincrement=True,
     )
 
+    # Kept for compatibility with the existing HW4 frontend and data.
     package_name: Mapped[str] = mapped_column(
         String(255),
         nullable=False,
+    )
+
+    # New normalized relationship required by HW5.
+    package_id: Mapped[int] = mapped_column(
+        ForeignKey(
+            "packages.id",
+            ondelete="RESTRICT",
+        ),
+        nullable=False,
+        index=True,
     )
 
     vulnerability_id: Mapped[str] = mapped_column(
@@ -57,9 +115,35 @@ class VulnerabilityReportDB(Base):
         nullable=False,
     )
 
+    # HW5 numeric field with a sensible default.
+    affected_versions_count: Mapped[int] = mapped_column(
+        Integer,
+        nullable=False,
+        default=0,
+        server_default="0",
+    )
+
+    # Existing HW4 timestamp.
     submission_date: Mapped[datetime] = mapped_column(
         DateTime,
         nullable=False,
+    )
+
+    # HW5 timestamps.
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime,
+        nullable=False,
+        default=datetime.utcnow,
+    )
+
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime,
+        nullable=False,
+        default=datetime.utcnow,
+    )
+
+    package: Mapped[PackageDB] = relationship(
+        back_populates="reports",
     )
 
 

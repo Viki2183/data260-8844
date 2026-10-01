@@ -1,6 +1,8 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { deleteReport, getReport } from "../api";
+
+import { getReport } from "../api";
+
 
 export default function DeleteRecord({ onDeleted }) {
   const { id } = useParams();
@@ -9,6 +11,7 @@ export default function DeleteRecord({ onDeleted }) {
   const [report, setReport] = useState(null);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
+
 
   useEffect(() => {
     async function loadReport() {
@@ -24,21 +27,25 @@ export default function DeleteRecord({ onDeleted }) {
     loadReport();
   }, [id]);
 
+
   async function handleDelete() {
     setError("");
     setBusy(true);
 
     try {
-      await deleteReport(id);
-      onDeleted(Number(id));
-      navigate("/");
+      // App.jsx dispatches the Redux removeReport thunk.
+      await onDeleted(Number(id));
     } catch (requestError) {
-      const detail = requestError.response?.data?.detail;
+      const detail =
+        requestError.response?.data?.detail ||
+        requestError.message;
+
       setError(detail || "Unable to delete the report.");
     } finally {
       setBusy(false);
     }
   }
+
 
   if (error) {
     return (
@@ -49,6 +56,7 @@ export default function DeleteRecord({ onDeleted }) {
     );
   }
 
+
   if (!report) {
     return (
       <section className="card">
@@ -56,6 +64,7 @@ export default function DeleteRecord({ onDeleted }) {
       </section>
     );
   }
+
 
   return (
     <section className="card">
