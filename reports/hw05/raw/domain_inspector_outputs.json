@@ -1,0 +1,545 @@
+[
+  {
+    "id": "a8438f23-f9bf-458f-a075-35ce5f92709d",
+    "timestamp": "2026-10-02T09:59:48.027Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "initialize",
+      "params": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "sampling": {},
+          "elicitation": {
+            "form": {},
+            "url": {}
+          },
+          "roots": {
+            "listChanged": true
+          },
+          "tasks": {
+            "list": {},
+            "cancel": {},
+            "requests": {
+              "sampling": {
+                "createMessage": {}
+              },
+              "elicitation": {
+                "create": {}
+              }
+            }
+          },
+          "extensions": {
+            "io.modelcontextprotocol/tasks": {},
+            "io.modelcontextprotocol/ui": {
+              "mimeTypes": [
+                "text/html;profile=mcp-app"
+              ],
+              "elicitation": {}
+            },
+            "io.modelcontextprotocol/skills": {}
+          }
+        },
+        "clientInfo": {
+          "name": "mcp-inspector",
+          "version": "2.9.0"
+        }
+      },
+      "jsonrpc": "2.0",
+      "id": 0
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 0,
+      "result": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "prompts": {
+            "listChanged": false
+          },
+          "resources": {
+            "subscribe": false,
+            "listChanged": false
+          },
+          "tools": {
+            "listChanged": false
+          }
+        },
+        "serverInfo": {
+          "name": "s8844 Domain Server",
+          "version": "1.30.0"
+        }
+      }
+    },
+    "duration": 1990
+  },
+  {
+    "id": "d7f8204d-6a6e-491f-8c44-57939c920693",
+    "timestamp": "2026-10-02T09:59:50.031Z",
+    "direction": "notification",
+    "origin": "client",
+    "message": {
+      "jsonrpc": "2.0",
+      "method": "notifications/initialized"
+    }
+  },
+  {
+    "id": "d1aa6bfe-e041-49bd-a59a-5307888474ee",
+    "timestamp": "2026-10-02T09:59:50.084Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "resources/list",
+      "jsonrpc": "2.0",
+      "id": 1,
+      "params": {
+        "_meta": {
+          "progressToken": 1
+        }
+      }
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "result": {
+        "resources": []
+      }
+    },
+    "duration": 263
+  },
+  {
+    "id": "d31481d3-884e-4578-839a-d369b332ab36",
+    "timestamp": "2026-10-02T09:59:50.085Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "tools/list",
+      "jsonrpc": "2.0",
+      "id": 2,
+      "params": {
+        "_meta": {
+          "progressToken": 2
+        }
+      }
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "result": {
+        "tools": [
+          {
+            "name": "search",
+            "description": "Search packages by name, ecosystem, or package code.",
+            "inputSchema": {
+              "properties": {
+                "query": {
+                  "title": "Query",
+                  "type": "string"
+                },
+                "limit": {
+                  "default": 10,
+                  "title": "Limit",
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "query"
+              ],
+              "title": "searchArguments",
+              "type": "object"
+            },
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "title": "Result",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "title": "searchOutput",
+              "type": "object"
+            }
+          },
+          {
+            "name": "detail",
+            "description": "Return one package and its vulnerability reports.",
+            "inputSchema": {
+              "properties": {
+                "package_id": {
+                  "title": "Package Id",
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "package_id"
+              ],
+              "title": "detailArguments",
+              "type": "object"
+            },
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "title": "Result",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "title": "detailOutput",
+              "type": "object"
+            }
+          },
+          {
+            "name": "aggregate",
+            "description": "Count vulnerability reports by severity.",
+            "inputSchema": {
+              "properties": {
+                "severity": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "title": "Severity"
+                }
+              },
+              "title": "aggregateArguments",
+              "type": "object"
+            },
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "title": "Result",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "title": "aggregateOutput",
+              "type": "object"
+            }
+          }
+        ]
+      }
+    },
+    "duration": 399
+  },
+  {
+    "id": "08dd3252-2a9a-464b-baa3-790662cc15ad",
+    "timestamp": "2026-10-02T09:59:50.085Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "prompts/list",
+      "jsonrpc": "2.0",
+      "id": 3,
+      "params": {
+        "_meta": {
+          "progressToken": 3
+        }
+      }
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "result": {
+        "prompts": []
+      }
+    },
+    "duration": 441
+  },
+  {
+    "id": "3f0c4181-4741-4f6e-8aaf-f527351ff20f",
+    "timestamp": "2026-10-02T09:59:50.085Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "resources/templates/list",
+      "jsonrpc": "2.0",
+      "id": 4,
+      "params": {
+        "_meta": {
+          "progressToken": 4
+        }
+      }
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 4,
+      "result": {
+        "resourceTemplates": []
+      }
+    },
+    "duration": 476
+  },
+  {
+    "id": "ba920b4e-118d-4f6f-861d-aa54a8c3913f",
+    "timestamp": "2026-10-02T10:00:07.191Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "tools/call",
+      "params": {
+        "name": "search",
+        "arguments": {
+          "limit": 5,
+          "query": "query: package-00001"
+        },
+        "_meta": {
+          "progressToken": 5
+        }
+      },
+      "jsonrpc": "2.0",
+      "id": 5
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 5,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\": true, \"data\": [], \"error\": null}"
+          }
+        ],
+        "structuredContent": {
+          "result": "{\"ok\": true, \"data\": [], \"error\": null}"
+        },
+        "isError": false
+      }
+    },
+    "duration": 173
+  },
+  {
+    "id": "51921c88-d94b-4fc9-a4c6-eaad3e9b94c8",
+    "timestamp": "2026-10-02T10:00:58.083Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "tools/call",
+      "params": {
+        "name": "detail",
+        "arguments": {
+          "package_id": 1
+        },
+        "_meta": {
+          "progressToken": 6
+        }
+      },
+      "jsonrpc": "2.0",
+      "id": 6
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 6,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\": true, \"data\": {\"id\": 1, \"name\": \"package-00001\", \"ecosystem\": \"PyPI\", \"package_code\": \"s8844-package-00001\", \"created_at\": \"2026-01-01 00:01:00\", \"updated_at\": \"2026-01-01 00:01:00\", \"reports\": [{\"id\": 10004, \"vulnerability_id\": \"CVE-2026-8844\", \"severity\": \"High\", \"affected_versions_count\": 5, \"submission_date\": \"2026-10-01 00:04:11\"}, {\"id\": 10005, \"vulnerability_id\": \"CVE-2026-8844-TEST-002\", \"severity\": \"Critical\", \"affected_versions_count\": 4, \"submission_date\": \"2026-10-01 00:08:50\"}]}, \"error\": null}"
+          }
+        ],
+        "structuredContent": {
+          "result": "{\"ok\": true, \"data\": {\"id\": 1, \"name\": \"package-00001\", \"ecosystem\": \"PyPI\", \"package_code\": \"s8844-package-00001\", \"created_at\": \"2026-01-01 00:01:00\", \"updated_at\": \"2026-01-01 00:01:00\", \"reports\": [{\"id\": 10004, \"vulnerability_id\": \"CVE-2026-8844\", \"severity\": \"High\", \"affected_versions_count\": 5, \"submission_date\": \"2026-10-01 00:04:11\"}, {\"id\": 10005, \"vulnerability_id\": \"CVE-2026-8844-TEST-002\", \"severity\": \"Critical\", \"affected_versions_count\": 4, \"submission_date\": \"2026-10-01 00:08:50\"}]}, \"error\": null}"
+        },
+        "isError": false
+      }
+    },
+    "duration": 169
+  },
+  {
+    "id": "dbeb9f80-9709-40f2-a181-014b6c1a8923",
+    "timestamp": "2026-10-02T10:01:08.443Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "tools/call",
+      "params": {
+        "name": "detail",
+        "arguments": {
+          "package_id": 0
+        },
+        "_meta": {
+          "progressToken": 7
+        }
+      },
+      "jsonrpc": "2.0",
+      "id": 7
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 7,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\": false, \"data\": null, \"error\": \"package_id must be positive\"}"
+          }
+        ],
+        "structuredContent": {
+          "result": "{\"ok\": false, \"data\": null, \"error\": \"package_id must be positive\"}"
+        },
+        "isError": false
+      }
+    },
+    "duration": 191
+  },
+  {
+    "id": "6dcb71f5-ef3a-4bb0-9603-5dbec893f8b5",
+    "timestamp": "2026-10-02T10:01:41.354Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "tools/call",
+      "params": {
+        "name": "aggregate",
+        "arguments": {
+          "severity": "medium"
+        },
+        "_meta": {
+          "progressToken": 8
+        }
+      },
+      "jsonrpc": "2.0",
+      "id": 8
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 8,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\": false, \"data\": null, \"error\": \"severity must be Critical, High, Medium, or Low\"}"
+          }
+        ],
+        "structuredContent": {
+          "result": "{\"ok\": false, \"data\": null, \"error\": \"severity must be Critical, High, Medium, or Low\"}"
+        },
+        "isError": false
+      }
+    },
+    "duration": 201
+  },
+  {
+    "id": "f9489f9c-5f15-488a-ab74-7c6f369dcbc2",
+    "timestamp": "2026-10-02T10:01:57.271Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "tools/call",
+      "params": {
+        "name": "aggregate",
+        "arguments": {
+          "severity": "Medium"
+        },
+        "_meta": {
+          "progressToken": 9
+        }
+      },
+      "jsonrpc": "2.0",
+      "id": 9
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 9,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\": true, \"data\": [{\"severity\": \"Medium\", \"report_count\": 1269}], \"error\": null}"
+          }
+        ],
+        "structuredContent": {
+          "result": "{\"ok\": true, \"data\": [{\"severity\": \"Medium\", \"report_count\": 1269}], \"error\": null}"
+        },
+        "isError": false
+      }
+    },
+    "duration": 202
+  },
+  {
+    "id": "3d78e88c-6e03-4e12-95a0-0bba81a22a06",
+    "timestamp": "2026-10-02T10:02:12.301Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "tools/call",
+      "params": {
+        "name": "aggregate",
+        "arguments": {
+          "severity": "Extreme"
+        },
+        "_meta": {
+          "progressToken": 10
+        }
+      },
+      "jsonrpc": "2.0",
+      "id": 10
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 10,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\": false, \"data\": null, \"error\": \"severity must be Critical, High, Medium, or Low\"}"
+          }
+        ],
+        "structuredContent": {
+          "result": "{\"ok\": false, \"data\": null, \"error\": \"severity must be Critical, High, Medium, or Low\"}"
+        },
+        "isError": false
+      }
+    },
+    "duration": 197
+  },
+  {
+    "id": "88d0523b-f80e-4966-95c7-b35e567b8c88",
+    "timestamp": "2026-10-02T10:03:33.695Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "tools/call",
+      "params": {
+        "name": "search",
+        "arguments": {
+          "limit": 10,
+          "query": " "
+        },
+        "_meta": {
+          "progressToken": 11
+        }
+      },
+      "jsonrpc": "2.0",
+      "id": 11
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 11,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\": false, \"data\": null, \"error\": \"query is required\"}"
+          }
+        ],
+        "structuredContent": {
+          "result": "{\"ok\": false, \"data\": null, \"error\": \"query is required\"}"
+        },
+        "isError": false
+      }
+    },
+    "duration": 218
+  }
+]

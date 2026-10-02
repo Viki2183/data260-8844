@@ -1,50 +1,50 @@
-{"seed": 268844, "failure_rate": 0.5, "call_number": 1, "ok": true, "attempts": 1, "latency_ms": 1.582, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 2, "ok": true, "attempts": 2, "latency_ms": 1.538, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 3, "ok": true, "attempts": 1, "latency_ms": 1.62, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 4, "ok": true, "attempts": 2, "latency_ms": 1.419, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 5, "ok": false, "attempts": 3, "latency_ms": 0.0, "error": "injected storage failure"}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 6, "ok": true, "attempts": 1, "latency_ms": 1.6, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 7, "ok": false, "attempts": 3, "latency_ms": 0.0, "error": "injected storage failure"}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 8, "ok": true, "attempts": 1, "latency_ms": 1.711, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 9, "ok": true, "attempts": 2, "latency_ms": 1.57, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 10, "ok": true, "attempts": 1, "latency_ms": 1.509, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 11, "ok": true, "attempts": 2, "latency_ms": 1.565, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 12, "ok": true, "attempts": 1, "latency_ms": 1.499, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 13, "ok": true, "attempts": 1, "latency_ms": 1.581, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 14, "ok": true, "attempts": 1, "latency_ms": 1.573, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 15, "ok": true, "attempts": 2, "latency_ms": 1.575, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 16, "ok": true, "attempts": 1, "latency_ms": 1.573, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 17, "ok": true, "attempts": 1, "latency_ms": 1.549, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 18, "ok": true, "attempts": 3, "latency_ms": 1.996, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 19, "ok": false, "attempts": 3, "latency_ms": 0.0, "error": "injected storage failure"}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 20, "ok": true, "attempts": 3, "latency_ms": 1.602, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 21, "ok": true, "attempts": 3, "latency_ms": 1.495, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 22, "ok": false, "attempts": 3, "latency_ms": 0.0, "error": "injected storage failure"}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 23, "ok": true, "attempts": 2, "latency_ms": 1.615, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 24, "ok": false, "attempts": 3, "latency_ms": 0.0, "error": "injected storage failure"}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 25, "ok": true, "attempts": 1, "latency_ms": 1.577, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 26, "ok": true, "attempts": 1, "latency_ms": 1.675, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 27, "ok": true, "attempts": 3, "latency_ms": 1.606, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 28, "ok": true, "attempts": 1, "latency_ms": 1.611, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 29, "ok": true, "attempts": 1, "latency_ms": 1.571, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 1, "ok": true, "attempts": 1, "latency_ms": 1.579, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 2, "ok": true, "attempts": 2, "latency_ms": 8.501, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 3, "ok": true, "attempts": 1, "latency_ms": 1.572, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 4, "ok": true, "attempts": 2, "latency_ms": 8.692, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 5, "ok": false, "attempts": 3, "latency_ms": 20.502, "error": "injected storage failure"}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 6, "ok": true, "attempts": 1, "latency_ms": 1.584, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 7, "ok": false, "attempts": 3, "latency_ms": 20.724, "error": "injected storage failure"}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 8, "ok": true, "attempts": 1, "latency_ms": 1.542, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 9, "ok": true, "attempts": 2, "latency_ms": 8.665, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 10, "ok": true, "attempts": 1, "latency_ms": 1.492, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 11, "ok": true, "attempts": 2, "latency_ms": 8.812, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 12, "ok": true, "attempts": 1, "latency_ms": 1.501, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 13, "ok": true, "attempts": 1, "latency_ms": 1.573, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 14, "ok": true, "attempts": 1, "latency_ms": 1.627, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 15, "ok": true, "attempts": 2, "latency_ms": 8.617, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 16, "ok": true, "attempts": 1, "latency_ms": 1.578, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 17, "ok": true, "attempts": 1, "latency_ms": 1.573, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 18, "ok": true, "attempts": 3, "latency_ms": 20.441, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 19, "ok": false, "attempts": 3, "latency_ms": 20.719, "error": "injected storage failure"}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 20, "ok": true, "attempts": 3, "latency_ms": 20.265, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 21, "ok": true, "attempts": 3, "latency_ms": 20.33, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 22, "ok": false, "attempts": 3, "latency_ms": 20.516, "error": "injected storage failure"}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 23, "ok": true, "attempts": 2, "latency_ms": 8.532, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 24, "ok": false, "attempts": 3, "latency_ms": 20.871, "error": "injected storage failure"}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 25, "ok": true, "attempts": 1, "latency_ms": 1.571, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 26, "ok": true, "attempts": 1, "latency_ms": 1.53, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 27, "ok": true, "attempts": 3, "latency_ms": 20.647, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 28, "ok": true, "attempts": 1, "latency_ms": 1.517, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 29, "ok": true, "attempts": 1, "latency_ms": 1.624, "error": null}
 {"seed": 268844, "failure_rate": 0.5, "call_number": 30, "ok": true, "attempts": 1, "latency_ms": 1.572, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 31, "ok": true, "attempts": 3, "latency_ms": 1.687, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 32, "ok": true, "attempts": 1, "latency_ms": 1.488, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 33, "ok": true, "attempts": 2, "latency_ms": 1.542, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 34, "ok": true, "attempts": 1, "latency_ms": 1.527, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 35, "ok": true, "attempts": 1, "latency_ms": 1.951, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 36, "ok": true, "attempts": 1, "latency_ms": 1.716, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 37, "ok": true, "attempts": 3, "latency_ms": 1.575, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 38, "ok": true, "attempts": 3, "latency_ms": 1.908, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 39, "ok": true, "attempts": 2, "latency_ms": 1.993, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 40, "ok": true, "attempts": 2, "latency_ms": 1.602, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 41, "ok": true, "attempts": 2, "latency_ms": 1.84, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 42, "ok": false, "attempts": 3, "latency_ms": 0.0, "error": "injected storage failure"}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 43, "ok": true, "attempts": 2, "latency_ms": 1.96, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 44, "ok": true, "attempts": 1, "latency_ms": 1.608, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 45, "ok": true, "attempts": 2, "latency_ms": 1.72, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 46, "ok": true, "attempts": 2, "latency_ms": 1.476, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 47, "ok": true, "attempts": 3, "latency_ms": 1.628, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 48, "ok": true, "attempts": 2, "latency_ms": 1.5, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 49, "ok": true, "attempts": 1, "latency_ms": 1.557, "error": null}
-{"seed": 268844, "failure_rate": 0.5, "call_number": 50, "ok": true, "attempts": 1, "latency_ms": 1.571, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 31, "ok": true, "attempts": 3, "latency_ms": 20.154, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 32, "ok": true, "attempts": 1, "latency_ms": 1.539, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 33, "ok": true, "attempts": 2, "latency_ms": 8.321, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 34, "ok": true, "attempts": 1, "latency_ms": 1.57, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 35, "ok": true, "attempts": 1, "latency_ms": 1.518, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 36, "ok": true, "attempts": 1, "latency_ms": 1.492, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 37, "ok": true, "attempts": 3, "latency_ms": 20.661, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 38, "ok": true, "attempts": 3, "latency_ms": 20.776, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 39, "ok": true, "attempts": 2, "latency_ms": 8.597, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 40, "ok": true, "attempts": 2, "latency_ms": 8.647, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 41, "ok": true, "attempts": 2, "latency_ms": 8.483, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 42, "ok": false, "attempts": 3, "latency_ms": 20.298, "error": "injected storage failure"}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 43, "ok": true, "attempts": 2, "latency_ms": 8.825, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 44, "ok": true, "attempts": 1, "latency_ms": 1.569, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 45, "ok": true, "attempts": 2, "latency_ms": 8.526, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 46, "ok": true, "attempts": 2, "latency_ms": 8.435, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 47, "ok": true, "attempts": 3, "latency_ms": 20.678, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 48, "ok": true, "attempts": 2, "latency_ms": 8.642, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 49, "ok": true, "attempts": 1, "latency_ms": 1.547, "error": null}
+{"seed": 268844, "failure_rate": 0.5, "call_number": 50, "ok": true, "attempts": 1, "latency_ms": 1.533, "error": null}

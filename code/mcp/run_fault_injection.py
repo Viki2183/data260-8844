@@ -35,7 +35,7 @@ def simulated_operation(rng, failure_rate):
 
 
 def call_with_retry(rng, failure_rate):
-    total_latency = 0.0
+    started_total = time.perf_counter()
     attempts = 0
     last_error = None
 
@@ -43,12 +43,16 @@ def call_with_retry(rng, failure_rate):
         attempts += 1
 
         try:
-            latency = simulated_operation(rng, failure_rate)
-            total_latency += latency
+            simulated_operation(rng, failure_rate)
+
+            total_latency_ms = (
+                time.perf_counter() - started_total
+            ) * 1000
+
             return {
                 "ok": True,
                 "attempts": attempts,
-                "latency_ms": round(total_latency, 3),
+                "latency_ms": round(total_latency_ms, 3),
                 "error": None,
             }
 
@@ -56,13 +60,17 @@ def call_with_retry(rng, failure_rate):
             last_error = str(exc)
 
             if attempt < MAX_RETRIES:
-                delay = BACKOFF_SECONDS * (2**attempt)
+                delay = BACKOFF_SECONDS * (2 ** attempt)
                 time.sleep(delay)
+
+    total_latency_ms = (
+        time.perf_counter() - started_total
+    ) * 1000
 
     return {
         "ok": False,
         "attempts": attempts,
-        "latency_ms": round(total_latency, 3),
+        "latency_ms": round(total_latency_ms, 3),
         "error": last_error,
     }
 

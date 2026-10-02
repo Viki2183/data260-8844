@@ -4,8 +4,8 @@
     "calls": 50,
     "successes": 50,
     "success_rate": 1.0,
-    "mean_latency_ms": 1.602,
-    "p99_latency_ms": 2.007,
+    "mean_latency_ms": 1.577,
+    "p99_latency_ms": 1.929,
     "raw_file": "C:\\Projects\\data260-8844\\reports\\hw05\\raw\\fault_injection_00.jsonl"
   },
   {
@@ -13,8 +13,8 @@
     "calls": 50,
     "successes": 50,
     "success_rate": 1.0,
-    "mean_latency_ms": 1.587,
-    "p99_latency_ms": 1.733,
+    "mean_latency_ms": 2.909,
+    "p99_latency_ms": 8.789,
     "raw_file": "C:\\Projects\\data260-8844\\reports\\hw05\\raw\\fault_injection_20.jsonl"
   },
   {
@@ -22,8 +22,8 @@
     "calls": 50,
     "successes": 44,
     "success_rate": 0.88,
-    "mean_latency_ms": 1.433,
-    "p99_latency_ms": 1.993,
+    "mean_latency_ms": 8.842,
+    "p99_latency_ms": 20.776,
     "raw_file": "C:\\Projects\\data260-8844\\reports\\hw05\\raw\\fault_injection_50.jsonl"
   }
 ]
