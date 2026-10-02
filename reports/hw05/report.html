@@ -2,449 +2,460 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KunnathamParambath_HW5</title>
+  <title>KunnathamParambath HW5</title>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 24px;
-      color: #222;
-      line-height: 1.6;
+    @page {
+      size: Letter;
+      margin: 0.55in;
     }
 
-    h1,
-    h2 {
-      color: #17365d;
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.35;
+      color: #222;
+      margin: 0;
     }
 
     h1 {
-      border-bottom: 3px solid #17365d;
-      padding-bottom: 10px;
+      font-size: 14pt;
+      font-weight: bold;
+      border-bottom: 1px solid #777;
+      padding-bottom: 3px;
+      margin-top: 18px;
     }
 
     h2 {
-      margin-top: 36px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 6px;
+      font-size: 12pt;
+      font-weight: bold;
+      margin-top: 12px;
+    }
+
+    p {
+      margin: 5px 0;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 16px 0;
+      margin: 8px 0 12px;
     }
 
     th,
     td {
-      border: 1px solid #bbb;
-      padding: 9px;
+      border: 1px solid #999;
+      padding: 4px 6px;
       text-align: left;
-      vertical-align: top;
     }
 
     th {
-      background: #eaf1f8;
-    }
-
-    figure {
-      margin: 28px 0;
-      page-break-inside: avoid;
-    }
-
-    figure img {
-      max-width: 100%;
-      border: 1px solid #aaa;
-      display: block;
-    }
-
-    figcaption {
-      margin-top: 8px;
-      font-weight: bold;
+      background: #eeeeee;
     }
 
     code {
-      background: #f1f1f1;
-      padding: 2px 5px;
-      border-radius: 3px;
+      font-family: Consolas, monospace;
+      font-size: 9pt;
     }
 
-    .result {
-      color: #176b32;
-      font-weight: bold;
+    pre {
+      background: #f4f4f4;
+      border: 1px solid #ccc;
+      padding: 6px;
+      white-space: pre-wrap;
+      font-size: 8.5pt;
     }
 
-    .note {
-      background: #f5f8fb;
-      border-left: 4px solid #17365d;
-      padding: 12px 16px;
-      margin: 18px 0;
+    .title {
+      text-align: center;
+      margin: 20px 0;
     }
 
-    @media print {
-      body {
-        margin: 20px;
-      }
+    .small {
+      font-size: 9.5pt;
+    }
 
-      figure {
-        page-break-inside: avoid;
-      }
+    .screenshots {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    figure {
+      margin: 0 0 10px;
+      break-inside: avoid;
+    }
+
+    figure img {
+      width: 100%;
+      height: 2.35in;
+      object-fit: contain;
+      border: 1px solid #999;
+    }
+
+    figcaption {
+      font-size: 8.5pt;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    .avoid-break {
+      break-inside: avoid;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>DATA 260 Homework 5</h1>
-
-  <p>
-    <strong>Student:</strong> Vrishin KP<br>
-    <strong>Project:</strong> Package Vulnerability Reporting Platform<br>
-    <strong>Technology:</strong> FastAPI, SQLAlchemy, MySQL, React, Redux Toolkit, Axios, and Vite
-  </p>
-
-  <h2>1. Objective</h2>
-
-  <p>
-    The main goal of this homework was to improve the existing vulnerability
-    reporting application by connecting the React frontend to Redux Toolkit.
-    In the earlier version, some report information and CRUD actions were handled
-    directly inside individual pages. For this homework, I moved the main report
-    state and report operations into Redux so that the application has a more
-    organized and predictable data flow.
-  </p>
-
-  <p>
-    This change also helped connect the frontend and backend more clearly.
-    The React pages collect user input, Redux manages the application state,
-    Axios sends the request, and FastAPI performs the database operation.
-    I also added the new HW5 fields required by the backend, including the
-    package ID and affected versions count.
-  </p>
-
-  <h2>2. Implemented Features</h2>
-
-  <p>
-    I implemented the following features and checked each one through the
-    running application:
-  </p>
-
-  <ul>
-    <li>Connected the report list to the Redux store.</li>
-    <li>Added Redux thunks for loading, creating, updating, and deleting reports.</li>
-    <li>Added package ID support to the create and update forms.</li>
-    <li>Added affected-version count support.</li>
-    <li>Updated the backend update function to save affected-version counts.</li>
-    <li>Updated the backend timestamp when a report is modified.</li>
-    <li>Connected the delete screen to the Redux delete thunk.</li>
-    <li>Verified the production frontend build using Vite.</li>
-  </ul>
-
-  <p>
-    One important part of the work was making sure that the update form did not
-    only display the new fields but also sent them to the backend. During testing,
-    I found that the affected-version count was still being saved as zero.
-    I corrected the backend update function and then verified that the value
-    was saved and displayed correctly.
-  </p>
-
-  <h2>3. Redux Data Flow</h2>
-
-  <p>
-    Redux is now used as the central place for the report list and report
-    operations. When a user performs an action, the page calls a handler in
-    <code>App.jsx</code>. That handler dispatches a Redux thunk. The thunk calls
-    the Axios API function, and the result is stored back in the Redux state.
-  </p>
-
-  <p>
-    This structure keeps the page components focused on displaying forms and
-    collecting input. It also means that the report list can be updated after
-    creating, editing, or deleting a report without keeping separate copies of
-    the same data in multiple components.
-  </p>
-
-  <table>
-    <tr>
-      <th>Operation</th>
-      <th>Frontend flow</th>
-      <th>Backend result</th>
-    </tr>
-
-    <tr>
-      <td>Load</td>
-      <td><code>fetchReports()</code></td>
-      <td>GET vulnerability reports</td>
-    </tr>
-
-    <tr>
-      <td>Create</td>
-      <td><code>addReport(payload)</code></td>
-      <td>POST a new vulnerability report</td>
-    </tr>
-
-    <tr>
-      <td>Update</td>
-      <td><code>editReport({ id, payload })</code></td>
-      <td>PUT updated report data</td>
-    </tr>
-
-    <tr>
-      <td>Delete</td>
-      <td><code>removeReport(id)</code></td>
-      <td>DELETE the selected report</td>
-    </tr>
-  </table>
-
-  <div class="note">
-    The final request path is:
-    page component → App.jsx → Redux thunk → Axios API function →
-    FastAPI endpoint → database.
+  <div class="title">
+    <h1>DATA 260 Homework 5</h1>
+    <h2>Open-Source Vulnerability Reporting Platform and MCP Tools</h2>
+    <p>
+      Student: Vrishin KunnathamParambath<br>
+      SID4: 8844
+    </p>
   </div>
 
-  <h2>4. Verification Results</h2>
+  <h1>0. Configuration and Repository</h1>
+
+  <table>
+    <tr><th>Item</th><th>Value</th></tr>
+    <tr><td>SID4</td><td>8844</td></tr>
+    <tr><td>PORT_BASE</td><td>8744</td></tr>
+    <tr><td>PREFIX</td><td>s8844</td></tr>
+    <tr><td>SEED</td><td>8844</td></tr>
+    <tr><td>VERIFY_SEED</td><td>268844</td></tr>
+    <tr><td>DOMAIN_ID</td><td>4</td></tr>
+    <tr><td>Operating system</td><td>Windows 11</td></tr>
+    <tr><td>Hardware</td><td>Local CPU environment</td></tr>
+    <tr><td>Local model</td><td>Ollama qwen3:8b</td></tr>
+    <tr><td>Branch</td><td>hw5-development</td></tr>
+    <tr><td>Final commit</td><td>UPDATE_AFTER_FINAL_COMMIT</td></tr>
+  </table>
 
   <p>
-    I tested the application through the browser using the local React frontend
-    and FastAPI backend. The tests were performed after logging in with the
-    demo account. The results below show what happened during each test.
+    Repository:
+    <a href="https://github.com/Viki2183/data260-8844">
+      https://github.com/Viki2183/data260-8844
+    </a>
+  </p>
+
+  <p>
+    Homework branch:
+    <a href="https://github.com/Viki2183/data260-8844/tree/hw5-development">
+      https://github.com/Viki2183/data260-8844/tree/hw5-development
+    </a>
+  </p>
+
+  <p>
+    Sbnikitha and supriyaselvanganesan have access to the repository.
+  </p>
+
+  <h1>1. Database, API, and Redux Client</h1>
+
+  <p>
+    I extended the existing vulnerability-reporting application by adding a related
+    <code>packages</code> entity. Each package can have multiple vulnerability reports.
+    Package codes use the required <code>s8844-</code> format.
   </p>
 
   <table>
+    <tr><th>Entity</th><th>Main fields</th></tr>
     <tr>
-      <th>Test</th>
-      <th>Result</th>
-      <th>Evidence</th>
+      <td>packages</td>
+      <td>id, name, ecosystem, packageCode, createdAt, updatedAt</td>
     </tr>
-
     <tr>
-      <td>User login and report loading</td>
-      <td class="result">Passed</td>
+      <td>vulnerability_reports</td>
       <td>
-        The authenticated Home page opened and displayed vulnerability reports.
-      </td>
-    </tr>
-
-    <tr>
-      <td>Update report</td>
-      <td class="result">Passed</td>
-      <td>
-        The affected versions count was changed to 5 and displayed correctly
-        after the update.
-      </td>
-    </tr>
-
-    <tr>
-      <td>Create report</td>
-      <td class="result">Passed</td>
-      <td>
-        A new report with a unique vulnerability ID appeared in the report list.
-      </td>
-    </tr>
-
-    <tr>
-      <td>Delete report</td>
-      <td class="result">Passed</td>
-      <td>
-        The selected report was deleted and no longer appeared on the Home page.
-      </td>
-    </tr>
-
-    <tr>
-      <td>Production build</td>
-      <td class="result">Passed</td>
-      <td>
-        Vite completed successfully with 95 modules transformed.
+        id, packageId, packageName, vulnerabilityId, submitterEmail,
+        vulnerabilityDescription, severity, affectedVersionsCount,
+        termsAccepted, timestamps
       </td>
     </tr>
   </table>
 
-  <h2>5. Test Evidence</h2>
-
   <p>
-    The following screenshots document the main tests performed in the browser.
-    Sensitive information such as passwords and authentication tokens was not
-    included in the screenshots.
+    The API supports CRUD operations for both entities and a relationship endpoint for
+    retrieving reports belonging to a package. Validation covers email format, severity,
+    required text, package-code format, positive IDs, description length, and terms acceptance.
+    Invalid inputs return 422, missing resources return 404, and restricted deletes return 409.
   </p>
 
-  <figure>
-    <img
-      src="screenshots/01-home-reports.png"
-      alt="Home page showing vulnerability reports"
-    >
-    <figcaption>
-      Figure 1. Authenticated Home page showing the vulnerability reports.
-    </figcaption>
-  </figure>
-
-  <figure>
-    <img
-      src="screenshots/02-update-form.png"
-      alt="Update form showing affected versions count"
-    >
-    <figcaption>
-      Figure 2. Update form showing the affected versions count set to 5.
-    </figcaption>
-  </figure>
-
-  <figure>
-    <img
-      src="screenshots/03-created-report.png"
-      alt="Home page showing newly created report"
-    >
-    <figcaption>
-      Figure 3. Home page showing the newly created vulnerability report.
-    </figcaption>
-  </figure>
-
-  <figure>
-    <img
-      src="screenshots/04-delete-confirmation.png"
-      alt="Delete confirmation page"
-    >
-    <figcaption>
-      Figure 4. Delete confirmation page before removing the report.
-    </figcaption>
-  </figure>
-
-  <figure>
-    <img
-      src="screenshots/05-after-delete.png"
-      alt="Home page after deleting a report"
-    >
-    <figcaption>
-      Figure 5. Home page after deletion, showing that the report was removed.
-    </figcaption>
-  </figure>
-
-  <figure>
-    <img
-      src="screenshots/06-build-success.png"
-      alt="Successful Vite build output"
-    >
-    <figcaption>
-      Figure 6. Successful production build using
-      <code>npm run build</code>.
-    </figcaption>
-  </figure>
-
-  <h2>6. Important Project Files</h2>
+  <table>
+    <tr><th>Area</th><th>Evidence</th></tr>
+    <tr><td>Package CRUD</td><td>Figures 7–15</td></tr>
+    <tr><td>Vulnerability-report CRUD</td><td>Figures 16–22</td></tr>
+    <tr><td>Database</td><td>Figure 23</td></tr>
+    <tr><td>Redux Home/Create/Update/Delete</td><td>Figures 24–27</td></tr>
+  </table>
 
   <p>
-    The following files were important to the HW5 implementation. Each file
-    contributed to a different part of the frontend or backend workflow.
+    The Redux client stores report data in a Redux Toolkit slice. Async thunks load,
+    create, update, and delete reports while the UI displays loading and error states.
   </p>
+
+  <pre><code>export const fetchReports = createAsyncThunk(
+  "reports/fetchReports",
+  async ({ search = "", skip = 0, limit = 100 } = {},
+         { rejectWithValue }) =&gt; {
+    try {
+      return await listReports(search, skip, limit);
+    } catch (error) {
+      return rejectWithValue(getErrorMessage(error));
+    }
+  },
+);</code></pre>
+
+  <h1>2A. TheMealDB MCP Server</h1>
+
+  <p>
+    The first MCP server provides four read-only meal tools. I tested each tool through
+    MCP Inspector with real inputs and reviewed the returned data.
+  </p>
+
+  <table>
+    <tr><th>Tool</th><th>Purpose</th></tr>
+    <tr><td>search_meals_by_name</td><td>Search meals by name.</td></tr>
+    <tr><td>meals_by_ingredient</td><td>Find meals using an ingredient.</td></tr>
+    <tr><td>random_meal</td><td>Return one random meal.</td></tr>
+    <tr><td>meal_details</td><td>Return details for one meal.</td></tr>
+  </table>
+
+  <p>Evidence: Figures 28–31.</p>
+
+  <h1>2B. Domain MCP Server</h1>
+
+  <p>
+    The second MCP server operates on the s8844 package and vulnerability data.
+    It exposes exactly three tools: <code>search</code>, <code>detail</code>, and
+    <code>aggregate</code>.
+  </p>
+
+  <pre><code>{
+  "ok": true,
+  "data": {},
+  "error": null
+}</code></pre>
+
+  <p>
+    Successful calls return data and a null error. Rejected calls return
+    <code>ok: false</code> with a clear error message. Datetime values are converted
+    to strings before serialization, and server logs go to stderr.
+  </p>
+
+  <p>Evidence: Figures 32–37.</p>
+
+  <h1>3. Validation, Retries, and Fault Injection</h1>
+
+  <p>
+    The three rejected inputs were a blank search query, package ID zero, and the
+    unsupported severity value <code>Extreme</code>. The retry policy allows two retries
+    after the initial attempt and uses bounded exponential backoff.
+  </p>
+
+  <table>
+    <tr>
+      <th>Failure rate</th>
+      <th>Calls</th>
+      <th>Success rate</th>
+      <th>Mean latency</th>
+      <th>P99 latency</th>
+    </tr>
+    <tr><td>0%</td><td>50</td><td>100%</td><td>1.602 ms</td><td>2.007 ms</td></tr>
+    <tr><td>20%</td><td>50</td><td>100%</td><td>1.587 ms</td><td>1.733 ms</td></tr>
+    <tr><td>50%</td><td>50</td><td>88%</td><td>1.433 ms</td><td>1.993 ms</td></tr>
+  </table>
+
+  <p>
+    The results show that retries recovered transient failures at 20%. At 50%, retries
+    improved reliability but six calls still failed after the retry limit. This policy is
+    appropriate for interactive use because it keeps delays bounded. Batch processing
+    could use more retries and longer backoff.
+  </p>
+
+  <p>Evidence: Figure 38 and the raw JSONL files in <code>reports/hw05/raw</code>.</p>
+
+  <h1>4. Safe Tool Entry Point and Offline Tests</h1>
+
+  <p>
+    <code>execute_tool(name, inputs)</code> is the single entry point used by the agent.
+    It validates tool names, catches errors, reuses the shared response envelope, and
+    returns JSON instead of crashing.
+  </p>
+
+  <p>
+    The offline runner uses fixture handlers so it can be executed without an LLM or
+    database. It produced 7/7 passing tests covering valid calls, rejected inputs,
+    and an unknown tool.
+  </p>
+
+  <p>Evidence: Figure 39.</p>
+
+  <h1>5. Safety Rule and Ollama Agent</h1>
+
+  <p>
+    The safety rule blocks searches containing credential-like terms such as
+    <code>password</code>, <code>secret</code>, <code>token</code>, or
+    <code>credential</code>. A normal package search is allowed, while a credential-like
+    search returns a structured blocked response without executing the tool.
+  </p>
+
+  <p>
+    The agent loop has a maximum step count. It records each request, selected tool,
+    inputs, result, and final stop reason in <code>agent_runs.jsonl</code>.
+  </p>
+
+  <table>
+    <tr><th>Test</th><th>Result</th></tr>
+    <tr><td>Allowed safety call</td><td>PASS</td></tr>
+    <tr><td>Blocked safety call</td><td>PASS</td></tr>
+    <tr><td>MockModel normal completion</td><td>PASS</td></tr>
+    <tr><td>MockModel max_steps</td><td>PASS</td></tr>
+  </table>
+
+  <p>
+    Four local Ollama scenarios were completed with qwen3:8b. CPU inference required a
+    longer timeout. Disabling extended reasoning and limiting the response to JSON made
+    the model responses more reliable.
+  </p>
+
+  <p>Evidence: Figures 40–41.</p>
+
+  <h1>AI Use Disclosure</h1>
+
+  <h2>What assistance was used?</h2>
+  <p>
+    I used an AI assistant to understand the assignment, plan the MCP and retry
+    implementation, troubleshoot errors, and improve the report structure. I ran the
+    commands, tested the application, reviewed the results, and captured the evidence myself.
+  </p>
+
+  <h2>What went wrong?</h2>
+  <p>
+    The first MCP code used an MCP 1.x import while the environment initially had MCP 2.x.
+    Ollama also timed out on CPU and sometimes returned incomplete JSON.
+  </p>
+
+  <h2>How was it verified?</h2>
+  <p>
+    I used the Python traceback, checked the installed package version, reviewed MCP
+    Inspector results, reran the offline tests, and reran the Ollama scenarios.
+  </p>
+
+  <h2>What was changed?</h2>
+  <p>
+    I pinned MCP to a compatible version, corrected the server launch command, added
+    datetime serialization, increased the Ollama timeout, disabled extended reasoning,
+    and restricted the model response to JSON.
+  </p>
+
+  <h1>Reflection</h1>
+
+  <p>
+    This homework connected a database-backed web application to MCP tools and a bounded
+    local agent. The shared response envelope was one of the most useful design choices
+    because successful results and rejected inputs followed the same structure. This made
+    the offline tests easier to write and made errors easier to understand.
+  </p>
+
+  <p>
+    The retry experiment showed that retries help with temporary failures but cannot solve
+    persistent failures. The 20% experiment achieved a 100% success rate, while the 50%
+    experiment achieved 88%. For interactive use, a small retry budget keeps the application
+    responsive. Batch processing could use more retries and longer delays.
+  </p>
+
+  <p>
+    The safety rule was also important. A model should not be able to search for
+    credential-like data simply because it generated that request. The blocked-call test
+    confirmed that safety is checked before tool execution. The maximum-step test prevented
+    an endless tool loop. Finally, local Ollama inference showed that CPU execution may
+    require longer timeouts and strict JSON output handling. These checks made the system
+    more predictable than relying on the model alone.
+  </p>
+
+  <h1>Evidence Screenshots</h1>
+
+  <div class="screenshots" id="screenshots"></div>
+
+  <h1>Submission Files</h1>
 
   <ul>
-    <li>
-      <code>frontend/src/App.jsx</code> -
-      connects the application pages to Redux actions and selectors.
-    </li>
-
-    <li>
-      <code>frontend/src/features/reports/reportsSlice.js</code> -
-      stores report state and defines the asynchronous Redux thunks.
-    </li>
-
-    <li>
-      <code>frontend/src/store/store.js</code> -
-      configures the Redux store for the React application.
-    </li>
-
-    <li>
-      <code>frontend/src/pages/CreateRecord.jsx</code> -
-      collects the fields needed to create a vulnerability report.
-    </li>
-
-    <li>
-      <code>frontend/src/pages/UpdateRecord.jsx</code> -
-      loads an existing report and submits updated values.
-    </li>
-
-    <li>
-      <code>frontend/src/pages/DeleteRecord.jsx</code> -
-      displays the delete confirmation and calls the Redux delete handler.
-    </li>
-
-    <li>
-      <code>code/web_application/crud_hw4.py</code> -
-      performs the database create, read, update, and delete operations.
-    </li>
-
-    <li>
-      <code>code/web_application/schemas.py</code> -
-      validates the request and response data used by the API.
-    </li>
+    <li>RUN_LOG.txt</li>
+    <li>METRICS.md</li>
+    <li>AI_USE.md</li>
+    <li>REFLECTION.md</li>
+    <li>verification.json</li>
+    <li>raw/agent_runs.jsonl</li>
+    <li>raw/agent_scenarios_metrics.json</li>
+    <li>raw/fault_injection_00.jsonl</li>
+    <li>raw/fault_injection_20.jsonl</li>
+    <li>raw/fault_injection_50.jsonl</li>
+    <li>raw/fault_injection_metrics.json</li>
+    <li>report.pdf</li>
   </ul>
 
-  <h2>7. Challenges and Fixes</h2>
+  <script>
+    const figures = [
+      ["01-home-reports.png", "Home reports page"],
+      ["02-update-form.png", "Update form"],
+      ["03-created-report.png", "Created report"],
+      ["04-delete-confirmation.png", "Delete confirmation"],
+      ["05-after-delete.png", "After deletion"],
+      ["06-build-success.png", "Frontend build success"],
+      ["08-postman-package-validation.png", "Package validation error"],
+      ["09-postman-package-create.png", "Package creation"],
+      ["11-postman-package-detail.png", "Package detail"],
+      ["12-postman-package-reports.png", "Package relationship query"],
+      ["13-postman-package-update.png", "Package update"],
+      ["14-postman-package-delete.png", "Package deletion"],
+      ["15-postman-deleted-package-404.png", "Deleted package 404"],
+      ["16-postman-vulnerability-reports-list.png", "Report list"],
+      ["17-postman-vulnerability-report-detail.png", "Report detail"],
+      ["18-postman-vulnerability-update-validation.png", "Report validation error"],
+      ["19-postman-vulnerability-update.png", "Report update"],
+      ["20-postman-vulnerability-report-create.png", "Report creation"],
+      ["21-postman-vulnerability-report-delete.png", "Report deletion"],
+      ["22-postman-deleted-vulnerability-report-404.png", "Deleted report 404"],
+      ["23-database-tables.png", "Database evidence"],
+      ["24-redux-home-code-ui.png", "Redux Home code and UI"],
+      ["25-redux-create-code-ui.png", "Redux Create code and UI"],
+      ["26-redux-update-code-ui.png", "Redux Update code and UI"],
+      ["27-redux-delete-code-ui.png", "Redux Delete code and UI"],
+      ["28-mcp-search-meals-by-name.png", "Meal search by name"],
+      ["29-mcp-meals-by-ingredient.png", "Meal search by ingredient"],
+      ["30-mcp-random-meal.png", "Random meal"],
+      ["31-mcp-meal-details.png", "Meal details"],
+      ["32-domain-search-success.png", "Domain search success"],
+      ["33-domain-search-invalid.png", "Domain search invalid input"],
+      ["34-domain-detail-success.png", "Domain detail success"],
+      ["35-domain-detail-invalid.png", "Domain detail invalid input"],
+      ["36-domain-aggregate-success.png", "Domain aggregate success"],
+      ["37-domain-aggregate-invalid.png", "Domain aggregate invalid input"],
+      ["38-retry-fault-injection.png", "Retry and fault injection"],
+      ["39-execute-tool-tests.png", "Execute-tool tests"],
+      ["40-agent-safety-tests.png", "Agent safety tests"],
+      ["41-ollama-scenarios.png", "Ollama scenarios"]
+    ];
 
-  <p>
-    The main issue found during testing was that the affected versions count
-    appeared as zero after updating a report. At first, the frontend form was
-    sending the value, but the backend update function was not assigning the
-    value to the database object.
-  </p>
+    const container = document.getElementById("screenshots");
 
-  <p>
-    I corrected the backend update logic so that it saves
-    <code>affected_versions_count</code> and updates the report timestamp.
-    After restarting the backend, I repeated the browser test and confirmed
-    that the value 5 was saved and displayed correctly.
-  </p>
+    figures.forEach((figure, index) => {
+      const item = document.createElement("figure");
 
-  <p>
-    Another small issue occurred while editing the delete page. The file was
-    accidentally opened from a nested frontend path. I moved the corrected file
-    into the actual <code>frontend/src/pages</code> directory, removed the
-    accidental duplicate folder, rebuilt the frontend, and confirmed that the
-    build still passed.
-  </p>
+      const image = document.createElement("img");
+      image.src = "screenshots/" + figure[0];
+      image.alt = figure[1];
 
-  <h2>9. Submission Information</h2>
+      const caption = document.createElement("figcaption");
+      caption.textContent = "Figure " + (index + 1) + ": " + figure[1];
 
-<p>
-  This submission was prepared on the HW5 development branch. The final
-  version will be identified in Git using the annotated submission tag
-  <code>hw5</code>.
-</p>
-
-<table>
-  <tr>
-    <th>Repository</th>
-    <td>Viki2183/data260-8844</td>
-  </tr>
-  <tr>
-    <th>Branch</th>
-    <td><code>hw5-development</code></td>
-  </tr>
-  <tr>
-    <th>Submission tag</th>
-    <td><code>hw5</code></td>
-  </tr>
-  <tr>
-    <th>Report location</th>
-    <td><code>reports/hw05/</code></td>
-  </tr>
-</table>
-
-  <h2>8. Conclusion</h2>
-
-  <p>
-    Homework 5 was completed by integrating Redux Toolkit into the existing
-    vulnerability reporting application. The report list and CRUD operations
-    now follow a consistent Redux-based data flow.
-  </p>
-
-  <p>
-    The browser tests confirmed that a user can log in, view reports, create a
-    new report, update an existing report, save the affected versions count,
-    and delete a report. The final Vite production build also completed
-    successfully, confirming that the frontend code is valid and can be bundled
-    for deployment.
-  </p>
+      item.appendChild(image);
+      item.appendChild(caption);
+      container.appendChild(item);
+    });
+  </script>
 
 </body>
 </html>

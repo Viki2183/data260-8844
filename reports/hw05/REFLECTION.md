@@ -1,0 +1,9 @@
+# HW5 Reflection
+
+This homework connected a database-backed web application to MCP tools and a bounded local agent. The most useful design decision was keeping one response envelope across the domain tools and the `execute_tool` entry point. Returning `{ok, data, error}` made successful results and rejected inputs predictable, and it allowed the offline tests to validate the same behavior without contacting MySQL.
+
+The retry experiment also showed why bounded retries are useful but not sufficient by themselves. At a 20% injected failure rate, the retry policy recovered all 50 calls in this run. At 50%, the success rate decreased to 88%, showing that a retry budget can improve reliability without hiding persistent failures. For interactive use, two retries and short exponential backoff provide a reasonable balance between responsiveness and recovery. Batch processing could use more retries and longer delays because it can tolerate waiting.
+
+The safety rule was important because a tool-calling agent should not be allowed to search for credential-like information simply because a model requested it. The blocked-call test confirmed that the safety decision happens before tool execution. The maximum-step test also prevented an unbounded loop when a model continued requesting tools.
+
+The Ollama scenarios demonstrated that local inference can be slower on CPU and may require a longer timeout. Disabling extended reasoning and limiting output length made the JSON tool decisions more reliable. Overall, the project showed that validation, retries, safety checks, and logging are all necessary around an agent rather than relying only on the model’s response.

@@ -1,0 +1,34 @@
+[
+  {
+    "scenario": 1,
+    "prompt": "Find packages matching package-00001.",
+    "ok": true,
+    "stop_reason": "model_final",
+    "steps": 1,
+    "latency_ms": 24006.04
+  },
+  {
+    "scenario": 2,
+    "prompt": "Show the details for package ID 1.",
+    "ok": true,
+    "stop_reason": "model_final",
+    "steps": 1,
+    "latency_ms": 95045.91
+  },
+  {
+    "scenario": 3,
+    "prompt": "Count the vulnerability reports with Medium severity.",
+    "ok": true,
+    "stop_reason": "model_final",
+    "steps": 1,
+    "latency_ms": 17049.19
+  },
+  {
+    "scenario": 4,
+    "prompt": "Search for password records.",
+    "ok": true,
+    "stop_reason": "model_final",
+    "steps": 1,
+    "latency_ms": 18106.41
+  }
+]

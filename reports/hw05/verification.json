@@ -1,0 +1,49 @@
+{
+  "homework": "HW5",
+  "sid4": "8844",
+  "port_base": 8744,
+  "prefix": "s8844",
+  "seed": 8844,
+  "verify_seed": 268844,
+  "domain_id": 4,
+  "model": "Ollama qwen3:8b",
+  "hardware": "Windows 11 CPU",
+  "commit": "888ce3b1801582c5fca607f6c175aa52f6c12f06",
+  "checks": [
+    {
+      "name": "FastAPI backend",
+      "result": "PASS",
+      "evidence": "http://127.0.0.1:8744/health"
+    },
+    {
+      "name": "TheMealDB MCP server",
+      "result": "PASS",
+      "evidence": "MCP Inspector screenshots 28-31"
+    },
+    {
+      "name": "Domain MCP server",
+      "result": "PASS",
+      "evidence": "MCP Inspector screenshots 32-37"
+    },
+    {
+      "name": "Fault injection",
+      "result": "PASS",
+      "evidence": "150 raw records in reports/hw05/raw"
+    },
+    {
+      "name": "execute_tool tests",
+      "result": "PASS",
+      "evidence": "7/7 tests passed"
+    },
+    {
+      "name": "Agent safety tests",
+      "result": "PASS",
+      "evidence": "4/4 tests passed"
+    },
+    {
+      "name": "Ollama scenarios",
+      "result": "PASS",
+      "evidence": "4 scenarios completed"
+    }
+  ]
+}
