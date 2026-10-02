@@ -8,7 +8,7 @@
   "domain_id": 4,
   "model": "Ollama qwen3:8b",
   "hardware": "Windows 11 CPU",
-  "commit": "888ce3b1801582c5fca607f6c175aa52f6c12f06",
+ "commit": "3588c517a6f515b99bf879a0ad3febb4559fa1ac",
   "checks": [
     {
       "name": "FastAPI backend",
