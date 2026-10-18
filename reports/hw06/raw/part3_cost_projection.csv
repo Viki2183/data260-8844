@@ -1,0 +1,4 @@
+window,conversations,input_rate_per_million,output_rate_per_million,estimated_input_tokens,estimated_output_tokens,estimated_total_tokens,input_cost,output_cost,total_cost,cost_note
+4,10000,1.0,5.0,248319899.99999997,51219900.0,299539800.0,248.31989999999996,256.09950000000003,504.4194,Hypothetical comparison only; Ollama is local with effectively zero direct API billing. CPU time and storage remain operational costs.
+12,10000,1.0,5.0,397730100.0,51800100.0,449530200.0,397.7301,259.0005,656.7306,Hypothetical comparison only; Ollama is local with effectively zero direct API billing. CPU time and storage remain operational costs.
+30,10000,1.0,5.0,290340000.0,59000100.0,349340100.0,290.34,295.0005,585.3405,Hypothetical comparison only; Ollama is local with effectively zero direct API billing. CPU time and storage remain operational costs.

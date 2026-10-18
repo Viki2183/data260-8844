@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-10-18T05:11:15.8251941Z",
+  "endpoint": "http://127.0.0.1:8744/api/chat",
+  "request_body": {
+    "user_id": "hw6-user-8844",
+    "session_id": "hw6-session-4",
+    "message": "/compact"
+  },
+  "http_status": 200,
+  "retry_count": 0,
+  "normal_chat_request_sent": false,
+  "elapsed_ms": null,
+  "elapsed_unavailable_reason": "The constrained PowerShell language mode rejected the Stopwatch/elapsed-time method after the single request completed; no elapsed value is inferred.",
+  "service_verification": {
+    "fastapi_pid": 23708,
+    "fastapi_health_status": 200,
+    "openapi_status": 200,
+    "mongodb_pid": 5136,
+    "mongodb_port": 27017,
+    "ollama_pid": 12048,
+    "ollama_port": 11434,
+    "ollama_model_observed": "qwen3:8b"
+  },
+  "response_observed": {
+    "answer": "Older messages were compacted into a session summary and durable facts; raw messages were preserved.",
+    "user_id": "hw6-user-8844",
+    "session_id": "hw6-session-4",
+    "command": "/compact",
+    "compacted_message_count": 6,
+    "facts_saved": 3,
+    "summary_created": null,
+    "summary_created_unavailable_reason": "The returned command_result did not contain the new summary_created field.",
+    "lifetime_summary_created": null,
+    "lifetime_summary_created_unavailable_reason": "The returned command_result did not contain the new lifetime_summary_created field.",
+    "facts_added": null,
+    "facts_added_unavailable_reason": "The returned command_result did not contain the new facts_added field; facts_saved=3 was present.",
+    "raw_messages_preserved": true,
+    "before": null,
+    "before_unavailable_reason": "The returned command_result did not contain the new before object.",
+    "after": null,
+    "after_unavailable_reason": "The returned command_result did not contain the new after object.",
+    "file_memory": {
+      "physical_lines": null,
+      "non_comment_lines": null,
+      "facts": null,
+      "unavailable_reason": "The returned file_memory metadata did not contain the new physical, non-comment, or fact-count fields."
+    },
+    "file_consolidation": {
+      "before_line_count": 43,
+      "after_line_count": 43,
+      "duplicate_count": 1,
+      "contradiction_count": 0,
+      "triggered": true,
+      "written": true
+    },
+    "response_body_capture_note": "The complete structured response was observed during the single request; long embedded episode vectors were not reproduced in this artifact. The fields above are the exact relevant fields captured from that response."
+  },
+  "raw_messages_preserved": true,
+  "no_direct_mongodb_writes": true,
+  "experiment_rerun": false
+}

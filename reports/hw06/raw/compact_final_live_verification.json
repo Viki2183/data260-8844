@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-10-18T04:30:25.348524+00:00",
+  "endpoint": "POST http://127.0.0.1:8744/api/chat",
+  "request_body": {
+    "user_id": "hw6-user-8844",
+    "session_id": "hw6-session-4",
+    "message": "/compact"
+  },
+  "http_status": 200,
+  "session_id": "hw6-session-4",
+  "retry_sent": false,
+  "normal_chat_request_sent": false,
+  "response_observations": {
+    "answer_present": true,
+    "answer_observation": "Older messages were compacted into a session summary and durable facts; raw messages were preserved.",
+    "raw_messages_preserved": true,
+    "episodic_facts_observed_after": 20,
+    "recent_messages_observed_after": 16,
+    "recent_summaries_observed_by_aggregate_after": 9,
+    "embedding_vectors_recorded": false,
+    "embedding_vectors_observation": "Vectors were intentionally not recorded in this artifact."
+  },
+  "read_only_verification": {
+    "memory_endpoint": {
+      "endpoint": "GET http://127.0.0.1:8744/api/memory/hw6-user-8844?session_id=hw6-session-4",
+      "http_status": 200
+    },
+    "aggregate_endpoint": {
+      "endpoint": "GET http://127.0.0.1:8744/api/aggregate/hw6-user-8844",
+      "http_status": 200
+    }
+  },
+  "service_availability": {
+    "fastapi": "available; health and OpenAPI checks returned HTTP 200",
+    "mongodb": "available; prior read-only connectivity check returned HTTP 200",
+    "ollama": "available; prior read-only model-list check returned HTTP 200 and qwen3:8b was present"
+  },
+  "mongodb_totals": {
+    "documents": "unavailable",
+    "messages": "unavailable",
+    "summaries": "unavailable",
+    "episodes": "unavailable",
+    "reason": "The project virtual-environment Python launcher pointed to a missing interpreter, and the available Python interpreter lacked bson/PyMongo. No direct MongoDB write or replacement query was performed."
+  },
+  "file_memory_counts": {
+    "before": "unavailable",
+    "after": "unavailable",
+    "reason": "The captured live run did not provide file-memory before/after counts."
+  },
+  "artifact_scope": "Created from captured results of the completed live run; no retry or second /compact request was sent."
+}

@@ -1,23 +1,30 @@
 ﻿from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+import os
 
 try:
     from .auth_hw4 import router as auth_router
     from .benchmark_hw4 import router as benchmark_router
     from .database import Base, engine
+    from .documents_hw6 import router as documents_router
+    from .memory_routes_hw6 import router as memory_router
     from .packages_hw5 import router as packages_router
     from .reports_hw4 import router as reports_router
 except ImportError:
     from auth_hw4 import router as auth_router
     from benchmark_hw4 import router as benchmark_router
     from database import Base, engine
+    from documents_hw6 import router as documents_router
+    from memory_routes_hw6 import router as memory_router
     from packages_hw5 import router as packages_router
     from reports_hw4 import router as reports_router
 
 
 # Create any missing tables defined by the SQLAlchemy models.
 # Existing tables and columns are handled by the HW5 migration script.
-Base.metadata.create_all(bind=engine)
+# HW6 MongoDB-only testing can opt out of this automatic MySQL initialization.
+if os.getenv("HW6_SKIP_MYSQL_INIT") != "1":
+    Base.metadata.create_all(bind=engine)
 
 
 app = FastAPI(
@@ -57,6 +64,8 @@ app.include_router(auth_router)
 app.include_router(packages_router)
 app.include_router(reports_router)
 app.include_router(benchmark_router)
+app.include_router(documents_router)
+app.include_router(memory_router)
 
 
 @app.get("/health")

@@ -12,17 +12,34 @@ class ModelClient:
         temperature: float = 0.0,
         base_url: str = "http://localhost:11434",
         json_mode: bool = True,
+        reasoning: bool | None = None,
+        timeout_s: float | None = None,
+        num_predict: int | None = None,
     ) -> None:
         self.model_name = model
         self.temperature = temperature
 
-        self.model = ChatOllama(
-            model=model,
-            temperature=temperature,
-            base_url=base_url,
-            num_ctx=2048,
-            format="json" if json_mode else None,
-        )
+        ollama_options: dict[str, Any] = {
+            "model": model,
+            "temperature": temperature,
+            "base_url": base_url,
+            "num_ctx": 2048,
+            "format": "json" if json_mode else None,
+        }
+        # Omit these options by default so existing callers retain their
+        # original ChatOllama behavior.
+        if reasoning is not None:
+            ollama_options["reasoning"] = reasoning
+        if timeout_s is not None:
+            if timeout_s <= 0:
+                raise ValueError("timeout_s must be greater than zero")
+            ollama_options["client_kwargs"] = {"timeout": float(timeout_s)}
+        if num_predict is not None:
+            if num_predict <= 0:
+                raise ValueError("num_predict must be greater than zero")
+            ollama_options["num_predict"] = num_predict
+
+        self.model = ChatOllama(**ollama_options)
 
         self.turn_count = 0
         self.cumulative_input_tokens = 0

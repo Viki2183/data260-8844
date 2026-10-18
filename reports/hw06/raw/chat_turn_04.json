@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-10-16T20:05:58.4466333-07:00",
+  "user_id": "hw6-user-8844",
+  "session_id": "hw6-session-4",
+  "request_message": "I am testing the HW6 memory system. My preferred study topic is distributed systems, and I want to remember that I am preparing for a graduate course project.",
+  "request": {
+    "method": "POST",
+    "path": "/api/chat",
+    "client_timeout_seconds": 420
+  },
+  "http_status": null,
+  "response_body": null,
+  "request_error": "recorder_output_unavailable",
+  "client_elapsed_seconds": null,
+  "assistant_response_returned": false,
+  "tokens_recorded": false,
+  "latency_recorded": false,
+  "episodic_facts_created": false,
+  "summary_created": false,
+  "final_counts": {
+    "documents": 1,
+    "messages": 15,
+    "summaries": 1,
+    "episodes": 15,
+    "session_4_messages": 1,
+    "session_4_assistant_messages": 0,
+    "session_4_summaries": 0,
+    "session_4_episodes": 0
+  },
+  "read_only_verification": {
+    "memory_endpoint_status": 200,
+    "aggregate_endpoint_status": 200,
+    "session_4_user_message_saved": true,
+    "session_4_user_message_count": 1,
+    "session_4_assistant_message_count": 0
+  },
+  "notes": "The single POST was attempted. The recorder did not return the POST status or response body, so those fields are explicitly unavailable. Counts and endpoint results were obtained afterward using read-only verification; no retry was sent."
+}

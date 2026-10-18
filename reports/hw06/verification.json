@@ -1,0 +1,597 @@
+{
+  "homework": "DATA260 HW6",
+  "student": "Vrishin KunnathamParambath",
+  "sid4": "8844",
+  "branch_expected": "hw6-development",
+  "port": 8744,
+  "mongo_database": "s8844_doc",
+  "model": "qwen3:8b",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "seed": 8844,
+  "verify_seed": 268844,
+  "hardware": "Intel Core i7-10750H, approximately 16 GB RAM",
+  "git": {
+    "branch": "hw6-development",
+    "commit": "a2fbe44c752b2b975c9f579d6d1fd715d5c29b14",
+    "working_tree": [
+      "M .gitignore",
+      " M AGENT.md",
+      " M code/web_application/main.py",
+      " M requirements.txt",
+      " M src/model_client.py",
+      "?? MEMORY.md",
+      "?? code/run_hw06_memory_experiments.py",
+      "?? code/verify_hw06.py",
+      "?? code/web_application/documents_hw6.py",
+      "?? code/web_application/embedding_service_hw6.py",
+      "?? code/web_application/memory_logic_hw6.py",
+      "?? code/web_application/memory_model_hw6.py",
+      "?? code/web_application/memory_repositories_hw6.py",
+      "?? code/web_application/memory_routes_hw6.py",
+      "?? code/web_application/memory_schemas_hw6.py",
+      "?? code/web_application/memory_service_hw6.py",
+      "?? code/web_application/memory_setup_hw6.py",
+      "?? code/web_application/mongo_database_hw6.py",
+      "?? code/web_application/mongo_repositories_hw6.py",
+      "?? code/web_application/mongo_setup_hw6.py",
+      "?? code/web_application/schemas_hw6.py",
+      "?? reports/hw06/"
+    ],
+    "tags": [
+      "hw1",
+      "hw2",
+      "hw3",
+      "hw4",
+      "hw5"
+    ]
+  },
+  "route_checks": {
+    "health": {
+      "status": 200,
+      "body": {
+        "status": "ok"
+      }
+    },
+    "openapi_status": 200,
+    "paths": {
+      "/api/documents": [
+        "get",
+        "post"
+      ],
+      "/api/documents/{document_id}": [
+        "delete",
+        "get",
+        "put"
+      ],
+      "/api/chat": [
+        "post"
+      ],
+      "/api/memory/{user_id}": [
+        "get"
+      ],
+      "/api/aggregate/{user_id}": [
+        "get"
+      ]
+    }
+  },
+  "crud_checks": {
+    "evidence_file": "reports/hw06/raw/document_crud_results.json"
+  },
+  "memory_checks": {
+    "database": "s8844_doc",
+    "collections": [
+      "documents",
+      "episodes",
+      "messages",
+      "summaries"
+    ],
+    "counts": {
+      "documents": 1,
+      "messages": 50,
+      "summaries": 7,
+      "episodes": 41
+    },
+    "validators": {
+      "documents": {
+        "validationLevel": "strict",
+        "validationAction": "error",
+        "has_jsonSchema": true
+      },
+      "messages": {
+        "validationLevel": "strict",
+        "validationAction": "error",
+        "has_jsonSchema": true
+      },
+      "summaries": {
+        "validationLevel": "strict",
+        "validationAction": "error",
+        "has_jsonSchema": true
+      },
+      "episodes": {
+        "validationLevel": "strict",
+        "validationAction": "error",
+        "has_jsonSchema": true
+      }
+    },
+    "indexes": {
+      "documents": [
+        "_id_",
+        "created_at_desc",
+        "document_date_desc",
+        "severity_asc",
+        "status_asc"
+      ],
+      "messages": [
+        "_id_",
+        "messages_role_asc",
+        "messages_user_created_desc",
+        "messages_user_session_created_desc"
+      ],
+      "summaries": [
+        "_id_",
+        "summaries_user_scope_created_desc",
+        "summaries_user_session_created_desc"
+      ],
+      "episodes": [
+        "_id_",
+        "episodes_user_created_desc",
+        "episodes_user_importance_desc"
+      ]
+    },
+    "session_summary_count": 6,
+    "lifetime_summary_count": 1
+  },
+  "short_term_experiment_checks": {
+    "crud_statuses": [
+      201,
+      201,
+      200,
+      200,
+      200,
+      200,
+      422,
+      422,
+      422,
+      422,
+      400,
+      404,
+      204,
+      404,
+      200
+    ],
+    "short_term_windows": [
+      4,
+      12,
+      30
+    ],
+    "lifetime_threshold": true
+  },
+  "command_checks": {
+    "live_evidence": "reports/hw06/raw/memory_commands_live.json",
+    "stale_evidence_non_authoritative": true
+  },
+  "lifetime_summary_checks": true,
+  "report_file_checks": {
+    "required_evidence": [
+      "document_crud_results.json",
+      "chat_turn_01.json",
+      "chat_turn_02.json",
+      "chat_turn_03.json",
+      "chat_turn_04.json",
+      "chat_turn_04_server_completion.json",
+      "chat_turn_05.json",
+      "chat_turn_06.json",
+      "chat_turn_07.json",
+      "chat_turn_08.json",
+      "memory_commands_results.json",
+      "memory_commands_live.json",
+      "short_term_comparison.csv",
+      "short_term_comparison.jsonl",
+      "compact_lifetime_step_01.json",
+      "compact_lifetime_step_02.json",
+      "compact_lifetime_step_03.json"
+    ],
+    "missing": []
+  },
+  "checks": [
+    {
+      "name": "git.branch",
+      "status": "PASS",
+      "details": "hw6-development"
+    },
+    {
+      "name": "git.tags",
+      "status": "PASS",
+      "details": [
+        "hw1",
+        "hw2",
+        "hw3",
+        "hw4",
+        "hw5"
+      ]
+    },
+    {
+      "name": "file:MEMORY.md",
+      "status": "PASS",
+      "details": "MEMORY.md"
+    },
+    {
+      "name": "file:AGENT.md",
+      "status": "PASS",
+      "details": "AGENT.md"
+    },
+    {
+      "name": "file:requirements.txt",
+      "status": "PASS",
+      "details": "requirements.txt"
+    },
+    {
+      "name": "file:code/web_application/mongo_database_hw6.py",
+      "status": "PASS",
+      "details": "code/web_application/mongo_database_hw6.py"
+    },
+    {
+      "name": "file:code/web_application/mongo_repositories_hw6.py",
+      "status": "PASS",
+      "details": "code/web_application/mongo_repositories_hw6.py"
+    },
+    {
+      "name": "file:code/web_application/mongo_setup_hw6.py",
+      "status": "PASS",
+      "details": "code/web_application/mongo_setup_hw6.py"
+    },
+    {
+      "name": "file:code/web_application/schemas_hw6.py",
+      "status": "PASS",
+      "details": "code/web_application/schemas_hw6.py"
+    },
+    {
+      "name": "file:code/web_application/documents_hw6.py",
+      "status": "PASS",
+      "details": "code/web_application/documents_hw6.py"
+    },
+    {
+      "name": "file:code/web_application/memory_schemas_hw6.py",
+      "status": "PASS",
+      "details": "code/web_application/memory_schemas_hw6.py"
+    },
+    {
+      "name": "file:code/web_application/memory_repositories_hw6.py",
+      "status": "PASS",
+      "details": "code/web_application/memory_repositories_hw6.py"
+    },
+    {
+      "name": "file:code/web_application/memory_setup_hw6.py",
+      "status": "PASS",
+      "details": "code/web_application/memory_setup_hw6.py"
+    },
+    {
+      "name": "file:code/web_application/embedding_service_hw6.py",
+      "status": "PASS",
+      "details": "code/web_application/embedding_service_hw6.py"
+    },
+    {
+      "name": "file:code/web_application/memory_logic_hw6.py",
+      "status": "PASS",
+      "details": "code/web_application/memory_logic_hw6.py"
+    },
+    {
+      "name": "file:code/web_application/memory_model_hw6.py",
+      "status": "PASS",
+      "details": "code/web_application/memory_model_hw6.py"
+    },
+    {
+      "name": "file:code/web_application/memory_service_hw6.py",
+      "status": "PASS",
+      "details": "code/web_application/memory_service_hw6.py"
+    },
+    {
+      "name": "file:code/web_application/memory_routes_hw6.py",
+      "status": "PASS",
+      "details": "code/web_application/memory_routes_hw6.py"
+    },
+    {
+      "name": "file:reports/hw06/README.md",
+      "status": "PASS",
+      "details": "reports/hw06/README.md"
+    },
+    {
+      "name": "file:reports/hw06/memory_probes.yaml",
+      "status": "PASS",
+      "details": "reports/hw06/memory_probes.yaml"
+    },
+    {
+      "name": "directory:reports/hw06/raw",
+      "status": "PASS",
+      "details": "reports/hw06/raw"
+    },
+    {
+      "name": "directory:reports/hw06/screenshots",
+      "status": "PASS",
+      "details": "reports/hw06/screenshots"
+    },
+    {
+      "name": "evidence.required_files",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "http.health",
+      "status": "PASS",
+      "details": {
+        "status": 200,
+        "body": {
+          "status": "ok"
+        },
+        "error": null
+      }
+    },
+    {
+      "name": "http.openapi",
+      "status": "PASS",
+      "details": {
+        "status": 200,
+        "error": null
+      }
+    },
+    {
+      "name": "http.route:/api/documents",
+      "status": "PASS",
+      "details": {
+        "expected": [
+          "get",
+          "post"
+        ],
+        "actual": [
+          "get",
+          "post"
+        ]
+      }
+    },
+    {
+      "name": "http.route:/api/documents/{document_id}",
+      "status": "PASS",
+      "details": {
+        "expected": [
+          "delete",
+          "get",
+          "put"
+        ],
+        "actual": [
+          "delete",
+          "get",
+          "put"
+        ]
+      }
+    },
+    {
+      "name": "http.route:/api/chat",
+      "status": "PASS",
+      "details": {
+        "expected": [
+          "post"
+        ],
+        "actual": [
+          "post"
+        ]
+      }
+    },
+    {
+      "name": "http.route:/api/memory/{user_id}",
+      "status": "PASS",
+      "details": {
+        "expected": [
+          "get"
+        ],
+        "actual": [
+          "get"
+        ]
+      }
+    },
+    {
+      "name": "http.route:/api/aggregate/{user_id}",
+      "status": "PASS",
+      "details": {
+        "expected": [
+          "get"
+        ],
+        "actual": [
+          "get"
+        ]
+      }
+    },
+    {
+      "name": "mongo.collection:documents",
+      "status": "PASS",
+      "details": "documents"
+    },
+    {
+      "name": "mongo.collection:messages",
+      "status": "PASS",
+      "details": "messages"
+    },
+    {
+      "name": "mongo.collection:summaries",
+      "status": "PASS",
+      "details": "summaries"
+    },
+    {
+      "name": "mongo.collection:episodes",
+      "status": "PASS",
+      "details": "episodes"
+    },
+    {
+      "name": "mongo.validator:documents",
+      "status": "PASS",
+      "details": [
+        "$jsonSchema"
+      ]
+    },
+    {
+      "name": "mongo.indexes:documents",
+      "status": "PASS",
+      "details": [
+        "_id_",
+        "created_at_desc",
+        "document_date_desc",
+        "severity_asc",
+        "status_asc"
+      ]
+    },
+    {
+      "name": "mongo.validator:messages",
+      "status": "PASS",
+      "details": [
+        "$jsonSchema"
+      ]
+    },
+    {
+      "name": "mongo.indexes:messages",
+      "status": "PASS",
+      "details": [
+        "_id_",
+        "messages_role_asc",
+        "messages_user_created_desc",
+        "messages_user_session_created_desc"
+      ]
+    },
+    {
+      "name": "mongo.validator:summaries",
+      "status": "PASS",
+      "details": [
+        "$jsonSchema"
+      ]
+    },
+    {
+      "name": "mongo.indexes:summaries",
+      "status": "PASS",
+      "details": [
+        "_id_",
+        "summaries_user_scope_created_desc",
+        "summaries_user_session_created_desc"
+      ]
+    },
+    {
+      "name": "mongo.validator:episodes",
+      "status": "PASS",
+      "details": [
+        "$jsonSchema"
+      ]
+    },
+    {
+      "name": "mongo.indexes:episodes",
+      "status": "PASS",
+      "details": [
+        "_id_",
+        "episodes_user_created_desc",
+        "episodes_user_importance_desc"
+      ]
+    },
+    {
+      "name": "mongo.documents_count",
+      "status": "PASS",
+      "details": 1
+    },
+    {
+      "name": "mongo.messages_count",
+      "status": "PASS",
+      "details": 50
+    },
+    {
+      "name": "mongo.session_summaries",
+      "status": "PASS",
+      "details": 6
+    },
+    {
+      "name": "mongo.lifetime_summaries",
+      "status": "PASS",
+      "details": 1
+    },
+    {
+      "name": "mongo.episodic_facts",
+      "status": "PASS",
+      "details": 41
+    },
+    {
+      "name": "evidence.crud_cases",
+      "status": "PASS",
+      "details": {
+        "recorded_actual_status_codes": [
+          201,
+          201,
+          200,
+          200,
+          200,
+          200,
+          422,
+          422,
+          422,
+          422,
+          400,
+          404,
+          204,
+          404,
+          200
+        ],
+        "required": [
+          200,
+          201,
+          204,
+          400,
+          404,
+          422
+        ]
+      }
+    },
+    {
+      "name": "evidence.episodic_retrieval",
+      "status": "PASS",
+      "details": "session-4 evidence"
+    },
+    {
+      "name": "evidence.live_commands_200",
+      "status": "PASS",
+      "details": [
+        200,
+        200,
+        200,
+        200
+      ]
+    },
+    {
+      "name": "evidence.short_term_windows",
+      "status": "PASS",
+      "details": [
+        4,
+        12,
+        30
+      ]
+    },
+    {
+      "name": "evidence.lifetime_threshold",
+      "status": "PASS",
+      "details": {
+        "sixth_session_summary_created": true,
+        "lifetime_summary_created_at_threshold": true,
+        "lifetime_summary_visible_in_memory_response": true,
+        "lifetime_summary_requirement_passed": true
+      }
+    },
+    {
+      "name": "evidence.stale_label",
+      "status": "PASS",
+      "details": {
+        "stale_file_exists": true,
+        "server_process_used": "Existing FastAPI PID 21012; it was not restarted during this test.",
+        "identifies_old_process": true,
+        "live_file_exists": true,
+        "separate_paths": true
+      }
+    }
+  ],
+  "warnings": [],
+  "overall": "PASS",
+  "timestamp": "2026-10-17T10:23:07.383074+00:00"
+}

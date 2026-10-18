@@ -1,0 +1,43 @@
+{
+  "timestamp": "unavailable: the successful compact summary did not capture a timestamp",
+  "endpoint": "POST http://127.0.0.1:8744/api/chat",
+  "session_id": "hw6-session-4",
+  "http_status": 200,
+  "elapsed_ms": 130973.166,
+  "answer": "Older messages were compacted into a session summary and durable facts; raw messages were preserved.",
+  "short_term_memory_metadata": {
+    "available": true,
+    "captured_fields": ["short_term_count", "short_term_messages"],
+    "values": "unavailable: the captured successful result recorded metadata keys only"
+  },
+  "session_summary_metadata": {
+    "available": true,
+    "captured_field": "session_summary",
+    "value": "unavailable: the captured successful result recorded metadata keys only"
+  },
+  "lifetime_summary_metadata": {
+    "available": true,
+    "captured_field": "lifetime_summary",
+    "value": "unavailable: the captured successful result recorded metadata keys only"
+  },
+  "episodic_fact_metadata": {
+    "available": true,
+    "captured_field": "episodic_facts",
+    "value": "unavailable: the captured successful result recorded metadata keys only"
+  },
+  "file_memory_field": {
+    "available": true,
+    "captured_field": "file_memory",
+    "value": "unavailable: the captured successful result recorded metadata keys only"
+  },
+  "retry_count": 0,
+  "normal_chat_request_sent": false,
+  "raw_messages_preserved": true,
+  "direct_mongodb_totals": "unavailable: HTTP-only verification was used; no direct MongoDB query was performed",
+  "earlier_failed_attempt": {
+    "http_status": 422,
+    "artifact": "compact_authoritative_before_after.json",
+    "preserved": true
+  },
+  "source": "Captured successful HTTP result; no additional request was sent."
+}

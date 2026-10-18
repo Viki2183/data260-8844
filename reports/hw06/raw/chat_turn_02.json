@@ -1,0 +1,99 @@
+{
+  "timestamp": "2026-10-16T08:49:39.2454110Z",
+  "user_id": "hw6-user-8844",
+  "session_id": "hw6-session-2",
+  "request_message": "I am studying FastAPI and MongoDB for DATA 260 Homework 6. My goal is to understand how short-term, long-term, and episodic memory work together.",
+  "model_name": "qwen3:8b",
+  "model_name_note": "The model was configured and available locally; the failed HTTP response did not return model metadata.",
+  "request": {
+    "method": "POST",
+    "path": "/api/chat",
+    "timeout_seconds": 240
+  },
+  "chat_result": {
+    "http_status": 500,
+    "response_body": "",
+    "elapsed_ms": 75384.7518,
+    "answer": null,
+    "memory_used": null,
+    "usage": null,
+    "diagnostics": null,
+    "response_capture_note": "The request completed with HTTP 500 and an empty response body as captured by the client. No retry was performed, and no error payload was invented."
+  },
+  "read_only_api_verification": {
+    "memory": {
+      "method": "GET",
+      "path": "/api/memory/hw6-user-8844?session_id=hw6-session-2",
+      "http_status": 200,
+      "response": {
+        "user_id": "hw6-user-8844",
+        "messages": [
+          {
+            "id": "6ad1e523b71ef9f4e954fac5",
+            "user_id": "hw6-user-8844",
+            "session_id": "hw6-session-2",
+            "role": "user",
+            "content": "I am studying FastAPI and MongoDB for DATA 260 Homework 6. My goal is to understand how short-term, long-term, and episodic memory work together.",
+            "created_at": "2026-10-16T08:49:39.308000",
+            "token_count": null,
+            "latency_ms": null
+          }
+        ],
+        "latest_session_summary": null,
+        "latest_lifetime_summary": null,
+        "episodic_facts": []
+      }
+    },
+    "aggregate": {
+      "method": "GET",
+      "path": "/api/aggregate/hw6-user-8844",
+      "http_status": 200,
+      "response": {
+        "user_id": "hw6-user-8844",
+        "daily_message_counts": [
+          {
+            "date": "2026-10-16",
+            "count": 2
+          }
+        ],
+        "recent_summaries": []
+      }
+    }
+  },
+  "mongodb_read_only_verification": {
+    "database": "s8844_doc",
+    "collection_counts": {
+      "documents": 1,
+      "messages": 2,
+      "summaries": 0,
+      "episodes": 0
+    },
+    "session_2_messages": [
+      {
+        "user_id": "hw6-user-8844",
+        "session_id": "hw6-session-2",
+        "role": "user",
+        "content": "I am studying FastAPI and MongoDB for DATA 260 Homework 6. My goal is to understand how short-term, long-term, and episodic memory work together.",
+        "created_at": "2026-10-16T08:49:39.308000"
+      }
+    ],
+    "episodes_for_user": [],
+    "session_1_messages": [
+      {
+        "user_id": "hw6-user-8844",
+        "session_id": "hw6-session-1",
+        "role": "user",
+        "content": "I am studying FastAPI and MongoDB for DATA 260 Homework 6. My goal is to understand how short-term, long-term, and episodic memory work together.",
+        "created_at": "2026-10-16T08:37:32.844000"
+      }
+    ]
+  },
+  "consistency": {
+    "session_2_message_count": 1,
+    "session_2_assistant_message_count": 0,
+    "session_2_episode_count": 0,
+    "old_session_1_message_preserved": true,
+    "duplicate_session_2_message_created": false,
+    "direct_mongodb_writes_performed": false
+  }
+}

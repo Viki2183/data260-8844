@@ -1,0 +1,107 @@
+{
+  "timestamp": "2026-10-16T07:57:27.579485+00:00",
+  "base_url": "http://127.0.0.1:8744",
+  "database": "s8844_doc",
+  "collection": "documents",
+  "tests": [
+    {
+      "test_name": "create_retained_sample",
+      "http_method": "POST",
+      "path": "/api/documents",
+      "request_payload": {"title": "OSV-8844 API Validation", "description": "A retained HW6 sample document for CRUD and MongoDB screenshots.", "severity": "High", "status": "Open", "document_date": "2026-10-16T07:00:00Z", "package_code": "demo-package-8844"},
+      "actual_status_code": 201,
+      "actual_response_body": {"title": "OSV-8844 API Validation", "description": "A retained HW6 sample document for CRUD and MongoDB screenshots.", "severity": "High", "status": "Open", "document_date": "2026-10-16T07:00:00Z", "package_code": "demo-package-8844", "id": "6ad1d8e7c0cd8a7feedf55bc", "created_at": "2026-10-16T07:57:27.362466Z", "updated_at": "2026-10-16T07:57:27.362466Z"}
+    },
+    {
+      "test_name": "create_delete_test_document",
+      "http_method": "POST",
+      "path": "/api/documents",
+      "request_payload": {"title": "Temporary Delete Test", "description": "This document will be deleted through the API.", "severity": "Low", "status": "Open", "document_date": "2026-10-16T07:05:00Z", "package_code": "delete-test-8844"},
+      "actual_status_code": 201,
+      "actual_response_body": {"title": "Temporary Delete Test", "description": "This document will be deleted through the API.", "severity": "Low", "status": "Open", "document_date": "2026-10-16T07:05:00Z", "package_code": "delete-test-8844", "id": "6ad1d8e7c0cd8a7feedf55bd", "created_at": "2026-10-16T07:57:27.385462Z", "updated_at": "2026-10-16T07:57:27.385462Z"}
+    },
+    {
+      "test_name": "retrieve_all_documents",
+      "http_method": "GET",
+      "path": "/api/documents",
+      "request_payload": null,
+      "actual_status_code": 200,
+      "actual_response_body": [{"title": "Temporary Delete Test", "description": "This document will be deleted through the API.", "severity": "Low", "status": "Open", "document_date": "2026-10-16T07:05:00", "package_code": "delete-test-8844", "id": "6ad1d8e7c0cd8a7feedf55bd", "created_at": "2026-10-16T07:57:27.385000", "updated_at": "2026-10-16T07:57:27.385000"}, {"title": "OSV-8844 API Validation", "description": "A retained HW6 sample document for CRUD and MongoDB screenshots.", "severity": "High", "status": "Open", "document_date": "2026-10-16T07:00:00", "package_code": "demo-package-8844", "id": "6ad1d8e7c0cd8a7feedf55bc", "created_at": "2026-10-16T07:57:27.362000", "updated_at": "2026-10-16T07:57:27.362000"}]
+    },
+    {
+      "test_name": "retrieve_retained_document",
+      "http_method": "GET",
+      "path": "/api/documents/6ad1d8e7c0cd8a7feedf55bc",
+      "request_payload": null,
+      "actual_status_code": 200,
+      "actual_response_body": {"title": "OSV-8844 API Validation", "description": "A retained HW6 sample document for CRUD and MongoDB screenshots.", "severity": "High", "status": "Open", "document_date": "2026-10-16T07:00:00", "package_code": "demo-package-8844", "id": "6ad1d8e7c0cd8a7feedf55bc", "created_at": "2026-10-16T07:57:27.362000", "updated_at": "2026-10-16T07:57:27.362000"}
+    },
+    {
+      "test_name": "update_retained_document",
+      "http_method": "PUT",
+      "path": "/api/documents/6ad1d8e7c0cd8a7feedf55bc",
+      "request_payload": {"description": "Updated description after the HW6 API update test.", "severity": "Critical", "status": "Resolved"},
+      "actual_status_code": 200,
+      "actual_response_body": {"title": "OSV-8844 API Validation", "description": "Updated description after the HW6 API update test.", "severity": "Critical", "status": "Resolved", "document_date": "2026-10-16T07:00:00", "package_code": "demo-package-8844", "id": "6ad1d8e7c0cd8a7feedf55bc", "created_at": "2026-10-16T07:57:27.362000", "updated_at": "2026-10-16T07:57:27.432000"}
+    },
+    {
+      "test_name": "retrieve_updated_retained_document",
+      "http_method": "GET",
+      "path": "/api/documents/6ad1d8e7c0cd8a7feedf55bc",
+      "request_payload": null,
+      "actual_status_code": 200,
+      "actual_response_body": {"title": "OSV-8844 API Validation", "description": "Updated description after the HW6 API update test.", "severity": "Critical", "status": "Resolved", "document_date": "2026-10-16T07:00:00", "package_code": "demo-package-8844", "id": "6ad1d8e7c0cd8a7feedf55bc", "created_at": "2026-10-16T07:57:27.362000", "updated_at": "2026-10-16T07:57:27.432000"}
+    },
+    {
+      "test_name": "missing_required_title",
+      "http_method": "POST",
+      "path": "/api/documents",
+      "request_payload": {"description": "This should fail validation.", "severity": "High", "status": "Open", "document_date": "2026-10-16T07:10:00Z"},
+      "actual_status_code": 422,
+      "actual_response_body": {"detail": [{"type": "missing", "loc": ["body", "title"], "msg": "Field required", "input": {"description": "This should fail validation.", "severity": "High", "status": "Open", "document_date": "2026-10-16T07:10:00Z"}}]}
+    },
+    {
+      "test_name": "invalid_severity",
+      "http_method": "POST",
+      "path": "/api/documents",
+      "request_payload": {"title": "Invalid Severity Test", "description": "This should fail validation.", "severity": "Extreme", "status": "Open", "document_date": "2026-10-16T07:10:00Z"},
+      "actual_status_code": 422,
+      "actual_response_body": {"detail": [{"type": "literal_error", "loc": ["body", "severity"], "msg": "Input should be 'Critical', 'High', 'Medium' or 'Low'", "input": "Extreme", "ctx": {"expected": "'Critical', 'High', 'Medium' or 'Low'"}}]}
+    },
+    {
+      "test_name": "invalid_status",
+      "http_method": "POST",
+      "path": "/api/documents",
+      "request_payload": {"title": "Invalid Status Test", "description": "This should fail validation.", "severity": "Medium", "status": "Unknown", "document_date": "2026-10-16T07:10:00Z"},
+      "actual_status_code": 422,
+      "actual_response_body": {"detail": [{"type": "literal_error", "loc": ["body", "status"], "msg": "Input should be 'Open', 'Resolved', 'Accepted' or 'Rejected'", "input": "Unknown", "ctx": {"expected": "'Open', 'Resolved', 'Accepted' or 'Rejected'"}}]}
+    },
+    {
+      "test_name": "invalid_datetime",
+      "http_method": "POST",
+      "path": "/api/documents",
+      "request_payload": {"title": "Invalid Date Test", "description": "This should fail validation.", "severity": "Medium", "status": "Open", "document_date": "not-a-date"},
+      "actual_status_code": 422,
+      "actual_response_body": {"detail": [{"type": "datetime_from_date_parsing", "loc": ["body", "document_date"], "msg": "Input should be a valid datetime or date, invalid character in year", "input": "not-a-date", "ctx": {"error": "invalid character in year"}}]}
+    },
+    {"test_name": "malformed_object_id", "http_method": "GET", "path": "/api/documents/not-a-valid-object-id", "request_payload": null, "actual_status_code": 400, "actual_response_body": {"detail": "Invalid document ID: 'not-a-valid-object-id'"}},
+    {"test_name": "well_formed_nonexistent_object_id", "http_method": "GET", "path": "/api/documents/000000000000000000000000", "request_payload": null, "actual_status_code": 404, "actual_response_body": {"detail": "Document not found: 000000000000000000000000"}},
+    {"test_name": "delete_temporary_document", "http_method": "DELETE", "path": "/api/documents/6ad1d8e7c0cd8a7feedf55bd", "request_payload": null, "actual_status_code": 204, "actual_response_body": ""},
+    {"test_name": "confirm_temporary_document_deleted", "http_method": "GET", "path": "/api/documents/6ad1d8e7c0cd8a7feedf55bd", "request_payload": null, "actual_status_code": 404, "actual_response_body": {"detail": "Document not found: 6ad1d8e7c0cd8a7feedf55bd"}},
+    {"test_name": "retrieve_final_document_list", "http_method": "GET", "path": "/api/documents", "request_payload": null, "actual_status_code": 200, "actual_response_body": [{"title": "OSV-8844 API Validation", "description": "Updated description after the HW6 API update test.", "severity": "Critical", "status": "Resolved", "document_date": "2026-10-16T07:00:00", "package_code": "demo-package-8844", "id": "6ad1d8e7c0cd8a7feedf55bc", "created_at": "2026-10-16T07:57:27.362000", "updated_at": "2026-10-16T07:57:27.432000"}]}
+  ],
+  "retained_document_id": "6ad1d8e7c0cd8a7feedf55bc",
+  "deleted_document_id": "6ad1d8e7c0cd8a7feedf55bd",
+  "final_document_count": 1,
+  "final_retained_document": {
+    "_id": "6ad1d8e7c0cd8a7feedf55bc",
+    "title": "OSV-8844 API Validation",
+    "description": "Updated description after the HW6 API update test.",
+    "severity": "Critical",
+    "status": "Resolved",
+    "document_date": "2026-10-16T07:00:00",
+    "package_code": "demo-package-8844",
+    "created_at": "2026-10-16T07:57:27.362000",
+    "updated_at": "2026-10-16T07:57:27.432000"
+  }
+}

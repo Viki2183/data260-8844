@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-10-16T08:54:25.6241863Z",
+  "endpoint": "local Ollama chat diagnostic",
+  "model": "qwen3:8b",
+  "request": {
+    "prompt": "Reply with the single word OK.",
+    "stream": false,
+    "think": false,
+    "timeout_seconds": 240
+  },
+  "result": {
+    "succeeded": true,
+    "status_code": 200,
+    "elapsed_ms": 116200.0094,
+    "response_keys": [
+      "model",
+      "created_at",
+      "message",
+      "done",
+      "done_reason",
+      "total_duration",
+      "load_duration",
+      "prompt_eval_count",
+      "prompt_eval_cached_count",
+      "prompt_eval_duration",
+      "eval_count",
+      "eval_duration"
+    ],
+    "message_content_exists": true,
+    "message_content_length": 2,
+    "usage_object_present": false,
+    "usage_fields_present_at_top_level": [
+      "prompt_eval_count",
+      "prompt_eval_cached_count",
+      "eval_count",
+      "total_duration",
+      "load_duration",
+      "prompt_eval_duration",
+      "eval_duration"
+    ],
+    "error_category": null
+  },
+  "note": "Only a short response summary was retained; the full model response was not written to evidence."
+}

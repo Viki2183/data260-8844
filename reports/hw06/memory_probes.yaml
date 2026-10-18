@@ -1,0 +1,95 @@
+homework: DATA260 HW6
+student: Vrishin KunnathamParambath
+sid4: "8844"
+seed: 8844
+verify_seed: 268844
+model: qwen3:8b
+embedding_model: sentence-transformers/all-MiniLM-L6-v2
+
+# These windows are the values used to compare how much recent conversation
+# remains directly available before older content must be summarized.
+short_term_windows:
+  - 4
+  - 12
+  - 30
+
+# Probe definitions describe reproducible experiments. They specify what we
+# expect to observe; they do not claim that a measurement has already passed.
+probes:
+  - probe_id: short_term_preference
+    name: Recent preference remains in short-term memory
+    setup_messages:
+      - "My preferred explanation style is concise, with comments beside important code."
+      - "I am preparing a DATA 260 graduate-course project."
+      - "Please keep the implementation easy to verify."
+    follow_up_question: "What explanation style did I say I prefer?"
+    expected_memory_source: recent messages
+    expected_behavior: "The recent preference should be available when it remains inside the configured short-term window."
+    required_for_pass: "The answer identifies the concise explanation preference from recent messages without requiring a summary."
+    applicable_short_term_windows:
+      - 4
+      - 12
+      - 30
+
+  - probe_id: session_summary_preferences
+    name: Session summary preserves project preferences
+    setup_messages:
+      - "My preferred study topic is distributed systems."
+      - "I want to focus on reliability and clear documentation."
+      - "The system should be modular, testable, and easy for another developer to understand."
+      - "These are important goals for my graduate course project."
+      - "Please remember these preferences for this session."
+    follow_up_question: "What project preferences and design goals have I shared?"
+    expected_memory_source: session summary
+    expected_behavior: "After the fifth user message, older session content should be represented by a session summary."
+    required_for_pass: "The response includes the stated topic, reliability and documentation priorities, and modular/testable design goals."
+    applicable_short_term_windows:
+      - 4
+      - 12
+      - 30
+
+  - probe_id: episodic_topic_retrieval
+    name: Durable topic is retrieved from episodic memory
+    setup_messages:
+      - "I prefer distributed systems as a study topic."
+      - "That topic is relevant to my graduate course project."
+      - "Please preserve this as a durable preference."
+    follow_up_question: "What study topic did I say I prefer, and why is it useful for my project?"
+    expected_memory_source: episodic facts
+    expected_behavior: "A later question should retrieve the durable distributed-systems preference through semantic episodic retrieval."
+    required_for_pass: "The answer identifies distributed systems and connects it to the graduate course project using a retrieved episodic fact."
+    applicable_short_term_windows:
+      - 4
+      - 12
+      - 30
+
+  - probe_id: lifetime_preference
+    name: Durable preference survives across sessions
+    setup_messages:
+      - "Across my work, I prefer humanized explanations with clear verification steps."
+      - "Please preserve this durable preference in the user-level memory."
+      - "Complete the configured lifetime-summary threshold before opening a new session."
+    follow_up_question: "What explanation style do I generally prefer in a new session?"
+    expected_memory_source: lifetime summary
+    expected_behavior: "After lifetime-summary creation, the preference should remain available when the user starts another session."
+    required_for_pass: "The new-session response reflects the durable explanation-style preference without relying only on the prior session's short-term messages."
+    applicable_short_term_windows:
+      - 4
+      - 12
+      - 30
+
+  - probe_id: command_behavior
+    name: File-based memory command behavior
+    setup_messages:
+      - "/help"
+      - "/memory"
+      - "/dream"
+      - "/compact"
+    follow_up_question: "Use each memory command and describe what it does."
+    expected_memory_source: command handler
+    expected_behavior: "The command handler should explain commands, return scoped memory, add verified durable facts through /dream, and compact older memory while preserving raw messages."
+    required_for_pass: "/help returns command instructions; /memory returns a snapshot; /dream adds verified facts, skips duplicates, and records contradictions for review; /compact reports compaction and preserves raw messages."
+    applicable_short_term_windows:
+      - 4
+      - 12
+      - 30

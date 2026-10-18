@@ -1,0 +1,6 @@
+probe_id,question,expected_fact,matched_keywords,quality_score,scoring_reason
+probe-01-topic,Which study topic did I say I preferred?,preferred study topic is distributed systems,"[""distributed systems""]",5,"Expected fact and all probe keywords were identified. This is an automated heuristic, not human evaluation."
+probe-02-reliability,What reliability goal did I describe for the project?,the project should be reliable,"[""reliable"", ""reliability""]",5,"Expected fact and all probe keywords were identified. This is an automated heuristic, not human evaluation."
+probe-03-design,What did I say about modular and testable code?,the code should be modular and testable,"[""modular"", ""testable""]",5,"Expected fact and all probe keywords were identified. This is an automated heuristic, not human evaluation."
+probe-04-documentation,What documentation preference did I mention?,clear documentation is important,"[""documentation""]",3,"Some expected content was present, but the keyword match was incomplete. This is an automated heuristic, not human evaluation."
+probe-05-scale,What concern did I raise about scalability and fault tolerance?,the project should address scalability and fault tolerance,"[""scalability"", ""fault tolerance""]",5,"Expected fact and all probe keywords were identified. This is an automated heuristic, not human evaluation."

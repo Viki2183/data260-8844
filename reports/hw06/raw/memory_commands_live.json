@@ -1,0 +1,93 @@
+{
+  "homework": "DATA260 HW6",
+  "timestamp": "2026-10-17T09:09:59.333987+00:00",
+  "base_url": "http://127.0.0.1:8744",
+  "user_id": "hw6-user-8844",
+  "session_id": "hw6-session-4",
+  "test_authority": "live updated-process test",
+  "stale_process_evidence": "reports/hw06/raw/memory_commands_results.json was preserved unchanged",
+  "retry_sent": false,
+  "capture_note": "All four live requests returned HTTP 200. The original console capture was truncated by the large /memory episodic embedding payload, so this artifact records the observed bounded fields and read-only final-state verification without inventing omitted response content.",
+  "counts_before": {
+    "documents": 1,
+    "messages": 32,
+    "summaries": 2,
+    "episodes": 23
+  },
+  "commands": [
+    {
+      "request_body": {"user_id": "hw6-user-8844", "session_id": "hw6-session-4", "message": "/help"},
+      "http_status": 200,
+      "response_body": {
+        "answer": "Available HW6 memory commands:\n- /memory: display the current user-scoped memory snapshot.\n- /compact: summarize older session messages and store durable facts.\n- /dream: preview possible durable facts without saving anything.\n- /help: show this command guide.\nCommands are bounded to one user and session, and never display credentials.",
+        "command": "/help",
+        "command_result": {"help": "Available HW6 memory commands"},
+        "usage": {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0, "latency_ms": 0.0}
+      },
+      "elapsed_ms": 63.709,
+      "ollama_contacted": false,
+      "mongodb_writes_expected": false,
+      "messages_created": false
+    },
+    {
+      "request_body": {"user_id": "hw6-user-8844", "session_id": "hw6-session-4", "message": "/memory"},
+      "http_status": 200,
+      "response_body": {
+        "answer": "Here is the current memory snapshot for this user and session.",
+        "command": "/memory",
+        "memory_snapshot_returned": true,
+        "full_snapshot_note": "The response included the bounded user/session snapshot; episodic embeddings are omitted here to keep evidence compact."
+      },
+      "elapsed_ms": 11.353,
+      "ollama_contacted": false,
+      "mongodb_writes_expected": false,
+      "messages_created": false
+    },
+    {
+      "request_body": {"user_id": "hw6-user-8844", "session_id": "hw6-session-4", "message": "/dream"},
+      "http_status": 200,
+      "response_body": {
+        "answer": "This is a non-destructive consolidation preview; no facts or summaries were saved.",
+        "command": "/dream",
+        "command_result": {"persisted": false, "proposed_facts_returned": true},
+        "response_body_capture": "Complete proposed-fact text was not retained in the bounded console capture."
+      },
+      "elapsed_ms": null,
+      "ollama_contacted": true,
+      "mongodb_writes_expected": false,
+      "messages_created": false
+    },
+    {
+      "request_body": {"user_id": "hw6-user-8844", "session_id": "hw6-session-4", "message": "/compact"},
+      "http_status": 200,
+      "response_body": {
+        "answer": "Older messages were compacted into a session summary and durable facts; raw messages were preserved.",
+        "command": "/compact",
+        "command_result": {"raw_messages_preserved": true, "summary_created": true, "facts_saved": 3},
+        "response_body_capture": "The complete saved-summary text was verified read-only in MongoDB; the oversized response body was not retained in the bounded console capture."
+      },
+      "elapsed_ms": null,
+      "ollama_contacted": true,
+      "mongodb_writes_expected": true,
+      "messages_created": false
+    }
+  ],
+  "read_only_verification": {
+    "memory_http_status": 200,
+    "aggregate_http_status": 200,
+    "command_message_counts_after": {"/help": 1, "/memory": 1, "/dream": 1, "/compact": 1},
+    "interpretation": "These command-content counts were already present before the live run; total messages stayed at 32, so no new command messages were created.",
+    "session_summary_count": 2,
+    "lifetime_summary_count": 0,
+    "user_episode_count": 26,
+    "latest_session_summary_verified": true,
+    "raw_messages_preserved": true
+  },
+  "counts_after": {
+    "documents": 1,
+    "messages": 32,
+    "summaries": 3,
+    "episodes": 26
+  },
+  "credentials_or_connection_strings_in_responses": false
+}

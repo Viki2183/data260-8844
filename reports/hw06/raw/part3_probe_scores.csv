@@ -1,0 +1,69 @@
+probe_id,question,response,expected_fact,matched_keywords,quality_score,scoring_reason
+probe-01-topic,Which study topic did I say I preferred?,The study topic you preferred is **distributed systems**.,preferred study topic is distributed systems,"[""distributed systems""]",5,"Expected fact and all probe keywords were identified. This is an automated heuristic, not human evaluation."
+probe-02-reliability,What reliability goal did I describe for the project?,"The reliability goal you described for the project includes **fault tolerance**, **redundancy**, **consistency protocols** (such as Raft or Paxos), and **error handling**. These goals are critical for ensuring the system behaves consistently and reliably, even in the presence of failures or inconsistencies.",the project should be reliable,"[""reliability""]",3,"Some expected content was present, but the keyword match was incomplete. This is an automated heuristic, not human evaluation."
+probe-03-design,What did I say about modular and testable code?,"You mentioned a preference for **modular code** with **single responsibility** to ensure clarity, maintainability, and scalability. Additionally, you emphasized the importance of **testable code** with **focused checks for each module**, which supports modular design and facilitates verification and validation of individual components.",the code should be modular and testable,"[""modular"", ""testable""]",5,"Expected fact and all probe keywords were identified. This is an automated heuristic, not human evaluation."
+probe-04-documentation,What documentation preference did I mention?,"You mentioned a preference for **clear documentation** to be important for another developer joining the project. This aligns with your focus on **modular code** and **reliability**, ensuring that the project is maintainable and understandable for others.",clear documentation is important,"[""documentation""]",3,"Some expected content was present, but the keyword match was incomplete. This is an automated heuristic, not human evaluation."
+probe-05-scale,What concern did I raise about scalability and fault tolerance?,"You raised concerns about **scalability** as the amount of data grows and **fault tolerance** when one component fails. These concerns align with your focus on **reliability**, **modular code**, and **system robustness** in a distributed environment.",the project should address scalability and fault tolerance,"[""scalability"", ""fault tolerance""]",5,"Expected fact and all probe keywords were identified. This is an automated heuristic, not human evaluation."
+probe-01-topic,Which study topic did I say I preferred?,You preferred the study topic of **distributed systems**.,preferred study topic is distributed systems,"[""distributed systems""]",5,"Expected fact and all probe keywords were identified. This is an automated heuristic, not human evaluation."
+probe-02-reliability,What reliability goal did I describe for the project?,"You described the reliability goal of ensuring the system **behaves consistently**. This is critical for maintaining **predictable**, **resilient**, and **trustworthy** behavior in a **distributed environment**.",the project should be reliable,"[""reliability""]",3,"Some expected content was present, but the keyword match was incomplete. This is an automated heuristic, not human evaluation."
+probe-03-design,What did I say about modular and testable code?,"You emphasized the importance of **modular code** to ensure **each responsibility is easy to understand**, **maintain**, and **reuse**. Additionally, you prioritized **testable code** with **focused checks for each module**, which supports **clarity**, **maintainability**, and **scalability** in your distributed systems project.",the code should be modular and testable,"[""modular"", ""testable""]",5,"Expected fact and all probe keywords were identified. This is an automated heuristic, not human evaluation."
+probe-04-documentation,What documentation preference did I mention?,"You mentioned that **clear documentation is important** for another developer joining the project. This preference highlights the importance of **maintainability**, **clarity**, and **collaboration** in your distributed systems project.",clear documentation is important,"[""documentation""]",3,"Some expected content was present, but the keyword match was incomplete. This is an automated heuristic, not human evaluation."
+probe-05-scale,What concern did I raise about scalability and fault tolerance?,"You raised concerns about **scalability** as the amount of data grows and **fault tolerance** when one component fails. These concerns are critical for ensuring **reliable**, **resilient**, and **scalable** behavior in your distributed systems project.",the project should address scalability and fault tolerance,"[""scalability"", ""fault tolerance""]",5,"Expected fact and all probe keywords were identified. This is an automated heuristic, not human evaluation."
+probe-01-topic,Which study topic did I say I preferred?,"You mentioned that you preferred **""Deterministic Fake Data in Tests When Live Services Are Unnecessary""** as a study topic. Let me know if you'd like to explore any of the other topics or dive deeper into this one! 📘🔍",preferred study topic is distributed systems,[],2,"The answer was related or non-empty but did not identify the expected fact. This is an automated heuristic, not human evaluation."
+probe-02-reliability,What reliability goal did I describe for the project?,"You described the **reliability goal** for the project as:
+
+> **""Ensure results are reproducible""**.
+
+This goal emphasizes the importance of **consistency, predictability, and trust** in the outcomes of the system, whether it's through unit tests, integration tests, or model inference. It aligns with the use of **fixed seeds, mock data, isolated environments, and versioned dependencies** to maintain stability across runs.",the project should be reliable,"[""reliability""]",3,"Some expected content was present, but the keyword match was incomplete. This is an automated heuristic, not human evaluation."
+probe-03-design,What did I say about modular and testable code?,"You mentioned that **modular and testable code** is important for the project, and you emphasized the following key points:
+
+---
+
+### **What You Said About Modular and Testable Code:**
+
+> **""Modular and testable code is essential for maintaining clarity, reducing complexity, and enabling reliable testing.""**
+
+This reflects a strong focus on:
+
+- **Separation of concerns**: Breaking down the system into distinct, focused components.
+- **Reusability**: Writing code that can be used across different parts of the system or in other projects.
+- **Testability**: Ensuring that each module can be independently tested without relying on external systems or services.
+- **Maintainability**: Making the codebase easier to update, debug, and scale over time.
+
+---
+
+### **How This Aligns with Your Project Preferences:**
+
+- **Unit tests** with **fake data** (when live services are not needed) support **testable code**.
+- **Mock services** and **in-memory databases** help maintain **modular** and **isolated** components.
+- **Reproducibility** and **self-contained tests** are made possible by **modular design** and **testable code**.
+
+---
+
+Let me know if you'd like to explore this further",the code should be modular and testable,"[""modular"", ""testable""]",5,"Expected fact and all probe keywords were identified. This is an automated heuristic, not human evaluation."
+probe-04-documentation,What documentation preference did I mention?,"You mentioned the **documentation preference** for the project as:
+
+> **""Document all assumptions, dependencies, and environment setup clearly to ensure reproducibility and clarity.""**
+
+This preference emphasizes the importance of:
+
+- **Transparency**: Making sure that anyone (or yourself in the future) can understand the context and setup of the project.
+- **Reproducibility**: Ensuring that the environment and assumptions are well-documented so that the work can be replicated.
+- **Clarity**: Avoiding ambiguity by explicitly stating what was assumed, what dependencies were used, and how the environment was configured.
+
+This aligns with your focus on **reproducibility**, **modular code**, and **testable systems**, as clear documentation supports all of these goals.
+
+Let me know if you'd like to explore this further! 📄🔍",clear documentation is important,"[""documentation"", ""documented""]",5,"Expected fact and all probe keywords were identified. This is an automated heuristic, not human evaluation."
+probe-05-scale,What concern did I raise about scalability and fault tolerance?,"You raised the concern about **scalability and fault tolerance** as follows:
+
+> **""The system should be designed to scale horizontally and handle failures gracefully without compromising reliability or performance.""**
+
+This concern highlights the importance of:
+
+- **Horizontal scaling**: Ensuring the system can grow by adding more nodes or instances rather than relying on a single point of failure.
+- **Fault tolerance**: Building resilience into the system so that it can continue operating or recover quickly from failures (e.g., through retries, circuit breakers, or redundancy).
+- **Reliability and performance**: Ensuring that as the system scales, it maintains consistent performance and does not degrade under load.
+
+This aligns with your focus on **reproducibility**, **mod,ular code**, and **testable systems**, as scalable and fault-tolerant systems are easier to test, maintain, and evolve over time.
+
+Let me know if you'd like to explore this further! 🚀🔧",the project should address scalability and fault tolerance,"[""scalability"", ""fault tolerance""]",5,"Expected fact and all probe keywords were identified. This is an automated heuristic, not human evaluation."

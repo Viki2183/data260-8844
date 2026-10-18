@@ -1,0 +1,63 @@
+{
+  "timestamp": "unavailable: the failed PowerShell recorder did not capture a timestamp",
+  "endpoint": "POST http://127.0.0.1:8744/api/chat",
+  "user_id": "hw6-user-8844",
+  "session_id": "hw6-session-4",
+  "request_body_intended": {
+    "user_id": "hw6-user-8844",
+    "session_id": "hw6-session-4",
+    "message": "/compact"
+  },
+  "request_body_sent": "{\\\"user_id\\\":\\\"hw6-user-8844\\\",\\\"session_id\\\":\\\"hw6-session-4\\\",\\\"message\\\":\\\"/compact\\\"}",
+  "http_status": 422,
+  "response_body": {
+    "detail": [
+      {
+        "type": "json_invalid",
+        "loc": ["body", 1],
+        "msg": "JSON decode error",
+        "ctx": {
+          "error": "Expecting property name enclosed in double quotes"
+        }
+      }
+    ]
+  },
+  "compact_completed": false,
+  "retry_count": 0,
+  "normal_chat_request_sent": false,
+  "before": {
+    "health_http_status": 200,
+    "memory_http_status": 200,
+    "aggregate_http_status": 200,
+    "memory_messages_observed": 16,
+    "episodic_facts_observed": 20,
+    "session_summary_present": true,
+    "file_memory_physical_lines": 43,
+    "file_memory_nonempty_noncomment_lines": 20,
+    "aggregate_recent_summaries_observed": 9
+  },
+  "after": {
+    "memory_http_status": 200,
+    "aggregate_http_status": 200,
+    "memory_messages_observed": 16,
+    "episodic_facts_observed": 20,
+    "session_summary_present": true,
+    "file_memory_physical_lines": 43,
+    "file_memory_nonempty_noncomment_lines": 20,
+    "aggregate_recent_summaries_observed": 9
+  },
+  "raw_messages_preserved": "unavailable as a direct database count; HTTP-only verification showed the observed memory message count unchanged at 16",
+  "mongodb_collection_totals": "unavailable: direct PyMongo interpreter unavailable; HTTP-only verification used.",
+  "summary_counts": "unavailable as direct collection totals; aggregate endpoint exposed 9 recent summaries before and after.",
+  "file_memory_before_after_counts": {
+    "physical_lines": "43 -> 43",
+    "nonempty_noncomment_lines": "20 -> 20",
+    "file_memory_fact_counts": "unavailable"
+  },
+  "services": {
+    "fastapi": "HTTP health check 200",
+    "mongodb": "not queried directly; prior HTTP-only availability check was 200",
+    "ollama": "not contacted during this attempt"
+  },
+  "notes": "Exactly one POST was attempted. It was not a valid compact operation because the sent JSON was malformed. No retry was sent and no direct MongoDB write was performed."
+}

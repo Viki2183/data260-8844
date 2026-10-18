@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>DATA260 HW6 — Vrishin KunnathamParambath</title>
+  <style>
+    @page { size: Letter; margin: 0.65in; }
+    body { font-family: Arial, sans-serif; color: #20262e; font-size: 11pt; line-height: 1.42; margin: 0; }
+    h1 { font-size: 20pt; margin-bottom: 4px; }
+    h2 { font-size: 14pt; font-weight: bold; color: #163f63; border-bottom: 1px solid #9db4c8; padding-bottom: 3px; margin-top: 24px; }
+    h3 { font-size: 12pt; font-weight: bold; color: #285a7a; margin-top: 16px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0 14px; font-size: 9.5pt; }
+    th, td { border: 1px solid #b8c5cf; padding: 5px 6px; vertical-align: top; }
+    th { background: #eaf1f6; text-align: left; }
+    code, pre { font-family: Consolas, monospace; }
+    pre { background: #f4f6f8; border-left: 3px solid #47799a; padding: 8px; white-space: pre-wrap; font-size: 8.5pt; }
+    .title { text-align: center; padding: 42px 20px 28px; border-bottom: 3px solid #163f63; }
+    .meta { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 18px; max-width: 700px; margin: 20px auto; }
+    .meta div { padding: 4px 0; border-bottom: 1px solid #e0e5e9; }
+    .note { background: #fff8e6; border-left: 4px solid #c58b18; padding: 8px 10px; }
+    .observed { background: #edf8ef; border-left: 4px solid #3b8b51; padding: 6px 9px; margin: 5px 0 12px; }
+    figure { margin: 14px 0; page-break-inside: avoid; }
+    figure img { max-width: 100%; max-height: 330px; border: 1px solid #aebbc5; }
+    figcaption { font-size: 9pt; color: #4e5b64; margin-top: 3px; }
+    .snippet { page-break-inside: avoid; }
+    footer { margin-top: 28px; border-top: 1px solid #b8c5cf; padding-top: 6px; color: #53616b; font-size: 9pt; }
+  </style>
+</head>
+<body>
+  <section class="title">
+    <h1>DATA260 Homework 6</h1>
+    <p>MongoDB Documents, Memory, Cost Experiments, and File-Based Memory</p>
+    <div class="meta">
+      <div><strong>Student:</strong> Vrishin KunnathamParambath</div>
+      <div><strong>SID4:</strong> 8844</div>
+      <div><strong>Repository:</strong> <a href="https://github.com/Viki2183/data260-8844">https://github.com/Viki2183/data260-8844</a></div>
+      <div><strong>Branch:</strong> hw6-development</div>
+      <div><strong>PORT_BASE:</strong> 8744</div>
+      <div><strong>PREFIX:</strong> s8844</div>
+      <div><strong>DOMAIN_ID:</strong> 4</div>
+      <div><strong>SEED / VERIFY_SEED:</strong> 8844 / 268844</div>
+      <div><strong>Model:</strong> qwen3:8b</div>
+      <div><strong>Embedding:</strong> sentence-transformers/all-MiniLM-L6-v2</div>
+      <div><strong>Hardware:</strong> Intel Core i7-10750H CPU, approximately 16 GB RAM</div>
+      <div><strong>HEAD observed at audit time:</strong> a2fbe44c752b2b975c9f579d6d1fd715d5c29b14 (historical local HEAD; not labeled as the final HW6 commit)</div>
+      <div><strong>HW6 tag:</strong> not present in the audited local tag list</div>
+      <div><strong>Collaborator access:</strong> not locally verifiable</div>
+    </div>
+  </section>
+
+  <h2>Executive summary</h2>
+  <p>HW6 extends the existing DATA260 vulnerability-reporting application with a MongoDB document API and a layered memory service. MySQL remains the relational application database. MongoDB stores raw messages, summaries, and episodic facts; a separate file-memory module consolidates durable notes without deleting raw MongoDB evidence.</p>
+  <p>The read-only verifier recorded <strong>Overall PASS, 53 PASS, 0 FAIL, and 0 WARNING</strong>. This is a historical verification snapshot; its stored database counts are not asserted as the current live database state. The report describes observed evidence and does not turn unavailable recorder values into measurements.</p>
+
+  <h2>Connection to HW1–HW5</h2>
+  <p>The work preserves the existing FastAPI routes, MySQL model, frontend, MCP components, and historical HW1–HW5 reports, screenshots, logs, notebooks, raw outputs, and tags. HW6 adds isolated modules and evidence under <code>reports/hw06</code>; it does not replace the earlier application.</p>
+
+  <h2>Part 1 — MongoDB document CRUD</h2>
+  <p>The document API uses Pydantic validation, ObjectId conversion, a repository layer, and a router at <code>/api/documents</code>. The collection validator enforces title length, severity/status enums, ISO dates stored as BSON dates, and timestamp fields. Indexes support created-time, severity, status, and document-date queries.</p>
+  <table><tr><th>Status</th><th>Observed use</th></tr><tr><td>201</td><td>Both document creations</td></tr><tr><td>200</td><td>List, retrieve, update, final list</td></tr><tr><td>204</td><td>Temporary document deletion</td></tr><tr><td>400</td><td>Malformed ObjectId</td></tr><tr><td>404</td><td>Missing and deleted documents</td></tr><tr><td>422</td><td>Missing title and invalid severity, status, datetime</td></tr></table>
+
+  <h2>Part 2 — Chat and memory architecture</h2>
+  <p>The <code>messages</code> collection preserves user and assistant turns. <code>summaries</code> contains session summaries and user-scoped lifetime summaries. <code>episodes</code> stores concise durable facts with importance and normalized 384-dimensional embeddings. Short-term memory is bounded; summaries compress older context; episodic retrieval supplies semantically relevant facts.</p>
+  <p>The configured policy uses <code>SHORT_TERM_N=12</code>, summarizes every five user messages, and retrieves at most three episodic candidates. A sixth session summary reached the configured multiple-of-three lifetime checkpoint and created the first lifetime summary.</p>
+
+  <h2>API routes and response behavior</h2>
+  <p>The public endpoints are POST <code>/api/chat</code>, GET <code>/api/memory/{user_id}</code>, and GET <code>/api/aggregate/{user_id}</code>, alongside the Part 1 document routes. Commands are detected before ordinary model generation and remain user-scoped.</p>
+
+  <h2>Memory probes and scoring rubric</h2>
+  <p>The five fixed probe questions were defined in <code>memory_probes.yaml</code>. Expected criteria were evaluated with an automated keyword rubric from 1 to 5; these are not human scores.</p>
+  <table><tr><th>Probe</th><th>Question</th><th>Expected answer criterion</th></tr><tr><td>Recent preference</td><td>What explanation style did I say I prefer?</td><td>Identifies the concise explanation preference from recent messages.</td></tr><tr><td>Session summary</td><td>What project preferences and design goals have I shared?</td><td>Includes distributed systems, reliability/documentation, and modular/testable design goals.</td></tr><tr><td>Episodic topic</td><td>What study topic did I say I prefer, and why is it useful for my project?</td><td>Identifies distributed systems and connects it to the graduate project.</td></tr><tr><td>Lifetime preference</td><td>What explanation style do I generally prefer in a new session?</td><td>Recalls the durable preference for humanized explanations and clear verification.</td></tr><tr><td>Command behavior</td><td>Use each memory command and describe what it does.</td><td>Explains /help, /memory, /dream persistence, and /compact preservation/consolidation.</td></tr></table>
+  <p>For each setting, the automated rubric assigned 1 point per satisfied expected criterion, with the resulting probe scores averaged on a 1–5 scale. The observed means were N=4: 4.2, N=12: 4.2, and N=30: 4.0; the summary-replacement policy measured 4.2.</p>
+
+  <h2>Part 3 - What Memory Costs</h2>
+  <h3>Implemented memory policy</h3>
+  <p><strong>Summary replacement policy:</strong> When the effective context exceeds the threshold, summary replacement removes older eligible messages from the prompt and retains the session summary plus the newest messages. Raw MongoDB messages remain preserved. The baseline is N=12; policy savings are prompt-token savings only, latency is not claimed to improve, and the replacement count is unavailable because the response schema did not expose it.</p>
+  <p>The experiment used one fixed 30-message conversation per window: 25 setup messages and five probes. It completed 90 successful requests with no automatic retries. Scores use an automated 1–5 keyword rubric, not human ratings.</p>
+   <table><tr><th>Window or policy</th><th>Requests</th><th>Mean prompt tokens</th><th>Mean completion tokens</th><th>Mean latency</th><th>Automated quality</th><th>Cost</th><th>Savings vs N=12</th></tr><tr><td>N=4</td><td>30/30</td><td>827.733</td><td>170.733</td><td>42393.933 ms</td><td>4.2</td><td>$504.4194</td><td>498.034 prompt tokens</td></tr><tr><td>N=12 baseline</td><td>30/30</td><td>1325.767</td><td>172.667</td><td>54340.642 ms</td><td>4.2</td><td>$656.7306</td><td>0</td></tr><tr><td>N=30* </td><td>30/30</td><td>967.800</td><td>196.667</td><td>66549.364 ms</td><td>4.0</td><td>$585.3405</td><td>357.967 prompt tokens</td></tr><tr><td>Summary replacement policy* (N=30, threshold=12)</td><td>30/30</td><td>1189.333</td><td>178.367</td><td>60020.074 ms</td><td>4.2</td><td>$624.3504</td><td>136.434 prompt tokens</td></tr></table>
+  <p><em>* N=30 and the summary-replacement policy are affected by the likely 2048-token context limit. Their savings and comparisons are not clean measurements of a full 30-message context.</em></p>
+  <h3>Token definitions and reconciliation</h3>
+  <p>Measured model prompt tokens are <code>response_body.usage.prompt_tokens</code>, mirrored to the top-level <code>prompt_tokens</code> field and obtained from Ollama usage metadata. Estimated component tokens use deterministic <code>ceil(words × 1.3)</code> estimates for the primer, summaries, episodic facts, short-term messages, and current message; they are not Ollama counts. The N=30 evidence contains 30 records, measured prompt tokens ranging from 90 to 1898, and final ten turns all reporting 1026. Estimated component totals exceeded the configured <code>num_ctx=2048</code> from turn 11 onward; their mean was 2559.967. Context trimming is highly likely, but the raw evidence has no explicit truncation flag, so truncation is not proven directly.</p>
+  <table><tr><th>Window</th><th>Measured prompt mean</th><th>Estimated component mean</th><th>Mean short-term messages</th><th>Maximum retained</th></tr><tr><td>N=4</td><td>827.733</td><td>595.767</td><td>3.867</td><td>4</td></tr><tr><td>N=12</td><td>1325.767</td><td>1275.100</td><td>10.8</td><td>12</td></tr><tr><td>N=30</td><td>967.800</td><td>2559.967</td><td>22.5</td><td>30</td></tr></table>
+  <p>N=30 did not reliably represent a full 30-message prompt after turn 10. Its quality, latency, prompt-token, and cost comparisons are therefore limited by likely context trimming. The summary-replacement policy also uses a capped effective window, so comparisons involving N=30 must be interpreted with this limitation. The evidence does not prove the exact internal truncation mechanism.</p>
+  <p>These are estimated component-minus-raw-history comparison values. They are not measured cost savings. Negative values mean the estimated component prompt exceeded the selected raw-history baseline: -105 for N=4, -496 for N=12, and -2824 for N=30.</p>
+  <table><tr><th>Window</th><th>Primer</th><th>Session</th><th>Lifetime</th><th>Short-term</th><th>Episodic</th><th>Current message</th></tr><tr><td>N=4</td><td>28.0</td><td>112.5</td><td>86.0</td><td>305.033</td><td>50.9</td><td>13.333</td></tr><tr><td>N=12</td><td>28.0</td><td>135.0</td><td>78.0</td><td>969.867</td><td>50.9</td><td>13.333</td></tr><tr><td>N=30</td><td>28.0</td><td>139.333</td><td>83.5</td><td>2244.9</td><td>50.9</td><td>13.333</td></tr></table>
+  <p><strong>Corrected hypothetical 10,000-conversation cost:</strong> input_cost = mean_prompt_tokens_per_turn × 30 × 10000 / 1,000,000 × $1; output_cost = mean_completion_tokens_per_turn × 30 × 10000 / 1,000,000 × $5; total_cost = input_cost + output_cost.</p>
+  <p>These are hypothetical estimates using $1 per 1,000,000 input tokens and $5 per 1,000,000 output tokens, not Ollama charges. Local Ollama has effectively zero direct API billing, but CPU time, storage, and operational costs remain real costs.</p>
+  <p>Best is N=4 under the quality threshold of 4.0 and corrected total cost rule. Worst is N=12 because it has the highest corrected cost among qualifying settings. N=30 is not labeled worst.</p>
+
+  <h2>Part 4 — File-based memory</h2>
+  <p><code>AGENT.md</code> documents the bounded, user-scoped command policy, while <code>MEMORY.md</code> is the file-memory source. Consolidation triggers when the file exceeds 40 lines or is older than 24 hours. The preserved legacy fixture has 75 lines; the required replacement fixture has exactly 55 physical lines and a 21-line non-empty/non-comment consolidated artifact. The originals are backed up before any rewrite, and both legacy and corrected artifacts remain under <code>reports/hw06/raw</code>.</p>
+  <p>Exact duplicates are removed, contradictions remain under <strong>Needs review</strong>, and comparison reports shared, file-only, MongoDB-only, and conflicting facts. <code>/memory</code> reports both memory sources; <code>/compact</code> preserves raw MongoDB messages while consolidating older context and file memory; <code>/dream</code> intentionally adds only verified non-sensitive durable facts. The live test added three facts and skipped zero duplicates. Older preview-only response text remains unchanged in historical raw evidence and is not authoritative; current source behavior and this report are authoritative.</p>
+  <table><tr><th>Observed measure</th><th>Result</th></tr><tr><td>Preserved legacy fixture</td><td>75 lines</td></tr><tr><td>Required fixture</td><td>55 physical lines</td></tr><tr><td>Required consolidated artifact</td><td>21 non-empty/non-comment lines</td></tr><tr><td>Required duplicate groups / contradictions</td><td>3 / 3</td></tr><tr><td>Earlier pre-compaction MEMORY.md physical / non-empty lines</td><td>48 / 25</td></tr><tr><td>Current post-compaction MEMORY.md physical / non-comment lines</td><td>43 / 20</td></tr><tr><td>Historical live consolidation before → after</td><td>82 → 55</td></tr><tr><td>/dream facts added / duplicates skipped</td><td>3 / 0</td></tr><tr><td>/compact raw messages</td><td>Preserved</td></tr></table>
+
+  <h3>Part 4 artifact excerpts and audit</h3>
+  <p><strong>AGENT.md numbered instructions:</strong></p>
+  <ol><li><strong>[Project description]</strong> HW6 is a layered MongoDB and file-memory extension of the existing DATA260 application.</li><li><strong>[Technology stack]</strong> FastAPI, MongoDB/PyMongo, Ollama, SentenceTransformer, and local cache settings are described only from observed source or evidence.</li><li><strong>[Coding conventions]</strong> Public behavior is preserved; commands are bounded and user-scoped; the current user message is not duplicated in prompts.</li><li><strong>[Testing approach]</strong> Deterministic offline tests with fake repositories and model responses are preferred before approved live verification.</li><li><strong>[Prohibited actions]</strong> Credentials, raw connection strings, direct MongoDB edits, overwritten historical evidence, and invented measurements are prohibited.</li></ol>
+  <p><strong>Original file-memory excerpt:</strong> “Preference: explanation style is concise.”, “Preference: explanation style is detailed.”, and “Constraint: use a local model for reproducible tests.” The original 55-line fixture preserves duplicates and conflicting facts for audit.</p>
+  <p><strong>Consolidated excerpt:</strong> the retained-facts section keeps the concise preference, modular/testable goal, credential-safety constraint, and raw-message constraint. The separate “Superseded facts and review history” section records conflicting facts instead of silently deleting them.</p>
+  <p>The separate fixture audit caught all three planted contradiction pairs with zero misses. The generated helper found one contradiction in its own deterministic run. Resolution rules were explicit: the most recent statement wins; a stricter safety or reproducibility constraint wins when applicable; otherwise the result is marked uncertain. No manual resolution was used in the recorded audit.</p>
+  <table><tr><th>Contradiction</th><th>Resolution rule</th><th>Kept fact</th><th>Superseded fact</th><th>Reason</th><th>Defensible/correct?</th><th>Resolution type</th></tr><tr><td>1</td><td>Otherwise mark uncertain; preference conflict has no objective winner</td><td>Neither treated as universally correct; concise retained as the current fixture preference</td><td>Detailed explanation style remains reviewable</td><td>Explanation style is subjective, so the audit does not silently call concise objectively correct.</td><td>Uncertain but defensible</td><td>Automated detection; documented audit resolution</td></tr><tr><td>2</td><td>Stricter safety/reproducibility constraint wins</td><td>Prioritize careful correctness</td><td>Prioritize fast responses</td><td>Correctness is the stricter project-quality constraint; speed remains auditable.</td><td>Defensible</td><td>Automated detection; documented audit resolution</td></tr><tr><td>3</td><td>Stricter safety/reproducibility constraint wins</td><td>Use a local model for reproducible tests</td><td>Use a hosted model for every test</td><td>Local reproducibility is the stricter constraint for this offline fixture.</td><td>Defensible</td><td>Automated detection; documented audit resolution</td></tr></table>
+  <table><tr><th>File/MongoDB comparison dimension</th><th>Observed result</th></tr><tr><td>Inspectability</td><td>Available: file facts, MongoDB facts, shared facts, file-only facts, MongoDB-only facts, and conflicts are returned by the comparison helper.</td></tr><tr><td>Persistence after restart</td><td>Unavailable from the offline fixture and read-only documentation evidence.</td></tr><tr><td>Scalability across many sessions</td><td>Unavailable; no separate measured scalability experiment is recorded.</td></tr><tr><td>Facts that must not be forgotten</td><td>Partially supported by preserved summaries, episodes, raw messages, and file artifacts; no dedicated forgetting test is recorded.</td></tr></table>
+  <p><strong>File/MongoDB interpretation:</strong> file facts are directly inspectable, while MongoDB facts are queryable and indexed; the comparison helper reports shared, file-only, MongoDB-only, and conflicting facts. By design, both persisted files and MongoDB records survive a process restart, while in-memory state does not; restart persistence was not separately measured in this offline check. File scalability is bounded by the 40-line consolidation rule, while MongoDB scalability benefits from its memory-collection indexes; no many-session scalability benchmark was recorded. For facts that must not be forgotten, durable file facts, summaries, episodes, and preserved raw messages provide complementary audit paths rather than an unmeasured silent merge.</p>
+  <p><strong>Generated-function verification:</strong> the actual offline call to <code>verify_generated_consolidation</code> returned <code>passed=true</code>, <code>deterministic=true</code>, duplicate removal, contradiction detection, line-rule, and age-rule checks all true; it reported 55 input lines, 15 output lines, 5 duplicate occurrences, and 1 contradiction detected by that helper. A separate fixed-time compliance check against the named AGENT.md rules returned <code>{"deterministic_output":true,"explicit_contradiction_handling":true,"no_credentials_or_invented_measurements":true,"original_content_preserved":true,"user_scoped_safe":true,"passed":true}</code>, with signature <code>(content, now, modified_at)</code>. The checked rules were [Coding conventions] deterministic output, original-input preservation, and no silent contradiction discard; [Prohibited actions] no credentials or invented measurements; and [Project description/Coding conventions] pure content-scoped behavior without database or network access. The 55-line fixture audit is a different artifact/run: 21 consolidated non-empty/non-comment lines, 3 duplicate groups, 3 contradiction pairs, and 0 missed. No external service or database was contacted.</p>
+  <p><strong>MEMORY.md counts:</strong> the earlier pre-compaction snapshot had 48 physical lines and 25 non-empty, non-comment lines. The authoritative compact run reports current post-compaction values of 43 physical lines and 20 non-comment lines; those are the current values for that run.</p>
+
+  <h2>Required code snippets and observed outputs</h2>
+  <div class="snippet"><h3>1. Three memory endpoints</h3><pre>router = APIRouter(prefix="/api", tags=["HW6 Memory"])
+@router.post("/chat", response_model=ChatResponse)
+@router.get("/memory/{user_id}", response_model=MemorySnapshotResponse)
+@router.get("/aggregate/{user_id}", response_model=AggregateResponse)</pre><div class="observed">Observed: OpenAPI included POST /api/chat, GET /api/memory/{user_id}, and GET /api/aggregate/{user_id}.</div></div>
+  <div class="snippet"><h3>2. Episode extraction</h3><pre>facts = self._model_value(facts_result, "facts", []) or []
+for fact in facts[:3]:
+    vector = self.embed_text(fact_text)
+    self.repository.save_episode(..., embedding=vector)</pre><div class="observed">Observed: session-4 server-completion evidence recorded three saved episodes.</div></div>
+  <div class="snippet"><h3>3. Summary trigger</h3><pre>return user_message_count &gt; 0 and user_message_count % summarize_every_user_msgs == 0</pre><div class="observed">Observed: the fifth session user message created a session summary.</div></div>
+  <div class="snippet"><h3>4. Embedding and retrieval</h3><pre>vector = self.embed_text(fact_text)
+ranked = self.rank_episodes(query_embedding, episodes, top_k=...)</pre><div class="observed">Observed: the session-4 follow-up answer returned “distributed systems” from stored memory.</div></div>
+  <div class="snippet"><h3>5. Prompt assembly</h3><pre>prompt_sections = [
+     _memory_section("System primer", sections["primer"]),
+     _memory_section("Lifetime memory", sections["lifetime_summary"]),
+     _memory_section("Session summary", sections["session_summary"]),
+     _memory_section("Episodic facts", sections["episodic_facts"]),
+     _memory_section("Recent conversation", sections["short_term_window"]),
+     _memory_section("Current user message", sections["current_user_message"]),
+ ]</pre><div class="observed">Observed: the component estimates separately represented primer, lifetime summary, session summary, episodic facts, short-term messages, and the current user message.</div></div>
+  <div class="snippet"><h3>6. File consolidation</h3><pre>unique, duplicate_count = remove_duplicate_facts(facts)
+conflicts = detect_contradictions(unique)
+ consolidated = _format_consolidated(unique, conflicts, current)</pre><div class="observed">Legacy artifact: 7 duplicate occurrences and 1 contradiction were recorded. Corrected fixture evidence is now 55 physical lines, with 3 duplicate groups, 3 contradiction pairs, and 21 non-empty/non-comment consolidated lines.</div></div>
+  <div class="snippet"><h3>7. Duplicate and contradiction handling</h3><pre>return {
+    "shared": [...], "only_in_file": [...],
+    "only_in_mongodb": [...],
+    "contradictions_or_conflicts": conflicts,
+}</pre><div class="observed">Observed: contradictions were retained for review rather than silently discarded.</div></div>
+  <div class="snippet"><h3>8. /compact (historical threshold example)</h3><pre>saved_summary = self.repository.save_summary(..., scope="session")
+generated_lifetime_summary = self._maybe_save_lifetime_summary(user_id)</pre><div class="observed">Observed: summary counts moved 5→6 and lifetime summaries 0→1; raw messages remained preserved.</div></div>
+  <p><strong>Historical-result label:</strong> the 5→6 session-summary and 0→1 lifetime-summary values shown in the preceding code-output note belong to an earlier test and are not the authoritative final count table.</p>
+  <p><strong>Authoritative complete compact counts:</strong> <code>compact_counts_live_success.json</code> supersedes earlier incomplete count records. Exactly one properly encoded request for <code>hw6-session-4</code> returned HTTP 200 in 153434.637 ms, with no retry, no normal chat request, and raw-message preservation.</p>
+  <table><tr><th>Metric</th><th>Before</th><th>After</th></tr><tr><td>MongoDB messages</td><td>18</td><td>18</td></tr><tr><td>MongoDB summaries</td><td>10</td><td>11</td></tr><tr><td>MongoDB episodes</td><td>35</td><td>38</td></tr><tr><td>File physical lines</td><td>43</td><td>43</td></tr><tr><td>File non-comment lines</td><td>20</td><td>20</td></tr><tr><td>File facts</td><td>28</td><td>29</td></tr></table>
+  <p><strong>Authoritative response metadata:</strong> <code>facts_added=3</code>, <code>summary_created=true</code>, <code>lifetime_summary_created=false</code>, and <code>raw_messages_preserved=true</code>. The failed 422 artifact and earlier incomplete compact artifacts remain separate historical records and were not overwritten.</p>
+  <p><strong>Successful live compact verification:</strong> <code>compact_authoritative_before_after_success.json</code> records one HTTP 200 <code>/compact</code> response for <code>hw6-session-4</code>, elapsed time 130973.166 ms, no retry, and no normal chat request. The exact answer was: “Older messages were compacted into a session summary and durable facts; raw messages were preserved.” The captured response included the fields <code>short_term_count</code>, <code>short_term_messages</code>, <code>session_summary</code>, <code>lifetime_summary</code>, <code>episodic_facts</code>, and <code>file_memory</code>; their unrecorded values remain unavailable. Direct MongoDB totals were unavailable because HTTP-only verification was used. The earlier malformed-body HTTP 422 attempt remains separately preserved in <code>compact_authoritative_before_after.json</code> and was not merged with this success artifact.</p>
+  <div class="snippet"><h3>9. /dream</h3><pre>file_result = self._add_facts_to_file_memory(safe_facts)
+return self._command_response(
+    "/dream", user_id, session_id,
+    "Dream added only verified, non-sensitive durable facts to file memory...",
+    snapshot, command_result,
+)</pre><div class="observed">Observed live command evidence: HTTP 200. Current implementation added three non-sensitive facts and skipped zero duplicates; older preview-only evidence remains historical.</div></div>
+
+  <h2>Failures and corrections</h2>
+  <ul><li>Initial FastAPI HTTP 500: corrected by launching from the repository root so <code>src.model_client</code> was importable.</li><li>MySQL credentials rejected: added and used only the opt-in HW6 initialization bypass; normal defaults remain.</li><li>Hugging Face cache permission failure: moved the cache to a project-local writable directory.</li><li>Stale command test: preserved as non-authoritative; <code>memory_commands_live.json</code> is authoritative.</li><li>Part 3 aggregate mismatch: corrected the canonical current-message field and regenerated only derived aggregates.</li><li>Recorder-level unavailable result: preserved <code>chat_turn_04.json</code> and added separate server-completion evidence.</li></ul>
+
+  <h2>Evidence index</h2>
+  <p>Important files include <code>document_crud_results.json</code>, chat-turn artifacts, <code>memory_commands_live.json</code>, lifetime-step artifacts, the Part 3 JSONL and aggregate files, file-memory fixtures/live artifacts, <code>verification.json</code>, and the screenshot inventory. The raw evidence remains the source of truth for detailed responses. The verifier JSON is identified above as a historical snapshot. The verified CRUD screenshot set documents create (201), retrieve (200), update (200), invalid validation (422), and deletion of a temporary document (204 with an empty response body).</p>
+
+  <h2>Conclusion</h2>
+  <p>HW6 demonstrates a layered MongoDB and file-memory design connected to the existing DATA260 application. The observed verifier passed its 53 checks, while documented failures and unavailable measurements remain visible. The report preserves the distinction between measured results, derived estimates, historical snapshots, and locally unverifiable repository state.</p>
+
+  <h2>Evidence screenshots</h2>
+  <p>These figures reference existing project screenshots using paths relative to this report. The authoritative slash-command record is <code>raw/memory_commands_live.json</code>; the stale-process command artifact is retained separately and is not authoritative.</p>
+  <figure><img src="screenshots/02_openapi_routes.png" alt="OpenAPI route registration"><figcaption>OpenAPI route registration: the document CRUD and HW6 memory routes are declared by the running FastAPI application.</figcaption></figure>
+  <figure><img src="screenshots/03_documents_list.png" alt="Document API list response"><figcaption>Document API: the retained vulnerability document is visible through the HTTP list endpoint.</figcaption></figure>
+  <figure><img src="screenshots/04_memory_snapshot.png" alt="Memory retrieval snapshot"><figcaption>Memory retrieval: recent messages, session memory, lifetime memory, and episodic facts are shown for the scoped user/session.</figcaption></figure>
+  <figure><img src="screenshots/05_aggregate.png" alt="Aggregate endpoint response"><figcaption>Aggregate endpoint: daily message counts and recent summaries are returned for the user.</figcaption></figure>
+  <figure><img src="screenshots/06_command_evidence.png" alt="Authoritative live slash-command evidence"><figcaption>Slash commands: this visual corresponds to the authoritative live command evidence for <code>/help</code>, <code>/memory</code>, <code>/dream</code>, and <code>/compact</code>.</figcaption></figure>
+  <figure><img src="screenshots/07_short_term_experiments.png" alt="Short-term memory experiment"><figcaption>Short-term experiment: the observed comparison covers N=4, N=12, and N=30 windows.</figcaption></figure>
+  <figure><img src="screenshots/08_verification_pass.png" alt="Final verification checks"><figcaption>Verification: the read-only verifier display records the observed HW6 check result.</figcaption></figure>
+  <figure><img src="screenshots/09_mongodb_collections.png" alt="MongoDB collection overview"><figcaption>MongoDB collections: the HW6 database organization is shown without changing database state.</figcaption></figure>
+  <figure><img src="screenshots/10_conversation_10_turns.png" alt="Ten-message conversation with student identity"><figcaption>Conversation evidence: the screenshot shows the student identity, ten existing USER and ASSISTANT messages, actual assistant responses, and no SyntaxError.</figcaption></figure>
+  <figure><img src="screenshots/11_messages_collection.png" alt="MongoDB messages collection"><figcaption>Messages collection: raw user and assistant turns are retained as the short-term and audit source.</figcaption></figure>
+  <figure><img src="screenshots/12_summaries_collection.png" alt="MongoDB summaries collection"><figcaption>Summaries collection: session and lifetime summary records support compressed and cross-session memory.</figcaption></figure>
+  <figure><img src="screenshots/13_episodes_collection.png" alt="MongoDB episodes collection"><figcaption>Episodes collection: durable facts and retrieval metadata support episodic memory.</figcaption></figure>
+  <figure><img src="screenshots/14_documents_collection.png" alt="MongoDB documents collection"><figcaption>Documents collection: the retained Part 1 vulnerability document remains visible in MongoDB.</figcaption></figure>
+  <figure><img src="screenshots/15_crud_create_201.png" alt="POST document create returning HTTP 201"><figcaption>CRUD create: POST creates a document and returns HTTP 201.</figcaption></figure>
+  <figure><img src="screenshots/16_crud_get_200.png" alt="GET one document returning HTTP 200"><figcaption>CRUD retrieve: GET returns one document with HTTP 200.</figcaption></figure>
+  <figure><img src="screenshots/17_crud_update_200.png" alt="PUT document update returning HTTP 200"><figcaption>CRUD update: PUT updates the document and returns HTTP 200.</figcaption></figure>
+  <figure><img src="screenshots/18_crud_invalid_422.png" alt="Invalid document request returning HTTP 422"><figcaption>CRUD validation: an invalid request is rejected with HTTP 422.</figcaption></figure>
+  <figure><img src="screenshots/19_crud_delete_204.png" alt="DELETE temporary document returning HTTP 204"><figcaption>CRUD delete: DELETE removes the temporary test document with HTTP 204 and an empty response body.</figcaption></figure>
+
+  <h2>AI Use</h2>
+  <p><strong>What I used AI for versus what I did myself?</strong> I used AI assistance for architecture planning, code scaffolding, validation logic, test harnesses, evidence organization, and explanatory documentation. I supplied the repository, configuration, homework context, and observed outputs, and I performed the local execution and verification.</p>
+  <p><strong>What incorrect or unsuitable AI output did I find?</strong> The clearest example was an initial Part 3 cost calculation that used the wrong token-unit formula and therefore produced unsuitable cost values.</p>
+  <p><strong>How did I detect it?</strong> I recomputed the values directly from the raw per-turn JSONL, compared the formula with the assignment requirement, and verified that the raw JSONL checksum had not changed.</p>
+  <p><strong>What did I change and why does it work now?</strong> I regenerated only the derived cost and comparison outputs using the required per-million-token rates, preserved measured and estimated token definitions separately, and documented the corrected baseline comparison. This explanation is based on the locally verified evidence.</p>
+
+  <footer>DATA260 HW6 · SID4 8844 · Instructor-facing report · Evidence and verification context documented above</footer>
+</body>
+</html>

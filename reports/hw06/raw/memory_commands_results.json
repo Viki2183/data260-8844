@@ -1,0 +1,135 @@
+{
+  "created_at": "2026-10-17T08:56:01.629634+00:00",
+  "user_id": "hw6-user-8844",
+  "session_id": "hw6-session-4",
+  "server_process_used": "Existing FastAPI PID 21012; it was not restarted during this test.",
+  "baseline_counts": {
+    "documents": 1,
+    "messages": 24,
+    "summaries": 2,
+    "episodes": 23
+  },
+  "commands": [
+    {
+      "request_body": {
+        "user_id": "hw6-user-8844",
+        "session_id": "hw6-session-4",
+        "message": "/help"
+      },
+      "http_status": 200,
+      "elapsed_seconds": 58.254,
+      "model_call_expected": false,
+      "database_writes_expected": false,
+      "observed_model_call": true,
+      "observed_database_writes": true,
+      "response_body": {
+        "answer": "Sure! Here's a concise summary of your main preferences and design goals for the graduate course project:\n\n- **Preferred Study Topic**: Distributed systems (focus on scalability, fault tolerance, concurrency).\n- **Focus Areas**: Reliability (consistent performance) and clear documentation (enhances maintainability and collaboration).\n- **Design Goals**: Modular, testable, and easy-to-understand system to improve reliability, maintainability, and collaboration.\n\nLet me know if you need further assistance!",
+        "usage": {
+          "prompt_tokens": 850,
+          "completion_tokens": 99,
+          "total_tokens": 949,
+          "latency_ms": 54311.143
+        },
+        "command_result_present": false
+      },
+      "observed_command_behavior": "Handled as normal chat; it did not return command instructions."
+    },
+    {
+      "request_body": {
+        "user_id": "hw6-user-8844",
+        "session_id": "hw6-session-4",
+        "message": "/memory"
+      },
+      "http_status": 200,
+      "elapsed_seconds": 51.298,
+      "model_call_expected": false,
+      "database_writes_expected": false,
+      "observed_model_call": true,
+      "observed_database_writes": true,
+      "response_body": {
+        "answer": "Sure! Here's a concise summary of your main preferences and design goals for the graduate course project:\n\n- **Preferred Study Topic**: Distributed systems (focus on scalability, fault tolerance, concurrency).\n- **Focus Areas**: Reliability (consistent performance) and clear documentation (enhances maintainability and collaboration).\n- **Design Goals**: Modular, testable, and easy-to-understand system to improve reliability, maintainability, and collaboration.\n\nLet me know if you need further assistance!",
+        "usage": {
+          "prompt_tokens": 923,
+          "completion_tokens": 99,
+          "total_tokens": 1022,
+          "latency_ms": 45276.359
+        },
+        "command_result_present": false
+      },
+      "observed_command_behavior": "Handled as normal chat; it did not return a user-scoped snapshot command result."
+    },
+    {
+      "request_body": {
+        "user_id": "hw6-user-8844",
+        "session_id": "hw6-session-4",
+        "message": "/dream"
+      },
+      "http_status": 200,
+      "elapsed_seconds": null,
+      "model_call_expected": true,
+      "database_writes_expected": false,
+      "observed_model_call": true,
+      "observed_database_writes": true,
+      "response_body": {
+        "answer": "It seems you're interested in exploring your graduate course project through the lens of a dream or imaginative scenario. If you'd like, I can help you create a dream-like or hypothetical scenario that aligns with your focus on distributed systems, reliability, and clear documentation. Just let me know what kind of scenario or concept you're interested in!",
+        "usage": {
+          "prompt_tokens": 984,
+          "completion_tokens": 69,
+          "total_tokens": 1053,
+          "latency_ms": 38479.784
+        },
+        "command_result_present": false
+      },
+      "observed_command_behavior": "Handled as normal chat; no non-destructive preview was returned."
+    },
+    {
+      "request_body": {
+        "user_id": "hw6-user-8844",
+        "session_id": "hw6-session-4",
+        "message": "/compact"
+      },
+      "http_status": 200,
+      "elapsed_seconds": 33.893,
+      "model_call_expected": true,
+      "database_writes_expected": true,
+      "observed_model_call": true,
+      "observed_database_writes": true,
+      "response_body": {
+        "answer": "- **Preferred Study Topic**: Distributed systems (scalability, fault tolerance, concurrency).\n- **Focus Areas**: Reliability, clear documentation.\n- **Design Goals**: Modular, testable, easy-to-understand system.",
+        "usage": {
+          "prompt_tokens": 927,
+          "completion_tokens": 47,
+          "total_tokens": 974,
+          "latency_ms": 31104.813
+        },
+        "command_result_present": false
+      },
+      "observed_command_behavior": "Handled as normal chat; it did not return a compaction result."
+    }
+  ],
+  "read_only_verification": {
+    "memory_endpoint_status": 200,
+    "aggregate_endpoint_status": 200,
+    "counts_after": {
+      "documents": 1,
+      "messages": 32,
+      "summaries": 2,
+      "episodes": 23
+    },
+    "session4_message_count": 18,
+    "session4_summary_count": 1,
+    "session4_episode_count": 8,
+    "raw_messages_preserved": true
+  },
+  "integration_result": {
+    "help_returned_command_instructions": false,
+    "memory_returned_command_snapshot": false,
+    "dream_returned_non_destructive_preview": false,
+    "compact_returned_compaction_result": false,
+    "credentials_or_connection_strings_seen": false,
+    "commands_retried": false,
+    "root_cause": "The running FastAPI process predates the command-handling changes and was not restarted, so the live test exercised the previous normal-chat implementation.",
+    "next_safe_action": "Restart FastAPI from the repository root, then rerun the four-command HTTP test with no changes to MongoDB made manually."
+  },
+  "embedding_vectors_omitted_from_evidence": true
+}

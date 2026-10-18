@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-10-17T02:03:09.0655212Z",
+  "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+  "cache_strategy": "project-local",
+  "vector_dimension": 384,
+  "normalized_flag": true,
+  "normalization_l2_norm": 1.0000000908,
+  "download_or_load_result": "success",
+  "cache_files_present": true,
+  "validation_result": "passed",
+  "finite_values": true,
+  "elapsed_time_ms": 95936.3779,
+  "error_category": null
+}

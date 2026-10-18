@@ -1,0 +1,50 @@
+{
+  "homework": "DATA260 HW6",
+  "fixture": "file_memory_test_input_55line.md",
+  "physical_line_count": 55,
+  "consolidated_artifact": "file_memory_consolidated_55line.md",
+  "consolidated_nonempty_noncomment_line_count": 21,
+  "duplicate_groups": [
+    {"id": "duplicate_preference", "fact": "Preference: explanation style is concise."},
+    {"id": "duplicate_goal", "fact": "Goal: keep the project modular and testable."},
+    {"id": "duplicate_constraint", "fact": "Constraint: do not expose credentials."}
+  ],
+  "duplicate_groups_removed": 3,
+  "contradictions": [
+    {
+      "contradiction_id": "contradiction_pair_1",
+      "left_original_fact": "Preference: explanation style is concise.",
+      "right_conflicting_fact": "Preference: explanation style is detailed.",
+      "kept_fact": "Preference: explanation style is concise.",
+      "superseded_fact": "Preference: explanation style is detailed.",
+      "reason": "Concise is retained as the selected fixture preference, while the conflicting detail preference remains auditable for review.",
+      "detector_resolved_correctly": true,
+      "contradiction_missed": false
+    },
+    {
+      "contradiction_id": "contradiction_pair_2",
+      "left_original_fact": "Goal: prioritize fast responses.",
+      "right_conflicting_fact": "Goal: prioritize careful correctness.",
+      "kept_fact": "Goal: prioritize careful correctness.",
+      "superseded_fact": "Goal: prioritize fast responses.",
+      "reason": "Correctness is selected for this reproducibility fixture, but the speed goal is retained in review history.",
+      "detector_resolved_correctly": true,
+      "contradiction_missed": false
+    },
+    {
+      "contradiction_id": "contradiction_pair_3",
+      "left_original_fact": "Constraint: use a local model for reproducible tests.",
+      "right_conflicting_fact": "Constraint: use a hosted model for every test.",
+      "kept_fact": "Constraint: use a local model for reproducible tests.",
+      "superseded_fact": "Constraint: use a hosted model for every test.",
+      "reason": "The fixture is for local reproducible testing, while the hosted-model constraint remains visible rather than silently deleted.",
+      "detector_resolved_correctly": true,
+      "contradiction_missed": false
+    }
+  ],
+  "contradiction_count": 3,
+  "missed_contradiction_count": 0,
+  "original_preserved": true,
+  "deterministic_output": true,
+  "external_services_contacted": false
+}

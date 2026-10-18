@@ -1,0 +1,246 @@
+DATA260 HW6 — Run Log
+=====================
+
+Student: Vrishin KunnathamParambath
+SID4: 8844
+Repository: https://github.com/Viki2183/data260-8844
+Repository path: C:\Projects\data260-8844
+Branch: hw6-development
+Read-only HEAD observed in verification.json: a2fbe44c752b2b975c9f579d6d1fd715d5c29b14
+
+Environment and fixed configuration
+-----------------------------------
+
+HW6 used the separate `.venv-hw6` environment with Python 3.12 and PyMongo
+4.8.0. The replacement environment was needed because the original `.venv`
+pointed to a missing Python executable. The model was `qwen3:8b`, the embedding
+model was `sentence-transformers/all-MiniLM-L6-v2`, the hardware was an Intel
+Core i7-10750H CPU with approximately 16 GB RAM, and the fixed seeds were
+SEED=8844 and VERIFY_SEED=268844. PORT_BASE=8744, PREFIX=s8844, and
+DOMAIN_ID=4 were used.
+
+MongoDB and application setup
+-----------------------------
+
+MongoDB remained local at 127.0.0.1:27017 using the project-local HW6 data and
+log paths. The `documents` collection was initialized through its setup
+function, followed by the `messages`, `summaries`, and `episodes` setup. The
+existing documents evidence was preserved. FastAPI was launched from the
+repository root with `--app-dir` so the repository-level `src` package was
+importable. The opt-in `HW6_SKIP_MYSQL_INIT=1` flag skipped only automatic
+MySQL schema initialization during HW6-only testing; normal behavior remained
+the default.
+
+Part 1 document CRUD
+--------------------
+
+The retained sample and temporary delete-test document were created through
+HTTP. The observed coverage was 201 for creates, 200 for list/retrieve/update,
+204 for deletion, 400 for malformed ObjectId, 404 for missing/deleted records,
+and 422 for validation failures. The retained document remained and the
+temporary document was deleted through the API.
+
+Embedding and model diagnostics
+-------------------------------
+
+The first SentenceTransformer load failed because the default Hugging Face
+cache was not writable. A project-local cache was configured and the
+all-MiniLM-L6-v2 model then loaded successfully with a 384-dimensional
+normalized vector. A direct local Ollama diagnostic returned HTTP 200 and took
+approximately 116.2 seconds for a minimal response. The HW6 model path later
+used reasoning=False, a 240-second timeout, and bounded output settings. A
+runtime observation also showed partial GPU offloading during local inference;
+the exact allocation was not retained in the final evidence.
+
+Chat failures and corrections
+-----------------------------
+
+The first two real chat attempts returned HTTP 500 and saved user messages but
+not assistant messages. Source and process inspection identified the initial
+repository import-path problem; later diagnosis also showed slow CPU inference
+and a missing writable embedding cache. Session-3 completed successfully.
+
+Session-4 began with `chat_turn_04.json`, whose recorder result was unavailable.
+The separate server-completion artifact later verified HTTP 200, one saved
+assistant response, three saved episodes, and no retry. The preferred topic,
+distributed systems, was retrieved in the follow-up. Later turns added
+reliability, documentation, modularity, and testing preferences, and the fifth
+user message created a session summary.
+
+Slash commands
+--------------
+
+The first four-command artifact used stale FastAPI PID 21012 and is preserved
+as non-authoritative evidence. After restart, `memory_commands_live.json`
+recorded live HTTP 200 results for `/help`, `/memory`, `/dream`, and `/compact`.
+The commands were user-scoped; `/help`, `/memory`, and `/dream` did not create
+chat messages. The current implementation makes `/dream` persistent for
+verified, non-sensitive facts: the live test added three facts and skipped zero
+duplicates. `/compact` preserved raw messages, consolidated file memory from 82
+lines to 55 lines, and created summary/fact data. Older preview-only wording in
+historical raw evidence remains unchanged; its preview-only response text is
+not authoritative. Current source behavior and the later live evidence are
+authoritative.
+
+Part 3 instrumentation and experiment
+--------------------------------------
+
+The service gained deterministic component-token estimates and an optional
+per-request `short_term_n` bounded from 1 through 30. The runner recorded the
+canonical `current_user_message` component and sent the same 30-message
+conversation for N=4, N=12, and N=30. Each window used 25 setup messages and
+five fixed probes. All 90 requests succeeded, no automatic retry was used,
+and the aggregate field mismatch was corrected from existing JSONL without
+altering that raw file. Negative savings were preserved as estimates.
+
+Phase 1 derived-output correction
+----------------------------------
+
+The Part 3 raw JSONL was read without modification and its SHA-256 remained
+38f80d1a7a1ec318683e0a09045956547c64555e1d3c8d52ef1f89b9c724f5d6. The derived
+cost files were corrected to use hypothetical rates of $1 per 1,000,000 input
+tokens and $5 per 1,000,000 output tokens. Corrected totals are $504.4194 for
+N=4, $656.7306 for N=12, and $585.3405 for N=30.
+
+N=12 is the named measured-prompt baseline. The reconciliation preserves both
+model-measured prompt tokens and deterministic component estimates. The N=30
+evidence later showed a 90-1898 measured range followed by final-ten values of
+1026; estimated component totals exceeded `num_ctx=2048` from turn 11 onward.
+Context trimming is highly likely, but the raw evidence has no explicit
+truncation flag, so truncation is not proven directly. Offline validation passed without HTTP,
+MongoDB, Ollama, or embedding calls. No new live experiment occurred.
+
+Phase 6 read-only token reconciliation
+--------------------------------------
+
+The audit identified three separate measurements: model-reported prompt tokens,
+deterministic component estimates, and the derived raw-history comparison
+baseline. The N=30 evidence has 30 records, measured prompt values from 90 to
+1898, and final ten values all 1026. Estimated component totals exceeded the
+configured `num_ctx=2048` from turn 11 onward, with mean 2559.967. Context
+trimming is highly likely, but the raw evidence has no explicit truncation flag,
+so truncation is not proven directly. The values -105, -496, and -2824 are
+estimated component-minus-raw-history values, not measured cost savings.
+
+Part 4 file memory
+------------------
+
+The file-memory module implements a 40-line or 24-hour consolidation rule,
+preserves an original copy, removes duplicate facts, and places contradictions
+in `Needs review`. The preserved legacy fixture has 75 lines. The required
+offline fixture has exactly 55 lines, three duplicate groups, and three
+contradiction pairs with explicit audit records; its consolidated artifact has
+21 non-empty, non-comment lines. The live file evidence recorded 82 lines
+before and 55 after; `/dream` added three non-sensitive facts, skipped zero
+duplicates, and `/compact` preserved raw MongoDB messages.
+
+The current `10_conversation_10_turns.png` shows the student name, ten real
+USER and ASSISTANT messages, and no SyntaxError. The verified CRUD screenshot
+set is `15_crud_create_201.png` (POST create, 201),
+`16_crud_get_200.png` (GET one document, 200),
+`17_crud_update_200.png` (PUT update, 200),
+`18_crud_invalid_422.png` (invalid request, 422), and
+`19_crud_delete_204.png` (DELETE temporary document, 204 with an empty body).
+
+Lifetime-summary verification
+-----------------------------
+
+The controlled `/compact` sequence moved session summaries 3→4, 4→5, and
+5→6. The first two checkpoints correctly produced no lifetime summary. The
+sixth session summary created the first lifetime summary, moving lifetime
+summaries 0→1. The final verified database evidence recorded one document, 50
+messages, seven summaries, and 41 episodes.
+
+Verification and remaining deliverables
+---------------------------------------
+
+The read-only verifier snapshot recorded overall PASS with 53 PASS, 0 FAIL, and
+0 WARNING. It used GET requests and read-only MongoDB queries only. Its stored
+database counts are historical rather than a current live query. The final
+
+Phase 15/16 summary-replacement policy experiment
+--------------------------------------------------
+
+One additional 30-request experiment measured the opt-in summary-replacement
+policy with `short_term_n=30` and threshold 12. It used a new user and session,
+the same 25 setup messages and five probes, and no automatic retries. All 30
+requests succeeded. The measured means were 1189.333 prompt tokens, 178.367
+completion tokens, 60020.074 ms model latency, and 4.2/5 automated quality.
+The deterministic component estimate averaged 1300.2 tokens. The policy cost
+was $624.3504 under the documented hypothetical per-million-token formula,
+with 136.434 measured prompt-token savings versus N=12 and quality change 0.0.
+
+The effective memory window was bounded at 13 messages from turn 7 onward, and
+the current user message appeared exactly once on every turn. Exact internal
+replacement counts were unavailable because the response schema did not expose
+that metadata; no count was invented. The original 90-record JSONL remained
+unchanged with its preserved SHA-256. The fourth-policy evidence is separate
+from the original Part 3 evidence and has not yet been merged into the final
+verification report.
+PDF export is present from the documentation phase. Final Git commit/tag/push
+
+Phase 27 offline Part 4 verification
+------------------------------------
+
+The actual generated-function check ran locally against the 55-line fixture and
+returned passed=true, deterministic=true, duplicate removal=true,
+contradiction detection=true, line_rule=true, and age_rule=true. It reported
+55 input lines, 15 output lines, 5 duplicate occurrences, and 1 contradiction
+detected by that helper. The separate fixture audit remains the authoritative
+three-pair record with zero missed contradictions. An earlier historical compact
+test distinguished MongoDB messages 50 -> 50 from summary changes; raw messages
+were preserved. That older verifier/global snapshot is not the authoritative
+18 -> 18 session-4 count. The earlier pre-compaction MEMORY.md snapshot showed
+48 physical lines and 25 non-empty, non-comment lines. The authoritative run
+reports current post-compaction values of 43 physical and 20 non-comment lines.
+No live service or
+database was contacted in this phase.
+
+Final live compact verification
+-------------------------------
+
+The captured artifact `compact_final_live_verification.json` records one HTTP
+200 `/compact` request for `hw6-session-4`. No retry and no normal chat request
+were sent. The read-only memory and aggregate endpoints returned HTTP 200; the
+response exposed 16 recent messages and 20 episodic facts and stated that raw
+messages were preserved. MongoDB collection totals were unavailable because the
+project Python launcher targeted a missing interpreter and the available Python
+lacked PyMongo/bson. File-memory before/after counts were unavailable because
+they were not captured. These values remain explicitly unavailable rather than
+being estimated.
+
+Successful compact follow-up
+----------------------------
+
+The separate artifact `compact_authoritative_before_after_success.json`
+records the properly encoded `/compact` request for `hw6-session-4` as HTTP
+200 with elapsed time 130973.166 ms. It recorded no retry, no normal chat
+request, and the exact answer: “Older messages were compacted into a session
+summary and durable facts; raw messages were preserved.” The response metadata
+fields were recorded, but unrecorded values remain unavailable. The earlier
+malformed-body HTTP 422 attempt remains in its original failed artifact and was
+not merged with this success result.
+and collaborator-access confirmation were not performed in this phase.
+
+Authoritative complete compact count verification
+--------------------------------------------------
+
+The artifact `compact_counts_live_success.json` is now the authoritative
+before/after record. Exactly one properly JSON-encoded `/compact` request was
+sent for `hw6-session-4`; it returned HTTP 200 in 153434.637 ms, with no retry
+and no normal chat request.
+
+| Metric | Before | After |
+|---|---:|---:|
+| MongoDB messages | 18 | 18 |
+| MongoDB summaries | 10 | 11 |
+| MongoDB episodes | 35 | 38 |
+| File physical lines | 43 | 43 |
+| File non-comment lines | 20 | 20 |
+| File facts | 28 | 29 |
+
+The response recorded `facts_added=3`, `summary_created=true`,
+`lifetime_summary_created=false`, and `raw_messages_preserved=true`. The failed
+422 artifact and earlier incomplete compact artifacts remain separate historical
+records and were not overwritten.
+Historical HW1–HW5 evidence was preserved throughout.
