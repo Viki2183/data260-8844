@@ -1,0 +1,50 @@
+{
+  "experiment": "Nonexistent package-ID recovery",
+  "requested_id": 999999,
+  "configuration": {
+    "model_calls": false,
+    "database_access": false,
+    "server_started": false,
+    "deterministic": true,
+    "max_steps": 2,
+    "max_repairs": 1
+  },
+  "started_at": "2026-10-25T10:25:38.796022+00:00",
+  "ended_at": "2026-10-25T10:25:38.796099+00:00",
+  "tool_call": {
+    "name": "detail",
+    "inputs": {
+      "package_id": 999999
+    }
+  },
+  "tool_result": {
+    "ok": false,
+    "data": null,
+    "error": "package not found"
+  },
+  "recovery_behavior": {
+    "agent_crashed": false,
+    "final_answer": "Package ID 999999 was not found; the tool returned a controlled error and the agent stopped normally.",
+    "stop_reason": "success",
+    "tool_calls": 1
+  },
+  "success": true,
+  "stop_reason": "success",
+  "crashed": false,
+  "database_writes": false,
+  "hidden_reasoning_stored": false,
+  "trace": [
+    {
+      "step": 1,
+      "tool": "detail",
+      "inputs": {
+        "package_id": 999999
+      },
+      "observation": {
+        "ok": false,
+        "data": null,
+        "error": "package not found"
+      }
+    }
+  ]
+}

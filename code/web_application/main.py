@@ -1,20 +1,25 @@
-﻿from fastapi import FastAPI, Request
+﻿import os
+
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-import os
 
 try:
     from .auth_hw4 import router as auth_router
+    from .auth_hw7 import router as hw7_auth_router
     from .benchmark_hw4 import router as benchmark_router
     from .database import Base, engine
     from .documents_hw6 import router as documents_router
+    from .hw7_bikeshare_routes import router as hw7_bikeshare_router
     from .memory_routes_hw6 import router as memory_router
     from .packages_hw5 import router as packages_router
     from .reports_hw4 import router as reports_router
 except ImportError:
     from auth_hw4 import router as auth_router
+    from auth_hw7 import router as hw7_auth_router
     from benchmark_hw4 import router as benchmark_router
     from database import Base, engine
     from documents_hw6 import router as documents_router
+    from hw7_bikeshare_routes import router as hw7_bikeshare_router
     from memory_routes_hw6 import router as memory_router
     from packages_hw5 import router as packages_router
     from reports_hw4 import router as reports_router
@@ -61,11 +66,13 @@ async def measure_sql_statements(request: Request, call_next):
 
 # Register all application routers after the FastAPI app exists.
 app.include_router(auth_router)
+app.include_router(hw7_auth_router)
 app.include_router(packages_router)
 app.include_router(reports_router)
 app.include_router(benchmark_router)
 app.include_router(documents_router)
 app.include_router(memory_router)
+app.include_router(hw7_bikeshare_router)
 
 
 @app.get("/health")

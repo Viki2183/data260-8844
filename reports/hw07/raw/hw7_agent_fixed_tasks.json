@@ -1,0 +1,94 @@
+{
+  "configuration": {
+    "model": "qwen3:8b",
+    "ollama_base_url": "http://127.0.0.1:11434",
+    "temperature": 0.0,
+    "num_predict": 512,
+    "timeout_s": 180,
+    "seed": 8844,
+    "verify_seed": 268844
+  },
+  "started_at": "2026-10-25T06:15:07.202281+00:00",
+  "ended_at": "2026-10-25T06:15:41.595306+00:00",
+  "tasks": [
+    {
+      "task_id": "A",
+      "prompt": "Search for a package related to requests, then detail the first result and summarize it. You must call search first and detail exactly the first returned package id before answering.",
+      "required_tools": [
+        "detail",
+        "search"
+      ],
+      "minimum_tool_calls": 2,
+      "success": false,
+      "stop_reason": "human_review",
+      "tool_calls": 0,
+      "repair_count": 0,
+      "tools_used": [],
+      "latency_ms": 20965.813,
+      "token_usage": [
+        {
+          "input_tokens": 136,
+          "output_tokens": 20,
+          "total_tokens": 156
+        }
+      ],
+      "unsupported_claims": true,
+      "error_summary": "KeyError: 'tool_call_id'",
+      "trace": [],
+      "answer_length": 0
+    },
+    {
+      "task_id": "B",
+      "prompt": "Produce an aggregate answer for Medium-severity vulnerability reports, then search for one package that supports the result and mention that supporting example. You must call aggregate first and search second before answering.",
+      "required_tools": [
+        "aggregate",
+        "search"
+      ],
+      "minimum_tool_calls": 2,
+      "success": false,
+      "stop_reason": "human_review",
+      "tool_calls": 0,
+      "repair_count": 0,
+      "tools_used": [],
+      "latency_ms": 4146.737,
+      "token_usage": [
+        {
+          "input_tokens": 141,
+          "output_tokens": 16,
+          "total_tokens": 157
+        }
+      ],
+      "unsupported_claims": true,
+      "error_summary": "KeyError: 'tool_call_id'",
+      "trace": [],
+      "answer_length": 0
+    },
+    {
+      "task_id": "C",
+      "prompt": "Compare two packages related to requests. Call search with limit 2, then detail both returned package ids, then compare them. You must make search plus two detail calls before answering.",
+      "required_tools": [
+        "detail",
+        "search"
+      ],
+      "minimum_tool_calls": 3,
+      "success": false,
+      "stop_reason": "human_review",
+      "tool_calls": 0,
+      "repair_count": 0,
+      "tools_used": [],
+      "latency_ms": 4752.874,
+      "token_usage": [
+        {
+          "input_tokens": 139,
+          "output_tokens": 20,
+          "total_tokens": 159
+        }
+      ],
+      "unsupported_claims": true,
+      "error_summary": "KeyError: 'tool_call_id'",
+      "trace": [],
+      "answer_length": 0
+    }
+  ],
+  "all_required_sequences_passed": false
+}

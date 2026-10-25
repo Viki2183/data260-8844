@@ -1,0 +1,373 @@
+{
+  "phase": "4C",
+  "server": "http://127.0.0.1:8744",
+  "database": "s8844_rel",
+  "all_passed": true,
+  "case_count": 19,
+  "created_hw7_record_ids": {
+    "writer": 8197,
+    "moderator_delete_target": 8198
+  },
+  "cleanup_performed": "moderator delete test target only",
+  "jwt_values_stored": false,
+  "passwords_stored": false,
+  "cases": [
+    {
+      "case": "valid_login_reader",
+      "username": "vikki1",
+      "role": "reader",
+      "method": "POST",
+      "route": "/auth/login",
+      "status_code": 200,
+      "expected_status": 200,
+      "timestamp_utc": "2026-10-24T18:54:14.712864+00:00",
+      "latency_ms": 502.213,
+      "pass": true,
+      "failure_reason": null,
+      "response_summary": {
+        "token_redacted": true,
+        "token_type": "bearer"
+      },
+      "request_summary": {},
+      "token_redacted": false
+    },
+    {
+      "case": "valid_login_writer",
+      "username": "vikki2",
+      "role": "writer",
+      "method": "POST",
+      "route": "/auth/login",
+      "status_code": 200,
+      "expected_status": 200,
+      "timestamp_utc": "2026-10-24T18:54:14.980183+00:00",
+      "latency_ms": 267.239,
+      "pass": true,
+      "failure_reason": null,
+      "response_summary": {
+        "token_redacted": true,
+        "token_type": "bearer"
+      },
+      "request_summary": {},
+      "token_redacted": false
+    },
+    {
+      "case": "valid_login_moderator",
+      "username": "vikki3",
+      "role": "moderator",
+      "method": "POST",
+      "route": "/auth/login",
+      "status_code": 200,
+      "expected_status": 200,
+      "timestamp_utc": "2026-10-24T18:54:15.236458+00:00",
+      "latency_ms": 256.214,
+      "pass": true,
+      "failure_reason": null,
+      "response_summary": {
+        "token_redacted": true,
+        "token_type": "bearer"
+      },
+      "request_summary": {},
+      "token_redacted": false
+    },
+    {
+      "case": "invalid_password",
+      "username": "vikki1",
+      "role": "reader",
+      "method": "POST",
+      "route": "/auth/login",
+      "status_code": 401,
+      "expected_status": 401,
+      "timestamp_utc": "2026-10-24T18:54:15.491803+00:00",
+      "latency_ms": 255.265,
+      "pass": true,
+      "failure_reason": null,
+      "response_summary": {
+        "detail": "Invalid username or password"
+      },
+      "request_summary": {},
+      "token_redacted": false
+    },
+    {
+      "case": "unknown_username",
+      "username": "hw7-unknown-user",
+      "role": null,
+      "method": "POST",
+      "route": "/auth/login",
+      "status_code": 401,
+      "expected_status": 401,
+      "timestamp_utc": "2026-10-24T18:54:15.520481+00:00",
+      "latency_ms": 28.629,
+      "pass": true,
+      "failure_reason": null,
+      "response_summary": {
+        "detail": "Invalid username or password"
+      },
+      "request_summary": {},
+      "token_redacted": false
+    },
+    {
+      "case": "auth_me_reader",
+      "username": "vikki1",
+      "role": "reader",
+      "method": "GET",
+      "route": "/auth/me",
+      "status_code": 200,
+      "expected_status": 200,
+      "timestamp_utc": "2026-10-24T18:54:15.527148+00:00",
+      "latency_ms": 6.625,
+      "pass": true,
+      "failure_reason": null,
+      "response_summary": {
+        "username": "vikki1",
+        "role": "reader"
+      },
+      "request_summary": {},
+      "token_redacted": true
+    },
+    {
+      "case": "auth_me_writer",
+      "username": "vikki2",
+      "role": "writer",
+      "method": "GET",
+      "route": "/auth/me",
+      "status_code": 200,
+      "expected_status": 200,
+      "timestamp_utc": "2026-10-24T18:54:15.552446+00:00",
+      "latency_ms": 25.255,
+      "pass": true,
+      "failure_reason": null,
+      "response_summary": {
+        "username": "vikki2",
+        "role": "writer"
+      },
+      "request_summary": {},
+      "token_redacted": true
+    },
+    {
+      "case": "auth_me_moderator",
+      "username": "vikki3",
+      "role": "moderator",
+      "method": "GET",
+      "route": "/auth/me",
+      "status_code": 200,
+      "expected_status": 200,
+      "timestamp_utc": "2026-10-24T18:54:15.583180+00:00",
+      "latency_ms": 30.688,
+      "pass": true,
+      "failure_reason": null,
+      "response_summary": {
+        "username": "vikki3",
+        "role": "moderator"
+      },
+      "request_summary": {},
+      "token_redacted": true
+    },
+    {
+      "case": "auth_me_missing_token",
+      "username": null,
+      "role": null,
+      "method": "GET",
+      "route": "/auth/me",
+      "status_code": 401,
+      "expected_status": 401,
+      "timestamp_utc": "2026-10-24T18:54:15.588846+00:00",
+      "latency_ms": 5.615,
+      "pass": true,
+      "failure_reason": null,
+      "response_summary": {
+        "detail": "Bearer token required"
+      },
+      "request_summary": {},
+      "token_redacted": false
+    },
+    {
+      "case": "auth_me_invalid_token",
+      "username": null,
+      "role": null,
+      "method": "GET",
+      "route": "/auth/me",
+      "status_code": 401,
+      "expected_status": 401,
+      "timestamp_utc": "2026-10-24T18:54:15.614459+00:00",
+      "latency_ms": 25.572,
+      "pass": true,
+      "failure_reason": null,
+      "response_summary": {
+        "detail": "Invalid or expired bearer token"
+      },
+      "request_summary": {},
+      "token_redacted": true
+    },
+    {
+      "case": "auth_me_expired_token",
+      "username": "vikki1",
+      "role": "reader",
+      "method": "GET",
+      "route": "/auth/me",
+      "status_code": 401,
+      "expected_status": 401,
+      "timestamp_utc": "2026-10-24T18:54:15.619303+00:00",
+      "latency_ms": 4.644,
+      "pass": true,
+      "failure_reason": null,
+      "response_summary": {
+        "detail": "Invalid or expired bearer token"
+      },
+      "request_summary": {},
+      "token_redacted": true
+    },
+    {
+      "case": "read_packages_reader",
+      "username": "vikki1",
+      "role": "reader",
+      "method": "GET",
+      "route": "/api/packages?limit=1",
+      "status_code": 200,
+      "expected_status": 200,
+      "timestamp_utc": "2026-10-24T18:54:15.668078+00:00",
+      "latency_ms": 48.716,
+      "pass": true,
+      "failure_reason": null,
+      "response_summary": null,
+      "request_summary": {},
+      "token_redacted": true
+    },
+    {
+      "case": "read_packages_writer",
+      "username": "vikki2",
+      "role": "writer",
+      "method": "GET",
+      "route": "/api/packages?limit=1",
+      "status_code": 200,
+      "expected_status": 200,
+      "timestamp_utc": "2026-10-24T18:54:15.731724+00:00",
+      "latency_ms": 63.602,
+      "pass": true,
+      "failure_reason": null,
+      "response_summary": null,
+      "request_summary": {},
+      "token_redacted": true
+    },
+    {
+      "case": "read_packages_moderator",
+      "username": "vikki3",
+      "role": "moderator",
+      "method": "GET",
+      "route": "/api/packages?limit=1",
+      "status_code": 200,
+      "expected_status": 200,
+      "timestamp_utc": "2026-10-24T18:54:15.756059+00:00",
+      "latency_ms": 24.29,
+      "pass": true,
+      "failure_reason": null,
+      "response_summary": null,
+      "request_summary": {},
+      "token_redacted": true
+    },
+    {
+      "case": "create_reader_denied",
+      "username": "vikki1",
+      "role": "reader",
+      "method": "POST",
+      "route": "/api/packages",
+      "status_code": 403,
+      "expected_status": 403,
+      "timestamp_utc": "2026-10-24T18:54:15.786723+00:00",
+      "latency_ms": 30.601,
+      "pass": true,
+      "failure_reason": null,
+      "response_summary": {
+        "detail": "Insufficient role for this operation"
+      },
+      "request_summary": {
+        "name": "HW7 Live Reader Denied 1792868054",
+        "ecosystem": "HW7",
+        "packageCode": "s8844-hw7-reader-denied-1792868054"
+      },
+      "token_redacted": true
+    },
+    {
+      "case": "create_writer_allowed",
+      "username": "vikki2",
+      "role": "writer",
+      "method": "POST",
+      "route": "/api/packages",
+      "status_code": 201,
+      "expected_status": 201,
+      "timestamp_utc": "2026-10-24T18:54:15.830812+00:00",
+      "latency_ms": 44.027,
+      "pass": true,
+      "failure_reason": null,
+      "response_summary": {
+        "id": 8197,
+        "packageCode": "s8844-hw7-writer-1792868054"
+      },
+      "request_summary": {
+        "name": "HW7 Live Writer Created 1792868054",
+        "ecosystem": "HW7",
+        "packageCode": "s8844-hw7-writer-1792868054"
+      },
+      "token_redacted": true
+    },
+    {
+      "case": "create_moderator_allowed",
+      "username": "vikki3",
+      "role": "moderator",
+      "method": "POST",
+      "route": "/api/packages",
+      "status_code": 201,
+      "expected_status": 201,
+      "timestamp_utc": "2026-10-24T18:54:15.856629+00:00",
+      "latency_ms": 25.753,
+      "pass": true,
+      "failure_reason": null,
+      "response_summary": {
+        "id": 8198,
+        "packageCode": "s8844-hw7-delete-target-1792868054"
+      },
+      "request_summary": {
+        "name": "HW7 Live Moderator Delete Target 1792868054",
+        "ecosystem": "HW7",
+        "packageCode": "s8844-hw7-delete-target-1792868054"
+      },
+      "token_redacted": true
+    },
+    {
+      "case": "delete_writer_denied",
+      "username": "vikki2",
+      "role": "writer",
+      "method": "DELETE",
+      "route": "/api/packages/8198",
+      "status_code": 403,
+      "expected_status": 403,
+      "timestamp_utc": "2026-10-24T18:54:15.865141+00:00",
+      "latency_ms": 8.451,
+      "pass": true,
+      "failure_reason": null,
+      "response_summary": {
+        "detail": "Insufficient role for this operation"
+      },
+      "request_summary": {},
+      "token_redacted": true
+    },
+    {
+      "case": "delete_moderator_allowed",
+      "username": "vikki3",
+      "role": "moderator",
+      "method": "DELETE",
+      "route": "/api/packages/8198",
+      "status_code": 200,
+      "expected_status": 200,
+      "timestamp_utc": "2026-10-24T18:54:15.902987+00:00",
+      "latency_ms": 37.794,
+      "pass": true,
+      "failure_reason": null,
+      "response_summary": {
+        "id": 8198,
+        "packageCode": "s8844-hw7-delete-target-1792868054"
+      },
+      "request_summary": {},
+      "token_redacted": true
+    }
+  ]
+}

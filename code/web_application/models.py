@@ -175,7 +175,7 @@ class VulnerabilityReferenceDB(Base):
 
 
 class UserDB(Base):
-    """Application users authenticated by email and password."""
+    """Application users for the historical session and HW7 JWT flows."""
 
     __tablename__ = "users"
 
@@ -190,6 +190,13 @@ class UserDB(Base):
         nullable=False,
     )
 
+    username: Mapped[str] = mapped_column(
+        String(100),
+        nullable=False,
+        unique=True,
+        index=True,
+    )
+
     email: Mapped[str] = mapped_column(
         String(255),
         nullable=False,
@@ -199,6 +206,13 @@ class UserDB(Base):
     password_hash: Mapped[str] = mapped_column(
         String(255),
         nullable=False,
+    )
+
+    role: Mapped[str] = mapped_column(
+        String(20),
+        nullable=False,
+        default="reader",
+        server_default="reader",
     )
 
 

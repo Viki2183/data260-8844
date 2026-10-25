@@ -1,0 +1,1032 @@
+{
+  "schema_version": "hw7-reliability-1",
+  "started_at": "2026-10-25T07:09:13.146619+00:00",
+  "last_updated_at": "2026-10-25T07:14:17.621098+00:00",
+  "configuration": {
+    "model": "qwen3:8b",
+    "ollama_base_url": "http://127.0.0.1:11434",
+    "temperature": 0.0,
+    "seed": 8844,
+    "verification_seed": 268844,
+    "timeout_seconds": 180,
+    "max_steps": 6,
+    "max_repairs": 1,
+    "reasoning": false
+  },
+  "tasks": [
+    {
+      "task_id": "A",
+      "input": "Search for package-00001, then retrieve its detailed information before answering.",
+      "sequence": [
+        "search",
+        "detail"
+      ],
+      "minimum_calls": 2
+    },
+    {
+      "task_id": "B",
+      "input": "Compute the aggregate package count, then search for package-00001 as a supporting example before answering.",
+      "sequence": [
+        "aggregate",
+        "search"
+      ],
+      "minimum_calls": 2
+    },
+    {
+      "task_id": "C",
+      "input": "Compare package-00001 and package-00002: search for both, then retrieve details for each before answering.",
+      "sequence": [
+        "search",
+        "detail",
+        "detail"
+      ],
+      "minimum_calls": 3
+    }
+  ],
+  "attempts": [
+    {
+      "attempt": 1,
+      "task_id": "A",
+      "task_input": "Search for package-00001, then retrieve its detailed information before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "search",
+        "detail"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 12440.773,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "search_package",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 105,
+            "output_tokens": 22,
+            "total_tokens": 127
+          }
+        },
+        {
+          "action": "final",
+          "name": null,
+          "has_answer": true,
+          "usage": {
+            "input_tokens": 125,
+            "output_tokens": 28,
+            "total_tokens": 153
+          }
+        }
+      ],
+      "trace": []
+    },
+    {
+      "attempt": 2,
+      "task_id": "B",
+      "task_input": "Compute the aggregate package count, then search for package-00001 as a supporting example before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "aggregate",
+        "search"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 11663.508,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "compute_aggregate_package_count",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 110,
+            "output_tokens": 18,
+            "total_tokens": 128
+          }
+        },
+        {
+          "action": "final",
+          "name": null,
+          "has_answer": true,
+          "usage": {
+            "input_tokens": 133,
+            "output_tokens": 31,
+            "total_tokens": 164
+          }
+        }
+      ],
+      "trace": []
+    },
+    {
+      "attempt": 3,
+      "task_id": "C",
+      "task_input": "Compare package-00001 and package-00002: search for both, then retrieve details for each before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "search",
+        "detail",
+        "detail"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 15080.003,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "search_packages",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 116,
+            "output_tokens": 33,
+            "total_tokens": 149
+          }
+        },
+        {
+          "action": "tool",
+          "name": "search_packages",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 136,
+            "output_tokens": 33,
+            "total_tokens": 169
+          }
+        }
+      ],
+      "trace": []
+    },
+    {
+      "attempt": 4,
+      "task_id": "A",
+      "task_input": "Search for package-00001, then retrieve its detailed information before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "search",
+        "detail"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 12429.875,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "search_package",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 105,
+            "output_tokens": 22,
+            "total_tokens": 127
+          }
+        },
+        {
+          "action": "final",
+          "name": null,
+          "has_answer": true,
+          "usage": {
+            "input_tokens": 125,
+            "output_tokens": 28,
+            "total_tokens": 153
+          }
+        }
+      ],
+      "trace": []
+    },
+    {
+      "attempt": 5,
+      "task_id": "B",
+      "task_input": "Compute the aggregate package count, then search for package-00001 as a supporting example before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "aggregate",
+        "search"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 12150.256,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "compute_aggregate_package_count",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 110,
+            "output_tokens": 18,
+            "total_tokens": 128
+          }
+        },
+        {
+          "action": "final",
+          "name": null,
+          "has_answer": true,
+          "usage": {
+            "input_tokens": 133,
+            "output_tokens": 31,
+            "total_tokens": 164
+          }
+        }
+      ],
+      "trace": []
+    },
+    {
+      "attempt": 6,
+      "task_id": "C",
+      "task_input": "Compare package-00001 and package-00002: search for both, then retrieve details for each before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "search",
+        "detail",
+        "detail"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 15860.794,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "search_packages",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 116,
+            "output_tokens": 33,
+            "total_tokens": 149
+          }
+        },
+        {
+          "action": "tool",
+          "name": "search_packages",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 136,
+            "output_tokens": 33,
+            "total_tokens": 169
+          }
+        }
+      ],
+      "trace": []
+    },
+    {
+      "attempt": 7,
+      "task_id": "A",
+      "task_input": "Search for package-00001, then retrieve its detailed information before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "search",
+        "detail"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 11791.253,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "search_package",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 105,
+            "output_tokens": 22,
+            "total_tokens": 127
+          }
+        },
+        {
+          "action": "final",
+          "name": null,
+          "has_answer": true,
+          "usage": {
+            "input_tokens": 125,
+            "output_tokens": 28,
+            "total_tokens": 153
+          }
+        }
+      ],
+      "trace": []
+    },
+    {
+      "attempt": 8,
+      "task_id": "B",
+      "task_input": "Compute the aggregate package count, then search for package-00001 as a supporting example before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "aggregate",
+        "search"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 12199.358,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "compute_aggregate_package_count",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 110,
+            "output_tokens": 18,
+            "total_tokens": 128
+          }
+        },
+        {
+          "action": "final",
+          "name": null,
+          "has_answer": true,
+          "usage": {
+            "input_tokens": 133,
+            "output_tokens": 31,
+            "total_tokens": 164
+          }
+        }
+      ],
+      "trace": []
+    },
+    {
+      "attempt": 9,
+      "task_id": "C",
+      "task_input": "Compare package-00001 and package-00002: search for both, then retrieve details for each before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "search",
+        "detail",
+        "detail"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 15246.081,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "search_packages",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 116,
+            "output_tokens": 33,
+            "total_tokens": 149
+          }
+        },
+        {
+          "action": "tool",
+          "name": "search_packages",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 136,
+            "output_tokens": 33,
+            "total_tokens": 169
+          }
+        }
+      ],
+      "trace": []
+    },
+    {
+      "attempt": 10,
+      "task_id": "A",
+      "task_input": "Search for package-00001, then retrieve its detailed information before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "search",
+        "detail"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 12417.789,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "search_package",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 105,
+            "output_tokens": 22,
+            "total_tokens": 127
+          }
+        },
+        {
+          "action": "final",
+          "name": null,
+          "has_answer": true,
+          "usage": {
+            "input_tokens": 125,
+            "output_tokens": 28,
+            "total_tokens": 153
+          }
+        }
+      ],
+      "trace": []
+    },
+    {
+      "attempt": 11,
+      "task_id": "B",
+      "task_input": "Compute the aggregate package count, then search for package-00001 as a supporting example before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "aggregate",
+        "search"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 11518.422,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "compute_aggregate_package_count",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 110,
+            "output_tokens": 18,
+            "total_tokens": 128
+          }
+        },
+        {
+          "action": "final",
+          "name": null,
+          "has_answer": true,
+          "usage": {
+            "input_tokens": 133,
+            "output_tokens": 31,
+            "total_tokens": 164
+          }
+        }
+      ],
+      "trace": []
+    },
+    {
+      "attempt": 12,
+      "task_id": "C",
+      "task_input": "Compare package-00001 and package-00002: search for both, then retrieve details for each before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "search",
+        "detail",
+        "detail"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 16052.922,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "search_packages",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 116,
+            "output_tokens": 33,
+            "total_tokens": 149
+          }
+        },
+        {
+          "action": "tool",
+          "name": "search_packages",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 136,
+            "output_tokens": 33,
+            "total_tokens": 169
+          }
+        }
+      ],
+      "trace": []
+    },
+    {
+      "attempt": 13,
+      "task_id": "A",
+      "task_input": "Search for package-00001, then retrieve its detailed information before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "search",
+        "detail"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 11749.843,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "search_package",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 105,
+            "output_tokens": 22,
+            "total_tokens": 127
+          }
+        },
+        {
+          "action": "final",
+          "name": null,
+          "has_answer": true,
+          "usage": {
+            "input_tokens": 125,
+            "output_tokens": 28,
+            "total_tokens": 153
+          }
+        }
+      ],
+      "trace": []
+    },
+    {
+      "attempt": 14,
+      "task_id": "B",
+      "task_input": "Compute the aggregate package count, then search for package-00001 as a supporting example before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "aggregate",
+        "search"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 12541.945,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "compute_aggregate_package_count",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 110,
+            "output_tokens": 18,
+            "total_tokens": 128
+          }
+        },
+        {
+          "action": "final",
+          "name": null,
+          "has_answer": true,
+          "usage": {
+            "input_tokens": 133,
+            "output_tokens": 31,
+            "total_tokens": 164
+          }
+        }
+      ],
+      "trace": []
+    },
+    {
+      "attempt": 15,
+      "task_id": "C",
+      "task_input": "Compare package-00001 and package-00002: search for both, then retrieve details for each before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "search",
+        "detail",
+        "detail"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 16103.859,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "search_packages",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 116,
+            "output_tokens": 33,
+            "total_tokens": 149
+          }
+        },
+        {
+          "action": "tool",
+          "name": "search_packages",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 136,
+            "output_tokens": 33,
+            "total_tokens": 169
+          }
+        }
+      ],
+      "trace": []
+    },
+    {
+      "attempt": 16,
+      "task_id": "A",
+      "task_input": "Search for package-00001, then retrieve its detailed information before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "search",
+        "detail"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 12529.469,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "search_package",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 105,
+            "output_tokens": 22,
+            "total_tokens": 127
+          }
+        },
+        {
+          "action": "final",
+          "name": null,
+          "has_answer": true,
+          "usage": {
+            "input_tokens": 125,
+            "output_tokens": 28,
+            "total_tokens": 153
+          }
+        }
+      ],
+      "trace": []
+    },
+    {
+      "attempt": 17,
+      "task_id": "B",
+      "task_input": "Compute the aggregate package count, then search for package-00001 as a supporting example before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "aggregate",
+        "search"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 11829.589,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "compute_aggregate_package_count",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 110,
+            "output_tokens": 18,
+            "total_tokens": 128
+          }
+        },
+        {
+          "action": "final",
+          "name": null,
+          "has_answer": true,
+          "usage": {
+            "input_tokens": 133,
+            "output_tokens": 31,
+            "total_tokens": 164
+          }
+        }
+      ],
+      "trace": []
+    },
+    {
+      "attempt": 18,
+      "task_id": "C",
+      "task_input": "Compare package-00001 and package-00002: search for both, then retrieve details for each before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "search",
+        "detail",
+        "detail"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 15286.147,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "search_packages",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 116,
+            "output_tokens": 33,
+            "total_tokens": 149
+          }
+        },
+        {
+          "action": "tool",
+          "name": "search_packages",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 136,
+            "output_tokens": 33,
+            "total_tokens": 169
+          }
+        }
+      ],
+      "trace": []
+    },
+    {
+      "attempt": 19,
+      "task_id": "A",
+      "task_input": "Search for package-00001, then retrieve its detailed information before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "search",
+        "detail"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 12247.121,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "search_package",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 105,
+            "output_tokens": 22,
+            "total_tokens": 127
+          }
+        },
+        {
+          "action": "final",
+          "name": null,
+          "has_answer": true,
+          "usage": {
+            "input_tokens": 125,
+            "output_tokens": 28,
+            "total_tokens": 153
+          }
+        }
+      ],
+      "trace": []
+    },
+    {
+      "attempt": 20,
+      "task_id": "B",
+      "task_input": "Compute the aggregate package count, then search for package-00001 as a supporting example before answering.",
+      "model": "qwen3:8b",
+      "seed": 8844,
+      "verification_seed": 268844,
+      "temperature": 0.0,
+      "tool_sequence_required": [
+        "aggregate",
+        "search"
+      ],
+      "tool_sequence_observed": [],
+      "tool_call_count": 0,
+      "well_formed_before_repair": true,
+      "repair_needed": true,
+      "completed": false,
+      "latency_ms": 12074.787,
+      "token_usage": {
+        "available": false
+      },
+      "failure_class": "text when a tool was required",
+      "stop_reason": "human_review",
+      "error_type": null,
+      "decisions": [
+        {
+          "action": "tool",
+          "name": "compute_aggregate_package_count",
+          "has_answer": false,
+          "usage": {
+            "input_tokens": 110,
+            "output_tokens": 18,
+            "total_tokens": 128
+          }
+        },
+        {
+          "action": "final",
+          "name": null,
+          "has_answer": true,
+          "usage": {
+            "input_tokens": 133,
+            "output_tokens": 31,
+            "total_tokens": 164
+          }
+        }
+      ],
+      "trace": []
+    }
+  ],
+  "summary": {
+    "attempts_recorded": 20,
+    "completed": 20,
+    "successes": 0,
+    "failures": 20,
+    "task_success_rate": 0.0,
+    "well_formed_before_repair_rate": 1.0,
+    "well_formed_after_repair_rate": 0.0,
+    "average_latency_ms": 13160.6897,
+    "median_latency_ms": 12423.832,
+    "average_tool_calls": 0,
+    "failure_counts": {
+      "text when a tool was required": 20
+    },
+    "stop_reasons": {
+      "human_review": 20
+    }
+  }
+}

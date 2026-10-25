@@ -1,0 +1,7 @@
+DATA260 HW7 run log
+===================
+
+Implementation phase initialized after explicit approval.
+No live model, server, database, or public-web experiment has been run in this
+initial implementation pass. Experiment timestamps and real console output
+must be appended when the required demonstrations are performed.
