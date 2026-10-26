@@ -218,6 +218,193 @@ def test_agent() -> None:
     print("PASS agent multi-step/repair/schema/ceiling/final/log trace")
 
 
+def test_agent_required_sequences_and_failures() -> None:
+    tools = {
+        "aggregate": lambda severity=None: {
+            "ok": True,
+            "data": [{"severity": severity or "all", "count": 2}],
+            "error": None,
+        },
+        "search": lambda query: {
+            "success": True,
+            "data": [{"id": 1, "name": query}],
+            "error": None,
+        },
+        "detail": lambda package_id: {
+            "success": package_id in (1, 2),
+            "data": {"id": package_id} if package_id == 1 else None,
+            "error": None if package_id == 1 else "package not found",
+        },
+    }
+
+    task_b = run_agent(
+        "aggregate then search",
+        SequenceModel([
+            {"action": "tool", "name": "aggregate", "inputs": {}},
+            {"action": "tool", "name": "search", "inputs": {"query": "x"}},
+            {"action": "final", "answer": "aggregate supported by search"},
+        ]),
+        tools,
+        required_tool_sequence=["aggregate", "search"],
+        required_tool_inputs=[{}, {"query": "package-00001"}],
+    )
+    assert task_b["stop_reason"] == "success"
+    assert [item["tool"] for item in task_b["trace"]] == ["aggregate", "search"]
+
+    task_c = run_agent(
+        "search then two details",
+        SequenceModel([
+            {"action": "tool", "name": "search", "inputs": {"query": "x"}},
+            {"action": "tool", "name": "detail", "inputs": {"package_id": "1"}},
+            {"action": "tool", "name": "detail", "inputs": {"package_id": 1}},
+            {"action": "final", "answer": "comparison complete"},
+        ]),
+        tools,
+        required_tool_sequence=["search", "detail", "detail"],
+        required_tool_inputs=[{"query": "package-00001"}, {"package_id": 1}, {"package_id": 2}],
+    )
+    assert task_c["stop_reason"] == "success"
+    assert [item["tool"] for item in task_c["trace"]] == ["search", "detail", "detail"]
+    assert task_c["trace"][1]["inputs"]["package_id"] == 1
+
+    premature_b = CapturingSequenceModel([
+        {"action": "tool", "name": "aggregate", "inputs": {}},
+        {"action": "final", "answer": "premature"},
+        {"action": "final", "answer": "aggregate and search complete"},
+    ])
+    repaired_b = run_agent(
+        "fixed B",
+        premature_b,
+        tools,
+        required_tool_sequence=["aggregate", "search"],
+        required_tool_inputs=[{}, {"query": "package-00001"}],
+    )
+    assert repaired_b["stop_reason"] == "success"
+    assert [item["tool"] for item in repaired_b["trace"]] == ["aggregate", "search"]
+    assert repaired_b["trace"][1]["inputs"] == {"query": "package-00001"}
+
+    premature_c = CapturingSequenceModel([
+        {"action": "tool", "name": "search", "inputs": {"query": "empty"}},
+        {"action": "final", "answer": "premature"},
+        {"action": "final", "answer": "two details complete"},
+    ])
+    repaired_c = run_agent(
+        "fixed C",
+        premature_c,
+        tools,
+        required_tool_sequence=["search", "detail", "detail"],
+        required_tool_inputs=[{"query": "package-00001"}, {"package_id": 1}, {"package_id": 2}],
+    )
+    assert repaired_c["stop_reason"] == "human_review"
+    assert [item["tool"] for item in repaired_c["trace"]] == ["search", "detail"]
+    assert repaired_c["trace"][0]["observation"]["data"]
+
+    class AdapterFailsAfterDetail:
+        def __init__(self):
+            self.calls = 0
+
+        def complete(self, _messages):
+            self.calls += 1
+            if self.calls == 1:
+                return {"action": "tool", "name": "search", "inputs": {"query": "package-00001"}}
+            if self.calls == 2:
+                return {"action": "tool", "name": "detail", "inputs": {"package_id": 1}}
+            raise RuntimeError("HTTP 500 from Ollama")
+
+    adapter_model = AdapterFailsAfterDetail()
+    recovered_after_adapter_failure = run_agent(
+        "fixed C adapter recovery",
+        adapter_model,
+        tools,
+        required_tool_sequence=["search", "detail", "detail"],
+        required_tool_inputs=[{"query": "package-00001"}, {"package_id": 1}, {"package_id": 2}],
+    )
+    executed = [item["tool"] for item in recovered_after_adapter_failure["trace"] if "tool" in item]
+    assert recovered_after_adapter_failure["stop_reason"] == "success"
+    assert executed == ["search", "detail", "detail"]
+    assert adapter_model.calls == 3
+    assert (
+        recovered_after_adapter_failure["failure_classification"]
+        == "bounded_controller_recovery"
+    )
+
+    failed_detail = dict(tools)
+    failed_detail["detail"] = lambda package_id: (
+        {"success": False, "ok": False, "data": None, "error": "package not found"}
+        if package_id == 2 else tools["detail"](package_id)
+    )
+    failed_recovery = run_agent(
+        "fixed C failed second detail",
+        AdapterFailsAfterDetail(),
+        failed_detail,
+        required_tool_sequence=["search", "detail", "detail"],
+        required_tool_inputs=[{"query": "package-00001"}, {"package_id": 1}, {"package_id": 2}],
+    )
+    assert failed_recovery["stop_reason"] == "human_review"
+    assert failed_recovery["failure_classification"] == "controller_tool_error"
+
+    consecutive_detail_model = CapturingSequenceModel([
+        {"action": "tool", "name": "search", "inputs": {"query": "x"}},
+        {"action": "tool", "name": "detail", "inputs": {"package_id": 1}},
+        {"action": "final", "answer": "premature"},
+        {"action": "tool", "name": "detail", "inputs": {"package_id": 1}},
+        {"action": "final", "answer": "comparison complete"},
+    ])
+    consecutive_detail = run_agent(
+        "search then two details with repair",
+        consecutive_detail_model,
+        tools,
+        required_tool_sequence=["search", "detail", "detail"],
+    )
+    assert consecutive_detail["stop_reason"] == "success"
+    assert consecutive_detail["tool_calls"] == 3
+    repair_text = " ".join(
+        message["content"]
+        for messages in consecutive_detail_model.messages
+        for message in messages
+        if message.get("role") == "user"
+        and "Repair once." in message.get("content", "")
+    )
+    assert 'detail with inputs {"package_id": 1}' in repair_text
+
+    missing = run_agent(
+        "missing package",
+        SequenceModel([
+            {"action": "tool", "name": "detail", "inputs": {"package_id": 999999}},
+            {"action": "final", "answer": "not found handled"},
+        ]),
+        tools,
+    )
+    assert missing["trace"][0]["observation"]["error"] == "package not found"
+
+    def broken_detail(package_id):
+        raise TypeError("detail package_id must be integer")
+
+    recovered = run_agent(
+        "handler failure",
+        SequenceModel([
+            {"action": "tool", "name": "detail", "inputs": {"package_id": 1}},
+            {"action": "final", "answer": "controlled error"},
+        ]),
+        {"detail": broken_detail},
+    )
+    assert recovered["stop_reason"] == "success"
+    assert "TypeError" in recovered["trace"][0]["observation"]["error"]
+
+    model_failure = run_agent(
+        "adapter failure",
+        SimpleNamespace(
+            complete=lambda _messages: (_ for _ in ()).throw(
+                RuntimeError("adapter stopped")
+            )
+        ),
+        tools,
+    )
+    assert model_failure["stop_reason"] == "human_review"
+    assert model_failure["failure_classification"] == "model_or_adapter_error"
+    print("PASS agent Task B/Task C sequences/ID normalization/controlled failures")
+
+
 def test_reflexion() -> None:
     tools = {
         "search": lambda query: {"success": True, "query": query},

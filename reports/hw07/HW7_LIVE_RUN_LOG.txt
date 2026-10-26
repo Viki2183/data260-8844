@@ -67,3 +67,17 @@ database_accessed=False
 model_called=False
 raw_evidence=reports/hw07/raw/hw7_file_tools_safety_results_corrected.json
 initial_raw_evidence=reports/hw07/raw/hw7_file_tools_safety_results.json
+
+Phase 5.3 final fixed-task smoke updates
+task_b=aggregate -> search; tool_calls=2; stop=success; database_writes=False
+raw_evidence=reports/hw07/raw/hw7_task_b_final_smoke.json
+task_c=search -> detail(1) -> detail(2); tool_calls=3; stop=success
+task_c_adapter_error=Ollama HTTP 500 after detail(1)
+task_c_recovery=one bounded controller repair executed detail(2); no model retry
+task_c_classification=bounded_controller_recovery; database_writes=False
+raw_evidence=reports/hw07/raw/hw7_task_c_final_smoke_v2.json
+
+Phase 5.4 current Reflexion comparison rerun
+tasks=A,B,C; baseline=0/3; reflexion=0/3; all current runs human_review
+reflexion_retries=2 per task; tokens=unavailable
+raw_evidence=reports/hw07/raw/hw7_reflexion_comparison_current.json

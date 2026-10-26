@@ -2,52 +2,55 @@
 
 Student: Vrishin KunnathamParambath | SID4: 8844
 
-Repository: https://github.com/Viki2183/data260-8844
-Submission access still requires confirmation for collaborators `Sbnikitha` and
-`supriyaselvanganesan`. Commit/tag hash: pending final packaging.
+Repository: https://github.com/Viki2183/data260-8844  
+Collaborator access for `Sbnikitha` and `supriyaselvanganesan`: not independently verified.  
+Commit/tag hash: pending final packaging.
 
-1. What assistance was used and what the student did
+## (1) How AI assistance was used
 
 Codex assisted with repository inspection, reading the official HW7 assignment,
-reviewing the existing HW1–HW6 implementation, implementing and testing the
-HW7 authentication, agent, MRKL, prompt-security, file-tool, migration, and
-bike-share UI changes, organizing raw evidence, and preparing the report.
-The student supplied the repository, credentials privately when needed,
-approved each phase, selected the HW7 scope and test data, reviewed the
-results, and retained responsibility for the final submission decisions.
+reviewing and implementing HW7 authentication, agent, MRKL, prompt-security,
+file-tool, migration, and bike-share changes, organizing raw evidence, and
+preparing the report and PDFs. The student approved the scope, supplied the
+repository and private credentials locally when needed, selected test data,
+reviewed outputs, and retained responsibility for submission decisions.
 
-2. Incorrect or unsuitable output and independent verification
+## (2) What was independently reviewed or verified
 
-One early bike-share evidence result reported a membership cost of $6,830 for
-the pay-per-use scenario. It was unsuitable because the calculation used
-`included_minutes=0`, even though the selected Citi Bike pricing evidence
-provides 45 included member minutes per ride.
+The student reviewed the source changes, raw evidence, screenshots, offline
+checks, JWT results, and local Ollama results. The latest Task B evidence shows
+`aggregate -> search` success. The latest Task C evidence shows
+`search -> detail -> detail` completed through bounded controller recovery after
+an Ollama HTTP 500; it is not described as uninterrupted model success.
 
-3. How the problem was detected or verified
+## (3) How a problem or limitation was detected
 
-The CSV contained 500 rides and 5,000 total minutes. The pricing snapshot and
-the UI pipeline were compared with the raw JSON. The corrected calculation is
-20 annual memberships × $239 = $4,780, with 500 × 45 included minutes and no
-residual charge. The original raw JSON was preserved and the corrected result
-was saved separately as `hw7_bikeshare_scenarios_corrected.json`.
+The original pay-per-use bike-share evidence reported $6,830 membership because
+it used `included_minutes=0`. Comparing the pricing snapshot, UI calculation,
+and raw JSON identified the correct 45 included minutes per ride and the
+authoritative $4,780 membership value. The original evidence was preserved and
+the corrected evidence was recorded separately.
 
-4. What changed and why it works
+The agent evidence also exposed premature finals, a detail argument mismatch,
+and an Ollama HTTP 500 after Task C detail ID 1. These were recorded rather
+than silently converted into normal model success.
 
-The bike-share UI pipeline already used `included_minutes=ride_count * 45`.
-A separate corrected evidence file and explanatory metrics/run-log notes were
-added so the authoritative value is $4,780 without overwriting the original
-raw evidence. Other verified corrections included the missing `tool_call_id`
-compatibility field, bounded agent repair messaging, duplicate router cleanup,
-and the inline `python -c` safety-gate false allow.
+## (4) What was changed and why the change works
+
+The HW7 agent now normalizes tool envelopes, converts detail IDs to integers,
+supports repeated detail sequences, records adapter failures, and performs one
+bounded fixed-plan controller repair only when explicitly configured. The
+controller executes the declared read-only handler and reports success only if
+all required tools actually succeed. No model retry or hidden chain-of-thought
+storage was added.
 
 Measured failures were reported without alteration: the 20-attempt reliability
-experiment recorded 0/20 successful tasks, while the baseline fixed-task
-comparison was 0/3 and Reflexion was 1/3. Pytest remained blocked by the
-managed temporary-file environment and the repository `code` package shadowing
-the standard-library `code` module; a deterministic offline assertion check
-was used where appropriate.
+run recorded 0/20 successes. The current fixed A/B/C comparison rerun recorded
+baseline 0/3 and Reflexion 0/3, with all current Reflexion runs stopping at
+human_review after two retries. The earlier comparison remains preserved as
+raw evidence and is not merged with the current rerun. Full pytest/verifier
+execution remained blocked by the managed temporary-sandbox environment;
+deterministic offline checks were used where appropriate.
 
-No hidden chain-of-thought was stored or returned. Raw evidence contains only
-prompts/task inputs where required, tool calls, tool results, verifier output,
-final answers, stop reasons, and measured metrics. Passwords, JWTs, password
-hashes, and other secrets were not included.
+No passwords, password hashes, JWT strings, tokens, or other secrets were
+included in the report or evidence.

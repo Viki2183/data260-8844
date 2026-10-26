@@ -7,7 +7,7 @@ below come from the raw evidence files named in each section.
 
 | Metric | Before repair | After repair |
 |---|---:|---:|
-| Well-formed first decision rate | 20/20 (100%) | 0/20 successful after repair (0%) |
+| Well-formed tool-call rate | 0/20 (0%) | 0/20 (0%) |
 | Malformed arguments | 0 | 0 |
 | Unknown tool | 0 | 0 |
 | Text when tool required | 0 | 20 |
@@ -23,17 +23,19 @@ final path, so the required tool sequence was not completed.
 
 | Metric | Original loop | Reflexion loop |
 |---|---:|---:|
-| Task success | 0/3 | 1/3 |
+| Task success (current rerun) | 0/3 | 0/3 |
 | Unsupported claims | verifier field recorded; no independent claim audit | verifier field recorded; no independent claim audit |
-| Retry rate | 0/3 | 2/3 used at least one retry; maximum was 2 |
-| Tool calls | average 0.000 | average 1.333 |
-| Tokens | available in raw evidence; not reduced to a single aggregate here | available in raw evidence; not reduced to a single aggregate here |
-| Latency (ms) | average 15,474.905 | average 54,233.208 |
-| Verifier false rejections | not established | not established |
+| Retry rate | 0/3 | 2/3 retries per run; maximum 2 |
+| Tool calls | average 0.000 | average 0.000 |
+| Tokens | unavailable | unavailable |
+| Latency (ms) | average 15,901.428 | average 29,865.338 |
+| Verifier false rejections | unavailable | unavailable |
 
-Comparison evidence: `raw/hw7_reflexion_comparison.json`. The baseline and
-Reflexion conditions used the same three task inputs and model configuration.
-Reflexion was bounded at two retries; its successful task was Task C.
+Current comparison evidence: `raw/hw7_reflexion_comparison_current.json`.
+The earlier comparison remains preserved in `raw/hw7_reflexion_comparison.json`
+and is not merged with this current rerun. The current baseline and Reflexion
+conditions used the same three fixed tasks and model configuration; all current
+runs stopped at `human_review`.
 
 ## Parts 4–6
 
@@ -44,7 +46,7 @@ Evidence: `raw/hw7_bikeshare_scenarios.json`.
 | Scenario | Rows | Pay-per-use | Membership | Decision | Tool steps |
 |---|---:|---:|---:|---|---:|
 | Frequent 30-minute rides | 500 | $8,645.00 | $19.92 | Buy Monthly Membership | 5 |
-| 20-year infrequent short rides | 500 | $4,545.00 | $6,830.00 | Pay Per Ride/Minute | 5 |
+| 20-year infrequent short rides | 500 | $4,545.00 | $4,780.00 | Pay Per Ride/Minute | 5 |
 
 Pricing snapshots were saved separately for both scenarios with source URL
 `https://citibikenyc.com/plans-and-pricing`, access timestamp, and SHA-256
@@ -56,6 +58,19 @@ authoritative pay-per-use case is $4,545 versus $4,780 membership, using 45
 included member minutes per ride. The earlier $6,830 membership value is
 superseded because it used `included_minutes=0`; the original raw JSON remains
 preserved unchanged.
+
+## Latest fixed-task live checks
+
+Task B evidence: `raw/hw7_task_b_final_smoke.json`. The required
+`aggregate -> search` sequence executed two read-only tool calls and ended with
+`success`; no database writes were recorded.
+
+Task C evidence: `raw/hw7_task_c_final_smoke_v2.json`. The required
+`search -> detail -> detail` sequence executed IDs 1 and 2 in three read-only
+tool calls. Ollama returned HTTP 500 after the first detail; one bounded
+controller repair executed the second detail with no model retry. The result is
+classified `bounded_controller_recovery`, not uninterrupted normal model
+success. No database writes or hidden chain-of-thought were recorded.
 
 ## Part 5 — Prompt injection and tool security
 

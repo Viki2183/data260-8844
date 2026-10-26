@@ -5,7 +5,9 @@ from __future__ import annotations
 import json
 import tempfile
 from pathlib import Path
+from types import SimpleNamespace
 
+from fastapi import HTTPException
 from hw7_agent import reflexion_run, run_agent
 from hw7_bikeshare import recommend
 from hw7_file_tools import (
@@ -17,6 +19,7 @@ from hw7_file_tools import (
     write_file,
 )
 from hw7_mrkl import calculator, csv_sql
+from web_application import auth_hw7
 
 
 class SequenceModel:
@@ -25,6 +28,25 @@ class SequenceModel:
 
     def complete(self, messages):
         return self.responses.pop(0) if self.responses else {"action": "final", "answer": "done"}
+
+
+class FakeQuery:
+    def __init__(self, user):
+        self.user = user
+
+    def filter(self, *_criteria):
+        return self
+
+    def first(self):
+        return self.user
+
+
+class FakeDB:
+    def __init__(self, user):
+        self.user = user
+
+    def query(self, _model):
+        return FakeQuery(self.user)
 
 
 def run() -> list[str]:
@@ -53,6 +75,32 @@ def run() -> list[str]:
     )
     assert bad["repair_count"] == 1
     passed.append("agent bounded repair")
+
+    user = SimpleNamespace(
+        username="reader1",
+        role="reader",
+        password_hash=auth_hw7.hash_password("offline-password"),
+    )
+    db = FakeDB(user)
+    token = auth_hw7.login(
+        auth_hw7.LoginPayload(username="reader1", password="offline-password"),
+        db,
+    )
+    assert token.access_token
+    try:
+        auth_hw7.login(
+            auth_hw7.LoginPayload(username="reader1", password="wrong"),
+            db,
+        )
+    except HTTPException as exc:
+        assert exc.status_code == 401
+    else:
+        raise AssertionError("invalid login must return 401")
+    for role in ("reader", "writer", "moderator"):
+        auth_hw7.require_roles("reader", "writer", "moderator")(
+            user=SimpleNamespace(username=role, role=role)
+        )
+    passed.append("JWT invalid login, role policy, authenticated read/list")
 
     def make_model(reflection):
         if reflection is None:
