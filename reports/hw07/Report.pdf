@@ -16,57 +16,57 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Courier >>
 endobj
 6 0 obj
-<< /Length 5992 >>
+<< /Length 5948 >>
 stream
 BT /F2 14 Tf 54.0 736.0 Td (DATA260 Homework 7) Tj ET
-BT /F1 9.5 Tf 54.0 712.0 Td (Student: Vrishin KunnathamParambath SID4: 8844 Domain: open-source package vulnerabilities) Tj ET
-BT /F1 9.5 Tf 54.0 702.0 Td (Repository: https://github.com/Viki2183/data260-8844 Final tagged tree:) Tj ET
-BT /F1 9.5 Tf 54.0 692.0 Td (https://github.com/Viki2183/data260-8844/tree/hw7 Collaborator-access confirmation:) Tj ET
-BT /F1 9.5 Tf 54.0 682.0 Td (Sbnikitha, supriyaselvanganesan - pending submission confirmation. Final tagged commit is) Tj ET
-BT /F1 9.5 Tf 54.0 672.0 Td (the peeled target of the annotated local hw7 tag. Commit 1 contains the final HW7 artifacts;) Tj ET
-BT /F1 9.5 Tf 54.0 662.0 Td (verification.json records that parent hash. Commit 2 contains verification.json, and) Tj ET
-BT /F1 9.5 Tf 54.0 652.0 Td (annotated hw7 points to Commit 2. Exact current hashes are verified in Git metadata and) Tj ET
-BT /F1 9.5 Tf 54.0 642.0 Td (verification.json after packaging. No GitHub push has occurred.) Tj ET
+BT /F1 11 Tf 54.0 712.0 Td (Student: Vrishin KunnathamParambath SID4: 8844 Domain: open-source package vulnerabilities) Tj ET
+BT /F1 11 Tf 54.0 702.0 Td (Repository: https://github.com/Viki2183/data260-8844 Final tagged tree:) Tj ET
+BT /F1 11 Tf 54.0 692.0 Td (https://github.com/Viki2183/data260-8844/tree/hw7 Collaborator-access confirmation:) Tj ET
+BT /F1 11 Tf 54.0 682.0 Td (Sbnikitha, supriyaselvanganesan - pending submission confirmation. Final tagged commit is) Tj ET
+BT /F1 11 Tf 54.0 672.0 Td (the peeled target of the annotated local hw7 tag. Commit 1 contains the final HW7 artifacts;) Tj ET
+BT /F1 11 Tf 54.0 662.0 Td (verification.json records that parent hash. Commit 2 contains verification.json, and) Tj ET
+BT /F1 11 Tf 54.0 652.0 Td (annotated hw7 points to Commit 2. Exact current hashes are verified in Git metadata and) Tj ET
+BT /F1 11 Tf 54.0 642.0 Td (verification.json after packaging. No GitHub push has occurred.) Tj ET
 BT /F2 14 Tf 54.0 623.0 Td (Configuration and hardware) Tj ET
-BT /F1 9.5 Tf 54.0 599.0 Td (Model: qwen3:8b through local Ollama at 127.0.0.1:11434. PORT_BASE=8744, PREFIX=s8844,) Tj ET
-BT /F1 9.5 Tf 54.0 589.0 Td (SEED=8844, VERIFY_SEED=268844, DOMAIN_ID=4. HW6 hardware description: Intel Core i7-10750H) Tj ET
-BT /F1 9.5 Tf 54.0 579.0 Td (CPU, approximately 16 GB RAM.) Tj ET
+BT /F1 11 Tf 54.0 599.0 Td (Model: qwen3:8b through local Ollama at 127.0.0.1:11434. PORT_BASE=8744, PREFIX=s8844,) Tj ET
+BT /F1 11 Tf 54.0 589.0 Td (SEED=8844, VERIFY_SEED=268844, DOMAIN_ID=4. HW6 hardware description: Intel Core i7-10750H) Tj ET
+BT /F1 11 Tf 54.0 579.0 Td (CPU, approximately 16 GB RAM.) Tj ET
 BT /F2 14 Tf 54.0 560.0 Td (AI use and verification boundary) Tj ET
-BT /F1 9.5 Tf 54.0 536.0 Td (Codex assisted with repository inspection, reading the official assignment, implementation) Tj ET
-BT /F1 9.5 Tf 54.0 526.0 Td (review, offline testing, evidence organization, and report preparation. The student supplied) Tj ET
-BT /F1 9.5 Tf 54.0 516.0 Td (the repository and private credentials when needed, approved the phases and test scope,) Tj ET
-BT /F1 9.5 Tf 54.0 506.0 Td (selected test data, reviewed the results, and retained responsibility for submission) Tj ET
-BT /F1 9.5 Tf 54.0 496.0 Td (decisions. The complete answer is synchronized in AI_USE.md.) Tj ET
-BT /F1 9.5 Tf 54.0 481.0 Td (\(1\) How AI assistance was used: Codex assisted with repository inspection, assignment) Tj ET
-BT /F1 9.5 Tf 54.0 471.0 Td (reading, implementation review, bounded testing, raw-evidence organization, and report/PDF) Tj ET
-BT /F1 9.5 Tf 54.0 461.0 Td (preparation. The student approved scope, reviewed outputs, and retained responsibility for) Tj ET
-BT /F1 9.5 Tf 54.0 451.0 Td (submission decisions.) Tj ET
-BT /F1 9.5 Tf 54.0 436.0 Td (\(2\) What was independently reviewed or verified: The student reviewed source changes,) Tj ET
-BT /F1 9.5 Tf 54.0 426.0 Td (screenshots, JWT results, offline checks, local Ollama results, raw evidence, and the) Tj ET
-BT /F1 9.5 Tf 54.0 416.0 Td (generated PDFs. Private credentials were entered locally and are not included here.) Tj ET
-BT /F1 9.5 Tf 54.0 401.0 Td (\(3\) How a problem or limitation was detected: The original bike-share result used) Tj ET
-BT /F1 9.5 Tf 54.0 391.0 Td (included_minutes=0, producing the superseded $6,830 value. Comparing the pricing snapshot) Tj ET
-BT /F1 9.5 Tf 54.0 381.0 Td (and UI calculation identified 45 included minutes per ride and the authoritative $4,780) Tj ET
-BT /F1 9.5 Tf 54.0 371.0 Td (membership value. The Task C Ollama HTTP 500 was also recorded as bounded recovery rather) Tj ET
-BT /F1 9.5 Tf 54.0 361.0 Td (than normal model success.) Tj ET
-BT /F1 9.5 Tf 54.0 346.0 Td (\(4\) What was changed and why the change works: The agent now normalizes tool responses,) Tj ET
-BT /F1 9.5 Tf 54.0 336.0 Td (supports repeated detail sequences, records adapter failures, and performs one fixed-plan) Tj ET
-BT /F1 9.5 Tf 54.0 326.0 Td (controller repair without retrying the model. Offline and live evidence were checked. No) Tj ET
-BT /F1 9.5 Tf 54.0 316.0 Td (hidden chain-of-thought was stored, and unavailable or failed measurements were not) Tj ET
-BT /F1 9.5 Tf 54.0 306.0 Td (invented.) Tj ET
-BT /F1 9.5 Tf 54.0 291.0 Td (No hidden chain-of-thought was stored or returned. Evidence stores only task inputs where) Tj ET
-BT /F1 9.5 Tf 54.0 281.0 Td (needed, tool calls, tool results, verifier outputs, final answers, stop reasons, and) Tj ET
-BT /F1 9.5 Tf 54.0 271.0 Td (measured metrics. Passwords, password hashes, JWT strings, and secrets are excluded.) Tj ET
-BT /F1 9.5 Tf 54.0 256.0 Td (The measured 20-attempt reliability result is reported without alteration: 20 attempts were) Tj ET
-BT /F1 9.5 Tf 54.0 246.0 Td (recorded, with 0/20 successful task completions. The latest fixed-sequence comparison was) Tj ET
-BT /F1 9.5 Tf 54.0 236.0 Td (baseline 0/3 and Reflexion 0/3; the earlier comparison remains preserved as separate) Tj ET
-BT /F1 9.5 Tf 54.0 226.0 Td (historical evidence. Pytest remained blocked by the managed temporary-file environment and) Tj ET
-BT /F1 9.5 Tf 54.0 216.0 Td (the repository code package shadowing the standard-library code module; deterministic) Tj ET
-BT /F1 9.5 Tf 54.0 206.0 Td (offline checks were used where appropriate. These checks do not replace the blocked full) Tj ET
-BT /F1 9.5 Tf 54.0 196.0 Td (pytest run.) Tj ET
+BT /F1 11 Tf 54.0 536.0 Td (Codex assisted with repository inspection, reading the official assignment, implementation) Tj ET
+BT /F1 11 Tf 54.0 526.0 Td (review, offline testing, evidence organization, and report preparation. The student supplied) Tj ET
+BT /F1 11 Tf 54.0 516.0 Td (the repository and private credentials when needed, approved the phases and test scope,) Tj ET
+BT /F1 11 Tf 54.0 506.0 Td (selected test data, reviewed the results, and retained responsibility for submission) Tj ET
+BT /F1 11 Tf 54.0 496.0 Td (decisions. The complete answer is synchronized in AI_USE.md.) Tj ET
+BT /F1 11 Tf 54.0 481.0 Td (\(1\) How AI assistance was used: Codex assisted with repository inspection, assignment) Tj ET
+BT /F1 11 Tf 54.0 471.0 Td (reading, implementation review, bounded testing, raw-evidence organization, and report/PDF) Tj ET
+BT /F1 11 Tf 54.0 461.0 Td (preparation. The student approved scope, reviewed outputs, and retained responsibility for) Tj ET
+BT /F1 11 Tf 54.0 451.0 Td (submission decisions.) Tj ET
+BT /F1 11 Tf 54.0 436.0 Td (\(2\) What was independently reviewed or verified: The student reviewed source changes,) Tj ET
+BT /F1 11 Tf 54.0 426.0 Td (screenshots, JWT results, offline checks, local Ollama results, raw evidence, and the) Tj ET
+BT /F1 11 Tf 54.0 416.0 Td (generated PDFs. Private credentials were entered locally and are not included here.) Tj ET
+BT /F1 11 Tf 54.0 401.0 Td (\(3\) How a problem or limitation was detected: The original bike-share result used) Tj ET
+BT /F1 11 Tf 54.0 391.0 Td (included_minutes=0, producing the superseded $6,830 value. Comparing the pricing snapshot) Tj ET
+BT /F1 11 Tf 54.0 381.0 Td (and UI calculation identified 45 included minutes per ride and the authoritative $4,780) Tj ET
+BT /F1 11 Tf 54.0 371.0 Td (membership value. The Task C Ollama HTTP 500 was also recorded as bounded recovery rather) Tj ET
+BT /F1 11 Tf 54.0 361.0 Td (than normal model success.) Tj ET
+BT /F1 11 Tf 54.0 346.0 Td (\(4\) What was changed and why the change works: The agent now normalizes tool responses,) Tj ET
+BT /F1 11 Tf 54.0 336.0 Td (supports repeated detail sequences, records adapter failures, and performs one fixed-plan) Tj ET
+BT /F1 11 Tf 54.0 326.0 Td (controller repair without retrying the model. Offline and live evidence were checked. No) Tj ET
+BT /F1 11 Tf 54.0 316.0 Td (hidden chain-of-thought was stored, and unavailable or failed measurements were not) Tj ET
+BT /F1 11 Tf 54.0 306.0 Td (invented.) Tj ET
+BT /F1 11 Tf 54.0 291.0 Td (No hidden chain-of-thought was stored or returned. Evidence stores only task inputs where) Tj ET
+BT /F1 11 Tf 54.0 281.0 Td (needed, tool calls, tool results, verifier outputs, final answers, stop reasons, and) Tj ET
+BT /F1 11 Tf 54.0 271.0 Td (measured metrics. Passwords, password hashes, JWT strings, and secrets are excluded.) Tj ET
+BT /F1 11 Tf 54.0 256.0 Td (The measured 20-attempt reliability result is reported without alteration: 20 attempts were) Tj ET
+BT /F1 11 Tf 54.0 246.0 Td (recorded, with 0/20 successful task completions. The latest fixed-sequence comparison was) Tj ET
+BT /F1 11 Tf 54.0 236.0 Td (baseline 0/3 and Reflexion 0/3; the earlier comparison remains preserved as separate) Tj ET
+BT /F1 11 Tf 54.0 226.0 Td (historical evidence. Pytest remained blocked by the managed temporary-file environment and) Tj ET
+BT /F1 11 Tf 54.0 216.0 Td (the repository code package shadowing the standard-library code module; deterministic) Tj ET
+BT /F1 11 Tf 54.0 206.0 Td (offline checks were used where appropriate. These checks do not replace the blocked full) Tj ET
+BT /F1 11 Tf 54.0 196.0 Td (pytest run.) Tj ET
 BT /F2 14 Tf 54.0 177.0 Td (Part 1 - JWT authentication, roles, and database migration) Tj ET
 BT /F2 12 Tf 54.0 151.0 Td (Implementation excerpts) Tj ET
-BT /F1 9.5 Tf 54.0 127.0 Td (code/web_application/auth_hw7.py defines the HW7 JWT routes and helpers:) Tj ET
+BT /F1 11 Tf 54.0 127.0 Td (code/web_application/auth_hw7.py defines the HW7 JWT routes and helpers:) Tj ET
 BT /F3 7.5 Tf 58.0 113.0 Td (@router.post\("/login", response_model=TokenResponse\)) Tj ET
 BT /F3 7.5 Tf 58.0 104.0 Td (def login\(payload: LoginPayload, db: Session = Depends\(get_db\)\) -> TokenResponse:) Tj ET
 BT /F3 7.5 Tf 58.0 95.0 Td (user = db.query\(models.UserDB\).filter\() Tj ET
@@ -81,7 +81,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 6 0 R >>
 endobj
 8 0 obj
-<< /Length 9642 >>
+<< /Length 9620 >>
 stream
 BT /F3 7.5 Tf 58.0 741.0 Td (\):) Tj ET
 BT /F3 7.5 Tf 58.0 732.0 Td (raise HTTPException\(status_code=401, detail="Invalid username or password"\)) Tj ET
@@ -90,15 +90,15 @@ BT /F3 7.5 Tf 58.0 714.0 Td () Tj ET
 BT /F3 7.5 Tf 58.0 705.0 Td (@router.get\("/me", response_model=IdentityResponse\)) Tj ET
 BT /F3 7.5 Tf 58.0 696.0 Td (def me\(user: models.UserDB = Depends\(get_current_user\)\) -> IdentityResponse:) Tj ET
 BT /F3 7.5 Tf 58.0 687.0 Td (return IdentityResponse\(username=user.username, role=user.role\)) Tj ET
-BT /F1 9.5 Tf 54.0 669.0 Td (JWT creation validates reader, writer, and moderator, signs HS256 claims, and includes iat) Tj ET
-BT /F1 9.5 Tf 54.0 659.0 Td (and exp. Validation checks the signature, header, username, role, and expiration. Passwords) Tj ET
-BT /F1 9.5 Tf 54.0 649.0 Td (use bcrypt:) Tj ET
+BT /F1 11 Tf 54.0 669.0 Td (JWT creation validates reader, writer, and moderator, signs HS256 claims, and includes iat) Tj ET
+BT /F1 11 Tf 54.0 659.0 Td (and exp. Validation checks the signature, header, username, role, and expiration. Passwords) Tj ET
+BT /F1 11 Tf 54.0 649.0 Td (use bcrypt:) Tj ET
 BT /F3 7.5 Tf 58.0 635.0 Td (def hash_password\(password: str\) -> str:) Tj ET
 BT /F3 7.5 Tf 58.0 626.0 Td (return bcrypt.hashpw\(password.encode\("utf-8"\), bcrypt.gensalt\(\)\).decode\("utf-8"\)) Tj ET
-BT /F1 9.5 Tf 54.0 608.0 Td (Role dependencies are explicit: authenticated reads are available to all three roles; create) Tj ET
-BT /F1 9.5 Tf 54.0 598.0 Td (is available to writer/moderator; delete is moderator-only.) Tj ET
+BT /F1 11 Tf 54.0 608.0 Td (Role dependencies are explicit: authenticated reads are available to all three roles; create) Tj ET
+BT /F1 11 Tf 54.0 598.0 Td (is available to writer/moderator; delete is moderator-only.) Tj ET
 BT /F2 12 Tf 54.0 581.0 Td (Live status evidence) Tj ET
-BT /F1 9.5 Tf 54.0 557.0 Td (Source: raw/hw7_live_jwt_authorization.json, 19 cases, all recorded as passing.) Tj ET
+BT /F1 11 Tf 54.0 557.0 Td (Source: raw/hw7_live_jwt_authorization.json, 19 cases, all recorded as passing.) Tj ET
 0.85 0.85 0.85 rg 54.0 537.0 150.0 18.0 re f 0 0 0 rg 54.0 537.0 150.0 18.0 re S
 BT /F1 7.2 Tf 57.0 542.0 Td (Check) Tj ET
 0.85 0.85 0.85 rg 204.0 537.0 55.0 18.0 re f 0 0 0 rg 204.0 537.0 55.0 18.0 re S
@@ -165,15 +165,15 @@ BT /F1 7.2 Tf 57.0 362.0 Td (Moderator delete) Tj ET
 BT /F1 7.2 Tf 207.0 362.0 Td (200) Tj ET
 0.85 0.85 0.85 rg 259.0 357.0 59.3 18.0 re f 0 0 0 rg 259.0 357.0 59.3 18.0 re S
 BT /F1 7.2 Tf 262.0 362.0 Td (200) Tj ET
-BT /F1 9.5 Tf 54.0 336.0 Td (The live evidence records no stored JWT values and no stored passwords. Created HW7 test) Tj ET
-BT /F1 9.5 Tf 54.0 326.0 Td (records were limited to the labeled test records; the moderator delete target was cleaned) Tj ET
-BT /F1 9.5 Tf 54.0 316.0 Td (up. No HW1-HW6 record was deleted or modified.) Tj ET
+BT /F1 11 Tf 54.0 336.0 Td (The live evidence records no stored JWT values and no stored passwords. Created HW7 test) Tj ET
+BT /F1 11 Tf 54.0 326.0 Td (records were limited to the labeled test records; the moderator delete target was cleaned) Tj ET
+BT /F1 11 Tf 54.0 316.0 Td (up. No HW1-HW6 record was deleted or modified.) Tj ET
 BT /F2 12 Tf 54.0 299.0 Td (Users schema and migration) Tj ET
-BT /F1 9.5 Tf 54.0 275.0 Td (code/web_application/hw7_migration.py defines a non-destructive CREATE TABLE IF NOT EXISTS) Tj ET
-BT /F1 9.5 Tf 54.0 265.0 Td (users shape with id, name, username, email, password_hash, role, a primary key, unique) Tj ET
-BT /F1 9.5 Tf 54.0 255.0 Td (username/email keys, and a role check for reader, writer, or moderator. It explicitly) Tj ET
-BT /F1 9.5 Tf 54.0 245.0 Td (requires preflight inspection before altering an existing table and does not invent a) Tj ET
-BT /F1 9.5 Tf 54.0 235.0 Td (username backfill.) Tj ET
+BT /F1 11 Tf 54.0 275.0 Td (code/web_application/hw7_migration.py defines a non-destructive CREATE TABLE IF NOT EXISTS) Tj ET
+BT /F1 11 Tf 54.0 265.0 Td (users shape with id, name, username, email, password_hash, role, a primary key, unique) Tj ET
+BT /F1 11 Tf 54.0 255.0 Td (username/email keys, and a role check for reader, writer, or moderator. It explicitly) Tj ET
+BT /F1 11 Tf 54.0 245.0 Td (requires preflight inspection before altering an existing table and does not invent a) Tj ET
+BT /F1 11 Tf 54.0 235.0 Td (username backfill.) Tj ET
 0.85 0.85 0.85 rg 54.0 215.0 55.0 18.0 re f 0 0 0 rg 54.0 215.0 55.0 18.0 re S
 BT /F1 7.2 Tf 57.0 220.0 Td (id) Tj ET
 0.85 0.85 0.85 rg 109.0 215.0 55.0 18.0 re f 0 0 0 rg 109.0 215.0 55.0 18.0 re S
@@ -206,14 +206,14 @@ BT /F1 7.2 Tf 112.0 166.0 Td (vikki3) Tj ET
 BT /F1 7.2 Tf 167.0 166.0 Td (moderator) Tj ET
 0.85 0.85 0.85 rg 219.0 161.0 128.1 18.0 re f 0 0 0 rg 219.0 161.0 128.1 18.0 re S
 BT /F1 7.2 Tf 222.0 166.0 Td (exists; value not displayed) Tj ET
-BT /F1 9.5 Tf 54.0 140.0 Td (This table records only safe fields from the approved live preflight. A dedicated) Tj ET
-BT /F1 9.5 Tf 54.0 130.0 Td (MySQL-table screenshot/raw artifact was not created; manual capture is required if the) Tj ET
-BT /F1 9.5 Tf 54.0 120.0 Td (instructor requires visual database evidence. No schema or row change is performed by this) Tj ET
-BT /F1 9.5 Tf 54.0 110.0 Td (report.) Tj ET
-BT /F1 9.5 Tf 54.0 95.0 Td (Ruff scoped checks passed for the HW7 scope. The temporary demonstration also shows the) Tj ET
-BT /F1 9.5 Tf 54.0 85.0 Td (original Ruff failure, the corrected file, both pre-commit hooks passing, and a successful) Tj ET
-BT /F1 9.5 Tf 54.0 75.0 Td (temporary Git commit. These screenshots use isolated temporary files and do not represent a) Tj ET
-BT /F1 9.5 Tf 54.0 65.0 Td (commit to the real repository.) Tj ET
+BT /F1 11 Tf 54.0 140.0 Td (This table records only safe fields from the approved live preflight. A dedicated) Tj ET
+BT /F1 11 Tf 54.0 130.0 Td (MySQL-table screenshot/raw artifact was not created; manual capture is required if the) Tj ET
+BT /F1 11 Tf 54.0 120.0 Td (instructor requires visual database evidence. No schema or row change is performed by this) Tj ET
+BT /F1 11 Tf 54.0 110.0 Td (report.) Tj ET
+BT /F1 11 Tf 54.0 95.0 Td (Ruff scoped checks passed for the HW7 scope. The temporary demonstration also shows the) Tj ET
+BT /F1 11 Tf 54.0 85.0 Td (original Ruff failure, the corrected file, both pre-commit hooks passing, and a successful) Tj ET
+BT /F1 11 Tf 54.0 75.0 Td (temporary Git commit. These screenshots use isolated temporary files and do not represent a) Tj ET
+BT /F1 11 Tf 54.0 65.0 Td (commit to the real repository.) Tj ET
 
 endstream
 endobj
@@ -221,24 +221,24 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 8 0 R >>
 endobj
 10 0 obj
-<< /Length 6008 >>
+<< /Length 5983 >>
 stream
-BT /F1 9.5 Tf 54.0 740.0 Td (Evidence: hw7_lint_failure.png, hw7_lint_fix_pass.png, and) Tj ET
-BT /F1 9.5 Tf 54.0 730.0 Td (hw7_precommit_successful_commit.png.) Tj ET
-BT /F1 9.5 Tf 54.0 715.0 Td (The final command must not be run until the approved packaging step; its successful output) Tj ET
-BT /F1 9.5 Tf 54.0 705.0 Td (is therefore unavailable in the current evidence.) Tj ET
+BT /F1 11 Tf 54.0 740.0 Td (Evidence: hw7_lint_failure.png, hw7_lint_fix_pass.png, and) Tj ET
+BT /F1 11 Tf 54.0 730.0 Td (hw7_precommit_successful_commit.png.) Tj ET
+BT /F1 11 Tf 54.0 715.0 Td (The final command must not be run until the approved packaging step; its successful output) Tj ET
+BT /F1 11 Tf 54.0 705.0 Td (is therefore unavailable in the current evidence.) Tj ET
 BT /F2 14 Tf 54.0 686.0 Td (Part 2 - bounded agent loop and reliability) Tj ET
 BT /F2 12 Tf 54.0 660.0 Td (Actual implementation) Tj ET
-BT /F1 9.5 Tf 54.0 636.0 Td (code/hw7_agent.py uses run_agent, not a pseudo-agent. It validates each model decision as) Tj ET
-BT /F1 9.5 Tf 54.0 626.0 Td (tool or final, dispatches the named handler, catches tool errors as bounded observations,) Tj ET
-BT /F1 9.5 Tf 54.0 616.0 Td (appends a tool message with deterministic IDs such as hw7-tool-call-1, and appends a) Tj ET
-BT /F1 9.5 Tf 54.0 606.0 Td (continuation message. The loop is bounded by max_steps; malformed/unknown decisions and) Tj ET
-BT /F1 9.5 Tf 54.0 596.0 Td (incomplete required sequences have at most one repair in the recorded smoke/reliability) Tj ET
-BT /F1 9.5 Tf 54.0 586.0 Td (configuration.) Tj ET
-BT /F1 9.5 Tf 54.0 571.0 Td (The repair includes the next required tool and, for Task A, the package ID from the search) Tj ET
-BT /F1 9.5 Tf 54.0 561.0 Td (observation. A final answer before the required sequence yields human_review after the) Tj ET
-BT /F1 9.5 Tf 54.0 551.0 Td (repair budget is exhausted. Other bounded stop reasons are success and budget_exhausted.) Tj ET
-BT /F1 9.5 Tf 54.0 536.0 Td (The following focused excerpts are copied from the current implementation, not pseudocode:) Tj ET
+BT /F1 11 Tf 54.0 636.0 Td (code/hw7_agent.py uses run_agent, not a pseudo-agent. It validates each model decision as) Tj ET
+BT /F1 11 Tf 54.0 626.0 Td (tool or final, dispatches the named handler, catches tool errors as bounded observations,) Tj ET
+BT /F1 11 Tf 54.0 616.0 Td (appends a tool message with deterministic IDs such as hw7-tool-call-1, and appends a) Tj ET
+BT /F1 11 Tf 54.0 606.0 Td (continuation message. The loop is bounded by max_steps; malformed/unknown decisions and) Tj ET
+BT /F1 11 Tf 54.0 596.0 Td (incomplete required sequences have at most one repair in the recorded smoke/reliability) Tj ET
+BT /F1 11 Tf 54.0 586.0 Td (configuration.) Tj ET
+BT /F1 11 Tf 54.0 571.0 Td (The repair includes the next required tool and, for Task A, the package ID from the search) Tj ET
+BT /F1 11 Tf 54.0 561.0 Td (observation. A final answer before the required sequence yields human_review after the) Tj ET
+BT /F1 11 Tf 54.0 551.0 Td (repair budget is exhausted. Other bounded stop reasons are success and budget_exhausted.) Tj ET
+BT /F1 11 Tf 54.0 536.0 Td (The following focused excerpts are copied from the current implementation, not pseudocode:) Tj ET
 BT /F3 7.5 Tf 58.0 522.0 Td (def run_agent\(user_input, model, tools, max_steps=8, max_repairs=1,) Tj ET
 BT /F3 7.5 Tf 58.0 513.0 Td (required_tool_sequence=None, required_tool_inputs=None\):) Tj ET
 BT /F3 7.5 Tf 58.0 504.0 Td (started = time.perf_counter\(\)) Tj ET
@@ -248,7 +248,7 @@ BT /F3 7.5 Tf 58.0 477.0 Td (for step in range\(1, max_steps + 1\):) Tj ET
 BT /F3 7.5 Tf 58.0 468.0 Td (decision = model.complete\(messages\)) Tj ET
 BT /F3 7.5 Tf 58.0 459.0 Td (action, name, inputs = _validate_decision\(decision, tools\)) Tj ET
 BT /F3 7.5 Tf 58.0 450.0 Td (inputs = _normalize_inputs\(name, inputs\)) Tj ET
-BT /F3 7.5 Tf 58.0 441.0 Td (observation = _normalize_observation\(toolsname\)) Tj ET
+BT /F3 7.5 Tf 58.0 441.0 Td (observation = _normalize_observation\(toolsname \(inputs\)\)) Tj ET
 BT /F3 7.5 Tf 58.0 432.0 Td (calls += 1) Tj ET
 BT /F3 7.5 Tf 58.0 423.0 Td (trace.append\({"step": step, "tool": name, "inputs": inputs,) Tj ET
 BT /F3 7.5 Tf 58.0 414.0 Td ("observation": observation}\)) Tj ET
@@ -260,29 +260,29 @@ BT /F3 7.5 Tf 58.0 369.0 Td ("content": "Continue or provide the final answer as
 BT /F3 7.5 Tf 58.0 360.0 Td (return AgentResult\("The tool-call budget was exhausted.",) Tj ET
 BT /F3 7.5 Tf 58.0 351.0 Td ("budget_exhausted", trace, calls, repairs,) Tj ET
 BT /F3 7.5 Tf 58.0 342.0 Td (\(time.perf_counter\(\) - started\) * 1000\).as_dict\(\)) Tj ET
-BT /F1 9.5 Tf 54.0 324.0 Td (The fixed-plan adapter-error branch records an adapter_error, executes the next declared) Tj ET
-BT /F1 9.5 Tf 54.0 314.0 Td (read-only handler once, records repair_reason="bounded controller recovery after adapter) Tj ET
-BT /F1 9.5 Tf 54.0 304.0 Td (failure", and returns success only after every declared handler succeeds. It does not retry) Tj ET
-BT /F1 9.5 Tf 54.0 294.0 Td (the model.) Tj ET
-BT /F1 9.5 Tf 54.0 279.0 Td (The loop logs tool name, inputs, observation, tool-call count, repair count, latency, final) Tj ET
-BT /F1 9.5 Tf 54.0 269.0 Td (answer, and stop reason. It does not store hidden reasoning.) Tj ET
-BT /F1 9.5 Tf 54.0 254.0 Td (The current fixed-input repair path also records an adapter failure as a trace event and,) Tj ET
-BT /F1 9.5 Tf 54.0 244.0 Td (only when an approved fixed plan is present, executes the next read-only handler once. It) Tj ET
-BT /F1 9.5 Tf 54.0 234.0 Td (never retries the model. A successful controller repair is labeled separately from) Tj ET
-BT /F1 9.5 Tf 54.0 224.0 Td (uninterrupted model success.) Tj ET
+BT /F1 11 Tf 54.0 324.0 Td (The fixed-plan adapter-error branch records an adapter_error, executes the next declared) Tj ET
+BT /F1 11 Tf 54.0 314.0 Td (read-only handler once, records repair_reason="bounded controller recovery after adapter) Tj ET
+BT /F1 11 Tf 54.0 304.0 Td (failure", and returns success only after every declared handler succeeds. It does not retry) Tj ET
+BT /F1 11 Tf 54.0 294.0 Td (the model.) Tj ET
+BT /F1 11 Tf 54.0 279.0 Td (The loop logs tool name, inputs, observation, tool-call count, repair count, latency, final) Tj ET
+BT /F1 11 Tf 54.0 269.0 Td (answer, and stop reason. It does not store hidden reasoning.) Tj ET
+BT /F1 11 Tf 54.0 254.0 Td (The current fixed-input repair path also records an adapter failure as a trace event and,) Tj ET
+BT /F1 11 Tf 54.0 244.0 Td (only when an approved fixed plan is present, executes the next read-only handler once. It) Tj ET
+BT /F1 11 Tf 54.0 234.0 Td (never retries the model. A successful controller repair is labeled separately from) Tj ET
+BT /F1 11 Tf 54.0 224.0 Td (uninterrupted model success.) Tj ET
 BT /F2 12 Tf 54.0 207.0 Td (Fixed-task evidence) Tj ET
-BT /F1 9.5 Tf 54.0 183.0 Td (raw/hw7_agent_fixed_tasks.json records the earlier fixed-task run with the pre-compatibility) Tj ET
-BT /F1 9.5 Tf 54.0 173.0 Td (tool_call_id failure. Later evidence raw/hw7_task_a_package00001.json records the corrected) Tj ET
-BT /F1 9.5 Tf 54.0 163.0 Td (Task A smoke input: search\(package-00001\) -> detail\(package_id=1\), two tool calls, final) Tj ET
-BT /F1 9.5 Tf 54.0 153.0 Td (answer produced, and success. These are separate runs and are not merged.) Tj ET
-BT /F1 9.5 Tf 54.0 138.0 Td (The latest Task B smoke evidence, raw/hw7_task_b_final_smoke.json, records aggregate ->) Tj ET
-BT /F1 9.5 Tf 54.0 128.0 Td (search, two executed tool calls, stop reason success, and no database writes. The search) Tj ET
-BT /F1 9.5 Tf 54.0 118.0 Td (used the verified existing package name package-00001.) Tj ET
-BT /F1 9.5 Tf 54.0 103.0 Td (The latest Task C evidence, raw/hw7_task_c_final_smoke_v2.json, records search -> detail ->) Tj ET
-BT /F1 9.5 Tf 54.0 93.0 Td (detail for integer IDs 1 and 2, three executed tool calls, and stop reason success. Ollama) Tj ET
-BT /F1 9.5 Tf 54.0 83.0 Td (returned HTTP 500 after detail\(1\); the bounded controller executed detail\(2\) once, with no) Tj ET
-BT /F1 9.5 Tf 54.0 73.0 Td (model retry. The result is classified bounded_controller_recovery, not uninterrupted normal) Tj ET
-BT /F1 9.5 Tf 54.0 63.0 Td (model success. No database writes or hidden chain-of-thought were recorded.) Tj ET
+BT /F1 11 Tf 54.0 183.0 Td (raw/hw7_agent_fixed_tasks.json records the earlier fixed-task run with the pre-compatibility) Tj ET
+BT /F1 11 Tf 54.0 173.0 Td (tool_call_id failure. Later evidence raw/hw7_task_a_package00001.json records the corrected) Tj ET
+BT /F1 11 Tf 54.0 163.0 Td (Task A smoke input: search\(package-00001\) -> detail\(package_id=1\), two tool calls, final) Tj ET
+BT /F1 11 Tf 54.0 153.0 Td (answer produced, and success. These are separate runs and are not merged.) Tj ET
+BT /F1 11 Tf 54.0 138.0 Td (The latest Task B smoke evidence, raw/hw7_task_b_final_smoke.json, records aggregate ->) Tj ET
+BT /F1 11 Tf 54.0 128.0 Td (search, two executed tool calls, stop reason success, and no database writes. The search) Tj ET
+BT /F1 11 Tf 54.0 118.0 Td (used the verified existing package name package-00001.) Tj ET
+BT /F1 11 Tf 54.0 103.0 Td (The latest Task C evidence, raw/hw7_task_c_final_smoke_v2.json, records search -> detail ->) Tj ET
+BT /F1 11 Tf 54.0 93.0 Td (detail for integer IDs 1 and 2, three executed tool calls, and stop reason success. Ollama) Tj ET
+BT /F1 11 Tf 54.0 83.0 Td (returned HTTP 500 after detail\(1\); the bounded controller executed detail\(2\) once, with no) Tj ET
+BT /F1 11 Tf 54.0 73.0 Td (model retry. The result is classified bounded_controller_recovery, not uninterrupted normal) Tj ET
+BT /F1 11 Tf 54.0 63.0 Td (model success. No database writes or hidden chain-of-thought were recorded.) Tj ET
 
 endstream
 endobj
@@ -290,15 +290,15 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 10 0 R >>
 endobj
 12 0 obj
-<< /Length 7351 >>
+<< /Length 7332 >>
 stream
-BT /F1 9.5 Tf 54.0 740.0 Td (raw/hw7_agent_nonexistent_id_recovery.json records controlled recovery for ID 999999 with a) Tj ET
-BT /F1 9.5 Tf 54.0 730.0 Td (package not found error and no crash. Nonexistent-ID recovery is covered by the offline) Tj ET
-BT /F1 9.5 Tf 54.0 720.0 Td (agent tests and bounded tool error handling; no database write is required for that recovery) Tj ET
-BT /F1 9.5 Tf 54.0 710.0 Td (path.) Tj ET
+BT /F1 11 Tf 54.0 740.0 Td (raw/hw7_agent_nonexistent_id_recovery.json records controlled recovery for ID 999999 with a) Tj ET
+BT /F1 11 Tf 54.0 730.0 Td (package not found error and no crash. Nonexistent-ID recovery is covered by the offline) Tj ET
+BT /F1 11 Tf 54.0 720.0 Td (agent tests and bounded tool error handling; no database write is required for that recovery) Tj ET
+BT /F1 11 Tf 54.0 710.0 Td (path.) Tj ET
 BT /F2 12 Tf 54.0 693.0 Td (Reliability table) Tj ET
-BT /F1 9.5 Tf 54.0 669.0 Td (Source: raw/hw7_reliability_20_attempts_v2.json. The consolidated tables are also recorded) Tj ET
-BT /F1 9.5 Tf 54.0 659.0 Td (in METRICS.md and the run chronology is recorded in HW7_LIVE_RUN_LOG.txt.) Tj ET
+BT /F1 11 Tf 54.0 669.0 Td (Source: raw/hw7_reliability_20_attempts_v2.json. The consolidated tables are also recorded) Tj ET
+BT /F1 11 Tf 54.0 659.0 Td (in METRICS.md and the run chronology is recorded in HW7_LIVE_RUN_LOG.txt.) Tj ET
 0.85 0.85 0.85 rg 54.0 639.0 150.0 18.0 re f 0 0 0 rg 54.0 639.0 150.0 18.0 re S
 BT /F1 7.2 Tf 57.0 644.0 Td (Metric) Tj ET
 0.85 0.85 0.85 rg 204.0 639.0 67.9 18.0 re f 0 0 0 rg 204.0 639.0 67.9 18.0 re S
@@ -355,20 +355,20 @@ BT /F1 7.2 Tf 207.0 428.0 Td (12,423.832 ms) Tj ET
 BT /F1 7.2 Tf 57.0 410.0 Td (Average tool calls) Tj ET
 0.85 0.85 0.85 rg 204.0 405.0 67.9 18.0 re f 0 0 0 rg 204.0 405.0 67.9 18.0 re S
 BT /F1 7.2 Tf 207.0 410.0 Td (0) Tj ET
-BT /F1 9.5 Tf 54.0 384.0 Td (For reliability, "well-formed" means that the model produced a valid tool call when a tool) Tj ET
-BT /F1 9.5 Tf 54.0 374.0 Td (was required. Because the recorded attempts produced zero executed tool calls, the) Tj ET
-BT /F1 9.5 Tf 54.0 364.0 Td (before-repair rate is 0/20, not 20/20. The after-repair rate is also 0/20; all 20 stopped at) Tj ET
-BT /F1 9.5 Tf 54.0 354.0 Td (human_review and none stopped at budget_exhausted.) Tj ET
+BT /F1 11 Tf 54.0 384.0 Td (For reliability, "well-formed" means that the model produced a valid tool call when a tool) Tj ET
+BT /F1 11 Tf 54.0 374.0 Td (was required. Because the recorded attempts produced zero executed tool calls, the) Tj ET
+BT /F1 11 Tf 54.0 364.0 Td (before-repair rate is 0/20, not 20/20. The after-repair rate is also 0/20; all 20 stopped at) Tj ET
+BT /F1 11 Tf 54.0 354.0 Td (human_review and none stopped at budget_exhausted.) Tj ET
 BT /F2 14 Tf 54.0 335.0 Td (Part 3 - Reflexion and verifier) Tj ET
-BT /F1 9.5 Tf 54.0 311.0 Td (verify_task checks the stop reason, required tool set, ordered tool sequence, and answer) Tj ET
-BT /F1 9.5 Tf 54.0 301.0 Td (presence. It returns success, unsupported_claims, missing_tools, and missing_sequence.) Tj ET
-BT /F1 9.5 Tf 54.0 291.0 Td (reflexion_run retries only after verifier failure, allows at most two retries, stores) Tj ET
-BT /F1 9.5 Tf 54.0 281.0 Td (concise reflections with the prior trace/verifier evidence, and returns one of success or) Tj ET
-BT /F1 9.5 Tf 54.0 271.0 Td (human_review; the agent itself also has budget_exhausted.) Tj ET
-BT /F1 9.5 Tf 54.0 256.0 Td (Reflections are isolated within a run and passed as a model-factory context; they are not) Tj ET
-BT /F1 9.5 Tf 54.0 246.0 Td (instructions, permissions, role definitions, or safety gates. The tool registry and) Tj ET
-BT /F1 9.5 Tf 54.0 236.0 Td (authorization policy remain fixed. Hidden chain-of-thought is not stored.) Tj ET
-BT /F1 9.5 Tf 54.0 221.0 Td (The actual verifier and Reflexion control excerpts are:) Tj ET
+BT /F1 11 Tf 54.0 311.0 Td (verify_task checks the stop reason, required tool set, ordered tool sequence, and answer) Tj ET
+BT /F1 11 Tf 54.0 301.0 Td (presence. It returns success, unsupported_claims, missing_tools, and missing_sequence.) Tj ET
+BT /F1 11 Tf 54.0 291.0 Td (reflexion_run retries only after verifier failure, allows at most two retries, stores) Tj ET
+BT /F1 11 Tf 54.0 281.0 Td (concise reflections with the prior trace/verifier evidence, and returns one of success or) Tj ET
+BT /F1 11 Tf 54.0 271.0 Td (human_review; the agent itself also has budget_exhausted.) Tj ET
+BT /F1 11 Tf 54.0 256.0 Td (Reflections are isolated within a run and passed as a model-factory context; they are not) Tj ET
+BT /F1 11 Tf 54.0 246.0 Td (instructions, permissions, role definitions, or safety gates. The tool registry and) Tj ET
+BT /F1 11 Tf 54.0 236.0 Td (authorization policy remain fixed. Hidden chain-of-thought is not stored.) Tj ET
+BT /F1 11 Tf 54.0 221.0 Td (The actual verifier and Reflexion control excerpts are:) Tj ET
 BT /F3 7.5 Tf 58.0 207.0 Td (def verify_task\(result, required_tools, required_tool_sequence=None\):) Tj ET
 BT /F3 7.5 Tf 58.0 198.0 Td (used_sequence = [item.get\("tool"\) for item in result.get\("trace", []\)]) Tj ET
 BT /F3 7.5 Tf 58.0 189.0 Td (used = set\(used_sequence\)) Tj ET
@@ -394,7 +394,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 12 0 R >>
 endobj
 14 0 obj
-<< /Length 12485 >>
+<< /Length 12473 >>
 stream
 BT /F3 7.5 Tf 58.0 741.0 Td (def reflexion_run\(user_input, model_factory, tools, required_tools,) Tj ET
 BT /F3 7.5 Tf 58.0 732.0 Td (max_retries=2, required_tool_sequence=None,) Tj ET
@@ -422,16 +422,16 @@ BT /F3 7.5 Tf 58.0 543.0 Td (reflections.append\({"attempt": attempt + 1,) Tj ET
 BT /F3 7.5 Tf 58.0 534.0 Td ("evidence": {"trace": result.get\("trace", []\),) Tj ET
 BT /F3 7.5 Tf 58.0 525.0 Td ("verifier": check},) Tj ET
 BT /F3 7.5 Tf 58.0 516.0 Td ("reflection": reflection}\)) Tj ET
-BT /F1 9.5 Tf 54.0 498.0 Td (Stored reflection evidence is concise and tied to the triggering verifier:) Tj ET
+BT /F1 11 Tf 54.0 498.0 Td (Stored reflection evidence is concise and tied to the triggering verifier:) Tj ET
 BT /F3 7.5 Tf 58.0 484.0 Td ({) Tj ET
 BT /F3 7.5 Tf 58.0 475.0 Td ("attempt": 1,) Tj ET
 BT /F3 7.5 Tf 58.0 466.0 Td ("evidence": {"trace": [], "verifier": {"success": false}},) Tj ET
 BT /F3 7.5 Tf 58.0 457.0 Td ("reflection": "Failed because required tools were missing: detail. Use the missing tool chain) Tj ET
 BT /F3 7.5 Tf 58.0 448.0 Td (before finalizing.") Tj ET
 BT /F3 7.5 Tf 58.0 439.0 Td (}) Tj ET
-BT /F1 9.5 Tf 54.0 421.0 Td (The raw evidence does not contain an independent adjudication of verifier false rejections,) Tj ET
-BT /F1 9.5 Tf 54.0 411.0 Td (so that metric is reported as unavailable rather than inferred from the verifier's own) Tj ET
-BT /F1 9.5 Tf 54.0 401.0 Td (result.) Tj ET
+BT /F1 11 Tf 54.0 421.0 Td (The raw evidence does not contain an independent adjudication of verifier false rejections,) Tj ET
+BT /F1 11 Tf 54.0 411.0 Td (so that metric is reported as unavailable rather than inferred from the verifier's own) Tj ET
+BT /F1 11 Tf 54.0 401.0 Td (result.) Tj ET
 0.85 0.85 0.85 rg 54.0 381.0 45.0 18.0 re f 0 0 0 rg 54.0 381.0 45.0 18.0 re S
 BT /F1 7.2 Tf 57.0 386.0 Td (Task) Tj ET
 0.85 0.85 0.85 rg 99.0 381.0 45.0 18.0 re f 0 0 0 rg 99.0 381.0 45.0 18.0 re S
@@ -558,15 +558,15 @@ BT /F1 7.2 Tf 369.5 278.0 Td (unavailable) Tj ET
 BT /F1 7.2 Tf 418.1 278.0 Td (36,203.908) Tj ET
 0.85 0.85 0.85 rg 460.1 273.0 97.9 18.0 re f 0 0 0 rg 460.1 273.0 97.9 18.0 re S
 BT /F1 7.2 Tf 463.1 278.0 Td (unavailable) Tj ET
-BT /F1 9.5 Tf 54.0 252.0 Td (Current rerun source: raw/hw7_reflexion_comparison_current.json. It recorded baseline 0/3) Tj ET
-BT /F1 9.5 Tf 54.0 242.0 Td (and Reflexion 0/3, with all six runs stopping at human_review; each of the 3 Reflexion runs) Tj ET
-BT /F1 9.5 Tf 54.0 232.0 Td (used 2 retries, for 6 retries total. Baseline average latency was 15,901.428 ms and current) Tj ET
-BT /F1 9.5 Tf 54.0 222.0 Td (Reflexion average latency was 29,865.338 ms. Token usage was unavailable. Verifier) Tj ET
-BT /F1 9.5 Tf 54.0 212.0 Td (false-rejection adjudication was unavailable. The earlier comparison remains preserved in) Tj ET
-BT /F1 9.5 Tf 54.0 202.0 Td (raw/hw7_reflexion_comparison.json and is not merged with this current rerun.) Tj ET
+BT /F1 11 Tf 54.0 252.0 Td (Current rerun source: raw/hw7_reflexion_comparison_current.json. It recorded baseline 0/3) Tj ET
+BT /F1 11 Tf 54.0 242.0 Td (and Reflexion 0/3, with all six runs stopping at human_review; each of the 3 Reflexion runs) Tj ET
+BT /F1 11 Tf 54.0 232.0 Td (used 2 retries, for 6 retries total. Baseline average latency was 15,901.428 ms and current) Tj ET
+BT /F1 11 Tf 54.0 222.0 Td (Reflexion average latency was 29,865.338 ms. Token usage was unavailable. Verifier) Tj ET
+BT /F1 11 Tf 54.0 212.0 Td (false-rejection adjudication was unavailable. The earlier comparison remains preserved in) Tj ET
+BT /F1 11 Tf 54.0 202.0 Td (raw/hw7_reflexion_comparison.json and is not merged with this current rerun.) Tj ET
 BT /F2 14 Tf 54.0 183.0 Td (Part 4 - MRKL and bike-share application) Tj ET
-BT /F1 9.5 Tf 54.0 159.0 Td (The three pure/isolated tools share a response shape with success, optional data, optional) Tj ET
-BT /F1 9.5 Tf 54.0 149.0 Td (error, optional source, and ts:) Tj ET
+BT /F1 11 Tf 54.0 159.0 Td (The three pure/isolated tools share a response shape with success, optional data, optional) Tj ET
+BT /F1 11 Tf 54.0 149.0 Td (error, optional source, and ts:) Tj ET
 BT /F3 7.5 Tf 58.0 135.0 Td (def _result\(success, data=None, error=None, source=None\):) Tj ET
 BT /F3 7.5 Tf 58.0 126.0 Td (value = {"success": success}) Tj ET
 BT /F3 7.5 Tf 58.0 117.0 Td (if data is not None: value["data"] = data) Tj ET
@@ -584,7 +584,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 14 0 R >>
 endobj
 16 0 obj
-<< /Length 10517 >>
+<< /Length 10494 >>
 stream
 BT /F3 7.5 Tf 58.0 741.0 Td (return _result\(False, error="csv_sql accepts one read-only SELECT"\)) Tj ET
 BT /F3 7.5 Tf 58.0 732.0 Td (if re.search\(r";|\\b\(insert|update|delete|drop|alter|create|replace\)\\b", sql, re.I\):) Tj ET
@@ -620,24 +620,24 @@ BT /F3 7.5 Tf 58.0 471.0 Td (data = {"value": value}) Tj ET
 BT /F3 7.5 Tf 58.0 462.0 Td (if units:) Tj ET
 BT /F3 7.5 Tf 58.0 453.0 Td (data["units"] = units) Tj ET
 BT /F3 7.5 Tf 58.0 444.0 Td (return _result\(True, data\)) Tj ET
-BT /F1 9.5 Tf 54.0 426.0 Td (csv_sql rejects non-SELECT statements independently of the model. The calculator rejects) Tj ET
-BT /F1 9.5 Tf 54.0 416.0 Td (unsupported characters and AST nodes. Missing files, malformed CSV, invalid arithmetic, and) Tj ET
-BT /F1 9.5 Tf 54.0 406.0 Td (SQL injection/non-SELECT attempts are covered by offline tests. The SQL boundary is one) Tj ET
-BT /F1 9.5 Tf 54.0 396.0 Td (statement only: semicolons and non-SELECT keywords are rejected before SQLite execution. The) Tj ET
-BT /F1 9.5 Tf 54.0 386.0 Td (calculator uses the exact whitelist regex ^[0-9+\\-*/\(\).\\s]+$ and then validates the AST.) Tj ET
-BT /F1 9.5 Tf 54.0 371.0 Td (Common response shape:) Tj ET
+BT /F1 11 Tf 54.0 426.0 Td (csv_sql rejects non-SELECT statements independently of the model. The calculator rejects) Tj ET
+BT /F1 11 Tf 54.0 416.0 Td (unsupported characters and AST nodes. Missing files, malformed CSV, invalid arithmetic, and) Tj ET
+BT /F1 11 Tf 54.0 406.0 Td (SQL injection/non-SELECT attempts are covered by offline tests. The SQL boundary is one) Tj ET
+BT /F1 11 Tf 54.0 396.0 Td (statement only: semicolons and non-SELECT keywords are rejected before SQLite execution. The) Tj ET
+BT /F1 11 Tf 54.0 386.0 Td (calculator uses the exact whitelist regex ^[0-9+\\-*/\(\).\\s]+$ and then validates the AST.) Tj ET
+BT /F1 11 Tf 54.0 371.0 Td (Common response shape:) Tj ET
 BT /F3 7.5 Tf 58.0 357.0 Td ({"success": true, "data": {}, "error": null, "source": "...", "ts": "..."}) Tj ET
-BT /F1 9.5 Tf 54.0 339.0 Td (Explicit tool input schemas:) Tj ET
+BT /F1 11 Tf 54.0 339.0 Td (Explicit tool input schemas:) Tj ET
 BT /F3 7.5 Tf 58.0 325.0 Td ({"tool": "csv_sql", "input": {"csv_text": "string", "sql": "string"}}) Tj ET
 BT /F3 7.5 Tf 58.0 316.0 Td ({"tool": "policy_retriever", "input": {"url": "string", "query": "string", "k": "integer) Tj ET
 BT /F3 7.5 Tf 58.0 307.0 Td (\(optional\)"}}) Tj ET
 BT /F3 7.5 Tf 58.0 298.0 Td ({"tool": "calculator", "input": {"expression": "string", "units": "string \(optional\)"}}) Tj ET
-BT /F1 9.5 Tf 54.0 280.0 Td (The official pricing URL recorded in evidence is https://citibikenyc.com/plans-and-pricing.) Tj ET
-BT /F1 9.5 Tf 54.0 270.0 Td (Both snapshots have access timestamp 2026-10-25T07:27:04.715872+00:00 and SHA-256) Tj ET
-BT /F1 9.5 Tf 54.0 260.0 Td (07fb221a434fb166302571050657a0c2c53f995214af78771faf735e7733c71d.) Tj ET
-BT /F1 9.5 Tf 54.0 245.0 Td (Readable snapshot excerpt used by the calculation: "$239/year"; "unlimited 45-minute rides) Tj ET
-BT /F1 9.5 Tf 54.0 235.0 Td (on classic bikes"; and "Any ride longer than 30 minutes is an additional $0.41/minute." The) Tj ET
-BT /F1 9.5 Tf 54.0 225.0 Td (excerpt is from the preserved pricing snapshot, not a new navigation request.) Tj ET
+BT /F1 11 Tf 54.0 280.0 Td (The official pricing URL recorded in evidence is https://citibikenyc.com/plans-and-pricing.) Tj ET
+BT /F1 11 Tf 54.0 270.0 Td (Both snapshots have access timestamp 2026-10-25T07:27:04.715872+00:00 and SHA-256) Tj ET
+BT /F1 11 Tf 54.0 260.0 Td (07fb221a434fb166302571050657a0c2c53f995214af78771faf735e7733c71d.) Tj ET
+BT /F1 11 Tf 54.0 245.0 Td (Readable snapshot excerpt used by the calculation: "$239/year"; "unlimited 45-minute rides) Tj ET
+BT /F1 11 Tf 54.0 235.0 Td (on classic bikes"; and "Any ride longer than 30 minutes is an additional $0.41/minute." The) Tj ET
+BT /F1 11 Tf 54.0 225.0 Td (excerpt is from the preserved pricing snapshot, not a new navigation request.) Tj ET
 0.85 0.85 0.85 rg 54.0 205.0 38.4 18.0 re f 0 0 0 rg 54.0 205.0 38.4 18.0 re S
 BT /F1 7.2 Tf 57.0 210.0 Td (Scenario) Tj ET
 0.85 0.85 0.85 rg 92.4 205.0 26.1 18.0 re f 0 0 0 rg 92.4 205.0 26.1 18.0 re S
@@ -710,16 +710,16 @@ BT /F1 7.2 Tf 437.5 174.0 Td (500 rides/5,000 m) Tj ET
 BT /F1 7.2 Tf 508.7 174.0 Td (5) Tj ET
 0.85 0.85 0.85 rg 531.9 169.0 26.1 18.0 re f 0 0 0 rg 531.9 169.0 26.1 18.0 re S
 BT /F1 7.2 Tf 534.9 174.0 Td (succes) Tj ET
-BT /F1 9.5 Tf 54.0 148.0 Td (The membership scenario is one month of 30-minute rides, all within the 45-minute member) Tj ET
-BT /F1 9.5 Tf 54.0 138.0 Td (allowance, and remains unchanged. The pay-per-use scenario is a 20-year observation horizon) Tj ET
-BT /F1 9.5 Tf 54.0 128.0 Td (with 25 short rides per year. Annual membership pricing is applied for each of the 20 years:) Tj ET
-BT /F1 9.5 Tf 54.0 118.0 Td (20 * $239 = $4,780. The corrected calculation uses 500 rides x 45 included minutes, so no) Tj ET
-BT /F1 9.5 Tf 54.0 108.0 Td (residual charge remains.) Tj ET
-BT /F1 9.5 Tf 54.0 93.0 Td (Membership-wins scenario: 500 rides, 30-minute average duration, and 500 rides per month.) Tj ET
-BT /F1 9.5 Tf 54.0 83.0 Td (Weekly ride count and weekly spend are not separately recorded in the source-period) Tj ET
-BT /F1 9.5 Tf 54.0 73.0 Td (evidence, so they are not inferred. Pay-per-use total is $8,645, membership total is $19.92,) Tj ET
-BT /F1 9.5 Tf 54.0 63.0 Td (residual charges are $0, total steps are 5, total time is 15,000 minutes, and stop reason is) Tj ET
-BT /F1 9.5 Tf 54.0 53.0 Td (success. Source: https://citibikenyc.com/plans-and-pricing; snapshot access time and SHA-256) Tj ET
+BT /F1 11 Tf 54.0 148.0 Td (The membership scenario is one month of 30-minute rides, all within the 45-minute member) Tj ET
+BT /F1 11 Tf 54.0 138.0 Td (allowance, and remains unchanged. The pay-per-use scenario is a 20-year observation horizon) Tj ET
+BT /F1 11 Tf 54.0 128.0 Td (with 25 short rides per year. Annual membership pricing is applied for each of the 20 years:) Tj ET
+BT /F1 11 Tf 54.0 118.0 Td (20 * $239 = $4,780. The corrected calculation uses 500 rides x 45 included minutes, so no) Tj ET
+BT /F1 11 Tf 54.0 108.0 Td (residual charge remains.) Tj ET
+BT /F1 11 Tf 54.0 93.0 Td (Membership-wins scenario: 500 rides, 30-minute average duration, and 500 rides per month.) Tj ET
+BT /F1 11 Tf 54.0 83.0 Td (Weekly ride count and weekly spend are not separately recorded in the source-period) Tj ET
+BT /F1 11 Tf 54.0 73.0 Td (evidence, so they are not inferred. Pay-per-use total is $8,645, membership total is $19.92,) Tj ET
+BT /F1 11 Tf 54.0 63.0 Td (residual charges are $0, total steps are 5, total time is 15,000 minutes, and stop reason is) Tj ET
+BT /F1 11 Tf 54.0 53.0 Td (success. Source: https://citibikenyc.com/plans-and-pricing; snapshot access time and SHA-256) Tj ET
 
 endstream
 endobj
@@ -727,23 +727,23 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 16 0 R >>
 endobj
 18 0 obj
-<< /Length 7664 >>
+<< /Length 7633 >>
 stream
-BT /F1 9.5 Tf 54.0 740.0 Td (are recorded above.) Tj ET
-BT /F1 9.5 Tf 54.0 725.0 Td (Pay-per-use-wins scenario: 500 rides, 10-minute average duration, and 25 rides per year) Tj ET
-BT /F1 9.5 Tf 54.0 715.0 Td (\(0.48 rides per week\). Weekly spend is not separately recorded in the source-period) Tj ET
-BT /F1 9.5 Tf 54.0 705.0 Td (evidence, so it is not inferred. Pay-per-use total is $4,545, membership total is $4,780,) Tj ET
-BT /F1 9.5 Tf 54.0 695.0 Td (residual charges are $0, total steps are 5, total time is 5,000 minutes over 20 years, and) Tj ET
-BT /F1 9.5 Tf 54.0 685.0 Td (stop reason is success. Source: https://citibikenyc.com/plans-and-pricing; snapshot access) Tj ET
-BT /F1 9.5 Tf 54.0 675.0 Td (time and SHA-256 are recorded above.) Tj ET
-BT /F1 9.5 Tf 54.0 660.0 Td (The original raw/hw7_bikeshare_scenarios.json is preserved unchanged. Its old pay-per-use) Tj ET
-BT /F1 9.5 Tf 54.0 650.0 Td (recommendation displayed $6,830 because it used included_minutes=0, even though its) Tj ET
-BT /F1 9.5 Tf 54.0 640.0 Td (calculator result recorded $4,780. raw/hw7_bikeshare_scenarios_corrected.json is the) Tj ET
-BT /F1 9.5 Tf 54.0 630.0 Td (authoritative correction: pay-per-use $4,545, membership $4,780, decision Pay Per) Tj ET
-BT /F1 9.5 Tf 54.0 620.0 Td (Ride/Minute.) Tj ET
+BT /F1 11 Tf 54.0 740.0 Td (are recorded above.) Tj ET
+BT /F1 11 Tf 54.0 725.0 Td (Pay-per-use-wins scenario: 500 rides, 10-minute average duration, and 25 rides per year) Tj ET
+BT /F1 11 Tf 54.0 715.0 Td (\(0.48 rides per week\). Weekly spend is not separately recorded in the source-period) Tj ET
+BT /F1 11 Tf 54.0 705.0 Td (evidence, so it is not inferred. Pay-per-use total is $4,545, membership total is $4,780,) Tj ET
+BT /F1 11 Tf 54.0 695.0 Td (residual charges are $0, total steps are 5, total time is 5,000 minutes over 20 years, and) Tj ET
+BT /F1 11 Tf 54.0 685.0 Td (stop reason is success. Source: https://citibikenyc.com/plans-and-pricing; snapshot access) Tj ET
+BT /F1 11 Tf 54.0 675.0 Td (time and SHA-256 are recorded above.) Tj ET
+BT /F1 11 Tf 54.0 660.0 Td (The original raw/hw7_bikeshare_scenarios.json is preserved unchanged. Its old pay-per-use) Tj ET
+BT /F1 11 Tf 54.0 650.0 Td (recommendation displayed $6,830 because it used included_minutes=0, even though its) Tj ET
+BT /F1 11 Tf 54.0 640.0 Td (calculator result recorded $4,780. raw/hw7_bikeshare_scenarios_corrected.json is the) Tj ET
+BT /F1 11 Tf 54.0 630.0 Td (authoritative correction: pay-per-use $4,545, membership $4,780, decision Pay Per) Tj ET
+BT /F1 11 Tf 54.0 620.0 Td (Ride/Minute.) Tj ET
 BT /F2 14 Tf 54.0 601.0 Td (Part 5 - prompt-injection threat model) Tj ET
-BT /F1 9.5 Tf 54.0 577.0 Td (Threats are: retrieved text overriding the recommendation; model-directed non-read-only SQL;) Tj ET
-BT /F1 9.5 Tf 54.0 567.0 Td (and inappropriate inclusion of complete uploaded CSV content.) Tj ET
+BT /F1 11 Tf 54.0 577.0 Td (Threats are: retrieved text overriding the recommendation; model-directed non-read-only SQL;) Tj ET
+BT /F1 11 Tf 54.0 567.0 Td (and inappropriate inclusion of complete uploaded CSV content.) Tj ET
 0.85 0.85 0.85 rg 54.0 547.0 129.8 18.0 re f 0 0 0 rg 54.0 547.0 129.8 18.0 re S
 BT /F1 7.2 Tf 57.0 552.0 Td (Attacker goal) Tj ET
 0.85 0.85 0.85 rg 183.8 547.0 114.6 18.0 re f 0 0 0 rg 183.8 547.0 114.6 18.0 re S
@@ -776,24 +776,24 @@ BT /F1 7.2 Tf 186.8 498.0 Td (Outcome: disclosure succeed) Tj ET
 BT /F1 7.2 Tf 301.4 498.0 Td (Outcome: unnecessary disclosure) Tj ET
 0.85 0.85 0.85 rg 428.2 493.0 129.8 18.0 re f 0 0 0 rg 428.2 493.0 129.8 18.0 re S
 BT /F1 7.2 Tf 431.2 498.0 Td (Outcome: blocked by prompt and) Tj ET
-BT /F1 9.5 Tf 54.0 472.0 Td (The before-defense results are deterministic modeled simulations, not an additional live) Tj ET
-BT /F1 9.5 Tf 54.0 462.0 Td (model run. Prompt-only defenses label retrieved policy as untrusted and rely on model) Tj ET
-BT /F1 9.5 Tf 54.0 452.0 Td (instruction following. Tool-boundary defenses enforce executable restrictions; csv_sql) Tj ET
-BT /F1 9.5 Tf 54.0 442.0 Td (independently accepts only read-only SELECT statements. Raw source:) Tj ET
-BT /F1 9.5 Tf 54.0 432.0 Td (raw/hw7_prompt_injection_results.json.) Tj ET
-BT /F1 9.5 Tf 54.0 417.0 Td (Success conditions are explicit: recommendation override succeeds if hostile retrieved text) Tj ET
-BT /F1 9.5 Tf 54.0 407.0 Td (changes the data-based decision; SQL misuse succeeds if a non-SELECT statement executes; and) Tj ET
-BT /F1 9.5 Tf 54.0 397.0 Td (CSV-content misuse succeeds if the complete uploaded file is returned unnecessarily. The) Tj ET
-BT /F1 9.5 Tf 54.0 387.0 Td (before-defense column is modeled analysis, not a live model run; prompt defense relies on) Tj ET
-BT /F1 9.5 Tf 54.0 377.0 Td (instruction following; the tool boundary enforces the executable restriction independently.) Tj ET
+BT /F1 11 Tf 54.0 472.0 Td (The before-defense results are deterministic modeled simulations, not an additional live) Tj ET
+BT /F1 11 Tf 54.0 462.0 Td (model run. Prompt-only defenses label retrieved policy as untrusted and rely on model) Tj ET
+BT /F1 11 Tf 54.0 452.0 Td (instruction following. Tool-boundary defenses enforce executable restrictions; csv_sql) Tj ET
+BT /F1 11 Tf 54.0 442.0 Td (independently accepts only read-only SELECT statements. Raw source:) Tj ET
+BT /F1 11 Tf 54.0 432.0 Td (raw/hw7_prompt_injection_results.json.) Tj ET
+BT /F1 11 Tf 54.0 417.0 Td (Success conditions are explicit: recommendation override succeeds if hostile retrieved text) Tj ET
+BT /F1 11 Tf 54.0 407.0 Td (changes the data-based decision; SQL misuse succeeds if a non-SELECT statement executes; and) Tj ET
+BT /F1 11 Tf 54.0 397.0 Td (CSV-content misuse succeeds if the complete uploaded file is returned unnecessarily. The) Tj ET
+BT /F1 11 Tf 54.0 387.0 Td (before-defense column is modeled analysis, not a live model run; prompt defense relies on) Tj ET
+BT /F1 11 Tf 54.0 377.0 Td (instruction following; the tool boundary enforces the executable restriction independently.) Tj ET
 BT /F2 14 Tf 54.0 358.0 Td (Part 6 - file tools and safety gate) Tj ET
-BT /F1 9.5 Tf 54.0 334.0 Td (code/hw7_file_tools.py implements read_file, write_file, edit_file, glob_files,) Tj ET
-BT /F1 9.5 Tf 54.0 324.0 Td (search_in_files, and bash. _safe resolves every path under the temporary course sandbox.) Tj ET
-BT /F1 9.5 Tf 54.0 314.0 Td (SAFE_PREFIXES allowlists bounded local commands. is_destructive independently detects) Tj ET
-BT /F1 9.5 Tf 54.0 304.0 Td (destructive patterns, including the original false allow: python -c file writes.) Tj ET
-BT /F1 9.5 Tf 54.0 294.0 Td (confirm_bash requires explicit confirmation for destructive commands, and bash applies a) Tj ET
-BT /F1 9.5 Tf 54.0 284.0 Td (30-second timeout.) Tj ET
-BT /F1 9.5 Tf 54.0 269.0 Td (Representative implementation excerpts:) Tj ET
+BT /F1 11 Tf 54.0 334.0 Td (code/hw7_file_tools.py implements read_file, write_file, edit_file, glob_files,) Tj ET
+BT /F1 11 Tf 54.0 324.0 Td (search_in_files, and bash. _safe resolves every path under the temporary course sandbox.) Tj ET
+BT /F1 11 Tf 54.0 314.0 Td (SAFE_PREFIXES allowlists bounded local commands. is_destructive independently detects) Tj ET
+BT /F1 11 Tf 54.0 304.0 Td (destructive patterns, including the original false allow: python -c file writes.) Tj ET
+BT /F1 11 Tf 54.0 294.0 Td (confirm_bash requires explicit confirmation for destructive commands, and bash applies a) Tj ET
+BT /F1 11 Tf 54.0 284.0 Td (30-second timeout.) Tj ET
+BT /F1 11 Tf 54.0 269.0 Td (Representative implementation excerpts:) Tj ET
 BT /F3 7.5 Tf 58.0 255.0 Td (def read_file\(path, root, max_lines=None\):) Tj ET
 BT /F3 7.5 Tf 58.0 246.0 Td (lines = _safe\(path, root\).read_text\(encoding="utf-8"\).splitlines\(\)) Tj ET
 BT /F3 7.5 Tf 58.0 237.0 Td (return "\\n".join\(lines if max_lines is None else lines[:max_lines]\)) Tj ET
@@ -824,7 +824,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 18 0 R >>
 endobj
 20 0 obj
-<< /Length 7026 >>
+<< /Length 7018 >>
 stream
 BT /F3 7.5 Tf 58.0 741.0 Td (if not path.is_file\(\):) Tj ET
 BT /F3 7.5 Tf 58.0 732.0 Td (continue) Tj ET
@@ -842,7 +842,7 @@ BT /F3 7.5 Tf 58.0 633.0 Td (def bash\(command, auto_approve=False\):) Tj ET
 BT /F3 7.5 Tf 58.0 624.0 Td (decision = confirm_bash\(command, auto_approve\)) Tj ET
 BT /F3 7.5 Tf 58.0 615.0 Td (if not decision["allowed"]: return decision) Tj ET
 BT /F3 7.5 Tf 58.0 606.0 Td (return subprocess.run\(command, shell=True, timeout=30, ...\)) Tj ET
-BT /F1 9.5 Tf 54.0 588.0 Td (The safety constants and independent checks are:) Tj ET
+BT /F1 11 Tf 54.0 588.0 Td (The safety constants and independent checks are:) Tj ET
 BT /F3 7.5 Tf 58.0 574.0 Td (SAFE_PREFIXES = \("python ", "python3 ", "pytest ", "ruff ",) Tj ET
 BT /F3 7.5 Tf 58.0 565.0 Td ("git status", "git diff", "git log"\)) Tj ET
 BT /F3 7.5 Tf 58.0 556.0 Td (DESTRUCTIVE_PATTERNS = \() Tj ET
@@ -861,7 +861,7 @@ BT /F3 7.5 Tf 58.0 448.0 Td ("reason": "destructive command requires explicit co
 BT /F3 7.5 Tf 58.0 439.0 Td (if not any\(command.strip\(\).startswith\(prefix\) for prefix in SAFE_PREFIXES\):) Tj ET
 BT /F3 7.5 Tf 58.0 430.0 Td (return {"allowed": False, "reason": "command is not on SAFE_PREFIXES allow-list"}) Tj ET
 BT /F3 7.5 Tf 58.0 421.0 Td (return {"allowed": True, "reason": "command matches SAFE_PREFIXES"}) Tj ET
-BT /F1 9.5 Tf 54.0 403.0 Td (The corrected run in raw/hw7_file_tools_safety_results_corrected.json reports:) Tj ET
+BT /F1 11 Tf 54.0 403.0 Td (The corrected run in raw/hw7_file_tools_safety_results_corrected.json reports:) Tj ET
 0.85 0.85 0.85 rg 54.0 383.0 150.0 18.0 re f 0 0 0 rg 54.0 383.0 150.0 18.0 re S
 BT /F1 7.2 Tf 57.0 388.0 Td (Check) Tj ET
 0.85 0.85 0.85 rg 204.0 383.0 55.0 18.0 re f 0 0 0 rg 204.0 383.0 55.0 18.0 re S
@@ -894,10 +894,10 @@ BT /F1 7.2 Tf 207.0 280.0 Td (false) Tj ET
 BT /F1 7.2 Tf 57.0 262.0 Td (Model called) Tj ET
 0.85 0.85 0.85 rg 204.0 257.0 55.0 18.0 re f 0 0 0 rg 204.0 257.0 55.0 18.0 re S
 BT /F1 7.2 Tf 207.0 262.0 Td (false) Tj ET
-BT /F1 9.5 Tf 54.0 236.0 Td (The independent deny-list added python -c after the first run identified the inline Python) Tj ET
-BT /F1 9.5 Tf 54.0 226.0 Td (file-write command as a false allow. No application file outside the temporary sandbox was) Tj ET
-BT /F1 9.5 Tf 54.0 216.0 Td (modified.) Tj ET
-BT /F1 9.5 Tf 54.0 201.0 Td (The ten tested commands were:) Tj ET
+BT /F1 11 Tf 54.0 236.0 Td (The independent deny-list added python -c after the first run identified the inline Python) Tj ET
+BT /F1 11 Tf 54.0 226.0 Td (file-write command as a false allow. No application file outside the temporary sandbox was) Tj ET
+BT /F1 11 Tf 54.0 216.0 Td (modified.) Tj ET
+BT /F1 11 Tf 54.0 201.0 Td (The ten tested commands were:) Tj ET
 0.85 0.85 0.85 rg 54.0 181.0 67.9 18.0 re f 0 0 0 rg 54.0 181.0 67.9 18.0 re S
 BT /F1 7.2 Tf 57.0 186.0 Td (Allowed \(5/5\)) Tj ET
 0.85 0.85 0.85 rg 121.9 181.0 80.8 18.0 re f 0 0 0 rg 121.9 181.0 80.8 18.0 re S
@@ -922,8 +922,8 @@ BT /F1 7.2 Tf 124.9 114.0 Td (mkfs /dev/sda) Tj ET
 BT /F1 7.2 Tf 57.0 96.0 Td (pytest -q) Tj ET
 0.85 0.85 0.85 rg 121.9 91.0 80.8 18.0 re f 0 0 0 rg 121.9 91.0 80.8 18.0 re S
 BT /F1 7.2 Tf 124.9 96.0 Td (echo x > /root/x) Tj ET
-BT /F1 9.5 Tf 54.0 70.0 Td (The sandbox integration created debug.py, searched for DEBUG, and read the matching content.) Tj ET
-BT /F1 9.5 Tf 54.0 60.0 Td (The edit test produced this before/after diff:) Tj ET
+BT /F1 11 Tf 54.0 70.0 Td (The sandbox integration created debug.py, searched for DEBUG, and read the matching content.) Tj ET
+BT /F1 11 Tf 54.0 60.0 Td (The edit test produced this before/after diff:) Tj ET
 
 endstream
 endobj
@@ -931,30 +931,30 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 20 0 R >>
 endobj
 22 0 obj
-<< /Length 6226 >>
+<< /Length 6189 >>
 stream
 BT /F3 7.5 Tf 58.0 741.0 Td (-DEBUG = True) Tj ET
 BT /F3 7.5 Tf 58.0 732.0 Td (+DEBUG = False) Tj ET
-BT /F1 9.5 Tf 54.0 714.0 Td (The original false allow was an inline python -c file write. The independent deny-list now) Tj ET
-BT /F1 9.5 Tf 54.0 704.0 Td (contains the exact pattern r"\\bpython\(?:3\)?\\s+-c\\b", so the corrected evidence reports zero) Tj ET
-BT /F1 9.5 Tf 54.0 694.0 Td (false allows.) Tj ET
+BT /F1 11 Tf 54.0 714.0 Td (The original false allow was an inline python -c file write. The independent deny-list now) Tj ET
+BT /F1 11 Tf 54.0 704.0 Td (contains the exact pattern r"\\bpython\(?:3\)?\\s+-c\\b", so the corrected evidence reports zero) Tj ET
+BT /F1 11 Tf 54.0 694.0 Td (false allows.) Tj ET
 BT /F2 14 Tf 54.0 675.0 Td (Screenshot evidence index) Tj ET
-BT /F1 9.5 Tf 54.0 651.0 Td (The following preserved screenshots are included in the PDF with readable captions:) Tj ET
-BT /F1 9.5 Tf 54.0 641.0 Td (hw7_jwt_login_reader_200.png, hw7_jwt_login_invalid_401.png,) Tj ET
-BT /F1 9.5 Tf 54.0 631.0 Td (hw7_auth_me_missing_token_401.png, hw7_auth_me_invalid_token_401.png,) Tj ET
-BT /F1 9.5 Tf 54.0 621.0 Td (hw7_auth_me_reader_200.png, hw7_authenticated_list_200.png, hw7_reader_create_403.png,) Tj ET
-BT /F1 9.5 Tf 54.0 611.0 Td (hw7_writer_create_201.png, hw7_writer_delete_403.png, hw7_moderator_delete_success.png,) Tj ET
-BT /F1 9.5 Tf 54.0 601.0 Td (hw7_mysql_users_roles.png, hw7_agent_task_a_search_detail.png,) Tj ET
-BT /F1 9.5 Tf 54.0 591.0 Td (hw7_agent_tasks_bc_json_derived.png, hw7_agent_nonexistent_id_recovery.png,) Tj ET
-BT /F1 9.5 Tf 54.0 581.0 Td (hw7_lint_failure.png, hw7_lint_fix_pass.png, hw7_precommit_successful_commit.png,) Tj ET
-BT /F1 9.5 Tf 54.0 571.0 Td (hw7_bikeshare_membership_wins.png, hw7_bikeshare_payg_wins.png,) Tj ET
-BT /F1 9.5 Tf 54.0 561.0 Td (hw7_prompt_injection_defenses.png, and hw7_file_tools_safety_gate.png. No Task B completion) Tj ET
-BT /F1 9.5 Tf 54.0 551.0 Td (screenshot exists, so the successful Task B result is documented from raw evidence rather) Tj ET
-BT /F1 9.5 Tf 54.0 541.0 Td (than a visual capture. The JSON-derived Task B/C screenshot is included; the older typed) Tj ET
-BT /F1 9.5 Tf 54.0 531.0 Td (summary screenshot and legacy failure screenshots are preserved on disk but excluded from) Tj ET
-BT /F1 9.5 Tf 54.0 521.0 Td (the regenerated PDFs. The lint/pre-commit demonstration is shown by the three temporary-demo) Tj ET
-BT /F1 9.5 Tf 54.0 511.0 Td (screenshots listed above.) Tj ET
-BT /F1 9.5 Tf 54.0 496.0 Td (Manual capture commands for replacement evidence:) Tj ET
+BT /F1 11 Tf 54.0 651.0 Td (The following preserved screenshots are included in the PDF with readable captions:) Tj ET
+BT /F1 11 Tf 54.0 641.0 Td (hw7_jwt_login_reader_200.png, hw7_jwt_login_invalid_401.png,) Tj ET
+BT /F1 11 Tf 54.0 631.0 Td (hw7_auth_me_missing_token_401.png, hw7_auth_me_invalid_token_401.png,) Tj ET
+BT /F1 11 Tf 54.0 621.0 Td (hw7_auth_me_reader_200.png, hw7_authenticated_list_200.png, hw7_reader_create_403.png,) Tj ET
+BT /F1 11 Tf 54.0 611.0 Td (hw7_writer_create_201.png, hw7_writer_delete_403.png, hw7_moderator_delete_success.png,) Tj ET
+BT /F1 11 Tf 54.0 601.0 Td (hw7_mysql_users_roles.png, hw7_agent_task_a_search_detail.png,) Tj ET
+BT /F1 11 Tf 54.0 591.0 Td (hw7_agent_tasks_bc_json_derived.png, hw7_agent_nonexistent_id_recovery.png,) Tj ET
+BT /F1 11 Tf 54.0 581.0 Td (hw7_lint_failure.png, hw7_lint_fix_pass.png, hw7_precommit_successful_commit.png,) Tj ET
+BT /F1 11 Tf 54.0 571.0 Td (hw7_bikeshare_membership_wins.png, hw7_bikeshare_payg_wins.png,) Tj ET
+BT /F1 11 Tf 54.0 561.0 Td (hw7_prompt_injection_defenses.png, and hw7_file_tools_safety_gate.png. No Task B completion) Tj ET
+BT /F1 11 Tf 54.0 551.0 Td (screenshot exists, so the successful Task B result is documented from raw evidence rather) Tj ET
+BT /F1 11 Tf 54.0 541.0 Td (than a visual capture. The JSON-derived Task B/C screenshot is included; the older typed) Tj ET
+BT /F1 11 Tf 54.0 531.0 Td (summary screenshot and legacy failure screenshots are preserved on disk but excluded from) Tj ET
+BT /F1 11 Tf 54.0 521.0 Td (the regenerated PDFs. The lint/pre-commit demonstration is shown by the three temporary-demo) Tj ET
+BT /F1 11 Tf 54.0 511.0 Td (screenshots listed above.) Tj ET
+BT /F1 11 Tf 54.0 496.0 Td (Manual capture commands for replacement evidence:) Tj ET
 BT /F3 7.5 Tf 58.0 482.0 Td (Set-Location C:\\Projects\\data260-8844) Tj ET
 BT /F3 7.5 Tf 58.0 473.0 Td ($b = Get-Content reports/hw07/raw/hw7_task_b_final_smoke.json -Raw | ConvertFrom-Json) Tj ET
 BT /F3 7.5 Tf 58.0 464.0 Td ($c = Get-Content reports/hw07/raw/hw7_task_c_final_smoke_v2.json -Raw | ConvertFrom-Json) Tj ET
@@ -971,26 +971,26 @@ BT /F3 7.5 Tf 58.0 374.0 Td ($\($c.controller_repair\)") Tj ET
 BT /F3 7.5 Tf 58.0 365.0 Td (Write-Host "Task C database writes: $\($c.database_writes\)") Tj ET
 BT /F3 7.5 Tf 58.0 356.0 Td (Write-Host "Task C raw evidence: reports/hw07/raw/hw7_task_c_final_smoke_v2.json") Tj ET
 BT /F2 14 Tf 54.0 334.0 Td (Tests, limitations, and preservation) Tj ET
-BT /F1 9.5 Tf 54.0 310.0 Td (Offline tests covered JWT creation/validation, password hashing, roles, bounded agent repair) Tj ET
-BT /F1 9.5 Tf 54.0 300.0 Td (and tool-call budgets, Reflexion retry bounds, MRKL calculator and SQL validation, prompt) Tj ET
-BT /F1 9.5 Tf 54.0 290.0 Td (security, file-tool sandbox behavior, migration safety, and the bike-share UI pipeline.) Tj ET
-BT /F1 9.5 Tf 54.0 280.0 Td (Scoped Ruff passed. Full pytest was not claimed because collection/execution remained) Tj ET
-BT /F1 9.5 Tf 54.0 270.0 Td (blocked by the managed environment and the repository code package shadowing the) Tj ET
-BT /F1 9.5 Tf 54.0 260.0 Td (standard-library code module.) Tj ET
-BT /F1 9.5 Tf 54.0 245.0 Td (Existing HW1-HW6 source changes, reports, screenshots, raw evidence, database state,) Tj ET
-BT /F1 9.5 Tf 54.0 235.0 Td (branches, tags, .hw6-chrome-pdf-profile*, and MEMORY.md.before-hw6 remain preserved. The) Tj ET
-BT /F1 9.5 Tf 54.0 225.0 Td (verifier-generated verification.json records Commit 1, Commit 2 contains the verification) Tj ET
-BT /F1 9.5 Tf 54.0 215.0 Td (metadata, and the annotated hw7 tag points to Commit 2. No GitHub push has occurred.) Tj ET
+BT /F1 11 Tf 54.0 310.0 Td (Offline tests covered JWT creation/validation, password hashing, roles, bounded agent repair) Tj ET
+BT /F1 11 Tf 54.0 300.0 Td (and tool-call budgets, Reflexion retry bounds, MRKL calculator and SQL validation, prompt) Tj ET
+BT /F1 11 Tf 54.0 290.0 Td (security, file-tool sandbox behavior, migration safety, and the bike-share UI pipeline.) Tj ET
+BT /F1 11 Tf 54.0 280.0 Td (Scoped Ruff passed. Full pytest was not claimed because collection/execution remained) Tj ET
+BT /F1 11 Tf 54.0 270.0 Td (blocked by the managed environment and the repository code package shadowing the) Tj ET
+BT /F1 11 Tf 54.0 260.0 Td (standard-library code module.) Tj ET
+BT /F1 11 Tf 54.0 245.0 Td (Existing HW1-HW6 source changes, reports, screenshots, raw evidence, database state,) Tj ET
+BT /F1 11 Tf 54.0 235.0 Td (branches, tags, .hw6-chrome-pdf-profile*, and MEMORY.md.before-hw6 remain preserved. The) Tj ET
+BT /F1 11 Tf 54.0 225.0 Td (verifier-generated verification.json records Commit 1, Commit 2 contains the verification) Tj ET
+BT /F1 11 Tf 54.0 215.0 Td (metadata, and the annotated hw7 tag points to Commit 2. No GitHub push has occurred.) Tj ET
 BT /F2 14 Tf 54.0 196.0 Td (Git packaging and submission status) Tj ET
-BT /F1 9.5 Tf 54.0 172.0 Td (Commit 1 contains the final HW7 artifacts. verification.json records Commit 1. Commit 2) Tj ET
-BT /F1 9.5 Tf 54.0 162.0 Td (contains verification.json, and the annotated hw7 tag points to Commit 2. The final tag) Tj ET
-BT /F1 9.5 Tf 54.0 152.0 Td (target is verified from Git metadata after Commit 2. A commit cannot contain its own final) Tj ET
-BT /F1 9.5 Tf 54.0 142.0 Td (hash because changing the hash would change the commit itself. The repository URL is) Tj ET
-BT /F1 9.5 Tf 54.0 132.0 Td (https://github.com/Viki2183/data260-8844, and the final tagged tree URL is) Tj ET
-BT /F1 9.5 Tf 54.0 122.0 Td (https://github.com/Viki2183/data260-8844/tree/hw7. No GitHub push has occurred.) Tj ET
+BT /F1 11 Tf 54.0 172.0 Td (Commit 1 contains the final HW7 artifacts. verification.json records Commit 1. Commit 2) Tj ET
+BT /F1 11 Tf 54.0 162.0 Td (contains verification.json, and the annotated hw7 tag points to Commit 2. The final tag) Tj ET
+BT /F1 11 Tf 54.0 152.0 Td (target is verified from Git metadata after Commit 2. A commit cannot contain its own final) Tj ET
+BT /F1 11 Tf 54.0 142.0 Td (hash because changing the hash would change the commit itself. The repository URL is) Tj ET
+BT /F1 11 Tf 54.0 132.0 Td (https://github.com/Viki2183/data260-8844, and the final tagged tree URL is) Tj ET
+BT /F1 11 Tf 54.0 122.0 Td (https://github.com/Viki2183/data260-8844/tree/hw7. No GitHub push has occurred.) Tj ET
 BT /F2 14 Tf 54.0 103.0 Td (Submission packaging status) Tj ET
-BT /F1 9.5 Tf 54.0 79.0 Td (verification.json records Commit 1 and passed the offline smoke checks. The existing local) Tj ET
-BT /F1 9.5 Tf 54.0 69.0 Td (hw7 tag points to Commit 2. A GitHub push remains unperformed.) Tj ET
+BT /F1 11 Tf 54.0 79.0 Td (verification.json records Commit 1 and passed the offline smoke checks. The existing local) Tj ET
+BT /F1 11 Tf 54.0 69.0 Td (hw7 tag points to Commit 2. A GitHub push remains unperformed.) Tj ET
 
 endstream
 endobj
@@ -4189,88 +4189,88 @@ xref
 0000000394 00000 n 
 0000000469 00000 n 
 0000000537 00000 n 
-0000006581 00000 n 
-0000006727 00000 n 
-0000016421 00000 n 
-0000016567 00000 n 
-0000022628 00000 n 
-0000022776 00000 n 
-0000030180 00000 n 
-0000030328 00000 n 
-0000042867 00000 n 
-0000043015 00000 n 
-0000053586 00000 n 
-0000053734 00000 n 
-0000061451 00000 n 
-0000061599 00000 n 
-0000068678 00000 n 
-0000068826 00000 n 
-0000075105 00000 n 
-0000075253 00000 n 
-0000142340 00000 n 
-0000142507 00000 n 
-0000142682 00000 n 
-0000217508 00000 n 
-0000217672 00000 n 
-0000217847 00000 n 
-0000254847 00000 n 
-0000255012 00000 n 
-0000255187 00000 n 
-0000293445 00000 n 
-0000293608 00000 n 
-0000293783 00000 n 
-0000334192 00000 n 
-0000334355 00000 n 
-0000334530 00000 n 
-0000369945 00000 n 
-0000370101 00000 n 
-0000370276 00000 n 
-0000406074 00000 n 
-0000406234 00000 n 
-0000406409 00000 n 
-0000432057 00000 n 
-0000432220 00000 n 
-0000432395 00000 n 
-0000454594 00000 n 
-0000454751 00000 n 
-0000454926 00000 n 
-0000484684 00000 n 
-0000484844 00000 n 
-0000485019 00000 n 
-0000525517 00000 n 
-0000525676 00000 n 
-0000525851 00000 n 
-0000564795 00000 n 
-0000564953 00000 n 
-0000565128 00000 n 
-0000593289 00000 n 
-0000593438 00000 n 
-0000593613 00000 n 
-0000605737 00000 n 
-0000605887 00000 n 
-0000606062 00000 n 
-0000642629 00000 n 
-0000642791 00000 n 
-0000642966 00000 n 
-0000686752 00000 n 
-0000686907 00000 n 
-0000687082 00000 n 
-0000750791 00000 n 
-0000750956 00000 n 
-0000751131 00000 n 
-0000788451 00000 n 
-0000788614 00000 n 
-0000788789 00000 n 
-0000827696 00000 n 
-0000827851 00000 n 
-0000828026 00000 n 
-0000867631 00000 n 
-0000867786 00000 n 
-0000867961 00000 n 
-0000903454 00000 n 
-0000903609 00000 n 
+0000006537 00000 n 
+0000006683 00000 n 
+0000016355 00000 n 
+0000016501 00000 n 
+0000022537 00000 n 
+0000022685 00000 n 
+0000030070 00000 n 
+0000030218 00000 n 
+0000042745 00000 n 
+0000042893 00000 n 
+0000053441 00000 n 
+0000053589 00000 n 
+0000061275 00000 n 
+0000061423 00000 n 
+0000068494 00000 n 
+0000068642 00000 n 
+0000074884 00000 n 
+0000075032 00000 n 
+0000142119 00000 n 
+0000142286 00000 n 
+0000142461 00000 n 
+0000217287 00000 n 
+0000217451 00000 n 
+0000217626 00000 n 
+0000254626 00000 n 
+0000254791 00000 n 
+0000254966 00000 n 
+0000293224 00000 n 
+0000293387 00000 n 
+0000293562 00000 n 
+0000333971 00000 n 
+0000334134 00000 n 
+0000334309 00000 n 
+0000369724 00000 n 
+0000369880 00000 n 
+0000370055 00000 n 
+0000405853 00000 n 
+0000406013 00000 n 
+0000406188 00000 n 
+0000431836 00000 n 
+0000431999 00000 n 
+0000432174 00000 n 
+0000454373 00000 n 
+0000454530 00000 n 
+0000454705 00000 n 
+0000484463 00000 n 
+0000484623 00000 n 
+0000484798 00000 n 
+0000525296 00000 n 
+0000525455 00000 n 
+0000525630 00000 n 
+0000564574 00000 n 
+0000564732 00000 n 
+0000564907 00000 n 
+0000593068 00000 n 
+0000593217 00000 n 
+0000593392 00000 n 
+0000605516 00000 n 
+0000605666 00000 n 
+0000605841 00000 n 
+0000642408 00000 n 
+0000642570 00000 n 
+0000642745 00000 n 
+0000686531 00000 n 
+0000686686 00000 n 
+0000686861 00000 n 
+0000750570 00000 n 
+0000750735 00000 n 
+0000750910 00000 n 
+0000788230 00000 n 
+0000788393 00000 n 
+0000788568 00000 n 
+0000827475 00000 n 
+0000827630 00000 n 
+0000827805 00000 n 
+0000867410 00000 n 
+0000867565 00000 n 
+0000867740 00000 n 
+0000903233 00000 n 
+0000903388 00000 n 
 trailer
 << /Size 87 /Root 1 0 R >>
 startxref
-903784
+903563
 %%EOF
