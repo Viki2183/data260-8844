@@ -1,51 +1,45 @@
 DATA260 HW7 run log
 ===================
 
-2026-10-25T07:00:24Z
-Task A live smoke: qwen3:8b, seed=8844, verify_seed=268844.
-Result: search(package-00001) -> detail(package_id=1), 2 calls, success.
+2026-10-25T07:00:24Z | Task A live smoke
+Console: search(package-00001) -> detail(package_id=1); calls=2; stop=success.
 Evidence: raw/hw7_task_a_package00001.json
 
-2026-10-25T07:09:13Z
-Reliability run: 20 fixed attempts, max_repairs=1.
-Result: 0/20 successful; 0/20 well-formed tool calls before repair and
-0/20 after repair; 20 human_review; 0 budget_exhausted.
-Evidence: raw/hw7_reliability_20_attempts_v2.json
+2026-10-25T07:09:13Z | Reliability run
+Console: attempts=20; success=0/20; well-formed before=0/20; after=0/20;
+text when tool required=20; human_review=20; budget_exhausted=0.
+Definition: well-formed means the model produced a valid tool call when a tool
+was required. Evidence: raw/hw7_reliability_20_attempts_v2.json
 
-2026-10-25T07:15:53Z
-Earlier baseline-versus-Reflexion comparison completed and preserved.
+2026-10-25T07:15:53Z | Earlier comparison preserved
+Console: historical baseline/Reflexion comparison retained as raw evidence;
+it is superseded by the corrected current rerun.
 Evidence: raw/hw7_reflexion_comparison.json
 
-2026-10-26T05:45:26Z
-Task B final smoke: aggregate -> search(package-00001), 2 calls, success,
-no database writes.
-Evidence: raw/hw7_task_b_final_smoke.json
-
-2026-10-26T05:53:56Z
-Task C final smoke: search -> detail(1) -> detail(2), 3 calls.
-Ollama HTTP 500 occurred after detail(1); one bounded controller recovery
-executed detail(2), no model retry, success classified as
-bounded_controller_recovery, no database writes.
-Evidence: raw/hw7_task_c_final_smoke_v2.json
-
-2026-10-26T23:21:17Z
-Current fixed baseline-versus-Reflexion rerun for A, B, and C completed once.
-Baseline: 0/3; Reflexion: 0/3; all current runs stopped human_review;
-Reflexion used two retries per task. Tokens unavailable.
-Evidence: raw/hw7_reflexion_comparison_current.json
-
-Offline verification
----------------------
-HW7_OFFLINE_FALLBACK_PASS
-Scoped Ruff: All checks passed for hw7_agent.py, test_hw07_phase3.py, and
-test_hw07_offline.py.
-Full verifier/test-harness run remained blocked by the managed temporary
-sandbox hang; no full pytest pass is claimed.
-
-2026-10-25T07:27:04Z
-Bike-share snapshots captured from the approved pricing URL. The snapshot
-contains the pricing excerpt: “$239/year”; “unlimited 45-minute rides on
-classic bikes”; and “Any ride longer than 30 minutes is an additional
-$0.41/minute.”
+2026-10-25T07:27:04Z | Pricing snapshots
+Console: source=https://citibikenyc.com/plans-and-pricing; excerpt="$239/year";
+"unlimited 45-minute rides on classic bikes"; "+$0.41/minute after 30 minutes".
 Evidence: raw/hw7_citibike_membership_snapshot.txt,
 raw/hw7_citibike_payg_snapshot.txt
+
+2026-10-26T05:45:26Z | Task B final smoke
+Console: actual_sequence=aggregate -> search; tool_calls=2; stop_reason=success;
+success=True; database_writes=False.
+Evidence: raw/hw7_task_b_final_smoke.json
+
+2026-10-26T05:53:56Z | Task C final smoke
+Console: actual_sequence=search -> detail -> detail; tool_calls=3;
+stop_reason=success; classification=bounded_controller_recovery;
+model_adapter_http_500=True; controller_repair=True; database_writes=False.
+Console: one bounded controller repair executed detail(2) after the HTTP 500;
+no model retry. Evidence: raw/hw7_task_c_final_smoke_v2.json
+
+2026-10-26T23:21:17Z | Current comparison rerun
+Console: baseline=0/3; Reflexion=0/3; all current runs=human_review;
+each of 3 Reflexion runs used 2 retries, for 6 retries total; tokens=unavailable.
+Evidence: raw/hw7_reflexion_comparison_current.json
+
+2026-10-26T23:30:00Z | Offline verification
+Console: HW7_OFFLINE_FALLBACK_PASS; scoped Ruff=All checks passed.
+Full pytest remains unclaimed because the managed temporary environment blocked
+the original harness until the explicit temp-parent correction.

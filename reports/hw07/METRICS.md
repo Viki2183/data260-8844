@@ -15,9 +15,10 @@ below come from the raw evidence files named in each section.
 
 Reliability evidence: `raw/hw7_reliability_20_attempts_v2.json`. All 20
 attempts ended at `human_review`, with zero tool calls and an average latency
-of 13,160.690 ms (median 12,423.832 ms). “Well-formed” means the first model
-decision was parseable by the bounded runner; the model selected a premature
-final path, so the required tool sequence was not completed.
+of 13,160.690 ms (median 12,423.832 ms). Well-formed means that the model
+produced a valid tool call when a tool was required. Because all 20 observed
+sequences were empty, before repair and after repair are both 0/20; the
+text-when-tool-required count is 20.
 
 ## Part 3
 
@@ -25,7 +26,7 @@ final path, so the required tool sequence was not completed.
 |---|---:|---:|
 | Task success (current rerun) | 0/3 | 0/3 |
 | Unsupported claims | verifier field recorded; no independent claim audit | verifier field recorded; no independent claim audit |
-| Retry rate | 0/3 | 2/3 retries per run; maximum 2 |
+| Retry rate | 0/3 | 2 retries in each of 3 runs; 6 retries total |
 | Tool calls | average 0.000 | average 0.000 |
 | Tokens | unavailable | unavailable |
 | Latency (ms) | average 15,901.428 | average 29,865.338 |
@@ -35,11 +36,12 @@ Current comparison evidence: `raw/hw7_reflexion_comparison_current.json`.
 The earlier comparison remains preserved in `raw/hw7_reflexion_comparison.json`
 and is not merged with this current rerun. The current baseline and Reflexion
 conditions used the same three fixed tasks and model configuration; all current
-runs stopped at `human_review`.
+runs stopped at `human_review`. Each of the 3 Reflexion runs used 2 retries,
+for 6 retries total. Token usage was unavailable in the raw evidence.
 
-## Parts 4–6
+## Parts 4-6
 
-## Part 4 — Bike-share and MRKL
+## Part 4 - Bike-share and MRKL
 
 Evidence: `raw/hw7_bikeshare_scenarios.json`.
 
