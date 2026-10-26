@@ -137,24 +137,13 @@ MySQL-table screenshot/raw artifact was not created; manual capture is required
 if the instructor requires visual database evidence. No schema or row change is
 performed by this report.
 
-Ruff scoped checks passed for the HW7 scope. Pre-commit configuration validation
-passed, while the configured fixing hook was not run because it can modify files.
-No successful commit/tag screenshot exists; packaging hashes remain pending.
+Ruff scoped checks passed for the HW7 scope. The temporary demonstration also
+shows the original Ruff failure, the corrected file, both pre-commit hooks
+passing, and a successful temporary Git commit. These screenshots use isolated
+temporary files and do not represent a commit to the real repository.
 
-Lint/pre-commit evidence status: the current scoped Ruff check passes and
-pre-commit configuration validation previously passed, but a successful commit
-has not yet been performed in this remediation pass. Therefore no successful
-commit screenshot is claimed. The required manual terminal capture remains
-pending and can be produced before packaging with:
-
-```powershell
-Set-Location C:\Projects\data260-8844
-git status --short
-\.venv-hw7\Scripts\python.exe -m ruff check code\hw7_agent.py code\test_hw07_phase3.py code\test_hw07_offline.py
-git diff -- code\hw7_agent.py
-\.venv-hw7\Scripts\pre-commit.exe validate-config
-git commit -m "Complete DATA260 HW7 artifacts before verification"
-```
+Evidence: `hw7_lint_failure.png`, `hw7_lint_fix_pass.png`, and
+`hw7_precommit_successful_commit.png`.
 
 The final command must not be run until the approved packaging step; its
 successful output is therefore unavailable in the current evidence.
@@ -629,14 +618,16 @@ captions: `hw7_jwt_login_reader_200.png`, `hw7_jwt_login_invalid_401.png`,
 `hw7_mysql_users_roles.png`, `hw7_agent_task_a_search_detail.png`,
 `hw7_agent_tasks_bc_json_derived.png`,
 `hw7_agent_nonexistent_id_recovery.png`,
+`hw7_lint_failure.png`, `hw7_lint_fix_pass.png`,
+`hw7_precommit_successful_commit.png`,
 `hw7_bikeshare_membership_wins.png`, `hw7_bikeshare_payg_wins.png`,
 `hw7_prompt_injection_defenses.png`, and
 `hw7_file_tools_safety_gate.png`. No Task B completion screenshot exists, so
 the successful Task B result is documented from raw evidence rather than a
 visual capture. The JSON-derived Task B/C screenshot is included; the older
 typed summary screenshot and legacy failure screenshots are preserved on disk
-but excluded from the regenerated PDFs. The lint/pre-commit terminal screenshot
-is still pending manual capture; no successful commit screenshot is claimed.
+but excluded from the regenerated PDFs. The lint/pre-commit demonstration is
+shown by the three temporary-demo screenshots listed above.
 
 Manual capture commands for replacement evidence:
 
