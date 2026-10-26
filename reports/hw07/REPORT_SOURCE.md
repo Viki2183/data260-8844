@@ -5,11 +5,11 @@ SID4: 8844
 Domain: open-source package vulnerabilities  
 Repository: https://github.com/Viki2183/data260-8844  
 Collaborator-access confirmation: `Sbnikitha`, `supriyaselvanganesan` - pending submission confirmation.  
-Final tagged commit: `0fa989c4b326c9610ba4f98270d7838a9dfeb995`. Commit 1,
-`024a997da55785ce327698b343cf524e5500c5a5`, contains the final HW7 artifacts;
-`verification.json` records that parent hash. Commit 2,
-`0fa989c4b326c9610ba4f98270d7838a9dfeb995`, contains `verification.json`, and
-annotated `hw7` points to Commit 2. No GitHub push has occurred.  
+Final tagged commit is the peeled target of the annotated local `hw7` tag.
+Commit 1 contains the final HW7 artifacts; `verification.json` records that
+parent hash. Commit 2 contains `verification.json`, and annotated `hw7` points
+to Commit 2. Exact current hashes are verified in Git metadata and
+`verification.json` after packaging. No GitHub push has occurred.  
 
 ## Configuration and hardware
 
@@ -675,6 +675,4 @@ to Commit 2. No GitHub push has occurred.
 ## Submission packaging status
 
 `verification.json` records Commit 1 and passed the offline smoke checks. The
-the existing local `hw7` tag points to Commit 2. This PDF correction is a new
-working-tree change after that tag and therefore requires a later packaging
-commit/tag update. A GitHub push remains unperformed.
+existing local `hw7` tag points to Commit 2. A GitHub push remains unperformed.
