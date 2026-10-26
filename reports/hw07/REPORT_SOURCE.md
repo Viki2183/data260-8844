@@ -4,6 +4,7 @@ Student: Vrishin KunnathamParambath
 SID4: 8844  
 Domain: open-source package vulnerabilities  
 Repository: https://github.com/Viki2183/data260-8844  
+Final tagged tree: https://github.com/Viki2183/data260-8844/tree/hw7  
 Collaborator-access confirmation: `Sbnikitha`, `supriyaselvanganesan` - pending submission confirmation.  
 Final tagged commit is the peeled target of the annotated local `hw7` tag.
 Commit 1 contains the final HW7 artifacts; `verification.json` records that
@@ -662,6 +663,16 @@ state, branches, tags, `.hw6-chrome-pdf-profile*`, and `MEMORY.md.before-hw6`
 remain preserved. The verifier-generated `verification.json` records Commit 1,
 Commit 2 contains the verification metadata, and the annotated `hw7` tag points
 to Commit 2. No GitHub push has occurred.
+
+## Git packaging and submission status
+
+Commit 1 contains the final HW7 artifacts. `verification.json` records Commit
+1. Commit 2 contains `verification.json`, and the annotated `hw7` tag points to
+Commit 2. The final tag target is verified from Git metadata after Commit 2.
+A commit cannot contain its own final hash because changing the hash would
+change the commit itself. The repository URL is
+`https://github.com/Viki2183/data260-8844`, and the final tagged tree URL is
+`https://github.com/Viki2183/data260-8844/tree/hw7`. No GitHub push has occurred.
 
 ## Submission packaging status
 
