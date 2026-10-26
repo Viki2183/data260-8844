@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import tempfile
 from pathlib import Path
 from types import SimpleNamespace
@@ -130,11 +131,16 @@ def run() -> list[str]:
     )
     passed.append("bike-share recommendation")
 
-    course_sandbox_parent = Path(__file__).resolve().parents[1]
+    configured_temp = os.environ.get("HW7_VERIFY_TEMP_DIR")
+    course_sandbox_parent = (
+        Path(configured_temp) if configured_temp else Path(__file__).resolve().parents[1]
+    )
     with tempfile.TemporaryDirectory(
         dir=course_sandbox_parent, prefix=".hw7-course-sandbox-"
     ) as temporary:
         root = Path(temporary)
+        if configured_temp:
+            assert root.parent == course_sandbox_parent.resolve()
         write_file("a.py", "DEBUG = True\n", root)
         write_file("b.py", "INFO = True\n", root)
         assert glob_files("*.py", root) == ["a.py", "b.py"]
