@@ -5,7 +5,10 @@ SID4: 8844
 Domain: open-source package vulnerabilities  
 Repository: https://github.com/Viki2183/data260-8844  
 Collaborator-access confirmation: `Sbnikitha`, `supriyaselvanganesan` - pending submission confirmation.  
-Existing local tag: `hw7` points to `b937f0eada798f7bdb46e9ab98875b161cff9848`. This report revision is not included in that tag yet and requires a later approved packaging commit.  
+Final packaging uses two local commits: `verification.json` records the artifact
+commit, and the annotated `hw7` tag points to the following metadata commit.
+Exact hashes are recorded in Git metadata and `verification.json` after
+packaging. No GitHub push has occurred.  
 
 ## Configuration and hardware
 
@@ -171,6 +174,39 @@ the search observation. A final answer before the required sequence yields
 `human_review` after the repair budget is exhausted. Other bounded stop reasons
 are `success` and `budget_exhausted`.
 
+The following focused excerpts are copied from the current implementation,
+not pseudocode:
+
+```python
+def run_agent(user_input, model, tools, max_steps=8, max_repairs=1,
+              required_tool_sequence=None, required_tool_inputs=None):
+    started = time.perf_counter()
+    messages = [{"role": "user", "content": user_input}]
+    trace, repairs, calls = [], 0, 0
+    for step in range(1, max_steps + 1):
+        decision = model.complete(messages)
+        action, name, inputs = _validate_decision(decision, tools)
+        inputs = _normalize_inputs(name, inputs)
+        observation = _normalize_observation(tools[name](**inputs))
+        calls += 1
+        trace.append({"step": step, "tool": name, "inputs": inputs,
+                      "observation": observation})
+        messages.append({"role": "tool",
+                         "tool_call_id": f"hw7-tool-call-{calls}",
+                         "content": json.dumps(observation, default=str)})
+        messages.append({"role": "user",
+                         "content": "Continue or provide the final answer as JSON."})
+    return AgentResult("The tool-call budget was exhausted.",
+                       "budget_exhausted", trace, calls, repairs,
+                       (time.perf_counter() - started) * 1000).as_dict()
+```
+
+The fixed-plan adapter-error branch records an `adapter_error`, executes the
+next declared read-only handler once, records
+`repair_reason="bounded controller recovery after adapter failure"`, and
+returns `success` only after every declared handler succeeds. It does not
+retry the model.
+
 The loop logs tool name, inputs, observation, tool-call count, repair count,
 latency, final answer, and stop reason. It does not store hidden reasoning.
 
@@ -226,7 +262,7 @@ also recorded in `METRICS.md` and the run chronology is recorded in
 | Median latency | 12,423.832 ms |
 | Average tool calls | 0 |
 
-For reliability, “well-formed” means that the model produced a valid tool call
+For reliability, "well-formed" means that the model produced a valid tool call
 when a tool was required. Because the recorded attempts produced zero executed
 tool calls, the before-repair rate is 0/20, not 20/20. The after-repair rate is
 also 0/20; all 20 stopped at `human_review` and none stopped at
@@ -245,6 +281,55 @@ Reflections are isolated within a run and passed as a model-factory context;
 they are not instructions, permissions, role definitions, or safety gates. The
 tool registry and authorization policy remain fixed. Hidden chain-of-thought is
 not stored.
+
+The actual verifier and Reflexion control excerpts are:
+
+```python
+def verify_task(result, required_tools, required_tool_sequence=None):
+    used_sequence = [item.get("tool") for item in result.get("trace", [])]
+    used = set(used_sequence)
+    sequence_ok = (required_tool_sequence is None or
+                   used_sequence[:len(required_tool_sequence)] ==
+                   required_tool_sequence)
+    return {
+        "success": (result.get("stop_reason") == "success"
+                    and required_tools.issubset(used)
+                    and sequence_ok
+                    and (required_tool_sequence is None or
+                         len(used_sequence) >= len(required_tool_sequence))),
+        "unsupported_claims": not bool(result.get("answer", "").strip()),
+        "missing_tools": sorted(required_tools - used),
+        "missing_sequence": (required_tool_sequence[len(used_sequence):]
+                              if required_tool_sequence and not sequence_ok else []),
+    }
+
+def reflexion_run(user_input, model_factory, tools, required_tools,
+                  max_retries=2, required_tool_sequence=None,
+                  required_tool_inputs=None):
+    reflections, reflection = [], None
+    for attempt in range(max_retries + 1):
+        result = run_agent(user_input, model_factory(reflection), tools,
+                           required_tool_sequence=required_tool_sequence,
+                           required_tool_inputs=required_tool_inputs)
+        check = verify_task(result, required_tools, required_tool_sequence)
+        if check["success"]:
+            result.update({"attempt": attempt + 1,
+                           "reflections": reflections, "verifier": check})
+            return result
+        if attempt == max_retries:
+            result.update({"stop_reason": "human_review",
+                           "attempt": attempt + 1,
+                           "reflections": reflections, "verifier": check})
+            return result
+        missing = ", ".join(check["missing_tools"])
+        missing = missing or ", ".join(check.get("missing_sequence", []))
+        reflection = (f"Failed because required tools were missing: {missing}. "
+                      "Use the missing tool chain before finalizing.")
+        reflections.append({"attempt": attempt + 1,
+                            "evidence": {"trace": result.get("trace", []),
+                                         "verifier": check},
+                            "reflection": reflection})
+```
 
 Stored reflection evidence is concise and tied to the triggering verifier:
 
@@ -340,6 +425,14 @@ Common response shape:
 
 ```json
 {"success": true, "data": {}, "error": null, "source": "...", "ts": "..."}
+```
+
+Explicit tool input schemas:
+
+```json
+{"tool": "csv_sql", "input": {"csv_text": "string", "sql": "string"}}
+{"tool": "policy_retriever", "input": {"url": "string", "query": "string", "k": "integer (optional)"}}
+{"tool": "calculator", "input": {"expression": "string", "units": "string (optional)"}}
 ```
 
 The official pricing URL recorded in evidence is
@@ -509,15 +602,35 @@ captions: `hw7_jwt_login_reader_200.png`, `hw7_jwt_login_invalid_401.png`,
 `hw7_reader_create_403.png`, `hw7_writer_create_201.png`,
 `hw7_writer_delete_403.png`, `hw7_moderator_delete_success.png`,
 `hw7_mysql_users_roles.png`, `hw7_agent_task_a_search_detail.png`,
-`hw7_agent_task_c_reflexion_limitation.png`,
+`hw7_agent_tasks_bc_json_derived.png`,
 `hw7_agent_nonexistent_id_recovery.png`,
-`hw7_agent_reliability_reflexion.png`,
 `hw7_bikeshare_membership_wins.png`, `hw7_bikeshare_payg_wins.png`,
 `hw7_prompt_injection_defenses.png`, and
 `hw7_file_tools_safety_gate.png`. No Task B completion screenshot exists, so
 the successful Task B result is documented from raw evidence rather than a
-visual capture. The lint/pre-commit terminal screenshot is also pending manual
-capture; no successful commit screenshot is claimed.
+visual capture. The JSON-derived Task B/C screenshot is included; the older
+typed summary screenshot and legacy failure screenshots are preserved on disk
+but excluded from the regenerated PDFs. The lint/pre-commit terminal screenshot
+is still pending manual capture; no successful commit screenshot is claimed.
+
+Manual capture commands for replacement evidence:
+
+```powershell
+Set-Location C:\Projects\data260-8844
+$b = Get-Content reports/hw07/raw/hw7_task_b_final_smoke.json -Raw | ConvertFrom-Json
+$c = Get-Content reports/hw07/raw/hw7_task_c_final_smoke_v2.json -Raw | ConvertFrom-Json
+Write-Host "Student: Vrishin KunnathamParambath | SID4: 8844"
+Write-Host "Task B actual sequence: $($b.actual_sequence -join ' -> ')"
+Write-Host "Task B tool calls: $($b.tool_calls) | stop: $($b.stop_reason) | success: $($b.success)"
+Write-Host "Task B database writes: $($b.database_writes)"
+Write-Host "Task B raw evidence: reports/hw07/raw/hw7_task_b_final_smoke.json"
+Write-Host "Task C actual sequence: $($c.actual_sequence -join ' -> ')"
+Write-Host "Task C tool calls: $($c.tool_calls) | stop: $($c.stop_reason) | success: $($c.success)"
+Write-Host "Task C classification: $($c.failure_classification)"
+Write-Host "Task C adapter HTTP 500: $($c.model_adapter_http_500) | controller repair: $($c.controller_repair)"
+Write-Host "Task C database writes: $($c.database_writes)"
+Write-Host "Task C raw evidence: reports/hw07/raw/hw7_task_c_final_smoke_v2.json"
+```
 
 ## Tests, limitations, and preservation
 
@@ -530,13 +643,13 @@ the repository `code` package shadowing the standard-library `code` module.
 
 Existing HW1-HW6 source changes, reports, screenshots, raw evidence, database
 state, branches, tags, `.hw6-chrome-pdf-profile*`, and `MEMORY.md.before-hw6`
-remain preserved. This report does not create `verification.json`. Commit 1,
-the verifier-generated `verification.json`, Commit 2, and the annotated `hw7`
-tag remain the next packaging steps. A GitHub push remains pending approval.
+remain preserved. The verifier-generated `verification.json` records Commit 1,
+Commit 2 contains the verification metadata, and the annotated `hw7` tag points
+to Commit 2. No GitHub push has occurred.
 
 ## Submission packaging status
 
 `verification.json` records Commit 1 and passed the offline smoke checks. The
-existing local `hw7` tag points to Commit 2, but this report revision is not yet
-included in that tag. A new approved packaging commit/tag update is required
-after this PDF correction. A GitHub push remains unperformed.
+the existing local `hw7` tag points to Commit 2. This PDF correction is a new
+working-tree change after that tag and therefore requires a later packaging
+commit/tag update. A GitHub push remains unperformed.
