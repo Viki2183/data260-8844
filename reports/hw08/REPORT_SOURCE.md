@@ -6,9 +6,10 @@ Domain: open-source package vulnerabilities
 Repository: https://github.com/Viki2183/data260-8844  
 Working branch: `hw6-development`  
 Historical HW7 tag: `hw7`, commit `238163e119dd9fc83c945f287e109d6e2d024fec`  
+Final tagged tree: https://github.com/Viki2183/data260-8844/tree/hw8  
 Assigned domain: Open-source package vulnerabilities  
 Collaborators with repository access: `Sbnikitha` and `supriyaselvanganesan`.  
-HW8 artifact commit: `bda1110c82293aac22d16951f35cff5b368f825a`. The existing `hw8` tag points to packaging commit `dfd3d31511d2af410288fa320b4e567276aef352`, which is different from the artifact commit.
+HW8 artifact commit: `bda1110c82293aac22d16951f35cff5b368f825a`. The final `hw8` tag target is verified in Git metadata after packaging.
 
 This report uses the official HW8 requirements and the preserved HW8 source,
 raw evidence, screenshots, run log, metrics, and verification files. Existing
