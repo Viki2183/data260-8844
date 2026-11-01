@@ -37,6 +37,7 @@ from hw08_consumer_death_harness import (
     wait_for_writer_group,
 )
 from hw08_poison_harness import parse_harness_args as parse_poison_harness_args
+from hw08_before_fix_harness import parse_args as parse_before_fix_args
 from homework_demo import parse_args as parse_homework_demo_args
 from hw08_agent_demo import parse_args as parse_agent_demo_args
 from hw08_ordering_harness import parse_args as parse_ordering_args
@@ -118,6 +119,24 @@ class Hw08OfflineTests(unittest.TestCase):
         self.assertEqual(first["entity_id"], second["entity_id"])
         self.assertTrue(second["metadata"]["duplicate"])
         self.assertEqual(len(store.entities), 1)
+
+    def test_fix_disabled_duplicate_creates_two_entities(self) -> None:
+        store = EntityStore()
+        message = self.request(CREATE_OPERATION, VALID_DATA)
+        first = process_entity_message(
+            message, store, uuid_factory=lambda: uuid.UUID(int=11), enable_idempotency=False
+        )
+        second = process_entity_message(
+            message, store, uuid_factory=lambda: uuid.UUID(int=12), enable_idempotency=False
+        )
+        self.assertNotEqual(first["entity_id"], second["entity_id"])
+        self.assertEqual(len(store.entities), 2)
+
+    def test_before_fix_harness_argument_modes(self) -> None:
+        duplicate = parse_before_fix_args(["--mode", "duplicate", "--validate-args"])
+        poison = parse_before_fix_args(["--mode", "poison", "--validate-args"])
+        self.assertEqual(duplicate.mode, "duplicate")
+        self.assertEqual(poison.mode, "poison")
 
     def test_get_round_trip_and_missing_entity(self) -> None:
         store = EntityStore()

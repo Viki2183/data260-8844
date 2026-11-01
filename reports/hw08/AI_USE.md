@@ -4,7 +4,7 @@ Student: Vrishin KunnathamParambath | SID4: 8844
 
 Repository: https://github.com/Viki2183/data260-8844  
 Collaborators with repository access: `Sbnikitha` and `supriyaselvanganesan`  
-HW8 artifact commit: `bda1110c82293aac22d16951f35cff5b368f825a`; final tag: `hw8`
+HW8 artifact commit: `bda1110c82293aac22d16951f35cff5b368f825a`; existing `hw8` tag target: `dfd3d31511d2af410288fa320b4e567276aef352`
 
 ## (1) What I used AI for versus what I did myself
 
@@ -17,31 +17,30 @@ myself.
 
 ## (2) One incorrect output and one independent verification
 
-The first hand-built PDF opened as a blank document. I independently verified
-the generated PDF by opening it, checking that it rendered pages, checking the
-`%PDF-` header, and searching its extracted text. I also independently checked
-the live Docker logs, Kafka topic metadata, JSONL/CSV evidence, offline tests,
-and the final verification output.
+The Kafka poison evidence initially omitted the required post-DLT check that a
+later valid task was processed. I independently verified the corrected live2
+DLT run and the separate fix-disabled unbounded-loop run. I also checked the
+live Docker logs, Kafka topic metadata, JSONL/CSV evidence, offline tests, and
+the final verification output.
 
 ## (3) How I detected the problem
 
-The blank viewer result did not match the expected report content. The PDF
-render check exposed the problem before submission. Separately, comparing the
-live poison writer log with the harness output showed that the later-valid
-message check had to be run explicitly; the corrected live2 run records that
-message reaching `s8844_drafts` with `blocked_by_poison=false`.
+Comparing the poison harness output with the Writer log showed that the
+later-valid message needed an explicit observation after DLT publication. The
+fix-disabled environment flag also had to be set before container creation so
+the unbounded-loop behavior was measured correctly.
 
 ## (4) What I changed and why it works now
 
-I replaced the unreliable hand-built PDF output with Chrome headless rendering,
-then verified both HW8 PDFs. I added the isolated FastAPI service and
+I ran the bounded DLT path with the later-valid check, captured the Writer and
+topic logs, and kept the before-fix loop in a separate evidence file. I added
+the isolated FastAPI service and
 `homework_demo.py` live evidence, structured full-stage agent logs, the
 post-DLT later-valid check, and normalized consumer-death evidence that records
-the real Writer crash, Kafka redelivery, output, commit, and restart. The
-verifier now validates the corrected live2 evidence paths and records the
-configuration and packaging metadata. Historical before-fix runs were not
-captured, so I did not invent them.
+the real Writer crash, Kafka redelivery, output, commit, and restart. I also
+captured separate fix-disabled duplicate, consumer-death, and poison runs so
+the comparison table uses measured before/after behavior. The verifier now
+validates the corrected live2 evidence paths and records the configuration and
+packaging metadata.
 
-No hidden chain-of-thought is stored or reported. Evidence contains observable
-requests, responses, topics, partitions, offsets, timestamps, process names,
-outcomes, and safe bounded failure metadata only.
+No hidden chain-of-thought is stored or reported.

@@ -34,6 +34,7 @@ services:
     command: python code/hw08_entity_worker.py
     environment:
       KAFKA_BOOTSTRAP_SERVERS: hw08-kafka:9092
+      HW8_DISABLE_IDEMPOTENCY: "${HW8_DISABLE_IDEMPOTENCY:-0}"
     depends_on:
       hw08-kafka:
         condition: service_healthy
@@ -72,6 +73,8 @@ services:
     environment:
       KAFKA_BOOTSTRAP_SERVERS: hw08-kafka:9092
       HW8_CRASH_BEFORE_COMMIT_ONCE: "${HW8_WRITER_1_CRASH_BEFORE_COMMIT_ONCE:-0}"
+      HW8_COMMIT_BEFORE_PROCESS: "${HW8_WRITER_1_COMMIT_BEFORE_PROCESS:-0}"
+      HW8_UNBOUNDED_POISON: "${HW8_WRITERS_UNBOUNDED_POISON:-0}"
       HW8_CRASH_MARKER: /tmp/hw08-writer-1-crash-used
       HW8_WRITER_NAME: writer-1
     depends_on:
@@ -86,6 +89,7 @@ services:
     environment:
       KAFKA_BOOTSTRAP_SERVERS: hw08-kafka:9092
       HW8_WRITER_NAME: writer-2
+      HW8_UNBOUNDED_POISON: "${HW8_WRITERS_UNBOUNDED_POISON:-0}"
     depends_on:
       hw08-kafka:
         condition: service_healthy

@@ -1,0 +1,28 @@
+{
+  "event": "final_received",
+  "topic": "s8844_final",
+  "partition": 1,
+  "offset": 0,
+  "process": "reviewer",
+  "correlation_id": "hw8-8844-agent-live2-001",
+  "message": {
+    "message_type": "reviewer_message",
+    "correlation_id": "hw8-8844-agent-live2-001",
+    "attempt": 1,
+    "timestamp": "2026-11-01T07:59:22.725617Z",
+    "data": {
+      "answer": "Draft based on Plan: answer Explain how Kafka coordinates vulnerability-report workers.",
+      "status": "approved"
+    },
+    "metadata": {
+      "processed_timestamp": "2026-11-01T07:59:22.748432Z",
+      "source_topic": "s8844_drafts",
+      "source_partition": 1,
+      "source_offset": 0,
+      "stage": "reviewer",
+      "writer_consumer": "reviewer",
+      "producer_application_retries": 0,
+      "producer_resend_count": 0
+    }
+  }
+}

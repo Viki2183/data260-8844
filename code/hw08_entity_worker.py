@@ -6,6 +6,7 @@ Kafka consumption and offset commits are deferred to a later phase.
 from __future__ import annotations
 
 import json
+import os
 import uuid
 from collections.abc import Callable, Mapping
 from typing import Any
@@ -29,17 +30,20 @@ def process_entity_message(
     store: EntityStore,
     *,
     uuid_factory: Callable[[], uuid.UUID] = uuid.uuid4,
+    enable_idempotency: bool = True,
 ) -> dict[str, Any]:
-    cached = store.get_cached_response(message)
-    if cached is not None:
-        cached["metadata"] = {**cached.get("metadata", {}), "duplicate": True}
-        return cached
+    if enable_idempotency:
+        cached = store.get_cached_response(message)
+        if cached is not None:
+            cached["metadata"] = {**cached.get("metadata", {}), "duplicate": True}
+            return cached
 
     operation = message.get("operation")
     data = message.get("data")
     if not isinstance(data, Mapping):
         response = build_response(message, success=False, error="data must be an object")
-        store.cache_response(message, response)
+        if enable_idempotency:
+            store.cache_response(message, response)
         return response
 
     if operation in {CREATE_ENTITY, DOMAIN_CREATE_OPERATION}:
@@ -69,17 +73,29 @@ def process_entity_message(
     else:
         response = build_response(message, success=False, error="Unknown operation")
 
-    store.cache_response(message, response)
+    if enable_idempotency:
+        store.cache_response(message, response)
     return response
 
 
 class EntityKafkaWorker:
     """Live Kafka adapter with manual commit after response publication."""
 
-    def __init__(self, producer: Any, consumer: Any, store: EntityStore | None = None) -> None:
+    def __init__(
+        self,
+        producer: Any,
+        consumer: Any,
+        store: EntityStore | None = None,
+        enable_idempotency: bool | None = None,
+    ) -> None:
         self.producer = producer
         self.consumer = consumer
         self.store = store or EntityStore()
+        self.enable_idempotency = (
+            os.getenv("HW8_DISABLE_IDEMPOTENCY", "0") != "1"
+            if enable_idempotency is None
+            else enable_idempotency
+        )
 
     async def process_record(
         self,
@@ -103,7 +119,12 @@ class EntityKafkaWorker:
             ),
             flush=True,
         )
-        response = process_entity_message(message, self.store, uuid_factory=uuid_factory)
+        response = process_entity_message(
+            message,
+            self.store,
+            uuid_factory=uuid_factory,
+            enable_idempotency=self.enable_idempotency,
+        )
         metadata = await self.producer.send_and_wait(
             ENTITY_RESPONSES_TOPIC, serialize_message(response)
         )
@@ -117,6 +138,8 @@ class EntityKafkaWorker:
                     "correlation_id": response.get("correlation_id"),
                     "operation": response.get("operation"),
                     "response": response,
+                    "entity_store_count": len(self.store.entities),
+                    "idempotency_enabled": self.enable_idempotency,
                 },
                 sort_keys=True,
             ),

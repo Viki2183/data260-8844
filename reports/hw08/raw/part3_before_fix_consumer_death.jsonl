@@ -1,0 +1,5 @@
+{"event_type":"task_published","topic":"s8844_tasks","partition":0,"offset":0,"correlation_id":"hw8-8844-consumer-death-001","readiness_method":"aiokafka","producer_retries":0}
+{"event_type":"message_received","process":"writer-1","topic":"s8844_tasks","partition":0,"offset":0,"correlation_id":"hw8-8844-consumer-death-001","timestamp":"2026-11-01T08:36:24.224430+00:00","committed":false}
+{"event_type":"before_fix_offset_committed_before_process","process":"writer-1","topic":"s8844_tasks","partition":0,"offset":0,"correlation_id":"hw8-8844-consumer-death-001","timestamp":"2026-11-01T08:36:24.228445+00:00","committed":true}
+{"event_type":"pre_commit_crash","process":"writer-1","topic":"s8844_tasks","partition":0,"offset":0,"correlation_id":"hw8-8844-consumer-death-001","timestamp":"2026-11-01T08:36:24.230234+00:00","committed":false,"crash_hook":"os._exit(42)"}
+{"event_type":"writer_terminated","process":"writer-1","correlation_id":"hw8-8844-consumer-death-001","exit_code":42,"container_status":"Exited (42)","redelivery_observed":false,"output_observed":false}

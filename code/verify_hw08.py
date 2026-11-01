@@ -28,6 +28,9 @@ CONSUMER_DEATH_EVIDENCE = ROOT / "reports" / "hw08" / "raw" / "part3_consumer_de
 CONSUMER_DEATH_LIVE2_EVIDENCE = ROOT / "reports" / "hw08" / "raw" / "part3_consumer_death_live2.jsonl"
 ORDERING_UNKEYED_EVIDENCE = ROOT / "reports" / "hw08" / "raw" / "part3_ordering_unkeyed.jsonl"
 ORDERING_KEYED_EVIDENCE = ROOT / "reports" / "hw08" / "raw" / "part3_ordering_keyed.jsonl"
+BEFORE_FIX_DUPLICATE_EVIDENCE = ROOT / "reports" / "hw08" / "raw" / "part3_before_fix_duplicate.jsonl"
+BEFORE_FIX_CONSUMER_DEATH_EVIDENCE = ROOT / "reports" / "hw08" / "raw" / "part3_before_fix_consumer_death.jsonl"
+BEFORE_FIX_POISON_EVIDENCE = ROOT / "reports" / "hw08" / "raw" / "part3_before_fix_poison_live3.jsonl"
 
 
 def read_evidence_text(path: Path) -> str:
@@ -36,6 +39,36 @@ def read_evidence_text(path: Path) -> str:
     if raw.startswith(b"\xff\xfe"):
         return raw.decode("utf-16")
     return raw.decode("utf-8")
+
+
+def read_before_fix(path: Path, expected_event: str) -> dict[str, object]:
+    result: dict[str, object] = {
+        "evidence_file": str(path.relative_to(ROOT)),
+        "recorded": path.exists(),
+        "passed": False,
+        "status": "unavailable",
+    }
+    if not path.exists():
+        return result
+    try:
+        records = [
+            json.loads(line)
+            for line in read_evidence_text(path).splitlines()
+            if line.strip()
+        ]
+    except (OSError, json.JSONDecodeError) as exc:
+        result["error"] = str(exc)
+        return result
+    result_record = next((record for record in records if record.get("event_type") == expected_event), {})
+    passed = bool(result_record.get("passed"))
+    if expected_event == "before_fix_duplicate_result":
+        passed = passed and result_record.get("unique_uuid_count") == 2 and result_record.get("duplicate_side_effect_prevented") is False
+    elif expected_event == "before_fix_poison_result":
+        passed = passed and result_record.get("later_valid_blocked") is True and result_record.get("dead_letter_published") is False
+    elif expected_event == "writer_terminated":
+        passed = result_record.get("exit_code") == 42 and result_record.get("redelivery_observed") is False and result_record.get("output_observed") is False
+    result.update({"passed": passed, "status": "passed" if passed else "failed", "record_count": len(records)})
+    return result
 
 
 def run_offline_smoke() -> list[dict[str, object]]:
@@ -540,6 +573,9 @@ def main() -> int:
     poison_dead_letter = read_poison_dead_letter()
     ordering_unkeyed = read_ordering(ORDERING_UNKEYED_EVIDENCE, keyed=False)
     ordering_keyed = read_ordering(ORDERING_KEYED_EVIDENCE, keyed=True)
+    before_fix_duplicate = read_before_fix(BEFORE_FIX_DUPLICATE_EVIDENCE, "before_fix_duplicate_result")
+    before_fix_consumer_death = read_before_fix(BEFORE_FIX_CONSUMER_DEATH_EVIDENCE, "writer_terminated")
+    before_fix_poison = read_before_fix(BEFORE_FIX_POISON_EVIDENCE, "before_fix_poison_result")
     payload = {
         "homework": 8,
         "sid4": 8844,
@@ -551,8 +587,11 @@ def main() -> int:
         "compose_project": "data260-hw8",
         "host_bootstrap": "localhost:29092",
         "docker_bootstrap": "hw08-kafka:9092",
-        "commit_hash": None,
-        "commit_hash_status": "inserted after final packaging commit",
+        "commit_hash": "bda1110c82293aac22d16951f35cff5b368f825a",
+        "commit_hash_status": "HW8 artifact commit; tag target is recorded separately",
+        "artifact_commit_hash": "bda1110c82293aac22d16951f35cff5b368f825a",
+        "tag_name": "hw8",
+        "tag_commit_hash": "dfd3d31511d2af410288fa320b4e567276aef352",
         "model_configuration": {"model": "qwen3:8b", "mode": "offline foundation"},
         "seed": 8844,
         "verify_seed": 268844,
@@ -568,6 +607,9 @@ def main() -> int:
         "live_poison_dead_letter": poison_dead_letter,
         "live_ordering_unkeyed": ordering_unkeyed,
         "live_ordering_keyed": ordering_keyed,
+        "before_fix_duplicate_delivery": before_fix_duplicate,
+        "before_fix_consumer_death": before_fix_consumer_death,
+        "before_fix_poison": before_fix_poison,
         "overall_pass": (
             offline_pass
             and (not live_smoke["recorded"] or bool(live_smoke["passed"]))
@@ -579,6 +621,9 @@ def main() -> int:
             and (not poison_dead_letter["recorded"] or bool(poison_dead_letter["passed"]))
             and (not ordering_unkeyed["recorded"] or bool(ordering_unkeyed["passed"]))
             and (not ordering_keyed["recorded"] or bool(ordering_keyed["passed"]))
+            and (not before_fix_duplicate["recorded"] or bool(before_fix_duplicate["passed"]))
+            and (not before_fix_consumer_death["recorded"] or bool(before_fix_consumer_death["passed"]))
+            and (not before_fix_poison["recorded"] or bool(before_fix_poison["passed"]))
         ),
         "live_results_claimed": bool(live_smoke["passed"]),
         "live_kafka_smoke_run": bool(live_smoke["recorded"]),
@@ -588,8 +633,8 @@ def main() -> int:
         "poison_dead_letter_run": bool(poison_dead_letter["recorded"]),
         "ordering_unkeyed_run": bool(ordering_unkeyed["recorded"]),
         "ordering_keyed_run": bool(ordering_keyed["recorded"]),
-        "live_kafka_experiments_run": False,
-        "docker_experiments_run": False,
+        "live_kafka_experiments_run": True,
+        "docker_experiments_run": True,
         "database_experiments_run": False,
         "model_experiments_run": False,
     }

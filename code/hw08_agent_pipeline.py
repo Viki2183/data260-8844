@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import asyncio
 import json
 import os
 from datetime import datetime, timezone
@@ -22,6 +23,8 @@ from hw08_messages import deserialize_message, serialize_message, utc_timestamp
 
 CRASH_HOOK_ENV = "HW8_CRASH_BEFORE_COMMIT_ONCE"
 CRASH_MARKER_ENV = "HW8_CRASH_MARKER"
+COMMIT_BEFORE_PROCESS_ENV = "HW8_COMMIT_BEFORE_PROCESS"
+UNBOUNDED_POISON_ENV = "HW8_UNBOUNDED_POISON"
 
 
 def stage_event(
@@ -168,8 +171,42 @@ async def run_stage(
                 ),
                 flush=True,
             )
+            if stage == "writer" and os.getenv(COMMIT_BEFORE_PROCESS_ENV) == "1":
+                await consumer.commit()
+                print(
+                    json.dumps(
+                        stage_event(
+                            "before_fix_offset_committed_before_process",
+                            stage=stage,
+                            record=record,
+                            message=message,
+                            committed=True,
+                        )
+                    ),
+                    flush=True,
+                )
             poison_error_type = classify_poison_message(message)
             if poison_error_type is not None:
+                if os.getenv(UNBOUNDED_POISON_ENV) == "1":
+                    attempt = int(message.get("attempt", 1))
+                    while True:
+                        print(
+                            json.dumps(
+                                poison_event(
+                                    "before_fix_poison_retry_loop",
+                                    stage=stage,
+                                    record=record,
+                                    message=message,
+                                    attempt=attempt,
+                                    error_type=poison_error_type,
+                                    retry_scheduled=True,
+                                    bounded=False,
+                                )
+                            ),
+                            flush=True,
+                        )
+                        attempt += 1
+                        await asyncio.sleep(0.5)
                 failures = poison_attempt_records(
                     message,
                     error_type=poison_error_type,

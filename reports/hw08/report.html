@@ -15,13 +15,13 @@ table { border-collapse: collapse; width: 100%; margin: 7pt 0 11pt; font-size: 8
 th { background: #dcecf7; text-align: left; font-weight: bold; }
 th, td { border: 1px solid #91a8b7; padding: 4pt; vertical-align: top; }
 code, pre { font-family: Consolas, monospace; font-size: 8.7pt; }
-pre { background: #f4f7f9; border-left: 4px solid #3c7597; padding: 7pt; white-space: pre-wrap; }
+pre { background: #f4f7f9; border-left: 4px solid #3c7597; padding: 7pt; white-space: pre-wrap; break-inside: avoid; page-break-inside: avoid; }
 .cover { min-height: 8.75in; display: flex; flex-direction: column; justify-content: center; }
 .meta { border-left: 5px solid #245a7d; padding: 8pt 12pt; background: #f2f7fa; }
 .note { background: #fff5d9; border: 1px solid #d5b45c; padding: 7pt; }
 .pagebreak { break-before: page; }
 .shot { width: 100%; max-height: 5.35in; object-fit: contain; border: 1px solid #7c909d; margin: 4pt 0 8pt; }
-.shot-header { font-family: Consolas, monospace; font-weight: bold; color: #1d5d35; margin-top: 7pt; }
+.shot-header { display: none; }
 .small { font-size: 9pt; color: #41525f; }
 a { color: #064f87; }
 </style>
@@ -35,7 +35,7 @@ a { color: #064f87; }
 <p><b>Repository:</b> <a href="https://github.com/Viki2183/data260-8844">https://github.com/Viki2183/data260-8844</a></p>
 <p><b>Branch:</b> <code>hw6-development</code></p>
 <p><b>Historical HW7:</b> tag <code>hw7</code>, commit <code>238163e119dd9fc83c945f287e109d6e2d024fec</code></p>
-<p><b>HW8 artifact commit:</b> <code>bda1110c82293aac22d16951f35cff5b368f825a</code>; final tag: <code>hw8</code></p>
+<p><b>HW8 artifact commit:</b> <code>bda1110c82293aac22d16951f35cff5b368f825a</code>. The existing <code>hw8</code> tag points to packaging commit <code>dfd3d31511d2af410288fa320b4e567276aef352</code>, which is different from the artifact commit.</p>
 <p><b>Collaborator access:</b> <code>Sbnikitha</code> and <code>supriyaselvanganesan</code></p>
 </div>
 <h2>0. Configuration</h2>
@@ -68,12 +68,12 @@ a { color: #064f87; }
 </table>
 <p>Validation requires non-empty package name, vulnerability ID, submitter email, and description; valid email syntax; a 26-character minimum description; one of Critical/High/Medium/Low severity; <code>termsAccepted=true</code>; and a non-negative integer version count.</p>
 <h3>Measured live result</h3>
-<p><code>homework_demo.py</code> ran against the captured FastAPI service at <code>http://127.0.0.1:8744</code>. CREATE correlation was <code>hw8-8844-live2-create-001</code>; GET correlation was <code>hw8-8844-live2-get-001</code>; generated UUID was <code>4e9d8b15-a4de-415c-82f0-e5f67123d12d</code>. The entity contained package <code>requests</code>, vulnerability <code>CVE-2026-0001</code>, severity <code>High</code>, submitter <code>student@example.com</code>, two affected versions, accepted terms, and the recorded description. Validation failure, unknown entity, and unknown operation responses each echoed their correlation ID.</p>
+<p><code>homework_demo.py</code> ran against the captured FastAPI service at <code>http://127.0.0.1:8744</code>. CREATE correlation was <code>hw8-8844-live2-create-001</code>; the CREATE response correlation was also <code>hw8-8844-live2-create-001</code>. GET correlation was <code>hw8-8844-live2-get-001</code>; the GET response correlation was also <code>hw8-8844-live2-get-001</code>. The generated UUID was <code>4e9d8b15-a4de-415c-82f0-e5f67123d12d</code>. The entity contained package <code>requests</code>, vulnerability <code>CVE-2026-0001</code>, severity <code>High</code>, submitter <code>student@example.com</code>, two affected versions, accepted terms, and the recorded description. Validation failure, unknown entity, and unknown operation responses each echoed their correlation ID.</p>
 <p>The captured service log contains <code>FastAPI server started at http://127.0.0.1:8744</code> and <code>Consumer is ready and listening on s8844_entity_requests</code>. The Docker snapshot shows Kafka, the entity worker, and the FastAPI service. Topic commands show the exact request/response names.</p>
 <p class="small">Evidence: <code>raw/part1_homework_demo_live2.jsonl</code>, <code>raw/part1_service_logs.log</code>, <code>raw/part1_docker_ps.txt</code>, <code>raw/part1_topic_commands.log</code>.</p>
-<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/13_live_docker_ps.png" alt="Captured Docker service status">
-<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/14_live_homework_demo.png" alt="Captured homework_demo.py output">
-<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/15_live_part1_flow.png" alt="Captured entity message flow">
+<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/24_live_docker_topics.png" alt="Captured Docker ps and Kafka topic description">
+<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/21_live_part1_complete_flow.png" alt="Captured homework_demo.py output and entity data">
+<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/27_live_part1_kafka_flow.png" alt="Untruncated CREATE and GET Kafka message flow">
 
 <h2>2. Planner, Writer, and Reviewer pipeline</h2>
 <table><tr><th>Process</th><th>Input</th><th>Output</th></tr>
@@ -81,19 +81,31 @@ a { color: #064f87; }
 <tr><td>Writer</td><td><code>s8844_tasks</code></td><td><code>s8844_drafts</code></td></tr>
 <tr><td>Reviewer</td><td><code>s8844_drafts</code></td><td><code>s8844_final</code></td></tr></table>
 <p>The corrected live run published one input with correlation ID <code>hw8-8844-agent-live2-001</code>. It was observed at <code>s8844_inbox</code> p0/o0, <code>s8844_tasks</code> p1/o0, <code>s8844_drafts</code> p1/o0, and <code>s8844_final</code> p1/o0. The final JSON message contained <code>status=approved</code> and an answer. The complete stage log shows each process receiving, publishing, and committing.</p>
-<p>Kafka helped coordinate the agents by providing durable topic boundaries, consumer-group assignment, explicit offsets, and independent restart/failure domains. Each process can be observed and scaled separately, while the correlation ID connects the journey without a shared in-process call stack.</p>
+<p>The actual final message was:</p>
+<pre>{
+  "message_type": "reviewer_message",
+  "correlation_id": "hw8-8844-agent-live2-001",
+  "data": {
+    "answer": "Draft based on Plan: answer Explain how Kafka coordinates vulnerability-report workers.",
+    "status": "approved"
+  },
+  "topic": "s8844_final",
+  "partition": 1,
+  "offset": 0
+}</pre>
+<p>Kafka helped coordinate the agents by providing durable topic boundaries, consumer-group assignment, explicit offsets, and independent restart/failure domains. Each process can be observed and scaled separately, while the correlation ID connects the journey without a shared in-process call stack. The compact screenshot notes the harmless topic-metadata warnings emitted before auto-creation; the processes then became ready and completed the journey.</p>
 <p>Topic verification recorded <code>s8844_inbox</code>, <code>s8844_tasks</code> with exactly two partitions, <code>s8844_drafts</code>, and <code>s8844_final</code>. No Ollama, MySQL, or JMeter call was made.</p>
-<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/16_live_agent_pipeline.png" alt="Captured Planner Writer Reviewer stage logs">
-<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/06_agent_final.png" alt="Final agent message">
+<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/31_live_pipeline_compact.png" alt="Cropped Planner Writer Reviewer stage log">
+<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/19_live_final_message.png" alt="Captured final s8844_final message">
 
 <h2>3. Failure handling and idempotency</h2>
 <h3>Measured behavior</h3>
 <table><tr><th>Experiment</th><th>Measured result</th></tr>
-<tr><td>Duplicate delivery</td><td>Intentional replay returned the same UUID; duplicate flag was true; derived entity-store count stayed 0 -> 1 -> 1.</td></tr>
-<tr><td>Consumer death</td><td>Writer 1 crashed before commit; the same p0/o0 was redelivered to Writer 2, which published and committed. Writer 1 restart readiness was logged. No exit code is claimed for the corrected run because it was not captured before recreation.</td></tr>
-<tr><td>Poison/DLT</td><td>Attempts 1-3 were bounded; DLT publication to <code>s8844_dead_letter</code> preceded source commit; a later valid message reached <code>s8844_drafts</code> with <code>blocked_by_poison=false</code>.</td></tr>
+<tr><td>Duplicate delivery</td><td>Before fix: idempotency disabled, two UUIDs, store count 1 then 2. After fix: same UUID, duplicate flag true, count 0 -> 1 -> 1.</td></tr>
+<tr><td>Consumer death</td><td>Before fix: offset committed before processing, Writer 1 exited 42, no redelivery/output. After fix: pre-commit crash, same p0/o0 redelivered to Writer 2, output and commit.</td></tr>
+<tr><td>Poison/DLT</td><td>Before fix: unbounded attempts reached 20 and blocked the later same-partition task. After fix: attempts 1-3, DLT before source commit, later valid output with <code>blocked_by_poison=false</code>.</td></tr>
 </table>
-<h3>Required implementation excerpts</h3>
+<div class="pagebreak"></div><h3>Required implementation excerpts</h3>
 <pre>def idempotency_key(message):
     data = message.get("data")
     data_entity_id = data.get("entity_id") if isinstance(data, Mapping) else None
@@ -101,47 +113,100 @@ a { color: #064f87; }
             str(message.get("correlation_id", "")),
             str(message.get("operation", "")),
             str(message.get("entity_id") or data_entity_id or ""))</pre>
+<pre>key = idempotency_key(message)
+if key in store.responses:
+    return deepcopy(store.responses[key])
+# only the first delivery creates the entity and caches its response
+store.responses[key] = deepcopy(response)</pre>
 <pre>await producer.send_and_wait(response_topic, serialize_message(response))
 await consumer.commit()  # commit only after successful output</pre>
-<pre>failures = poison_attempt_records(message, error_type=error_type, max_attempts=3)
-dead_letter = dead_letter_message(message, error_type=error_type, ...)
-await producer.send_and_wait("s8844_dead_letter", serialize_message(dead_letter))
-await consumer.commit()</pre>
+<pre>failures = poison_attempt_records(
+    message,
+    error_type=poison_error_type,
+    max_attempts=DEFAULT_MAX_ATTEMPTS,
+)
+for failure in failures:
+    print(json.dumps(poison_event(
+        "poison_attempt", stage=stage, record=record,
+        message=message, attempt=failure["attempt"],
+        error_type=failure["error_type"],
+        retry_scheduled=failure["retry_scheduled"])))
+final_attempt = failures[-1]["attempt"]
+dead_letter = dead_letter_message(
+    message, error_type=poison_error_type, source_topic=record.topic,
+    source_partition=record.partition, source_offset=record.offset,
+    attempt=final_attempt, failure_metadata=failures)
+dlt_metadata = await producer.send_and_wait(
+    DEAD_LETTER_TOPIC, serialize_message(dead_letter))
+await consumer.commit()  # only after DLT publication succeeds</pre>
+<pre># poison_attempt_records decides bounded attempts 1..3
+first_attempt = int(message.get("attempt", 1))
+failures = []
+for attempt in range(first_attempt, DEFAULT_MAX_ATTEMPTS + 1):
+    failures.append({"attempt": attempt,
+        "retry_scheduled": attempt &lt; DEFAULT_MAX_ATTEMPTS})</pre>
+<p>Consumer-death control: <code>HW8_CRASH_BEFORE_COMMIT_ONCE=1</code> triggers the documented pre-commit hook, which terminates the Writer with <code>os._exit(42)</code> before output publication and offset commit.</p>
+<pre># Separate process entry points use the shared consume/process/publish/commit runtime
+# Planner: s8844_inbox -> s8844_tasks
+asyncio.run(run_stage("s8844_inbox", "s8844_tasks", "s8844-planner", "planner"))
+# Writer: s8844_tasks -> s8844_drafts
+asyncio.run(run_stage("s8844_tasks", "s8844_drafts", "s8844-writer", "writer"))
+# Reviewer: s8844_drafts -> s8844_final
+asyncio.run(run_stage("s8844_drafts", "s8844_final", "s8844-reviewer", "reviewer"))
+
+async for record in consumer:
+    message = deserialize_message(record.value)
+    output = transform(stage, message)
+    await producer.send_and_wait(output_topic, serialize_message(output))
+    await consumer.commit()  # only after successful publication</pre>
+<pre># transform_stage gives each role a distinct deterministic result
+data = dict(message.get("data", {}))
+question = str(data.get("question", data.get("content", "")))
+if stage == "planner":
+    output = {"question": question, "plan": f"Plan: answer {question}"}
+elif stage == "writer":
+    plan = str(data.get("plan", ""))
+    output = {"question": question, "draft": f"Draft based on {plan}"}
+elif stage == "reviewer":
+    draft = str(data.get("draft", ""))
+    output = {"answer": draft, "status": "approved"}</pre>
 <pre># ordering harness
 key = "entity-268844" if keyed else None
 await producer.send_and_wait("s8844_tasks", value, key=key)</pre>
-<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/17_live_poison_later_valid.png" alt="Captured poison DLT and later-valid flow">
-<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/18_live_consumer_death_restart.png" alt="Captured consumer death redelivery and restart">
+<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/30_live_poison_complete.png" alt="Complete bounded poison DLT and later-valid flow">
+<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/28_before_fix_poison.png" alt="Measured before-fix unbounded poison loop">
+<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/23_live_consumer_death_complete.png" alt="Captured consumer death before and after evidence">
+<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/26_duplicate_before_after.png" alt="Captured duplicate delivery before and after evidence">
 
 <h3>Before/after comparison boundary</h3>
-<p>No historical before-fix run was captured for duplicate, consumer death, or poison handling. The table therefore does not invent measured before values; it records the actual measured after behavior and identifies the evidence boundary.</p>
+<p>The before-fix fixtures disabled one mechanism at a time in the isolated HW8 runtime. They are measured comparisons, not hypothetical behavior.</p>
 <table><tr><th>Case</th><th>Before-fix evidence</th><th>After HW8 mechanism</th><th>Evidence</th></tr>
-<tr><td>Duplicate delivery</td><td>No historical before-fix run captured.</td><td>Cached response, same UUID, unchanged count.</td><td><code>part3_duplicate_delivery.jsonl</code></td></tr>
-<tr><td>Consumer death</td><td>No historical before-fix run captured.</td><td>Crash before commit, Kafka redelivery, output then commit.</td><td><code>part3_consumer_death_live2.jsonl</code> plus logs</td></tr>
-<tr><td>Poison message</td><td>No historical before-fix run captured.</td><td>Three bounded attempts, DLT publication, source commit, later valid output.</td><td><code>part3_poison_dead_letter_live2.jsonl</code></td></tr>
-<tr><td>Ordering</td><td>In-process graph has no Kafka partition measurement.</td><td>Unkeyed and entity-keyed 20-message runs measured per-partition order.</td><td>Four ordering JSONL/CSV files</td></tr>
+<tr><td>Duplicate delivery</td><td><code>part3_before_fix_duplicate.jsonl</code>: 0 -> 1 -> 2 and two UUIDs.</td><td><code>part3_duplicate_delivery.jsonl</code>: 0 -> 1 -> 1 and cached response.</td><td>Before/after raw JSONL and worker log</td></tr>
+<tr><td>Consumer death</td><td><code>part3_before_fix_consumer_death.jsonl</code>: commit-before-process, exit 42, no redelivery/output.</td><td><code>part3_consumer_death_live2.jsonl</code>: redelivery, output, commit.</td><td>Before/after raw JSONL and logs</td></tr>
+<tr><td>Poison message</td><td><code>part3_before_fix_poison_live3.jsonl</code>: attempts continued to 20, later task blocked.</td><td><code>part3_poison_dead_letter_live2.jsonl</code>: attempts 1-3, DLT, commit, later output.</td><td>Before/after raw JSONL and Writer logs</td></tr>
+<tr><td>Ordering</td><td>Unkeyed run: no key, both partitions and Writers; measured per-partition sequences.</td><td>Entity-keyed run: one partition, sequence 0-19; Kafka key colocated related messages.</td><td>Four ordering JSONL/CSV files</td></tr>
 </table>
 
 <h2>4. Deterministic ordering experiment</h2>
 <p><code>VERIFY_SEED=268844</code>, exactly 20 related messages per run, two partitions, and two Writers in group <code>s8844-writer</code> were used. Unkeyed messages used no key. Keyed messages used <code>entity-268844</code>. No retry or resend occurred.</p>
 <table><tr><th>Run</th><th>Measured result</th><th>Interpretation</th></tr>
 <tr><td>Unkeyed</td><td>20/20; partitions 0 and 1; both Writers. By offset: p0 [0,3,4,6,7,9,10,11,12,15,17,18,19]; p1 [1,2,5,8,13,14,16].</td><td>Each partition preserved its measured sequence; no global ordering claim.</td></tr>
-<tr><td>Entity-keyed</td><td>20/20; all p0; Writer 1; sequence and offsets both 0 through 19.</td><td>One deterministic key colocated related messages in one partition.</td></tr>
+<tr><td>Entity-keyed</td><td>20/20; all p0; Writer 1; sequence was 0 through 19; Kafka offsets were contiguous 13 through 32.</td><td>One deterministic key colocated related messages in one partition.</td></tr>
 </table>
 <p>Kafka guarantees ordering within a partition, not global ordering across partitions.</p>
-<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/10_ordering_unkeyed.png" alt="Unkeyed ordering evidence">
-<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/11_ordering_keyed.png" alt="Entity-keyed ordering evidence">
+<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/29_ordering_unkeyed_compact.png" alt="Cropped unkeyed ordering evidence">
+<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/25_live_ordering_keyed_sequence.png" alt="Entity-keyed sequence and offset evidence">
 
 <h2>5. HW2 in-process graph versus Kafka</h2>
 <table><tr><th>Required item</th><th>Result</th></tr>
 <tr><td>Benefit 1 - independent scaling</td><td>Planner, Writer, and Reviewer are separate consumers and can scale or restart independently through Kafka groups.</td></tr>
-<tr><td>Benefit 2 - decoupled failure</td><td>A Writer crash before commit does not lose the task; Kafka redelivers it to a surviving Writer and topic boundaries isolate stages.</td></tr>
+<tr><td>Benefit 2 - decoupled failure</td><td>A Writer failure does not stop Planner or Reviewer; Kafka redelivers the uncommitted task to a surviving Writer while topic boundaries isolate stages.</td></tr>
 <tr><td>Responsibility 1 - idempotency and DLT</td><td>The application must handle duplicate delivery, bound poison attempts, publish the DLT, and commit only after output/DLT success.</td></tr>
 <tr><td>Responsibility 2 - ordering and operations</td><td>The application must choose keys, understand partition-local ordering, manage listeners/topics/groups, and verify readiness and cleanup.</td></tr>
 </table>
 
 <h2>6. Verification and evidence index</h2>
-<p><code>verification.json</code> records homework number, SID4, the HW8 artifact commit hash, model/configuration, PORT_BASE, PREFIX, DOMAIN_ID, SEED, VERIFY_SEED, named checks, and pass/fail values. The final <code>hw8</code> tag is created on the packaging metadata commit.</p>
+<p><code>verification.json</code> records homework number, SID4, the HW8 artifact commit hash, model/configuration, PORT_BASE, PREFIX, DOMAIN_ID, SEED, VERIFY_SEED, named checks, and pass/fail values. It also records that the existing <code>hw8</code> tag points to packaging commit <code>dfd3d31511d2af410288fa320b4e567276aef352</code>, distinct from artifact commit <code>bda1110c82293aac22d16951f35cff5b368f825a</code>.</p>
 <table><tr><th>Requirement</th><th>Evidence</th></tr>
 <tr><td>Entity/API</td><td><code>part1_homework_demo_live2.jsonl</code>, service logs, Docker snapshot, topic commands</td></tr>
 <tr><td>Agent journey</td><td><code>part2_agent_demo_live2.jsonl</code>, full pipeline logs, topic commands</td></tr>
@@ -151,15 +216,15 @@ await producer.send_and_wait("s8844_tasks", value, key=key)</pre>
 <tr><td>Ordering</td><td>Four ordering JSONL/CSV files</td></tr>
 <tr><td>Offline verification</td><td><code>python -m unittest test_hw08_offline -v</code> and <code>verification.json</code></td></tr>
 </table>
-<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/12_verification_summary.png" alt="Verification summary">
-<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/07_duplicate_delivery.png" alt="Duplicate delivery evidence">
+<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/20_live_verification_summary.png" alt="Corrected verification summary">
 
 <h2>7. AI-use disclosure</h2>
 <p><b>1. Use:</b> I used AI/Codex for inspection, implementation support, tests, controlled local Kafka commands, evidence organization, screenshots, and report/PDF preparation. I selected data and scope, reviewed results, and made final decisions.</p>
-<p><b>2. Incorrect output/verification:</b> The first hand-built PDF opened blank. I independently verified rendering, the <code>%PDF-</code> header, searchable text, raw evidence, logs, tests, and links.</p>
-<p><b>3. Detection:</b> The blank PDF contradicted the expected report content. Comparing poison logs also showed that the later-valid check needed an explicit run.</p>
-<p><b>4. Correction:</b> Chrome headless rendering replaced the blank output; the FastAPI/demo, full stage logs, post-DLT check, and normalized consumer-death evidence were added; the verifier now checks the corrected evidence paths.</p>
-<p>No hidden chain-of-thought, credentials, JWTs, hashes, API keys, tokens, or <code>.env</code> values are included. Historical before-fix runs were not captured and are not presented as measured data.</p>
+<p><b>2. Incorrect output/verification:</b> The Kafka poison evidence initially did not include the required post-DLT later-valid check. I independently verified the corrected live2 DLT run and the fix-disabled unbounded-loop run.</p>
+<p><b>3. Detection:</b> Comparing the poison harness output with the Writer logs showed that the later-valid task needed an explicit observation after the DLT commit, and that the fix-disabled environment flag had to be set before container creation.</p>
+<p><b>4. Correction:</b> I ran the bounded DLT path with the later-valid check, captured the Writer/topic logs, and kept the before-fix loop in a separate evidence file. The verifier now checks both corrected and before-fix evidence paths.</p>
+<p>No hidden chain-of-thought is included. The before-fix and after-fix measurements are stored in separate HW8 raw files.</p>
 <p class="small">Full disclosure: <code>reports/hw08/AI_USE.md</code>. Verification source: <code>code/verify_hw08.py</code>.</p>
+<p class="small">The <code>reports/hw08/</code> directory also contains <code>report.pdf</code>, <code>KunnathamParambath_HW8.pdf</code>, <code>RUN_LOG.txt</code>, <code>METRICS.md</code>, <code>AI_USE.md</code>, <code>verification.json</code>, raw evidence, and screenshots.</p>
 </body>
 </html>

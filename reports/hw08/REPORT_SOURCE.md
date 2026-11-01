@@ -8,7 +8,7 @@ Working branch: `hw6-development`
 Historical HW7 tag: `hw7`, commit `238163e119dd9fc83c945f287e109d6e2d024fec`  
 Assigned domain: Open-source package vulnerabilities  
 Collaborators with repository access: `Sbnikitha` and `supriyaselvanganesan`.  
-HW8 artifact commit: `bda1110c82293aac22d16951f35cff5b368f825a`. The final `hw8` tag is created on the packaging metadata commit after this artifact commit.
+HW8 artifact commit: `bda1110c82293aac22d16951f35cff5b368f825a`. The existing `hw8` tag points to packaging commit `dfd3d31511d2af410288fa320b4e567276aef352`, which is different from the artifact commit.
 
 This report uses the official HW8 requirements and the preserved HW8 source,
 raw evidence, screenshots, run log, metrics, and verification files. Existing
@@ -51,9 +51,9 @@ links. No hidden chain-of-thought is stored or reported.
 The corrected implementation uses a real isolated FastAPI service, a live
 `homework_demo.py` host client, structured worker/pipeline logs, a post-DLT
 later-valid-message check, and a normalized consumer-death evidence file. The
-changes work because the report and verifier now point to the corrected live2
-evidence rather than the stale pre-correction paths. Historical before-fix
-runs were not captured, so no before-fix measurement is invented.
+report and verifier point to the corrected live2 evidence rather than stale
+pre-correction paths. Separate fix-disabled duplicate, consumer-death, and
+poison runs are included as measured before-fix comparisons.
 
 ## Part 1 - Kafka entity request/response
 
@@ -98,7 +98,9 @@ Measured corrected-demo GET correlation: `hw8-8844-live2-get-001`.
 Generated UUID: `4e9d8b15-a4de-415c-82f0-e5f67123d12d`.
 
 The corrected live demo generated UUID
-`4e9d8b15-a4de-415c-82f0-e5f67123d12d` and returned these entity fields:
+`4e9d8b15-a4de-415c-82f0-e5f67123d12d` and returned these entity fields. The
+CREATE response preserved `correlation_id=hw8-8844-live2-create-001`, and the
+GET response preserved `correlation_id=hw8-8844-live2-get-001`:
 `packageName=requests`, `vulnerabilityId=CVE-2026-0001`,
 `submitterEmail=student@example.com`, `severity=High`,
 `affectedVersionsCount=2`, `termsAccepted=true`, and the recorded
@@ -126,6 +128,13 @@ The correlation flow is: `homework_demo.py` -> FastAPI on port 8744 ->
 fields—`correlation_id`, `reply_to`, `operation`, and `data`—are visible on
 both sides of each request/response pair.
 
+The untruncated live message-flow excerpt is captured in
+`screenshots/27_live_part1_kafka_flow.png`. It shows, for both CREATE and GET,
+the five measured steps in order: demo-to-FastAPI request, API publication to
+the request topic, worker receipt/processing, worker reply to the response
+topic, and API receipt of the matching response, with timestamps and explicit
+response correlation IDs.
+
 ## Part 2 - Planner, Writer, and Reviewer pipeline
 
 ### Process and topic separation
@@ -147,16 +156,16 @@ Source: `raw/part2_agent_journey.jsonl`, `raw/part2_agent_flow.log`,
 The live corrected run is also recorded in `raw/part2_agent_demo_live2.jsonl`,
 `raw/part2_agent_pipeline_logs.log`, and `raw/part2_topic_commands.log`.
 
-One deterministic message with correlation ID
-`hw8-8844-agent-journey-001` traversed:
-
-`s8844_inbox -> s8844_tasks -> s8844_drafts -> s8844_final`
-
 The corrected live sender published one input with correlation ID
 `hw8-8844-agent-live2-001` to `s8844_inbox` partition 0 offset 0. The observed
 journey then used `s8844_tasks` partition 1 offset 0, `s8844_drafts` partition 1
-offset 0, and `s8844_final` partition 1 offset 0. The final JSON message had
-`status=approved` and an `answer` field. Ollama, MySQL, and JMeter were not used.
+offset 0, and `s8844_final` partition 1 offset 0. The final JSON message was:
+
+```json
+{"message_type":"reviewer_message","correlation_id":"hw8-8844-agent-live2-001","data":{"answer":"Draft based on Plan: answer Explain how Kafka coordinates vulnerability-report workers.","status":"approved"},"topic":"s8844_final","partition":1,"offset":0}
+```
+
+Ollama, MySQL, and JMeter were not used.
 
 Kafka provides durable topic boundaries, consumer-group coordination, offsets,
 and independent process failure domains.
@@ -168,6 +177,58 @@ commit. This gives the instructor a complete observable journey rather than
 only a final answer. Kafka also lets each process restart independently,
 assigns partitions through consumer groups, and makes the handoff boundaries
 inspectable through topic/partition/offset metadata.
+
+The startup logs include topic-metadata warnings before auto-creation; after
+that initialization, all three processes became ready and completed the
+journey. The compact stage screenshot shows only the measured lifecycle lines.
+
+The separate entry points call the shared runtime with these exact routes:
+
+```python
+# hw08_planner.py
+asyncio.run(run_stage(INBOX_TOPIC, TASKS_TOPIC, PLANNER_CONSUMER_GROUP, "planner"))
+# hw08_writer.py
+asyncio.run(run_stage(TASKS_TOPIC, DRAFTS_TOPIC, WRITER_CONSUMER_GROUP, "writer"))
+# hw08_reviewer.py
+asyncio.run(run_stage(DRAFTS_TOPIC, FINAL_TOPIC, REVIEWER_CONSUMER_GROUP, "reviewer"))
+```
+
+The shared runtime consumes, transforms, publishes, and then commits:
+
+```python
+async for record in consumer:
+    message = deserialize_message(record.value)
+    output = transform(stage, message)
+    await producer.send_and_wait(output_topic, serialize_message(output))
+    await consumer.commit()
+```
+
+The deterministic stage transformation is role-specific:
+
+```python
+data = dict(message.get("data", {}))
+question = str(data.get("question", data.get("content", "")))
+if stage == "planner":
+    output = {"question": question, "plan": f"Plan: answer {question}"}
+elif stage == "writer":
+    plan = str(data.get("plan", ""))
+    output = {"question": question, "draft": f"Draft based on {plan}"}
+elif stage == "reviewer":
+    draft = str(data.get("draft", ""))
+    output = {"answer": draft, "status": "approved"}
+```
+
+The three process snippets follow the same consume/process/publish/commit
+boundary:
+
+```python
+async for record in consumer:
+    message = deserialize_message(record.value)
+    output = transform_stage(stage, message)
+    published = await producer.send_and_wait(
+        output_topic, serialize_message(output))
+    await consumer.commit()  # only after successful publication
+```
 
 ## Part 3 - Failure handling and idempotency
 
@@ -240,11 +301,34 @@ Poison handling uses an explicit fixture marker, attempts 1 through 3, and
 publishes the DLT record before committing:
 
 ```python
-failures = poison_attempt_records(message, error_type=error_type, max_attempts=3)
-dead_letter = dead_letter_message(message, error_type=error_type, ...)
-await producer.send_and_wait(DEAD_LETTER_TOPIC, serialize_message(dead_letter))
-await consumer.commit()
+failures = poison_attempt_records(
+    message, error_type=poison_error_type, max_attempts=DEFAULT_MAX_ATTEMPTS)
+for failure in failures:
+    emit_poison_attempt(failure)
+final_attempt = failures[-1]["attempt"]
+dead_letter = dead_letter_message(
+    message, error_type=poison_error_type,
+    source_topic=record.topic, source_partition=record.partition,
+    source_offset=record.offset, attempt=final_attempt,
+    failure_metadata=failures)
+await producer.send_and_wait(
+    DEAD_LETTER_TOPIC, serialize_message(dead_letter))
+await consumer.commit()  # only after DLT publication succeeds
 ```
+
+The bounded attempt decision is:
+
+```python
+first_attempt = int(message.get("attempt", 1))
+failures = []
+for attempt in range(first_attempt, DEFAULT_MAX_ATTEMPTS + 1):
+    failures.append({"attempt": attempt,
+                     "retry_scheduled": attempt < DEFAULT_MAX_ATTEMPTS})
+```
+
+Consumer death uses `HW8_CRASH_BEFORE_COMMIT_ONCE=1`; the hook terminates the
+Writer with `os._exit(42)` after receipt but before output publication and
+offset commit.
 
 The ordering key is the deterministic entity key `entity-268844`; unkeyed
 messages pass `None` as the Kafka key.
@@ -253,10 +337,10 @@ messages pass `None` as the Kafka key.
 
 | Case | Before HW8 mechanism | After HW8 mechanism | Evidence |
 |---|---|---|---|
-| Duplicate delivery | Repeated delivery could create a second entity. | Same idempotency identity returns the cached response; UUID and count remain unchanged. | `part3_duplicate_delivery.jsonl` |
-| Consumer death | No historical before-fix run was captured; no measured before-fix claim is made. | Uncommitted work is redelivered; surviving Writer commits after output. | `part3_consumer_death_live2.jsonl` and restart/writer logs |
-| Poison message | No historical before-fix run was captured; no measured before-fix claim is made. | Bounded attempts end in `s8844_dead_letter`; source commits after DLT publication and a later valid message is processed. | `part3_poison_dead_letter_live2.jsonl` and writer log |
-| Ordering | In-process order was local to the execution path. | Kafka order is measured per partition; keyed related work is colocated. | Four ordering JSONL/CSV files |
+| Duplicate delivery | Idempotency disabled: count changed `0 -> 1 -> 2` and two UUIDs were generated. | Same idempotency identity returns the cached response; count remained `0 -> 1 -> 1`. | `part3_before_fix_duplicate.jsonl` and `part3_duplicate_delivery.jsonl` |
+| Consumer death | Commit-before-process: Writer 1 exited 42 after receipt; no redelivery or output was observed. | Pre-commit crash left the offset uncommitted; Writer 2 received the same record, published output, and committed. | `part3_before_fix_consumer_death.jsonl` and `part3_consumer_death_live2.jsonl` |
+| Poison message | Unbounded attempts reached 20 and blocked the later same-partition task. | Bounded attempts 1-3 ended in `s8844_dead_letter`; source commit followed DLT publication and the later task was processed. | `part3_before_fix_poison_live3.jsonl` and `part3_poison_dead_letter_live2.jsonl` |
+| Ordering | Unkeyed run measured messages across both partitions; no global order was assumed. | Entity-keyed run colocated related messages and preserved sequence order in one partition. | Four ordering JSONL/CSV files |
 
 ## Part 4 - Deterministic ordering experiment
 
@@ -276,7 +360,7 @@ order. No retry or resend occurred.
 | Run | Measured result |
 |---|---|
 | Unkeyed | 20/20; no Kafka key; partitions 0 and 1; both Writers observed. p0 sequence by offset `[0,3,4,6,7,9,10,11,12,15,17,18,19]`; p1 `[1,2,5,8,13,14,16]`. |
-| Entity-keyed | 20/20; key `entity-268844`; all messages on partition 0; Writer 1 observed; sequence and offset order were both 0 through 19. |
+| Entity-keyed | 20/20; key `entity-268844`; all messages on partition 0; Writer 1 observed; sequence was 0 through 19 and offsets were contiguous starting at 13 (13 through 32). |
 
 The measured result demonstrates partition-local ordering. Kafka guarantees
 ordering within a partition, not global ordering across partitions. No global
@@ -287,7 +371,7 @@ ordering claim is made.
 | Item | Explanation |
 |---|---|
 | Benefit 1 - independent scaling | Planner, Writer, and Reviewer are separate consumers and can scale or restart independently through Kafka consumer groups. |
-| Benefit 2 - decoupled failure | A Writer crash before commit does not lose the task; Kafka redelivers it to the surviving Writer. Topic boundaries also isolate the entity API, planner, writer, and reviewer. |
+| Benefit 2 - decoupled failure | A Writer failure does not stop Planner or Reviewer; Kafka redelivers the uncommitted task to a surviving Writer. Topic boundaries also isolate the entity API, planner, writer, and reviewer. |
 | Responsibility 1 - idempotency and DLT | The application must detect duplicate delivery, bound poison attempts, publish `s8844_dead_letter`, and commit only after successful output/DLT publication. |
 | Responsibility 2 - ordering and operations | The application must choose keys, understand partition-local rather than global ordering, manage listeners/topics/groups, and verify readiness/cleanup. |
 
@@ -318,8 +402,21 @@ poison/DLT, and both ordering runs. The final overall result is `true`.
 | `14_live_homework_demo.png` | Captured `homework_demo.py` run and error cases |
 | `15_live_part1_flow.png` | Captured FastAPI/entity-worker flow and readiness logs |
 | `16_live_agent_pipeline.png` | Captured Planner/Writer/Reviewer stage logs |
-| `17_live_poison_later_valid.png` | Captured poison attempts, DLT, commit, and later-valid output |
+| `17_live_poison_later_valid.png` | Preserved earlier poison/DLT evidence |
 | `18_live_consumer_death_restart.png` | Captured crash, redelivery, output, commit, and restart |
+| `19_live_final_message.png` | Actual `s8844_final` JSON with `status` and `answer` |
+| `20_live_verification_summary.png` | Verification with homework, commit/tag metadata, `VERIFY_SEED`, and live flags |
+| `21_live_part1_complete_flow.png` | Complete `homework_demo.py` CREATE/GET flow and error cases |
+| `22_live_part2_complete_flow.png` | Complete Planner/Writer/Reviewer stage log |
+| `23_live_consumer_death_complete.png` | Writer 1 crash and Writer 2 redelivery/output/commit |
+| `24_live_docker_topics.png` | `docker ps`, startup logs, and topic description with two partitions |
+| `25_live_ordering_keyed_sequence.png` | Keyed sequence 0-19 and contiguous offsets 13-32 |
+| `26_duplicate_before_after.png` | Measured duplicate before/after comparison |
+| `27_live_part1_kafka_flow.png` | Untruncated timestamped CREATE/GET Kafka flow with response IDs |
+| `28_before_fix_poison.png` | Measured unbounded poison attempts and blocked later task |
+| `29_ordering_unkeyed_compact.png` | Cropped unkeyed ordering evidence |
+| `30_live_poison_complete.png` | Complete bounded attempts, DLT, source commit, and later-valid output |
+| `31_live_pipeline_compact.png` | Cropped Planner/Writer/Reviewer lifecycle log |
 
 Every screenshot displayed in the report is labeled:
 `Student: Vrishin KunnathamParambath | SID4: 8844`.
@@ -327,9 +424,10 @@ Every screenshot displayed in the report is labeled:
 ## Tests, limitations, and preservation
 
 Offline validation and HW8 verification passed. The corrected controlled live
-results are preserved in HW8 raw evidence. Historical before-fix runs were not
-captured, so the failure table labels those rows as a comparison boundary and
-does not present hypothetical behavior as measured data. No hidden
+results and separate measured before-fix fixtures are preserved in HW8 raw
+evidence. The `reports/hw08/` directory also contains `report.pdf`,
+`KunnathamParambath_HW8.pdf`, `RUN_LOG.txt`, `METRICS.md`, `AI_USE.md`, and
+`verification.json`. No hidden
 chain-of-thought, passwords, hashes, JWTs, API keys, tokens, or `.env` values
 are included.
 
@@ -342,5 +440,6 @@ Current branch: `hw6-development`.
 Existing HW7 tag: `hw7`.  
 Existing HW7 tagged commit: `238163e119dd9fc83c945f287e109d6e2d024fec`.  
 HW8 artifact commit: `bda1110c82293aac22d16951f35cff5b368f825a`.  
-HW8 tag: `hw8`, created on the final packaging metadata commit.  
+HW8 tag: `hw8`, target `dfd3d31511d2af410288fa320b4e567276aef352`, distinct
+from artifact commit `bda1110c82293aac22d16951f35cff5b368f825a`.  
 GitHub push: performed after local verification.

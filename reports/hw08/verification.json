@@ -10,7 +10,10 @@
   "host_bootstrap": "localhost:29092",
   "docker_bootstrap": "hw08-kafka:9092",
   "commit_hash": "bda1110c82293aac22d16951f35cff5b368f825a",
-  "commit_hash_status": "HW8 artifact commit containing implementation and evidence",
+  "commit_hash_status": "HW8 artifact commit; tag target is recorded separately",
+  "artifact_commit_hash": "bda1110c82293aac22d16951f35cff5b368f825a",
+  "tag_name": "hw8",
+  "tag_commit_hash": "dfd3d31511d2af410288fa320b4e567276aef352",
   "model_configuration": {
     "model": "qwen3:8b",
     "mode": "offline foundation"
@@ -183,6 +186,24 @@
       "writer-1"
     ]
   },
+  "before_fix_duplicate_delivery": {
+    "evidence_file": "reports\\hw08\\raw\\part3_before_fix_duplicate.jsonl",
+    "recorded": true,
+    "passed": true,
+    "status": "passed"
+  },
+  "before_fix_consumer_death": {
+    "evidence_file": "reports\\hw08\\raw\\part3_before_fix_consumer_death.jsonl",
+    "recorded": true,
+    "passed": true,
+    "status": "passed"
+  },
+  "before_fix_poison": {
+    "evidence_file": "reports\\hw08\\raw\\part3_before_fix_poison_live3.jsonl",
+    "recorded": true,
+    "passed": true,
+    "status": "passed"
+  },
   "overall_pass": true,
   "live_results_claimed": true,
   "live_kafka_smoke_run": true,
@@ -192,8 +213,8 @@
   "poison_dead_letter_run": true,
   "ordering_unkeyed_run": true,
   "ordering_keyed_run": true,
-  "live_kafka_experiments_run": false,
-  "docker_experiments_run": false,
+  "live_kafka_experiments_run": true,
+  "docker_experiments_run": true,
   "database_experiments_run": false,
   "model_experiments_run": false
 }
