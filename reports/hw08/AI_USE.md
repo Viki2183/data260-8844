@@ -5,7 +5,8 @@ Student: Vrishin KunnathamParambath | SID4: 8844
 Repository: https://github.com/Viki2183/data260-8844  
 Collaborators with repository access: `Sbnikitha` and `supriyaselvanganesan`  
 Final tagged tree: https://github.com/Viki2183/data260-8844/tree/hw8  
-HW8 artifact commit: `bda1110c82293aac22d16951f35cff5b368f825a`; final tag target is verified in Git metadata after packaging.
+HW8 artifact commit: `bda1110c82293aac22d16951f35cff5b368f825a`  
+HW8 tagged packaging commit: `6dcadc68b88d5c8473978c52e7953ddb7020ea81` (`hw8` tag). The hashes differ because packaging contains the final report/PDF metadata.
 
 ## (1) What I used AI for versus what I did myself
 

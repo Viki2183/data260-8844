@@ -9,7 +9,8 @@ Historical HW7 tag: `hw7`, commit `238163e119dd9fc83c945f287e109d6e2d024fec`
 Final tagged tree: https://github.com/Viki2183/data260-8844/tree/hw8  
 Assigned domain: Open-source package vulnerabilities  
 Collaborators with repository access: `Sbnikitha` and `supriyaselvanganesan`.  
-HW8 artifact commit: `bda1110c82293aac22d16951f35cff5b368f825a`. The final `hw8` tag target is verified in Git metadata after packaging.
+HW8 artifact/implementation commit: `bda1110c82293aac22d16951f35cff5b368f825a`  
+HW8 tagged packaging commit: `6dcadc68b88d5c8473978c52e7953ddb7020ea81`; `hw8` points to this commit. The hashes differ because the tagged packaging commit contains the final report/PDF metadata.
 
 This report uses the official HW8 requirements and the preserved HW8 source,
 raw evidence, screenshots, run log, metrics, and verification files. Existing
@@ -418,6 +419,7 @@ poison/DLT, and both ordering runs. The final overall result is `true`.
 | `29_ordering_unkeyed_compact.png` | Cropped unkeyed ordering evidence |
 | `30_live_poison_complete.png` | Complete bounded attempts, DLT, source commit, and later-valid output |
 | `31_live_pipeline_compact.png` | Cropped Planner/Writer/Reviewer lifecycle log |
+| `32_live_verification_hashes.png` | Verification summary with artifact and tagged packaging commit hashes |
 
 Every screenshot displayed in the report is labeled:
 `Student: Vrishin KunnathamParambath | SID4: 8844`.

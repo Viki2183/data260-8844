@@ -36,7 +36,8 @@ a { color: #064f87; }
 <p><b>Branch:</b> <code>hw6-development</code></p>
 <p><b>Historical HW7:</b> tag <code>hw7</code>, commit <code>238163e119dd9fc83c945f287e109d6e2d024fec</code></p>
 <p><b>Final tagged tree:</b> <a href="https://github.com/Viki2183/data260-8844/tree/hw8">https://github.com/Viki2183/data260-8844/tree/hw8</a></p>
-<p><b>HW8 artifact commit:</b> <code>bda1110c82293aac22d16951f35cff5b368f825a</code>. The final <code>hw8</code> tag target is verified in Git metadata after packaging.</p>
+<p><b>HW8 artifact/implementation commit:</b> <code>bda1110c82293aac22d16951f35cff5b368f825a</code></p>
+<p><b>HW8 tagged packaging commit:</b> <code>6dcadc68b88d5c8473978c52e7953ddb7020ea81</code>; tag <code>hw8</code> points to this packaging commit. The artifact hash and tagged packaging hash differ because the latter contains the final report/PDF metadata.</p>
 <p><b>Collaborator access:</b> <code>Sbnikitha</code> and <code>supriyaselvanganesan</code></p>
 </div>
 <h2>0. Configuration</h2>
@@ -207,7 +208,7 @@ await producer.send_and_wait("s8844_tasks", value, key=key)</pre>
 </table>
 
 <h2>6. Verification and evidence index</h2>
-<p><code>verification.json</code> records homework number, SID4, the HW8 artifact commit hash, model/configuration, PORT_BASE, PREFIX, DOMAIN_ID, SEED, VERIFY_SEED, named checks, and pass/fail values. The final tagged tree is linked above, and the final <code>hw8</code> tag target is verified in Git metadata after packaging.</p>
+<p><code>verification.json</code> records homework number, SID4, the artifact commit hash, the tagged packaging commit hash, model/configuration, PORT_BASE, PREFIX, DOMAIN_ID, SEED, VERIFY_SEED, named checks, and pass/fail values. The two hashes are intentionally different: the artifact commit contains the implementation, while the tagged packaging commit contains the final report/PDF metadata.</p>
 <table><tr><th>Requirement</th><th>Evidence</th></tr>
 <tr><td>Entity/API</td><td><code>part1_homework_demo_live2.jsonl</code>, service logs, Docker snapshot, topic commands</td></tr>
 <tr><td>Agent journey</td><td><code>part2_agent_demo_live2.jsonl</code>, full pipeline logs, topic commands</td></tr>
@@ -217,7 +218,7 @@ await producer.send_and_wait("s8844_tasks", value, key=key)</pre>
 <tr><td>Ordering</td><td>Four ordering JSONL/CSV files</td></tr>
 <tr><td>Offline verification</td><td><code>python -m unittest test_hw08_offline -v</code> and <code>verification.json</code></td></tr>
 </table>
-<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/20_live_verification_summary.png" alt="Corrected verification summary">
+<div class="shot-header">Student: Vrishin KunnathamParambath | SID4: 8844</div><img class="shot" src="screenshots/32_live_verification_hashes.png" alt="Verification summary with artifact and tagged packaging commit hashes">
 
 <h2>7. AI-use disclosure</h2>
 <p><b>1. Use:</b> I used AI/Codex for inspection, implementation support, tests, controlled local Kafka commands, evidence organization, screenshots, and report/PDF preparation. I selected data and scope, reviewed results, and made final decisions.</p>
