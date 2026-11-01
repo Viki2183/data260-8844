@@ -35,7 +35,7 @@ a { color: #064f87; }
 <p><b>Repository:</b> <a href="https://github.com/Viki2183/data260-8844">https://github.com/Viki2183/data260-8844</a></p>
 <p><b>Branch:</b> <code>hw6-development</code></p>
 <p><b>Historical HW7:</b> tag <code>hw7</code>, commit <code>238163e119dd9fc83c945f287e109d6e2d024fec</code></p>
-<p><b>HW8:</b> tag <code>hw8</code> and final packaging commit are inserted after Git packaging.</p>
+<p><b>HW8 artifact commit:</b> <code>bda1110c82293aac22d16951f35cff5b368f825a</code>; final tag: <code>hw8</code></p>
 <p><b>Collaborator access:</b> <code>Sbnikitha</code> and <code>supriyaselvanganesan</code></p>
 </div>
 <h2>0. Configuration</h2>
@@ -141,7 +141,7 @@ await producer.send_and_wait("s8844_tasks", value, key=key)</pre>
 </table>
 
 <h2>6. Verification and evidence index</h2>
-<p><code>verification.json</code> records homework number, SID4, model/configuration, PORT_BASE, PREFIX, DOMAIN_ID, SEED, VERIFY_SEED, named checks, and pass/fail values. The final packaging commit hash is inserted when Git packaging is complete.</p>
+<p><code>verification.json</code> records homework number, SID4, the HW8 artifact commit hash, model/configuration, PORT_BASE, PREFIX, DOMAIN_ID, SEED, VERIFY_SEED, named checks, and pass/fail values. The final <code>hw8</code> tag is created on the packaging metadata commit.</p>
 <table><tr><th>Requirement</th><th>Evidence</th></tr>
 <tr><td>Entity/API</td><td><code>part1_homework_demo_live2.jsonl</code>, service logs, Docker snapshot, topic commands</td></tr>
 <tr><td>Agent journey</td><td><code>part2_agent_demo_live2.jsonl</code>, full pipeline logs, topic commands</td></tr>

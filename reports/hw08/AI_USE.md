@@ -4,7 +4,7 @@ Student: Vrishin KunnathamParambath | SID4: 8844
 
 Repository: https://github.com/Viki2183/data260-8844  
 Collaborators with repository access: `Sbnikitha` and `supriyaselvanganesan`  
-HW8 tag: `hw8` at the final packaging commit
+HW8 artifact commit: `bda1110c82293aac22d16951f35cff5b368f825a`; final tag: `hw8`
 
 ## (1) What I used AI for versus what I did myself
 

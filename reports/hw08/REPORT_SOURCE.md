@@ -8,7 +8,7 @@ Working branch: `hw6-development`
 Historical HW7 tag: `hw7`, commit `238163e119dd9fc83c945f287e109d6e2d024fec`  
 Assigned domain: Open-source package vulnerabilities  
 Collaborators with repository access: `Sbnikitha` and `supriyaselvanganesan`.  
-HW8 tag and commit: `hw8` will point to the final packaging commit; the exact hash is inserted after that commit is created.
+HW8 artifact commit: `bda1110c82293aac22d16951f35cff5b368f825a`. The final `hw8` tag is created on the packaging metadata commit after this artifact commit.
 
 This report uses the official HW8 requirements and the preserved HW8 source,
 raw evidence, screenshots, run log, metrics, and verification files. Existing
@@ -341,6 +341,6 @@ history remain preserved. No historical evidence was overwritten.
 Current branch: `hw6-development`.  
 Existing HW7 tag: `hw7`.  
 Existing HW7 tagged commit: `238163e119dd9fc83c945f287e109d6e2d024fec`.  
-HW8 commit: inserted after the final packaging commit.  
-HW8 tag: `hw8`, pointing to the final packaging commit.  
+HW8 artifact commit: `bda1110c82293aac22d16951f35cff5b368f825a`.  
+HW8 tag: `hw8`, created on the final packaging metadata commit.  
 GitHub push: performed after local verification.

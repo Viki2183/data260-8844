@@ -9,8 +9,8 @@
   "compose_project": "data260-hw8",
   "host_bootstrap": "localhost:29092",
   "docker_bootstrap": "hw08-kafka:9092",
-  "commit_hash": null,
-  "commit_hash_status": "inserted after final packaging commit",
+  "commit_hash": "bda1110c82293aac22d16951f35cff5b368f825a",
+  "commit_hash_status": "HW8 artifact commit containing implementation and evidence",
   "model_configuration": {
     "model": "qwen3:8b",
     "mode": "offline foundation"
