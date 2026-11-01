@@ -1,0 +1,26 @@
+DATA260 HW8 Phase 4B deterministic agent journey
+Student: Vrishin KunnathamParambath | SID4: 8844
+Compose project: data260-hw8
+Collection timestamp UTC: 2026-10-30T08:50:43.8939081Z
+Kafka image: apache/kafka:3.9.2
+Host sender bootstrap: localhost:29092
+Docker agent bootstrap: hw08-kafka:9092
+Kafka health: healthy
+Planner status: running
+Writer 1 status: running
+Writer 2 status: running
+Reviewer status: running
+Exact topics: s8844_inbox, s8844_tasks, s8844_drafts, s8844_final
+Journey correlation_id: hw8-8844-agent-journey-001
+Journey: s8844_inbox -> Planner -> s8844_tasks -> Writer -> s8844_drafts -> Reviewer -> s8844_final
+Input: s8844_inbox partition 0 offset 0 timestamp_ms 1793350226109 key null
+Planner output: s8844_tasks partition 0 offset 0 timestamp_ms 1793350226130 key null
+Writer output: s8844_drafts partition 0 offset 0 timestamp_ms 1793350226141 key null
+Reviewer output: s8844_final partition 0 offset 0 timestamp_ms 1793350226154 key null
+Correlation preserved through all four records: true
+Final status: approved
+Automatic retries: 0
+Ollama used: false
+MySQL used: false
+JMeter used: false
+Duplicate, consumer-death, poison-message, and ordering experiments: not run

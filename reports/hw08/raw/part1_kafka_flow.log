@@ -1,0 +1,26 @@
+DATA260 HW8 Phase 4A entity smoke flow
+Student: Vrishin KunnathamParambath | SID4: 8844
+Compose project: data260-hw8
+Kafka image: apache/kafka:3.9.2
+Worker image: data260-hw8-hw08-entity-worker:latest
+Collection timestamp UTC: 2026-10-30T08:34:33.9789408Z
+Docker services started: hw08-kafka, hw08-entity-worker
+Docker services not started: hw08-planner, hw08-writer-1, hw08-writer-2, hw08-reviewer
+Kafka health: healthy
+Entity worker status: running
+Docker bootstrap: hw08-kafka:9092
+Host bootstrap: localhost:29092
+Kafka advertised listeners: INTERNAL://hw08-kafka:9092,EXTERNAL://localhost:29092
+Kafka advertised localhost:9092: no
+Topics created exactly: s8844_entity_requests, s8844_entity_responses
+Topic s8844_entity_requests: partition count measured as 2, replication factor 1
+Topic s8844_entity_responses: partition count measured as 1, replication factor 1
+CREATE correlation_id: hw8-8844-create-001
+CREATE response success: true
+Generated entity UUID: cb2a410f-1e40-4eac-8566-1e6b8b3d68ac
+GET correlation_id: hw8-8844-get-001
+GET response success: true
+GET entity matched CREATE entity: true
+Correlation IDs preserved: true
+Automatic request retries: none
+Duplicate, consumer-death, poison, ordering, Planner, Writer, and Reviewer experiments: not run

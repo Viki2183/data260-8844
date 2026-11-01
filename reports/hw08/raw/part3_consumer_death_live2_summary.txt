@@ -1,0 +1,11 @@
+﻿readiness_method=aiokafka
+group_id=s8844-writer
+topic=s8844_tasks
+correlation_id=hw8-8844-consumer-death-001
+producer_application_retries=0
+producer_resend_count=0
+writer1_pre_commit_crash_observed=True
+writer2_same_partition_offset_redelivery_observed=True
+writer2_output_and_commit_observed=True
+writer1_restart_observed=True
+restart_log=part3_consumer_death_live2_restart.log

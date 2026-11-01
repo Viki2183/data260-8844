@@ -1,0 +1,89 @@
+DATA260 HW8 RUN LOG
+Student: Vrishin KunnathamParambath | SID4: 8844
+
+Phase 2 foundation created. No Kafka, Docker, database, Ollama, JMeter, load,
+or public-network experiments have been run.
+
+Phase 5B consumer-death experiment completed at 2026-11-01T06:16:20.454360Z.
+Only hw08-kafka, Writer 1, Writer 2, and the non-competing publisher/observer
+harness were used. Kafka readiness was confirmed by aiokafka for group
+s8844-writer with both Writer assignments active. One task was published to
+s8844_tasks partition 0 offset 0 with correlation_id
+hw8-8844-consumer-death-001. Writer 1 received it, crashed at the documented
+pre-commit point, and terminated with exit code 42 before output publication
+or offset commit. Kafka redelivered the same partition and offset to Writer 2;
+Writer 2 published to s8844_drafts and committed the input offset. The
+correlation_id was preserved throughout. Producer/application retries were 0,
+with one send_and_wait call and no resend; aiokafka internal behavior was not
+represented as a configurable constructor retry count. Poison-message and
+ordering experiments were not run.
+
+Phase 5C poison/dead-letter experiment completed at
+2026-11-01T06:32:52.068903Z. Only hw08-kafka, Writer 1, Writer 2, and the
+non-competing poison harness were used. Kafka was healthy; group
+s8844-writer was STABLE with active Writer assignments. Exactly one deterministic
+poison message with correlation_id hw8-8844-poison-001 was published to
+s8844_tasks partition 1 offset 0 using localhost:29092. Writer 2 recorded
+bounded attempts 1, 2, and 3 with error classification
+intentional_poison_fixture. The final attempt published the original message
+and safe failure metadata to s8844_dead_letter partition 0 offset 0. The source
+offset was committed as 1 only after DLT publication succeeded. Correlation was
+preserved; producer/application retries and resends were 0. The harness did
+not include a later-valid-message check, so that measurement is unavailable.
+Ordering was not run.
+
+Phase 5D ordering experiment completed at 2026-11-01T07:01:35.807929Z.
+Kafka was healthy, s8844_tasks had exactly partitions 0 and 1, and two Writers
+were active in group s8844-writer with crash injection disabled. Both runs used
+VERIFY_SEED=268844, exactly 20 related messages, one send per message, and no
+producer retry or resend. The unkeyed run used no Kafka key and measured both
+partitions with both Writers. The keyed run used deterministic key
+entity-268844 and measured all 20 messages on partition 0 with Writer 1.
+Within each partition, sequence order by Kafka offset was preserved. No global
+ordering claim was made across partitions; Kafka ordering is measured within a
+partition only. The four ordering evidence files were written successfully.
+
+Phase 4A live entity smoke completed at 2026-10-30T08:34:33.9789408Z.
+Kafka health was healthy and the entity worker was running. Host bootstrap was
+localhost:29092; Docker bootstrap was hw08-kafka:9092. Exactly the two entity
+topics were present. One CREATE_ENTITY and one GET_ENTITY request completed
+successfully without automatic retries. CREATE correlation_id was
+hw8-8844-create-001; GET correlation_id was hw8-8844-get-001; generated UUID
+was cb2a410f-1e40-4eac-8566-1e6b8b3d68ac. The GET entity matched the CREATE
+entity and both correlation IDs were preserved. Planner, Writer, Reviewer,
+duplicate-delivery, consumer-death, poison-message, and ordering experiments
+were not run.
+
+Phase 5A duplicate-delivery smoke completed at 2026-10-30T08:56:32.7318153Z.
+Kafka was healthy and the entity worker remained running on hw08-kafka:9092.
+One valid CREATE_ENTITY request with correlation_id hw8-8844-duplicate-001
+was published at request offset 0 and intentionally replayed once at offset 1.
+The original response generated UUID 150109d0-99fa-42d9-92e9-ca74c7f01c91;
+the replay returned the same UUID, success true, correlation_id preserved, and
+metadata duplicate true. The recorded entity-store baseline was 0, after the
+original create 1, and after replay 1; the count is derived because no runtime
+store-count endpoint exists. Automatic retries were 0. Consumer-death,
+poison-message, and ordering experiments were not run.
+
+Phase 4B deterministic Planner/Writer/Reviewer smoke completed at
+2026-10-30T08:50:43.8939081Z. Kafka was healthy and Planner, Writer 1,
+Writer 2, and Reviewer remained running. One message with correlation_id
+hw8-8844-agent-journey-001 traversed s8844_inbox -> Planner -> s8844_tasks
+-> Writer -> s8844_drafts -> Reviewer -> s8844_final. The observed records
+had offsets 0 on partitions 0 for all four topics, and correlation was
+preserved. The final deterministic result was approved. No automatic retries,
+Ollama, MySQL, JMeter, failure, duplicate, consumer-death, poison-message,
+or ordering experiments were run.
+
+Corrected live evidence capture completed at 2026-11-01T08:02:15Z onward.
+The isolated FastAPI service on port 8744, entity worker, Planner, Writers,
+Reviewer, poison harness, and consumer-death logs were captured in separate
+HW8 raw files. `homework_demo.py` recorded valid CREATE/GET plus validation,
+missing-entity, and unknown-operation responses. The agent live2 run recorded
+the full deterministic final message. The poison live2 run recorded attempts
+1-3, DLT publication, source commit, and a later valid message with
+blocked_by_poison=false. The consumer-death live2 run recorded Writer 1's
+pre-commit crash, termination observation, Kafka redelivery to Writer 2,
+output/commit, and Writer 1 restart readiness. No producer resend or automatic
+retry was used. Historical before-fix runs were not captured.
+

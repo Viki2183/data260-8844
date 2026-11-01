@@ -1,0 +1,199 @@
+{
+  "homework": 8,
+  "sid4": 8844,
+  "port_base": 8744,
+  "prefix": "s8844",
+  "domain_id": 4,
+  "domain": "open-source package vulnerabilities",
+  "kafka_image": "apache/kafka:3.9.2",
+  "compose_project": "data260-hw8",
+  "host_bootstrap": "localhost:29092",
+  "docker_bootstrap": "hw08-kafka:9092",
+  "commit_hash": null,
+  "commit_hash_status": "inserted after final packaging commit",
+  "model_configuration": {
+    "model": "qwen3:8b",
+    "mode": "offline foundation"
+  },
+  "seed": 8844,
+  "verify_seed": 268844,
+  "checks": [
+    {
+      "name": "valid vulnerability-report validation",
+      "passed": true
+    },
+    {
+      "name": "invalid payload rejection",
+      "passed": true
+    },
+    {
+      "name": "offline CREATE_ENTITY",
+      "passed": true
+    },
+    {
+      "name": "UUID generation",
+      "passed": true
+    },
+    {
+      "name": "CREATE correlation_id preservation",
+      "passed": true
+    },
+    {
+      "name": "offline GET_ENTITY round trip",
+      "passed": true
+    },
+    {
+      "name": "GET correlation_id preservation",
+      "passed": true
+    },
+    {
+      "name": "missing-entity behavior",
+      "passed": true
+    },
+    {
+      "name": "duplicate CREATE idempotency",
+      "passed": true
+    },
+    {
+      "name": "GET idempotency key includes entity_id",
+      "passed": true
+    }
+  ],
+  "offline_checks": [
+    {
+      "name": "valid vulnerability-report validation",
+      "passed": true
+    },
+    {
+      "name": "invalid payload rejection",
+      "passed": true
+    },
+    {
+      "name": "offline CREATE_ENTITY",
+      "passed": true
+    },
+    {
+      "name": "UUID generation",
+      "passed": true
+    },
+    {
+      "name": "CREATE correlation_id preservation",
+      "passed": true
+    },
+    {
+      "name": "offline GET_ENTITY round trip",
+      "passed": true
+    },
+    {
+      "name": "GET correlation_id preservation",
+      "passed": true
+    },
+    {
+      "name": "missing-entity behavior",
+      "passed": true
+    },
+    {
+      "name": "duplicate CREATE idempotency",
+      "passed": true
+    },
+    {
+      "name": "GET idempotency key includes entity_id",
+      "passed": true
+    }
+  ],
+  "offline_overall_pass": true,
+  "live_kafka_smoke": {
+    "evidence_file": "reports\\hw08\\raw\\part1_create_get.jsonl",
+    "recorded": true,
+    "passed": true,
+    "status": "passed"
+  },
+  "live_homework_demo": {
+    "evidence_file": "reports\\hw08\\raw\\part1_homework_demo_live2.jsonl",
+    "recorded": true,
+    "passed": true,
+    "status": "passed",
+    "record_count": 6
+  },
+  "live_agent_journey": {
+    "evidence_file": "reports\\hw08\\raw\\part2_agent_journey.jsonl",
+    "recorded": true,
+    "passed": true,
+    "status": "passed"
+  },
+  "live_agent_journey_live2": {
+    "evidence_file": "reports\\hw08\\raw\\part2_agent_demo_live2.jsonl",
+    "pipeline_log": "reports/hw08/raw/part2_agent_pipeline_logs.log",
+    "recorded": true,
+    "passed": true,
+    "status": "passed",
+    "record_count": 2
+  },
+  "live_duplicate_delivery": {
+    "evidence_file": "reports\\hw08\\raw\\part3_duplicate_delivery.jsonl",
+    "recorded": true,
+    "passed": true,
+    "status": "passed"
+  },
+  "live_consumer_death": {
+    "evidence_file": "reports\\hw08\\raw\\part3_consumer_death_live2.jsonl",
+    "recorded": true,
+    "passed": true,
+    "status": "passed"
+  },
+  "live_poison_dead_letter": {
+    "evidence_file": "reports\\hw08\\raw\\part3_poison_dead_letter_live2.jsonl",
+    "recorded": true,
+    "passed": true,
+    "status": "passed",
+    "later_valid_check": {
+      "blocked_by_poison": false,
+      "output_topic": "s8844_drafts",
+      "output_partition": 1,
+      "output_offset": 1
+    }
+  },
+  "live_ordering_unkeyed": {
+    "evidence_file": "reports\\hw08\\raw\\part3_ordering_unkeyed.jsonl",
+    "recorded": true,
+    "passed": true,
+    "status": "passed",
+    "keyed": false,
+    "message_count": 20,
+    "partitions_observed": [
+      0,
+      1
+    ],
+    "writer_consumers_observed": [
+      "writer-1",
+      "writer-2"
+    ]
+  },
+  "live_ordering_keyed": {
+    "evidence_file": "reports\\hw08\\raw\\part3_ordering_keyed.jsonl",
+    "recorded": true,
+    "passed": true,
+    "status": "passed",
+    "keyed": true,
+    "message_count": 20,
+    "partitions_observed": [
+      0
+    ],
+    "writer_consumers_observed": [
+      "writer-1"
+    ]
+  },
+  "overall_pass": true,
+  "live_results_claimed": true,
+  "live_kafka_smoke_run": true,
+  "live_agent_journey_run": true,
+  "duplicate_delivery_run": true,
+  "consumer_death_run": true,
+  "poison_dead_letter_run": true,
+  "ordering_unkeyed_run": true,
+  "ordering_keyed_run": true,
+  "live_kafka_experiments_run": false,
+  "docker_experiments_run": false,
+  "database_experiments_run": false,
+  "model_experiments_run": false
+}

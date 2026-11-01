@@ -1,0 +1,16 @@
+﻿hw08-planner-1  | Topic s8844_inbox not found in cluster metadata
+hw08-planner-1  | {"event_type": "consumer_ready", "process": "planner", "input_topic": "s8844_inbox", "group_id": "s8844-planner"}
+hw08-planner-1  | {"event_type": "message_received", "process": "planner", "correlation_id": "hw8-8844-agent-live2-001", "topic": "s8844_inbox", "partition": 0, "offset": 0, "timestamp": "2026-11-01T07:59:22.731985+00:00", "committed": false}
+hw08-planner-1  | {"event_type": "output_published", "process": "planner", "correlation_id": "hw8-8844-agent-live2-001", "topic": "s8844_inbox", "partition": 0, "offset": 0, "timestamp": "2026-11-01T07:59:22.738138+00:00", "committed": false, "output_topic": "s8844_tasks", "output_partition": 1, "output_offset": 0}
+hw08-planner-1  | {"event_type": "offset_committed", "process": "planner", "correlation_id": "hw8-8844-agent-live2-001", "topic": "s8844_inbox", "partition": 0, "offset": 0, "timestamp": "2026-11-01T07:59:22.740894+00:00", "committed": true}
+hw08-writer-2-1  | Topic s8844_tasks not found in cluster metadata
+hw08-writer-2-1  | {"event_type": "consumer_ready", "process": "writer", "input_topic": "s8844_tasks", "group_id": "s8844-writer"}
+hw08-writer-2-1  | {"event_type": "message_received", "process": "writer", "correlation_id": "hw8-8844-agent-live2-001", "topic": "s8844_tasks", "partition": 1, "offset": 0, "timestamp": "2026-11-01T07:59:22.738913+00:00", "committed": false}
+hw08-writer-2-1  | {"event_type": "output_published", "process": "writer", "correlation_id": "hw8-8844-agent-live2-001", "topic": "s8844_tasks", "partition": 1, "offset": 0, "timestamp": "2026-11-01T07:59:22.746835+00:00", "committed": false, "output_topic": "s8844_drafts", "output_partition": 1, "output_offset": 0}
+hw08-writer-2-1  | {"event_type": "offset_committed", "process": "writer", "correlation_id": "hw8-8844-agent-live2-001", "topic": "s8844_tasks", "partition": 1, "offset": 0, "timestamp": "2026-11-01T07:59:22.749357+00:00", "committed": true}
+hw08-writer-1-1  | {"event_type": "consumer_ready", "process": "writer", "input_topic": "s8844_tasks", "group_id": "s8844-writer"}
+hw08-reviewer-1  | Topic s8844_drafts not found in cluster metadata
+hw08-reviewer-1  | {"event_type": "consumer_ready", "process": "reviewer", "input_topic": "s8844_drafts", "group_id": "s8844-reviewer"}
+hw08-reviewer-1  | {"event_type": "message_received", "process": "reviewer", "correlation_id": "hw8-8844-agent-live2-001", "topic": "s8844_drafts", "partition": 1, "offset": 0, "timestamp": "2026-11-01T07:59:22.747848+00:00", "committed": false}
+hw08-reviewer-1  | {"event_type": "output_published", "process": "reviewer", "correlation_id": "hw8-8844-agent-live2-001", "topic": "s8844_drafts", "partition": 1, "offset": 0, "timestamp": "2026-11-01T07:59:22.754908+00:00", "committed": false, "output_topic": "s8844_final", "output_partition": 1, "output_offset": 0}
+hw08-reviewer-1  | {"event_type": "offset_committed", "process": "reviewer", "correlation_id": "hw8-8844-agent-live2-001", "topic": "s8844_drafts", "partition": 1, "offset": 0, "timestamp": "2026-11-01T07:59:22.757623+00:00", "committed": true}

@@ -1,0 +1,4 @@
+﻿NAME                               IMAGE                            COMMAND                  SERVICE              CREATED          STATUS                   PORTS
+data260-hw8-hw08-api-1             data260-hw8-hw08-api             "uvicorn code.hw08_a…"   hw08-api             36 seconds ago   Up 32 seconds            0.0.0.0:8744->8744/tcp, [::]:8744->8744/tcp
+data260-hw8-hw08-entity-worker-1   data260-hw8-hw08-entity-worker   "python code/hw08_en…"   hw08-entity-worker   39 seconds ago   Up 33 seconds            
+data260-hw8-hw08-kafka-1           apache/kafka:3.9.2               "/__cacert_entrypoin…"   hw08-kafka           2 minutes ago    Up 2 minutes (healthy)   0.0.0.0:29092->29092/tcp, [::]:29092->29092/tcp

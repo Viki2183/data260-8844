@@ -1,0 +1,22 @@
+﻿COMMAND: kafka-topics.sh --describe for Planner/Writer/Reviewer topics
+
+TOPIC: s8844_inbox
+Topic: s8844_inbox	TopicId: YlkVT6OWSku-qXaA1KgMLg	PartitionCount: 2	ReplicationFactor: 1	Configs: 
+	Topic: s8844_inbox	Partition: 0	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: s8844_inbox	Partition: 1	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+
+TOPIC: s8844_tasks
+Topic: s8844_tasks	TopicId: dtcwsvslQEGQFSETenlskg	PartitionCount: 2	ReplicationFactor: 1	Configs: 
+	Topic: s8844_tasks	Partition: 0	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: s8844_tasks	Partition: 1	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+
+TOPIC: s8844_drafts
+Topic: s8844_drafts	TopicId: NPak-TmySZSeJ1zeDQHVzg	PartitionCount: 2	ReplicationFactor: 1	Configs: 
+	Topic: s8844_drafts	Partition: 0	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: s8844_drafts	Partition: 1	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+
+TOPIC: s8844_final
+Topic: s8844_final	TopicId: T1No6Vd7Qp6f8IGLtaYvMA	PartitionCount: 2	ReplicationFactor: 1	Configs: 
+	Topic: s8844_final	Partition: 0	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: s8844_final	Partition: 1	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+

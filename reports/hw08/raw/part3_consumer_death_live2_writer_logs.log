@@ -1,0 +1,7 @@
+﻿hw08-writer-2-1  | {"event_type": "consumer_ready", "process": "writer", "input_topic": "s8844_tasks", "group_id": "s8844-writer"}
+hw08-writer-2-1  | Heartbeat failed for group s8844-writer because it is rebalancing
+hw08-writer-2-1  | {"event_type": "message_received", "process": "writer", "correlation_id": "hw8-8844-consumer-death-001", "topic": "s8844_tasks", "partition": 0, "offset": 0, "timestamp": "2026-11-01T08:02:15.726563+00:00", "committed": false}
+hw08-writer-2-1  | {"event_type": "output_published", "process": "writer", "correlation_id": "hw8-8844-consumer-death-001", "topic": "s8844_tasks", "partition": 0, "offset": 0, "timestamp": "2026-11-01T08:02:15.731129+00:00", "committed": false, "output_topic": "s8844_drafts", "output_partition": 1, "output_offset": 2}
+hw08-writer-2-1  | {"event_type": "offset_committed", "process": "writer", "correlation_id": "hw8-8844-consumer-death-001", "topic": "s8844_tasks", "partition": 0, "offset": 0, "timestamp": "2026-11-01T08:02:15.732998+00:00", "committed": true}
+hw08-writer-2-1  | Heartbeat failed for group s8844-writer because it is rebalancing
+hw08-writer-1-1  | {"event_type": "consumer_ready", "process": "writer", "input_topic": "s8844_tasks", "group_id": "s8844-writer"}

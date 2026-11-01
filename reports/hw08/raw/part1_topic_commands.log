@@ -1,0 +1,17 @@
+﻿COMMAND: kafka-topics.sh --list
+RESULT:
+__consumer_offsets
+s8844_entity_requests
+s8844_entity_responses
+
+COMMAND: kafka-topics.sh --describe --topic s8844_entity_requests
+RESULT:
+Topic: s8844_entity_requests	TopicId: YmUQIL5BR3KTII1500WOqA	PartitionCount: 2	ReplicationFactor: 1	Configs: 
+	Topic: s8844_entity_requests	Partition: 0	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: s8844_entity_requests	Partition: 1	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+
+COMMAND: kafka-topics.sh --describe --topic s8844_entity_responses
+RESULT:
+Topic: s8844_entity_responses	TopicId: gRShN7fjSXqz8KDVFR3upQ	PartitionCount: 2	ReplicationFactor: 1	Configs: 
+	Topic: s8844_entity_responses	Partition: 0	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: s8844_entity_responses	Partition: 1	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 

@@ -1,0 +1,4 @@
+﻿COMMAND: kafka-topics.sh --describe --topic s8844_dead_letter
+RESULT:
+Topic: s8844_dead_letter	TopicId: TeKLqXdHQi-CcYjJv-C8rQ	PartitionCount: 1	ReplicationFactor: 1	Configs: 
+	Topic: s8844_dead_letter	Partition: 0	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 

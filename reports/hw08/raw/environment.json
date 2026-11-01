@@ -1,0 +1,25 @@
+{
+  "student": "Vrishin KunnathamParambath",
+  "sid4": 8844,
+  "captured_at_utc": "2026-10-30T08:34:33.9789408Z",
+  "compose_project": "data260-hw8",
+  "kafka_image": "apache/kafka:3.9.2",
+  "entity_worker_image": "data260-hw8-hw08-entity-worker:latest",
+  "services_started": ["hw08-kafka", "hw08-entity-worker"],
+  "services_not_started": ["hw08-planner", "hw08-writer-1", "hw08-writer-2", "hw08-reviewer"],
+  "kafka_health": "healthy",
+  "entity_worker_status": "running",
+  "docker_bootstrap_servers": "hw08-kafka:9092",
+  "host_bootstrap_servers": "localhost:29092",
+  "advertised_listeners": ["INTERNAL://hw08-kafka:9092", "EXTERNAL://localhost:29092"],
+  "advertised_localhost_9092": false,
+  "host_port": "29092:29092",
+  "topics": {
+    "s8844_entity_requests": {"partitions": 2, "replication_factor": 1},
+    "s8844_entity_responses": {"partitions": 1, "replication_factor": 1}
+  },
+  "mysql_used": false,
+  "ollama_used": false,
+  "jmeter_used": false,
+  "automatic_request_retries": false
+}
