@@ -1,0 +1,143 @@
+- id: exact-01
+  label: exact_duplicate
+  query: Which versions of package alpha are affected by CVE-2026-0001?
+  cached_query: Which versions of package alpha are affected by CVE-2026-0001?
+- id: exact-02
+  label: exact_duplicate
+  query: Which versions of package beta are affected by CVE-2026-0002?
+  cached_query: Which versions of package beta are affected by CVE-2026-0002?
+- id: exact-03
+  label: exact_duplicate
+  query: What is the severity of CVE-2026-0003?
+  cached_query: What is the severity of CVE-2026-0003?
+- id: exact-04
+  label: exact_duplicate
+  query: Which package has the path traversal vulnerability?
+  cached_query: Which package has the path traversal vulnerability?
+- id: exact-05
+  label: exact_duplicate
+  query: What is the patched version for package gamma?
+  cached_query: What is the patched version for package gamma?
+- id: exact-06
+  label: exact_duplicate
+  query: Does CVE-2026-0006 require local access?
+  cached_query: Does CVE-2026-0006 require local access?
+- id: exact-07
+  label: exact_duplicate
+  query: Is CVE-2026-0007 an injection vulnerability?
+  cached_query: Is CVE-2026-0007 an injection vulnerability?
+- id: exact-08
+  label: exact_duplicate
+  query: What ecosystem contains package delta?
+  cached_query: What ecosystem contains package delta?
+- id: exact-09
+  label: exact_duplicate
+  query: Which CVE affects package epsilon?
+  cached_query: Which CVE affects package epsilon?
+- id: exact-10
+  label: exact_duplicate
+  query: What mitigation is recommended for package zeta?
+  cached_query: What mitigation is recommended for package zeta?
+- id: paraphrase-01
+  label: paraphrase
+  query: What releases of alpha are vulnerable to CVE-2026-0001?
+  cached_query: Which versions of package alpha are affected by CVE-2026-0001?
+- id: paraphrase-02
+  label: paraphrase
+  query: Which beta releases contain CVE-2026-0002?
+  cached_query: Which versions of package beta are affected by CVE-2026-0002?
+- id: paraphrase-03
+  label: paraphrase
+  query: How severe is CVE-2026-0003?
+  cached_query: What is the severity of CVE-2026-0003?
+- id: paraphrase-04
+  label: paraphrase
+  query: Name the package exposed to path traversal.
+  cached_query: Which package has the path traversal vulnerability?
+- id: paraphrase-05
+  label: paraphrase
+  query: What release fixes gamma?
+  cached_query: What is the patched version for package gamma?
+- id: paraphrase-06
+  label: paraphrase
+  query: Is local access needed for CVE-2026-0006?
+  cached_query: Does CVE-2026-0006 require local access?
+- id: paraphrase-07
+  label: paraphrase
+  query: Does CVE-2026-0007 involve injection?
+  cached_query: Is CVE-2026-0007 an injection vulnerability?
+- id: paraphrase-08
+  label: paraphrase
+  query: Which ecosystem is delta from?
+  cached_query: What ecosystem contains package delta?
+- id: paraphrase-09
+  label: paraphrase
+  query: Identify the CVE assigned to epsilon.
+  cached_query: Which CVE affects package epsilon?
+- id: paraphrase-10
+  label: paraphrase
+  query: How should users mitigate zeta?
+  cached_query: What mitigation is recommended for package zeta?
+- id: similar-different-01
+  label: superficially_similar_different_answer
+  query: Which versions of package alpha are fixed by CVE-2026-1001?
+  cached_query: Which versions of package alpha are affected by CVE-2026-0001?
+- id: similar-different-02
+  label: superficially_similar_different_answer
+  query: Which versions of package beta are fixed by CVE-2026-1002?
+  cached_query: Which versions of package beta are affected by CVE-2026-0002?
+- id: similar-different-03
+  label: superficially_similar_different_answer
+  query: What is the severity of CVE-2026-1003?
+  cached_query: What is the severity of CVE-2026-0003?
+- id: similar-different-04
+  label: superficially_similar_different_answer
+  query: Which package has a different path traversal issue?
+- id: similar-different-05
+  label: superficially_similar_different_answer
+  query: What is the patched version for package eta?
+- id: similar-different-06
+  label: superficially_similar_different_answer
+  query: Does CVE-2026-1006 require local access?
+- id: similar-different-07
+  label: superficially_similar_different_answer
+  query: Is CVE-2026-1007 an injection vulnerability?
+- id: similar-different-08
+  label: superficially_similar_different_answer
+  query: What ecosystem contains package theta?
+- id: similar-different-09
+  label: superficially_similar_different_answer
+  query: Which CVE affects package iota?
+- id: similar-different-10
+  label: superficially_similar_different_answer
+  query: What mitigation is recommended for package kappa?
+- id: unrelated-01
+  label: unrelated
+  query: How do I sort a list in Python?
+- id: unrelated-02
+  label: unrelated
+  query: What is the capital of France?
+- id: unrelated-03
+  label: unrelated
+  query: Explain relational database normalization.
+- id: unrelated-04
+  label: unrelated
+  query: What causes ocean tides?
+- id: unrelated-05
+  label: unrelated
+  query: How do I make sourdough bread?
+- id: unrelated-06
+  label: unrelated
+  query: What is the quadratic formula?
+- id: unrelated-07
+  label: unrelated
+  query: How does a bicycle derailleur work?
+- id: unrelated-08
+  label: unrelated
+  query: What are the phases of the moon?
+- id: unrelated-09
+  label: unrelated
+  query: How can I improve sleep quality?
+- id: unrelated-10
+  label: unrelated
+  query: What is the fastest ocean animal?
