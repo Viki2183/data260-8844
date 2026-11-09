@@ -1,0 +1,75 @@
+{
+  "run_date": "2026-11-07",
+  "base_url": "http://127.0.0.1:8745",
+  "authentication": {
+    "missing_bearer_status": 401,
+    "reader_status": 200,
+    "writer_status": 200,
+    "moderator_status": 200
+  },
+  "first_request": {
+    "question": "Which package versions are affected?",
+    "is_cached": false,
+    "similarity": 0.0,
+    "latency_ms": 36177.985,
+    "cache_status": "miss",
+    "correlation_id": "live-first-8844",
+    "timings_ms": {
+      "embedding": 32076.237,
+      "redis_search": 1.964,
+      "agent": 3876.141,
+      "finalization": 6.356
+    }
+  },
+  "exact_duplicate": {
+    "is_cached": true,
+    "similarity": 1.0,
+    "latency_ms": 24.93,
+    "cache_status": "hit",
+    "correlation_id": "live-duplicate-8844"
+  },
+  "paraphrase": {
+    "question": "What versions of the package are impacted?",
+    "is_cached": true,
+    "similarity": 0.93005,
+    "latency_ms": 72.601,
+    "cache_status": "hit",
+    "correlation_id": "live-paraphrase-8844"
+  },
+  "different_query": {
+    "question": "Which maintainer published the patched release?",
+    "is_cached": false,
+    "similarity": 0.489112,
+    "latency_ms": 3197.389,
+    "cache_status": "miss",
+    "correlation_id": "live-header-correlation-8844"
+  },
+  "report_scoped_invalidation": {
+    "report_id": 5005,
+    "initial_cache_status": "miss",
+    "duplicate_cache_status": "hit",
+    "baseline_version": "2026-10-01 21:00:11.000000",
+    "temporary_version": "2026-10-01 21:00:12.000000",
+    "after_change_cache_status": "miss",
+    "after_change_similarity": 0.0,
+    "restored_version": "2026-10-01 21:00:11.000000"
+  },
+  "correlation_matching": {
+    "requested": "live-match-8844",
+    "returned": "live-match-8844",
+    "cache_status": "miss",
+    "similarity": 0.077566,
+    "latency_ms": 3086.337
+  },
+  "timeout": {
+    "status": 504,
+    "detail": "Timed out waiting for the HW8 final response",
+    "reviewer_restarted": true
+  },
+  "kafka_unavailable": {
+    "status": 503,
+    "detail": "KafkaConnectionError: Unable to bootstrap from [('hw08-kafka', 9092, )]",
+    "kafka_restarted_healthy": true,
+    "workers_restarted": true
+  }
+}

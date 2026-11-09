@@ -1,0 +1,598 @@
+{
+  "Baseline": [
+    {
+      "question": "Which beta releases contain CVE-2026-0002?",
+      "answer": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "beta"
+        ],
+        "correction": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.05059997783973813
+    },
+    {
+      "question": "Does CVE-2026-0007 involve injection?",
+      "answer": "CVE-2026-0007 is an injection vulnerability.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "injection"
+        ],
+        "correction": "CVE-2026-0007 is an injection vulnerability."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.02169999061152339
+    },
+    {
+      "question": "Which ecosystem is delta from?",
+      "answer": "Package delta is in the PyPI ecosystem.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "delta"
+        ],
+        "correction": "Package delta is in the PyPI ecosystem."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.01759998849593103
+    },
+    {
+      "question": "Which alpha versions are vulnerable?",
+      "answer": "Package alpha is affected by CVE-2026-0001.",
+      "evaluation": {
+        "result": "REVISE",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "alpha"
+        ],
+        "correction": "Package alpha is affected through version 1.4.2 by CVE-2026-0001."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.018099992303177714
+    },
+    {
+      "question": "What version patches gamma?",
+      "answer": "Package gamma has a patched release.",
+      "evaluation": {
+        "result": "REVISE",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "gamma-fix"
+        ],
+        "correction": "Package gamma is patched in version 4.2.0."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.016600009985268116
+    },
+    {
+      "question": "How should users mitigate package zeta?",
+      "answer": "Users should upgrade package zeta.",
+      "evaluation": {
+        "result": "REVISE",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "zeta"
+        ],
+        "correction": "Users should upgrade package zeta and reject untrusted input."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.015799974789842963
+    },
+    {
+      "question": "What severity is CVE-2026-1003?",
+      "answer": "CVE-2026-1003 has Critical severity.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "severity-1003"
+        ],
+        "correction": "CVE-2026-1003 has Critical severity."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.015900004655122757
+    },
+    {
+      "question": "Which CVE affects epsilon?",
+      "answer": "Package epsilon is affected by CVE-2026-0009.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "epsilon"
+        ],
+        "correction": "Package epsilon is affected by CVE-2026-0009."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.014699995517730713
+    },
+    {
+      "question": "What version fixes CVE-2026-0012 in omega?",
+      "answer": "Package omega fixes CVE-2026-0012 in version 7.1.0.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "omega"
+        ],
+        "correction": "Package omega fixes CVE-2026-0012 in version 7.1.0."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.01580000389367342
+    },
+    {
+      "question": "How do I sort a list in Python?",
+      "answer": "No matching vulnerability fact was found in the reference dataset.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Keep the answer grounded in the reference dataset.",
+        "expected_fact_ids": []
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.014199991710484028
+    }
+  ],
+  "Evaluator Repair": [
+    {
+      "question": "Which beta releases contain CVE-2026-0002?",
+      "answer": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "beta"
+        ],
+        "correction": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.03670001751743257
+    },
+    {
+      "question": "Does CVE-2026-0007 involve injection?",
+      "answer": "CVE-2026-0007 is an injection vulnerability.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "injection"
+        ],
+        "correction": "CVE-2026-0007 is an injection vulnerability."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.01829999382607639
+    },
+    {
+      "question": "Which ecosystem is delta from?",
+      "answer": "Package delta is in the PyPI ecosystem.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "delta"
+        ],
+        "correction": "Package delta is in the PyPI ecosystem."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.01650000922381878
+    },
+    {
+      "question": "Which alpha versions are vulnerable?",
+      "answer": "Package alpha is affected through version 1.4.2 by CVE-2026-0001.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "alpha"
+        ],
+        "correction": "Package alpha is affected through version 1.4.2 by CVE-2026-0001."
+      },
+      "attempts": 2,
+      "feedback_used": true,
+      "latency_ms": 0.03500000457279384
+    },
+    {
+      "question": "What version patches gamma?",
+      "answer": "Package gamma is patched in version 4.2.0.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "gamma-fix"
+        ],
+        "correction": "Package gamma is patched in version 4.2.0."
+      },
+      "attempts": 2,
+      "feedback_used": true,
+      "latency_ms": 0.03209998249076307
+    },
+    {
+      "question": "How should users mitigate package zeta?",
+      "answer": "Users should upgrade package zeta and reject untrusted input.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "zeta"
+        ],
+        "correction": "Users should upgrade package zeta and reject untrusted input."
+      },
+      "attempts": 2,
+      "feedback_used": true,
+      "latency_ms": 0.029699993319809437
+    },
+    {
+      "question": "What severity is CVE-2026-1003?",
+      "answer": "CVE-2026-1003 has Critical severity.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "severity-1003"
+        ],
+        "correction": "CVE-2026-1003 has Critical severity."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.015600002370774746
+    },
+    {
+      "question": "Which CVE affects epsilon?",
+      "answer": "Package epsilon is affected by CVE-2026-0009.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "epsilon"
+        ],
+        "correction": "Package epsilon is affected by CVE-2026-0009."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.014999997802078724
+    },
+    {
+      "question": "What version fixes CVE-2026-0012 in omega?",
+      "answer": "Package omega fixes CVE-2026-0012 in version 7.1.0.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "omega"
+        ],
+        "correction": "Package omega fixes CVE-2026-0012 in version 7.1.0."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.016000005416572094
+    },
+    {
+      "question": "How do I sort a list in Python?",
+      "answer": "No matching vulnerability fact was found in the reference dataset.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Keep the answer grounded in the reference dataset.",
+        "expected_fact_ids": []
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.01470002462156117
+    }
+  ],
+  "Lesson Memory": [
+    {
+      "question": "Which beta releases contain CVE-2026-0002?",
+      "answer": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "beta"
+        ],
+        "correction": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 2.034400007687509
+    },
+    {
+      "question": "Does CVE-2026-0007 involve injection?",
+      "answer": "CVE-2026-0007 is an injection vulnerability.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "injection"
+        ],
+        "correction": "CVE-2026-0007 is an injection vulnerability."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.4304999893065542
+    },
+    {
+      "question": "Which ecosystem is delta from?",
+      "answer": "Package delta is in the PyPI ecosystem.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "delta"
+        ],
+        "correction": "Package delta is in the PyPI ecosystem."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.3995999868493527
+    },
+    {
+      "question": "Which alpha versions are vulnerable?",
+      "answer": "Package alpha is affected through version 1.4.2 by CVE-2026-0001.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "alpha"
+        ],
+        "correction": "Package alpha is affected through version 1.4.2 by CVE-2026-0001."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 1.4701999898534268
+    },
+    {
+      "question": "What version patches gamma?",
+      "answer": "Package gamma has a patched release.",
+      "evaluation": {
+        "result": "REVISE",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "gamma-fix"
+        ],
+        "correction": "Package gamma is patched in version 4.2.0."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 1.5740999951958656
+    },
+    {
+      "question": "How should users mitigate package zeta?",
+      "answer": "Users should upgrade package zeta.",
+      "evaluation": {
+        "result": "REVISE",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "zeta"
+        ],
+        "correction": "Users should upgrade package zeta and reject untrusted input."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.3384999872650951
+    },
+    {
+      "question": "What severity is CVE-2026-1003?",
+      "answer": "CVE-2026-1003 has Critical severity.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "severity-1003"
+        ],
+        "correction": "CVE-2026-1003 has Critical severity."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.2683000057004392
+    },
+    {
+      "question": "Which CVE affects epsilon?",
+      "answer": "Package epsilon is affected by CVE-2026-0009.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "epsilon"
+        ],
+        "correction": "Package epsilon is affected by CVE-2026-0009."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.49509998643770814
+    },
+    {
+      "question": "What version fixes CVE-2026-0012 in omega?",
+      "answer": "Package omega fixes CVE-2026-0012 in version 7.1.0.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "omega"
+        ],
+        "correction": "Package omega fixes CVE-2026-0012 in version 7.1.0."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.2567000046838075
+    },
+    {
+      "question": "How do I sort a list in Python?",
+      "answer": "No matching vulnerability fact was found in the reference dataset.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Keep the answer grounded in the reference dataset.",
+        "expected_fact_ids": []
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.24220001068897545
+    }
+  ],
+  "Validated Improvement": [
+    {
+      "question": "Which beta releases contain CVE-2026-0002?",
+      "answer": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "beta"
+        ],
+        "correction": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 1.500300015322864
+    },
+    {
+      "question": "Does CVE-2026-0007 involve injection?",
+      "answer": "CVE-2026-0007 is an injection vulnerability.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "injection"
+        ],
+        "correction": "CVE-2026-0007 is an injection vulnerability."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.2846000134013593
+    },
+    {
+      "question": "Which ecosystem is delta from?",
+      "answer": "Package delta is in the PyPI ecosystem.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "delta"
+        ],
+        "correction": "Package delta is in the PyPI ecosystem."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.2662999904714525
+    },
+    {
+      "question": "Which alpha versions are vulnerable?",
+      "answer": "Package alpha is affected through version 1.4.2 by CVE-2026-0001.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "alpha"
+        ],
+        "correction": "Package alpha is affected through version 1.4.2 by CVE-2026-0001."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 1.0375999845564365
+    },
+    {
+      "question": "What version patches gamma?",
+      "answer": "Package gamma has a patched release.",
+      "evaluation": {
+        "result": "REVISE",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "gamma-fix"
+        ],
+        "correction": "Package gamma is patched in version 4.2.0."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 1.5412000066135079
+    },
+    {
+      "question": "How should users mitigate package zeta?",
+      "answer": "Users should upgrade package zeta.",
+      "evaluation": {
+        "result": "REVISE",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "zeta"
+        ],
+        "correction": "Users should upgrade package zeta and reject untrusted input."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.3176000027451664
+    },
+    {
+      "question": "What severity is CVE-2026-1003?",
+      "answer": "CVE-2026-1003 has Critical severity.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "severity-1003"
+        ],
+        "correction": "CVE-2026-1003 has Critical severity."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.27540000155568123
+    },
+    {
+      "question": "Which CVE affects epsilon?",
+      "answer": "Package epsilon is affected by CVE-2026-0009.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "epsilon"
+        ],
+        "correction": "Package epsilon is affected by CVE-2026-0009."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.2403999969828874
+    },
+    {
+      "question": "What version fixes CVE-2026-0012 in omega?",
+      "answer": "Package omega fixes CVE-2026-0012 in version 7.1.0.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "omega"
+        ],
+        "correction": "Package omega fixes CVE-2026-0012 in version 7.1.0."
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.23999999393709004
+    },
+    {
+      "question": "How do I sort a list in Python?",
+      "answer": "No matching vulnerability fact was found in the reference dataset.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Keep the answer grounded in the reference dataset.",
+        "expected_fact_ids": []
+      },
+      "attempts": 1,
+      "feedback_used": false,
+      "latency_ms": 0.2339000056963414
+    }
+  ]
+}

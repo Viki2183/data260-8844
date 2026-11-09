@@ -1,0 +1,12 @@
+[
+  {"question":"Which beta releases contain CVE-2026-0002?"},
+  {"question":"Does CVE-2026-0007 involve injection?"},
+  {"question":"Which ecosystem is delta from?"},
+  {"question":"Which alpha versions are vulnerable?"},
+  {"question":"What version patches gamma?"},
+  {"question":"How should users mitigate package zeta?"},
+  {"question":"What severity is CVE-2026-1003?"},
+  {"question":"Which CVE affects epsilon?"},
+  {"question":"What version fixes CVE-2026-0012 in omega?"},
+  {"question":"How do I sort a list in Python?"}
+]

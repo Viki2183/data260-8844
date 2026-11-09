@@ -123,6 +123,14 @@ class VulnerabilityReportDB(Base):
         server_default="0",
     )
 
+    # HW9 Redis view-counter synchronization target.
+    view_count: Mapped[int] = mapped_column(
+        Integer,
+        nullable=False,
+        default=0,
+        server_default="0",
+    )
+
     # Existing HW4 timestamp.
     submission_date: Mapped[datetime] = mapped_column(
         DateTime,

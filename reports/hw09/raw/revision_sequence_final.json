@@ -1,0 +1,18 @@
+{
+  "question": "Which versions of package alpha are affected?",
+  "initial_answer": "Package alpha is affected by CVE-2026-0001.",
+  "initial_evaluator_result": "REVISE",
+  "evaluator_feedback": "Include the complete reference fact and avoid unsupported claims.",
+  "revision_generated_by": "AnsweringAgent.answer",
+  "revised_answer": "Package alpha is affected through version 1.4.2 by CVE-2026-0001.",
+  "final_evaluation": {
+    "result": "PASS",
+    "feedback": "Include the complete reference fact and avoid unsupported claims.",
+    "expected_fact_ids": [
+      "alpha"
+    ],
+    "correction": "Package alpha is affected through version 1.4.2 by CVE-2026-0001."
+  },
+  "attempt_count": 2,
+  "final_returned_response": "Package alpha is affected through version 1.4.2 by CVE-2026-0001."
+}

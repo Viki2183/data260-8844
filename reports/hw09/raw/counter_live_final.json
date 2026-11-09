@@ -1,0 +1,116 @@
+{
+  "student": "Vrishin KunnathamParambath",
+  "sid4": "8844",
+  "report_id": 5005,
+  "redis_key": "s8844:views:vulnerability_report:5005",
+  "original_view_count": 0,
+  "accesses": [
+    {
+      "access": 1,
+      "total": 1
+    },
+    {
+      "access": 2,
+      "total": 2
+    },
+    {
+      "access": 3,
+      "total": 3
+    },
+    {
+      "access": 4,
+      "total": 4
+    },
+    {
+      "access": 5,
+      "total": 5
+    },
+    {
+      "access": 6,
+      "total": 6
+    },
+    {
+      "access": 7,
+      "total": 7
+    },
+    {
+      "access": 8,
+      "total": 8
+    },
+    {
+      "access": 9,
+      "total": 9
+    },
+    {
+      "access": 10,
+      "total": 10,
+      "database_view_count": 10
+    },
+    {
+      "access": 11,
+      "total": 11
+    },
+    {
+      "access": 12,
+      "total": 12
+    },
+    {
+      "access": 13,
+      "total": 13
+    },
+    {
+      "access": 14,
+      "total": 14
+    },
+    {
+      "access": 15,
+      "total": 15
+    },
+    {
+      "access": 16,
+      "total": 16
+    },
+    {
+      "access": 17,
+      "total": 17
+    },
+    {
+      "access": 18,
+      "total": 18
+    },
+    {
+      "access": 19,
+      "total": 19
+    },
+    {
+      "access": 20,
+      "total": 20,
+      "database_view_count": 20
+    },
+    {
+      "access": 21,
+      "total": 21
+    },
+    {
+      "access": 22,
+      "total": 22
+    },
+    {
+      "access": 23,
+      "total": 23
+    },
+    {
+      "access": 24,
+      "total": 24
+    },
+    {
+      "access": 25,
+      "total": 25
+    }
+  ],
+  "sync_counts": [
+    10,
+    20
+  ],
+  "restored_view_count": 0
+}

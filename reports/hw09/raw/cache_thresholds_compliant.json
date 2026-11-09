@@ -1,0 +1,102 @@
+[
+  {
+    "threshold": 0.75,
+    "hit_rate": 0.625,
+    "false_hit_rate": 0.15,
+    "mean_latency_ms": 20.86418177499354,
+    "total_cost": 45.0,
+    "hits": 25,
+    "misses": 15,
+    "false_hits": 6,
+    "cache_miss_cost": 1.0,
+    "false_hit_cost": 5.0,
+    "false_hit_example": {
+      "cached_query": "Which versions of package alpha are affected by CVE-2026-0001?",
+      "incoming_query": "Which versions of package alpha are fixed by CVE-2026-1001?",
+      "similarity": 0.951798081398,
+      "cached_answer_returned": "Package alpha is affected through version 1.4.2 by CVE-2026-0001.",
+      "correct_answer": "CVE-2026-1001 fixes package alpha in version 1.5.0.",
+      "confusion": "The questions share vulnerability-domain wording while differing in the package or CVE identifier that determines the answer."
+    }
+  },
+  {
+    "threshold": 0.8,
+    "hit_rate": 0.55,
+    "false_hit_rate": 0.15,
+    "mean_latency_ms": 17.477036875004615,
+    "total_cost": 48.0,
+    "hits": 22,
+    "misses": 18,
+    "false_hits": 6,
+    "cache_miss_cost": 1.0,
+    "false_hit_cost": 5.0,
+    "false_hit_example": {
+      "cached_query": "Which versions of package alpha are affected by CVE-2026-0001?",
+      "incoming_query": "Which versions of package alpha are fixed by CVE-2026-1001?",
+      "similarity": 0.951798081398,
+      "cached_answer_returned": "Package alpha is affected through version 1.4.2 by CVE-2026-0001.",
+      "correct_answer": "CVE-2026-1001 fixes package alpha in version 1.5.0.",
+      "confusion": "The questions share vulnerability-domain wording while differing in the package or CVE identifier that determines the answer."
+    }
+  },
+  {
+    "threshold": 0.85,
+    "hit_rate": 0.5,
+    "false_hit_rate": 0.15,
+    "mean_latency_ms": 14.863062349991196,
+    "total_cost": 50.0,
+    "hits": 20,
+    "misses": 20,
+    "false_hits": 6,
+    "cache_miss_cost": 1.0,
+    "false_hit_cost": 5.0,
+    "false_hit_example": {
+      "cached_query": "Which versions of package alpha are affected by CVE-2026-0001?",
+      "incoming_query": "Which versions of package alpha are fixed by CVE-2026-1001?",
+      "similarity": 0.951798081398,
+      "cached_answer_returned": "Package alpha is affected through version 1.4.2 by CVE-2026-0001.",
+      "correct_answer": "CVE-2026-1001 fixes package alpha in version 1.5.0.",
+      "confusion": "The questions share vulnerability-domain wording while differing in the package or CVE identifier that determines the answer."
+    }
+  },
+  {
+    "threshold": 0.9,
+    "hit_rate": 0.425,
+    "false_hit_rate": 0.125,
+    "mean_latency_ms": 14.440420200014614,
+    "total_cost": 48.0,
+    "hits": 17,
+    "misses": 23,
+    "false_hits": 5,
+    "cache_miss_cost": 1.0,
+    "false_hit_cost": 5.0,
+    "false_hit_example": {
+      "cached_query": "Which versions of package alpha are affected by CVE-2026-0001?",
+      "incoming_query": "Which versions of package alpha are fixed by CVE-2026-1001?",
+      "similarity": 0.951798081398,
+      "cached_answer_returned": "Package alpha is affected through version 1.4.2 by CVE-2026-0001.",
+      "correct_answer": "CVE-2026-1001 fixes package alpha in version 1.5.0.",
+      "confusion": "The questions share vulnerability-domain wording while differing in the package or CVE identifier that determines the answer."
+    }
+  },
+  {
+    "threshold": 0.95,
+    "hit_rate": 0.375,
+    "false_hit_rate": 0.1,
+    "mean_latency_ms": 17.92735132499388,
+    "total_cost": 45.0,
+    "hits": 15,
+    "misses": 25,
+    "false_hits": 4,
+    "cache_miss_cost": 1.0,
+    "false_hit_cost": 5.0,
+    "false_hit_example": {
+      "cached_query": "Which versions of package alpha are affected by CVE-2026-0001?",
+      "incoming_query": "Which versions of package alpha are fixed by CVE-2026-1001?",
+      "similarity": 0.951798081398,
+      "cached_answer_returned": "Package alpha is affected through version 1.4.2 by CVE-2026-0001.",
+      "correct_answer": "CVE-2026-1001 fixes package alpha in version 1.5.0.",
+      "confusion": "The questions share vulnerability-domain wording while differing in the package or CVE identifier that determines the answer."
+    }
+  }
+]

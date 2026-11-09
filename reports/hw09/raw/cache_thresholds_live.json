@@ -1,0 +1,52 @@
+[
+  {
+    "threshold": 0.75,
+    "hit_rate": 0.625,
+    "false_hit_rate": 0.15,
+    "mean_latency_ms": 30.873738175000653,
+    "total_cost": 45.0,
+    "hits": 25,
+    "misses": 15,
+    "false_hits": 6
+  },
+  {
+    "threshold": 0.8,
+    "hit_rate": 0.55,
+    "false_hit_rate": 0.15,
+    "mean_latency_ms": 32.65491269996801,
+    "total_cost": 48.0,
+    "hits": 22,
+    "misses": 18,
+    "false_hits": 6
+  },
+  {
+    "threshold": 0.85,
+    "hit_rate": 0.5,
+    "false_hit_rate": 0.15,
+    "mean_latency_ms": 24.747638224971524,
+    "total_cost": 50.0,
+    "hits": 20,
+    "misses": 20,
+    "false_hits": 6
+  },
+  {
+    "threshold": 0.9,
+    "hit_rate": 0.425,
+    "false_hit_rate": 0.125,
+    "mean_latency_ms": 21.255366349987526,
+    "total_cost": 48.0,
+    "hits": 17,
+    "misses": 23,
+    "false_hits": 5
+  },
+  {
+    "threshold": 0.95,
+    "hit_rate": 0.375,
+    "false_hit_rate": 0.1,
+    "mean_latency_ms": 19.911704350033688,
+    "total_cost": 45.0,
+    "hits": 15,
+    "misses": 25,
+    "false_hits": 4
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "run_date": "2026-11-07",
+  "threshold": 0.95,
+  "case_id": "similar-different-03",
+  "cached_query": "What is the severity of CVE-2026-0003?",
+  "incoming_query": "What is the severity of CVE-2026-1003?",
+  "similarity": 0.9797133193741595,
+  "cached_answer_returned": "CVE-2026-0003 has High severity.",
+  "false_hit_observed": true,
+  "correct_answer": "No reference fact exists for CVE-2026-1003; this input must miss and run the agent rather than reuse the CVE-2026-0003 entry.",
+  "explanation": "The embedding strongly weighted the shared severity question and nearly identical CVE token shape while underweighting the changed numeric identifier."
+}

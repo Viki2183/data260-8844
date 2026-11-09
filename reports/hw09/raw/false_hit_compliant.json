@@ -1,0 +1,10 @@
+{
+  "threshold": 0.95,
+  "cached_query": "Which versions of package alpha are affected by CVE-2026-0001?",
+  "incoming_query": "Which versions of package alpha are fixed by CVE-2026-1001?",
+  "similarity": 0.951798081398,
+  "cached_answer_returned": "Package alpha is affected through version 1.4.2 by CVE-2026-0001.",
+  "correct_answer": "CVE-2026-1001 fixes package alpha in version 1.5.0.",
+  "confusion": "The embedding emphasized shared package, version, and vulnerability wording while underweighting the changed CVE identifier and affected-versus-fixed relation.",
+  "source": "reports/hw09/raw/cache_thresholds_compliant.json"
+}

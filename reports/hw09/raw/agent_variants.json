@@ -1,0 +1,222 @@
+{
+  "Baseline": [
+    {
+      "question": "Which beta releases contain CVE-2026-0002?",
+      "answer": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "beta"
+        ],
+        "correction": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002."
+      },
+      "attempts": 1,
+      "latency_ms": 0.03880000440403819
+    },
+    {
+      "question": "Does CVE-2026-0007 involve injection?",
+      "answer": "CVE-2026-0007 is an injection vulnerability.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "injection"
+        ],
+        "correction": "CVE-2026-0007 is an injection vulnerability."
+      },
+      "attempts": 1,
+      "latency_ms": 0.01610000617802143
+    },
+    {
+      "question": "Which ecosystem is delta from?",
+      "answer": "Package delta is in the PyPI ecosystem.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "delta"
+        ],
+        "correction": "Package delta is in the PyPI ecosystem."
+      },
+      "attempts": 1,
+      "latency_ms": 0.015099998563528061
+    },
+    {
+      "question": "How do I sort a list in Python?",
+      "answer": "No matching vulnerability fact was found in the reference dataset.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Keep the answer grounded in the reference dataset.",
+        "expected_fact_ids": []
+      },
+      "attempts": 1,
+      "latency_ms": 0.017399986973032355
+    }
+  ],
+  "Evaluator Repair": [
+    {
+      "question": "Which beta releases contain CVE-2026-0002?",
+      "answer": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "beta"
+        ],
+        "correction": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002."
+      },
+      "attempts": 1,
+      "latency_ms": 0.02090001362375915
+    },
+    {
+      "question": "Does CVE-2026-0007 involve injection?",
+      "answer": "CVE-2026-0007 is an injection vulnerability.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "injection"
+        ],
+        "correction": "CVE-2026-0007 is an injection vulnerability."
+      },
+      "attempts": 1,
+      "latency_ms": 0.011500000255182385
+    },
+    {
+      "question": "Which ecosystem is delta from?",
+      "answer": "Package delta is in the PyPI ecosystem.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "delta"
+        ],
+        "correction": "Package delta is in the PyPI ecosystem."
+      },
+      "attempts": 1,
+      "latency_ms": 0.010400020983070135
+    },
+    {
+      "question": "How do I sort a list in Python?",
+      "answer": "No matching vulnerability fact was found in the reference dataset.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Keep the answer grounded in the reference dataset.",
+        "expected_fact_ids": []
+      },
+      "attempts": 1,
+      "latency_ms": 0.01500002690590918
+    }
+  ],
+  "Lesson Memory": [
+    {
+      "question": "Which beta releases contain CVE-2026-0002?",
+      "answer": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "beta"
+        ],
+        "correction": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002."
+      },
+      "attempts": 1,
+      "latency_ms": 0.28050001128576696
+    },
+    {
+      "question": "Does CVE-2026-0007 involve injection?",
+      "answer": "CVE-2026-0007 is an injection vulnerability.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "injection"
+        ],
+        "correction": "CVE-2026-0007 is an injection vulnerability."
+      },
+      "attempts": 1,
+      "latency_ms": 0.3069999802391976
+    },
+    {
+      "question": "Which ecosystem is delta from?",
+      "answer": "Package delta is in the PyPI ecosystem.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "delta"
+        ],
+        "correction": "Package delta is in the PyPI ecosystem."
+      },
+      "attempts": 1,
+      "latency_ms": 0.27000001864507794
+    },
+    {
+      "question": "How do I sort a list in Python?",
+      "answer": "No matching vulnerability fact was found in the reference dataset.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Keep the answer grounded in the reference dataset.",
+        "expected_fact_ids": []
+      },
+      "attempts": 1,
+      "latency_ms": 0.2536000101827085
+    }
+  ],
+  "Validated Improvement": [
+    {
+      "question": "Which beta releases contain CVE-2026-0002?",
+      "answer": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "beta"
+        ],
+        "correction": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002."
+      },
+      "attempts": 1,
+      "latency_ms": 0.302100001135841
+    },
+    {
+      "question": "Does CVE-2026-0007 involve injection?",
+      "answer": "CVE-2026-0007 is an injection vulnerability.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "injection"
+        ],
+        "correction": "CVE-2026-0007 is an injection vulnerability."
+      },
+      "attempts": 1,
+      "latency_ms": 0.3040999872609973
+    },
+    {
+      "question": "Which ecosystem is delta from?",
+      "answer": "Package delta is in the PyPI ecosystem.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Include the complete reference fact and avoid unsupported claims.",
+        "expected_fact_ids": [
+          "delta"
+        ],
+        "correction": "Package delta is in the PyPI ecosystem."
+      },
+      "attempts": 1,
+      "latency_ms": 0.6443999882321805
+    },
+    {
+      "question": "How do I sort a list in Python?",
+      "answer": "No matching vulnerability fact was found in the reference dataset.",
+      "evaluation": {
+        "result": "PASS",
+        "feedback": "Keep the answer grounded in the reference dataset.",
+        "expected_fact_ids": []
+      },
+      "attempts": 1,
+      "latency_ms": 0.440200004959479
+    }
+  ]
+}

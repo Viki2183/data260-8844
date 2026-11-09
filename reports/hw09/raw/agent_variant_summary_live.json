@@ -1,0 +1,30 @@
+{
+  "run_date": "2026-11-07",
+  "dataset": "reports/hw09/cases/test_data.json",
+  "variants": {
+    "Baseline": {
+      "correct_answers": 4,
+      "incorrect_answers": 0,
+      "average_attempts": 1.0,
+      "average_latency_ms": 0.02184999902965501
+    },
+    "Evaluator Repair": {
+      "correct_answers": 4,
+      "incorrect_answers": 0,
+      "average_attempts": 1.0,
+      "average_latency_ms": 0.014450015441980213
+    },
+    "Lesson Memory": {
+      "correct_answers": 4,
+      "incorrect_answers": 0,
+      "average_attempts": 1.0,
+      "average_latency_ms": 0.27777500508818775
+    },
+    "Validated Improvement": {
+      "correct_answers": 4,
+      "incorrect_answers": 0,
+      "average_attempts": 1.0,
+      "average_latency_ms": 0.42269999539712444
+    }
+  }
+}

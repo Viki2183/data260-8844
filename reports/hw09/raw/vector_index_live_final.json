@@ -1,0 +1,12 @@
+{
+  "student": "Vrishin KunnathamParambath",
+  "sid4": "8844",
+  "redis_image": "redis/redis-stack-server:7.4.0-v8",
+  "index": "s8844:semantic_cache:index",
+  "index_exists": true,
+  "inserted_entries": 2,
+  "knn_hit_answer": "alpha answer",
+  "knn_hit_similarity": 1.0,
+  "threshold_filter_rejected": true,
+  "rejected_similarity": 0.0
+}

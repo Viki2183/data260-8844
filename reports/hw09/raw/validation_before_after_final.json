@@ -1,0 +1,85 @@
+{
+  "student": "Vrishin KunnathamParambath",
+  "sid4": "8844",
+  "lesson_candidate": {
+    "correction": "Package alpha is affected through version 1.4.2 by CVE-2026-0001.",
+    "created_at": "2026-11-08T19:05:27.579057Z",
+    "failure_pattern": "alpha affected versions",
+    "lesson_id": "lesson-2f16f3d9990c",
+    "use_count": 1
+  },
+  "rows": [
+    {
+      "question": "Which releases of alpha are affected?",
+      "before_answer": "Package alpha is affected by CVE-2026-0001.",
+      "before": "REVISE",
+      "after_answer": "Package alpha is affected through version 1.4.2 by CVE-2026-0001.",
+      "after": "PASS",
+      "unsupported_regression": false
+    },
+    {
+      "question": "What is the severity of CVE-2026-0003?",
+      "before_answer": "CVE-2026-0003 has High severity.",
+      "before": "PASS",
+      "after_answer": "CVE-2026-0003 has High severity.",
+      "after": "PASS",
+      "unsupported_regression": false
+    },
+    {
+      "question": "Which version fixes gamma?",
+      "before_answer": "Package gamma has a patched release.",
+      "before": "REVISE",
+      "after_answer": "Package gamma has a patched release.",
+      "after": "REVISE",
+      "unsupported_regression": false
+    },
+    {
+      "question": "What mitigation should users apply for zeta?",
+      "before_answer": "Users should upgrade package zeta.",
+      "before": "REVISE",
+      "after_answer": "Users should upgrade package zeta.",
+      "after": "REVISE",
+      "unsupported_regression": false
+    },
+    {
+      "question": "What is the capital of France?",
+      "before_answer": "No matching vulnerability fact was found in the reference dataset.",
+      "before": "PASS",
+      "after_answer": "No matching vulnerability fact was found in the reference dataset.",
+      "after": "PASS",
+      "unsupported_regression": false
+    },
+    {
+      "question": "How do I sort a list in Python?",
+      "before_answer": "No matching vulnerability fact was found in the reference dataset.",
+      "before": "PASS",
+      "after_answer": "No matching vulnerability fact was found in the reference dataset.",
+      "after": "PASS",
+      "unsupported_regression": false
+    }
+  ],
+  "conditions": {
+    "failure_cases_improve_or_unchanged": true,
+    "previously_correct_remain_correct": true,
+    "unrelated_have_no_unsupported_answers": true
+  },
+  "retained": true,
+  "explicit_regression_check": "No unsupported-answer regression observed.",
+  "rejected_candidate_demo": {
+    "candidate": {
+      "failure_pattern": "unrelated questions",
+      "correction": "Always claim package alpha is vulnerable."
+    },
+    "before": {
+      "failure_cases_incorrect": 1,
+      "unrelated_unsupported": 0
+    },
+    "after": {
+      "failure_cases_incorrect": 2,
+      "previously_correct_still_correct": false,
+      "unrelated_unsupported": 1
+    },
+    "retained": false,
+    "decision": "REJECTED: worsened failures, broke a previously correct case, and added an unsupported unrelated answer."
+  }
+}

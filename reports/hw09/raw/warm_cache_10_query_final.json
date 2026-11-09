@@ -1,0 +1,176 @@
+{
+  "student": "Vrishin KunnathamParambath",
+  "sid4": "8844",
+  "warm_up": {
+    "procedure": "one authenticated endpoint request after Ollama qwen3:8b warm-up; excluded from statistics",
+    "excluded_latency_ms": 26040.415
+  },
+  "total_queries": 10,
+  "cached_queries": 6,
+  "non_cached_queries": 4,
+  "hit_rate": 0.6,
+  "average_cached_latency_ms": 21.844,
+  "average_non_cached_latency_ms": 3075.926,
+  "responses": [
+    {
+      "query_number": 1,
+      "question": "Which versions of package alpha are affected?",
+      "answer": "Draft based on Plan: answer Which versions of package alpha are affected?",
+      "is_cached": false,
+      "similarity": 0.0,
+      "latency_ms": 3078.411,
+      "cache_status": "miss",
+      "correlation_id": "warm-cache-01-8844",
+      "timings_ms": {
+        "embedding": 20.463,
+        "redis_search": 0.859,
+        "agent": 3054.9,
+        "finalization": 1.419
+      }
+    },
+    {
+      "query_number": 2,
+      "question": "Which versions of package alpha are affected?",
+      "answer": "Draft based on Plan: answer Which versions of package alpha are affected?",
+      "is_cached": true,
+      "similarity": 1.0,
+      "latency_ms": 19.223,
+      "cache_status": "hit",
+      "correlation_id": "warm-cache-02-8844",
+      "timings_ms": {
+        "embedding": 15.691,
+        "redis_search": 2.549,
+        "agent": 0.0,
+        "finalization": 2.558
+      }
+    },
+    {
+      "query_number": 3,
+      "question": "What releases of package alpha are vulnerable?",
+      "answer": "Draft based on Plan: answer Which versions of package alpha are affected?",
+      "is_cached": true,
+      "similarity": 0.857683,
+      "latency_ms": 24.349,
+      "cache_status": "hit",
+      "correlation_id": "warm-cache-03-8844",
+      "timings_ms": {
+        "embedding": 21.719,
+        "redis_search": 1.905,
+        "agent": 0.0,
+        "finalization": 1.913
+      }
+    },
+    {
+      "query_number": 4,
+      "question": "What is the severity of CVE-2026-0003?",
+      "answer": "Draft based on Plan: answer What is the severity of CVE-2026-0003?",
+      "is_cached": false,
+      "similarity": 0.281056,
+      "latency_ms": 3074.526,
+      "cache_status": "miss",
+      "correlation_id": "warm-cache-04-8844",
+      "timings_ms": {
+        "embedding": 26.673,
+        "redis_search": 1.0,
+        "agent": 3044.797,
+        "finalization": 0.928
+      }
+    },
+    {
+      "query_number": 5,
+      "question": "What is the severity of CVE-2026-0003?",
+      "answer": "Draft based on Plan: answer What is the severity of CVE-2026-0003?",
+      "is_cached": true,
+      "similarity": 1.0,
+      "latency_ms": 15.769,
+      "cache_status": "hit",
+      "correlation_id": "warm-cache-05-8844",
+      "timings_ms": {
+        "embedding": 13.292,
+        "redis_search": 1.812,
+        "agent": 0.0,
+        "finalization": 1.818
+      }
+    },
+    {
+      "query_number": 6,
+      "question": "How severe is CVE-2026-0003?",
+      "answer": "Draft based on Plan: answer What is the severity of CVE-2026-0003?",
+      "is_cached": true,
+      "similarity": 0.939928,
+      "latency_ms": 20.007,
+      "cache_status": "hit",
+      "correlation_id": "warm-cache-06-8844",
+      "timings_ms": {
+        "embedding": 17.443,
+        "redis_search": 1.875,
+        "agent": 0.0,
+        "finalization": 1.881
+      }
+    },
+    {
+      "query_number": 7,
+      "question": "What mitigation is recommended for package zeta?",
+      "answer": "Draft based on Plan: answer What mitigation is recommended for package zeta?",
+      "is_cached": false,
+      "similarity": 0.328531,
+      "latency_ms": 3070.101,
+      "cache_status": "miss",
+      "correlation_id": "warm-cache-07-8844",
+      "timings_ms": {
+        "embedding": 23.565,
+        "redis_search": 0.984,
+        "agent": 3043.402,
+        "finalization": 1.382
+      }
+    },
+    {
+      "query_number": 8,
+      "question": "What mitigation is recommended for package zeta?",
+      "answer": "Draft based on Plan: answer What mitigation is recommended for package zeta?",
+      "is_cached": true,
+      "similarity": 1.0,
+      "latency_ms": 16.96,
+      "cache_status": "hit",
+      "correlation_id": "warm-cache-08-8844",
+      "timings_ms": {
+        "embedding": 14.024,
+        "redis_search": 2.111,
+        "agent": 0.0,
+        "finalization": 2.121
+      }
+    },
+    {
+      "query_number": 9,
+      "question": "Which ecosystem contains package delta?",
+      "answer": "Draft based on Plan: answer Which ecosystem contains package delta?",
+      "is_cached": false,
+      "similarity": 0.329384,
+      "latency_ms": 3080.666,
+      "cache_status": "miss",
+      "correlation_id": "warm-cache-09-8844",
+      "timings_ms": {
+        "embedding": 28.87,
+        "redis_search": 1.61,
+        "agent": 3047.934,
+        "finalization": 1.321
+      }
+    },
+    {
+      "query_number": 10,
+      "question": "Which ecosystem contains package delta?",
+      "answer": "Draft based on Plan: answer Which ecosystem contains package delta?",
+      "is_cached": true,
+      "similarity": 1.0,
+      "latency_ms": 34.756,
+      "cache_status": "hit",
+      "correlation_id": "warm-cache-10-8844",
+      "timings_ms": {
+        "embedding": 31.827,
+        "redis_search": 2.12,
+        "agent": 0.0,
+        "finalization": 2.127
+      }
+    }
+  ]
+}

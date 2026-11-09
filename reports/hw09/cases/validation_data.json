@@ -1,0 +1,8 @@
+[
+  {"question":"Which releases of alpha are affected?"},
+  {"question":"What is the severity of CVE-2026-0003?"},
+  {"question":"Which version fixes gamma?"},
+  {"question":"What mitigation should users apply for zeta?"},
+  {"question":"What is the capital of France?"},
+  {"question":"How do I sort a list in Python?"}
+]

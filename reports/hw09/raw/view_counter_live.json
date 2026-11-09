@@ -1,0 +1,54 @@
+{
+  "run_date": "2026-11-07",
+  "status": "passed",
+  "report_id": 5005,
+  "redis_key": "s8844:views:vulnerability_report:5005",
+  "prefix_valid": true,
+  "baseline_mysql_view_count": 0,
+  "sync_at_10": {
+    "access": 10,
+    "redis_count": 10,
+    "mysql_view_count": 10
+  },
+  "sync_at_20": {
+    "access": 20,
+    "redis_count": 20,
+    "mysql_view_count": 20
+  },
+  "final_at_25": {
+    "access": 25,
+    "redis_count": 25,
+    "mysql_view_count": 20
+  },
+  "all_observations": [
+    {"access": 1, "redis_count": 1, "mysql_view_count": 0},
+    {"access": 2, "redis_count": 2, "mysql_view_count": 0},
+    {"access": 3, "redis_count": 3, "mysql_view_count": 0},
+    {"access": 4, "redis_count": 4, "mysql_view_count": 0},
+    {"access": 5, "redis_count": 5, "mysql_view_count": 0},
+    {"access": 6, "redis_count": 6, "mysql_view_count": 0},
+    {"access": 7, "redis_count": 7, "mysql_view_count": 0},
+    {"access": 8, "redis_count": 8, "mysql_view_count": 0},
+    {"access": 9, "redis_count": 9, "mysql_view_count": 0},
+    {"access": 10, "redis_count": 10, "mysql_view_count": 10},
+    {"access": 11, "redis_count": 11, "mysql_view_count": 10},
+    {"access": 12, "redis_count": 12, "mysql_view_count": 10},
+    {"access": 13, "redis_count": 13, "mysql_view_count": 10},
+    {"access": 14, "redis_count": 14, "mysql_view_count": 10},
+    {"access": 15, "redis_count": 15, "mysql_view_count": 10},
+    {"access": 16, "redis_count": 16, "mysql_view_count": 10},
+    {"access": 17, "redis_count": 17, "mysql_view_count": 10},
+    {"access": 18, "redis_count": 18, "mysql_view_count": 10},
+    {"access": 19, "redis_count": 19, "mysql_view_count": 10},
+    {"access": 20, "redis_count": 20, "mysql_view_count": 20},
+    {"access": 21, "redis_count": 21, "mysql_view_count": 20},
+    {"access": 22, "redis_count": 22, "mysql_view_count": 20},
+    {"access": 23, "redis_count": 23, "mysql_view_count": 20},
+    {"access": 24, "redis_count": 24, "mysql_view_count": 20},
+    {"access": 25, "redis_count": 25, "mysql_view_count": 20}
+  ],
+  "cleanup": {
+    "mysql_view_count_restored_to": 0,
+    "target_redis_key_deleted": true
+  }
+}

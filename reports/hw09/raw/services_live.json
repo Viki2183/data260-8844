@@ -1,0 +1,31 @@
+{
+  "run_date": "2026-11-07",
+  "redis": {
+    "image": "redis:7.4-alpine",
+    "health": "healthy",
+    "ping": "PONG"
+  },
+  "mysql": {
+    "service": "MySQL80",
+    "status": "running",
+    "database": "s8844_rel",
+    "view_count_column": "int NOT NULL DEFAULT 0"
+  },
+  "kafka": {
+    "image": "apache/kafka:3.9.2",
+    "health": "healthy",
+    "topics": [
+      "s8844_drafts",
+      "s8844_entity_requests",
+      "s8844_entity_responses",
+      "s8844_final",
+      "s8844_inbox",
+      "s8844_tasks"
+    ]
+  },
+  "ollama": {
+    "api": "http://127.0.0.1:11434",
+    "status": "reachable",
+    "model": "qwen3:8b"
+  }
+}

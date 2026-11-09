@@ -1,0 +1,15 @@
+[
+  {"fact_id":"alpha","keywords":["alpha","cve-2026-0001","versions","affected","releases"],"fact":"Package alpha is affected through version 1.4.2 by CVE-2026-0001.","baseline_failure":true,"incomplete_fact":"Package alpha is affected by CVE-2026-0001."},
+  {"fact_id":"beta","keywords":["beta","cve-2026-0002","versions","affected","releases"],"fact":"Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002."},
+  {"fact_id":"severity-0003","keywords":["severity","cve-2026-0003"],"fact":"CVE-2026-0003 has High severity."},
+  {"fact_id":"traversal","keywords":["gamma","path","traversal","vulnerability"],"fact":"Package gamma has the documented path traversal vulnerability."},
+  {"fact_id":"gamma-fix","keywords":["patched","version","gamma","fixes"],"fact":"Package gamma is patched in version 4.2.0.","baseline_failure":true,"incomplete_fact":"Package gamma has a patched release."},
+  {"fact_id":"local","keywords":["cve-2026-0006","local","access"],"fact":"CVE-2026-0006 requires local access."},
+  {"fact_id":"injection","keywords":["cve-2026-0007","injection"],"fact":"CVE-2026-0007 is an injection vulnerability."},
+  {"fact_id":"delta","keywords":["ecosystem","delta"],"fact":"Package delta is in the PyPI ecosystem."},
+  {"fact_id":"epsilon","keywords":["cve","epsilon"],"fact":"Package epsilon is affected by CVE-2026-0009."},
+  {"fact_id":"zeta","keywords":["mitigation","zeta","upgrade"],"fact":"Users should upgrade package zeta and reject untrusted input.","baseline_failure":true,"incomplete_fact":"Users should upgrade package zeta."},
+  {"fact_id":"severity-1003","keywords":["severity","cve-2026-1003"],"fact":"CVE-2026-1003 has Critical severity."},
+  {"fact_id":"omega","keywords":["omega","fixed","version","cve-2026-0012"],"fact":"Package omega fixes CVE-2026-0012 in version 7.1.0."},
+  {"fact_id":"alpha-fix-1001","keywords":["alpha","cve-2026-1001","versions","fixed"],"fact":"CVE-2026-1001 fixes package alpha in version 1.5.0."}
+]

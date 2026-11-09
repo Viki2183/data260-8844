@@ -1,0 +1,38 @@
+{
+  "question": "controlled_incomplete Which versions of package alpha are affected?",
+  "initial_answer": "Package alpha is affected through version 1.",
+  "initial_evaluation": {
+    "result": "REVISE",
+    "feedback": "Include the complete reference fact and avoid unsupported claims.",
+    "expected_fact_ids": [
+      "alpha"
+    ],
+    "correction": "Package alpha is affected through version 1.4.2 by CVE-2026-0001."
+  },
+  "lesson_created": {
+    "lesson_id": "lesson-758dc27e97a8",
+    "failure_pattern": "controlled_incomplete alpha",
+    "correction": "Package alpha is affected through version 1.4.2 by CVE-2026-0001.",
+    "created_at": "2026-11-07T10:31:38.175007Z",
+    "use_count": 0
+  },
+  "lesson_loaded": [
+    {
+      "correction": "Package alpha is affected through version 1.4.2 by CVE-2026-0001.",
+      "created_at": "2026-11-07T10:31:38.175007Z",
+      "failure_pattern": "controlled_incomplete alpha",
+      "lesson_id": "lesson-758dc27e97a8",
+      "use_count": 1
+    }
+  ],
+  "revised_answer": "Package alpha is affected through version 1.4.2 by CVE-2026-0001. Package alpha is affected through version 1.4.2 by CVE-2026-0001.",
+  "final_evaluation": {
+    "result": "PASS",
+    "feedback": "Include the complete reference fact and avoid unsupported claims.",
+    "expected_fact_ids": [
+      "alpha"
+    ],
+    "correction": "Package alpha is affected through version 1.4.2 by CVE-2026-0001."
+  },
+  "attempts": 2
+}

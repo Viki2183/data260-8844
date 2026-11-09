@@ -1,0 +1,7 @@
+{
+  "path": "reports/hw09/cases/cache_cases.yaml",
+  "commit": "a67fda24dcfd4c92851c380464da9be180dc4898",
+  "committed_at": "2026-11-08T00:51:10-08:00",
+  "sha256": "4BB63A41026FF3D8A881F22014D0D2E819808FB380DC9FEACB356F10962AA7FF",
+  "note": "The compliant final sweep is run after this selective case-file commit. Earlier sweep evidence is retained as historical evidence."
+}

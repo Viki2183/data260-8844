@@ -1,0 +1,5 @@
+[
+  {"question":"Which versions of package alpha are affected?"},
+  {"question":"What mitigation is recommended for package zeta?"},
+  {"question":"Which release patches package gamma?"}
+]

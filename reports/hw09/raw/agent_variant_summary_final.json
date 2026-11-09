@@ -1,0 +1,34 @@
+[
+  {
+    "variant": "Baseline",
+    "correct": 7,
+    "incorrect": 3,
+    "average_attempts": 1,
+    "average_latency_ms": 0.020099992980249226,
+    "agent_type": "deterministic reference-grounded rule system"
+  },
+  {
+    "variant": "Evaluator Repair",
+    "correct": 10,
+    "incorrect": 0,
+    "average_attempts": 1.3,
+    "average_latency_ms": 0.022960003116168082,
+    "agent_type": "deterministic reference-grounded rule system"
+  },
+  {
+    "variant": "Lesson Memory",
+    "correct": 8,
+    "incorrect": 2,
+    "average_attempts": 1,
+    "average_latency_ms": 0.7509599963668734,
+    "agent_type": "deterministic reference-grounded rule system"
+  },
+  {
+    "variant": "Validated Improvement",
+    "correct": 8,
+    "incorrect": 2,
+    "average_attempts": 1,
+    "average_latency_ms": 0.5937300011282787,
+    "agent_type": "deterministic reference-grounded rule system"
+  }
+]
