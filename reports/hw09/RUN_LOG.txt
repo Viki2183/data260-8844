@@ -1,0 +1,52 @@
+DATA260 HOMEWORK 9 RUN LOG
+Student: Vrishin KunnathamParambath
+SID4: 8844
+Live verification date: November 8, 2026
+
+1. Started the existing HW8 services with the HW9 Redis Stack overlay.
+   Result: Redis Stack, MySQL, Kafka, API, Planner, Writer, Reviewer, and entity
+   worker were available for the recorded live checks.
+
+2. Applied the view_count migration preflight.
+   Result: vulnerability_reports.view_count already existed.
+
+3. Ran the reversible 25-access view-counter check on report 5005.
+   Result: Redis reached 25; MySQL synchronized at 10 and 20; original state was
+   restored. Evidence: raw/counter_live_final.json.
+
+4. Ran authenticated POST /api/agent/ask checks.
+   Result: 401 without a token; 200 for reader, writer, and moderator. The first
+   request missed, the duplicate and paraphrase hit, and a different query
+   missed. Correlation matching, 504 timeout, 503 Kafka outage, and recovery were
+   observed. Evidence: raw/endpoint_live.json.
+
+5. Verified Redis Search vector behavior.
+   Result: RediSearch 2.10.20, index creation, insertion, KNN candidate return,
+   and threshold rejection succeeded. Evidence: raw/vector_index_live_final.json.
+
+6. Ran the warm ten-query experiment.
+   Result: 6 cached, 4 non-cached, 60.0% hit rate, 21.844 ms cached mean, and
+   3,075.926 ms non-cached mean. Cold initialization was excluded.
+
+7. Ran the committed 40-case sweep at 0.75, 0.80, 0.85, 0.90, and 0.95.
+   Result: final costs 45, 48, 50, 48, and 45. Threshold 0.95 is recommended.
+
+8. Ran the reversible stale-answer demonstration.
+   Result: severity changed Critical to Low, the stale Critical cache hit was
+   observed, version 3 to 4 invalidated the entry, Low was regenerated, and the
+   database value was restored to Critical.
+
+9. Ran lesson creation/reuse, before/after validation, and all four variants.
+   Result: Baseline 7/10, Evaluator Repair 10/10, Lesson Memory 8/10, and
+   Validated Improvement 8/10.
+
+10. Final checks.
+    Python compilation: PASS
+    HW9 tests in dependency-complete container: 12/12 PASS
+    HW8 offline tests: 40/40 PASS
+    Docker Compose validation: PASS
+    git diff --check: PASS
+    Ruff: BLOCKED because Ruff was not installed
+
+Complete commands and limitations are recorded in verification.md. This log does
+not claim a new live rerun after Docker Desktop was stopped.

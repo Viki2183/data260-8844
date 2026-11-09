@@ -1,0 +1,44 @@
+{
+  "homework": 9,
+  "student": "Vrishin KunnathamParambath",
+  "sid4": "8844",
+  "repository": "https://github.com/Viki2183/data260-8844",
+  "branch": "hw6-development",
+  "tag_name": "hw9",
+  "artifact_commit_hash": "2584b2fbade9aec7930cd6c8595dfce0113bb5da",
+  "prefix": "s8844",
+  "port_base": 8744,
+  "seed": 8844,
+  "verify_seed": 268844,
+  "domain_id": 4,
+  "code_semantic_threshold": 0.85,
+  "recommended_deployment_threshold": 0.95,
+  "checks": {
+    "python_compilation": "passed",
+    "hw9_unit_tests": "12/12 passed in dependency-complete container",
+    "hw8_offline_tests": "40/40 passed",
+    "docker_compose_validation": "passed",
+    "redis_vector_index_live": "passed",
+    "view_counter_live": "passed with synchronization at 10 and 20",
+    "authenticated_endpoint_live": "passed",
+    "report_scoped_invalidation_live": "passed and database value restored",
+    "threshold_sweep_live": "passed for five thresholds",
+    "agent_variants": "completed on unchanged 10-question test set",
+    "ruff": "blocked: Ruff not installed"
+  },
+  "evidence": {
+    "view_counter": "raw/counter_live_final.json",
+    "endpoint": "raw/endpoint_live.json",
+    "vector_index": "raw/vector_index_live_final.json",
+    "warm_cache": "raw/warm_cache_10_query_final.json",
+    "thresholds": "raw/cache_thresholds_compliant.json",
+    "stale_answer": "raw/stale_answer_content_final.json",
+    "validation": "raw/validation_before_after_final.json",
+    "agent_variants": "raw/agent_variants_final.json"
+  },
+  "notes": [
+    "The artifact commit identifies the implementation/report commit before these conventional companion files.",
+    "The tagged packaging commit is verified from Git metadata because a commit cannot contain its own hash.",
+    "No unavailable result is reported as successful."
+  ]
+}
