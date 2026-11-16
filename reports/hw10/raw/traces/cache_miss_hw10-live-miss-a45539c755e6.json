@@ -1,0 +1,238 @@
+{
+  "trace_id": "hw10-live-miss-a45539c755e6",
+  "correlation_id": "hw10-live-miss-a45539c755e6",
+  "question": "Open-source vulnerability trace selection nonce 10930467adb04aa09258c868ee157af6 artifact marker 0a043dceef22485daa75c12abdb43f27: document the package security evidence.",
+  "start_time": "2026-11-15T08:12:38.450968Z",
+  "end_time": "2026-11-15T08:12:41.788554Z",
+  "duration_ms": 3292.077,
+  "status": "success",
+  "error": null,
+  "failure_stage": null,
+  "failure_class": null,
+  "cache_status": "miss",
+  "is_cached": false,
+  "similarity": 0.726885,
+  "threshold": 0.85,
+  "threshold_source": "HW9_SEMANTIC_THRESHOLD environment variable or existing code default 0.85",
+  "entry_id": "50e25adf33684ab7bb8278c6b35b9705",
+  "report_id": 5005,
+  "http_status": 200,
+  "response": {
+    "answer": "Draft based on Plan: answer Open-source vulnerability trace selection nonce 10930467adb04aa09258c868ee157af6 artifact marker 0a043dceef22485daa75c12abdb43f27: document the package security evidence.",
+    "is_cached": false,
+    "similarity": 0.726885,
+    "latency_ms": 3292.077,
+    "cache_status": "miss",
+    "correlation_id": "hw10-live-miss-a45539c755e6",
+    "timings_ms": {
+      "embedding": 98.788,
+      "redis_search": 8.138,
+      "agent": 3156.057,
+      "finalization": 3.301
+    }
+  },
+  "timings_ms": {
+    "embedding": 98.788,
+    "redis_search": 8.138,
+    "agent": 3156.057,
+    "finalization": 3.301
+  },
+  "stages": [
+    {
+      "stage": "cache_lookup",
+      "start_time": "2026-11-15T08:12:38.450968Z",
+      "end_time": "2026-11-15T08:12:38.557894Z",
+      "duration_ms": 106.926,
+      "status": "cache_miss",
+      "error": null,
+      "topic": null,
+      "partition": null,
+      "offset": null,
+      "message_type": null,
+      "cache_status": "miss",
+      "similarity": 0.726885,
+      "threshold": 0.85,
+      "entry_id": "50e25adf33684ab7bb8278c6b35b9705",
+      "report_id": 5005,
+      "details": {
+        "timings_ms": {
+          "embedding": 98.788,
+          "redis_search": 8.138,
+          "agent": 3156.057,
+          "finalization": 3.301
+        }
+      }
+    },
+    {
+      "stage": "inbox",
+      "start_time": "2026-11-15T08:12:38.450968Z",
+      "end_time": "2026-11-15T08:12:41.760000Z",
+      "duration_ms": 3309.032,
+      "status": "observed",
+      "error": null,
+      "topic": "s8844_inbox",
+      "partition": 1,
+      "offset": 38,
+      "message_type": "agent_request",
+      "cache_status": "miss",
+      "similarity": 0.726885,
+      "threshold": 0.85,
+      "entry_id": "50e25adf33684ab7bb8278c6b35b9705",
+      "report_id": 5005,
+      "details": {
+        "question": "Open-source vulnerability trace selection nonce 10930467adb04aa09258c868ee157af6 artifact marker 0a043dceef22485daa75c12abdb43f27: document the package security evidence.",
+        "report_id": 5005
+      }
+    },
+    {
+      "stage": "planner",
+      "start_time": "2026-11-15T08:12:41.760000Z",
+      "end_time": "2026-11-15T08:12:41.765000Z",
+      "duration_ms": 5.0,
+      "status": "observed",
+      "error": null,
+      "topic": "s8844_tasks",
+      "partition": 1,
+      "offset": 35,
+      "message_type": "planner_message",
+      "cache_status": "miss",
+      "similarity": 0.726885,
+      "threshold": 0.85,
+      "entry_id": "50e25adf33684ab7bb8278c6b35b9705",
+      "report_id": 5005,
+      "details": {
+        "plan": "Plan: answer Open-source vulnerability trace selection nonce 10930467adb04aa09258c868ee157af6 artifact marker 0a043dceef22485daa75c12abdb43f27: document the package security evidence.",
+        "question": "Open-source vulnerability trace selection nonce 10930467adb04aa09258c868ee157af6 artifact marker 0a043dceef22485daa75c12abdb43f27: document the package security evidence."
+      }
+    },
+    {
+      "stage": "tasks",
+      "start_time": "2026-11-15T08:12:41.765000Z",
+      "end_time": "2026-11-15T08:12:41.765000Z",
+      "duration_ms": 0.0,
+      "status": "observed_same_topic_record",
+      "error": null,
+      "topic": "s8844_tasks",
+      "partition": 1,
+      "offset": 35,
+      "message_type": "planner_message",
+      "cache_status": "miss",
+      "similarity": 0.726885,
+      "threshold": 0.85,
+      "entry_id": "50e25adf33684ab7bb8278c6b35b9705",
+      "report_id": 5005,
+      "details": {
+        "plan": "Plan: answer Open-source vulnerability trace selection nonce 10930467adb04aa09258c868ee157af6 artifact marker 0a043dceef22485daa75c12abdb43f27: document the package security evidence.",
+        "question": "Open-source vulnerability trace selection nonce 10930467adb04aa09258c868ee157af6 artifact marker 0a043dceef22485daa75c12abdb43f27: document the package security evidence."
+      }
+    },
+    {
+      "stage": "writer",
+      "start_time": "2026-11-15T08:12:41.765000Z",
+      "end_time": "2026-11-15T08:12:41.769000Z",
+      "duration_ms": 4.0,
+      "status": "observed",
+      "error": null,
+      "topic": "s8844_drafts",
+      "partition": 0,
+      "offset": 42,
+      "message_type": "writer_message",
+      "cache_status": "miss",
+      "similarity": 0.726885,
+      "threshold": 0.85,
+      "entry_id": "50e25adf33684ab7bb8278c6b35b9705",
+      "report_id": 5005,
+      "details": {
+        "draft": "Draft based on Plan: answer Open-source vulnerability trace selection nonce 10930467adb04aa09258c868ee157af6 artifact marker 0a043dceef22485daa75c12abdb43f27: document the package security evidence.",
+        "question": "Open-source vulnerability trace selection nonce 10930467adb04aa09258c868ee157af6 artifact marker 0a043dceef22485daa75c12abdb43f27: document the package security evidence."
+      }
+    },
+    {
+      "stage": "drafts",
+      "start_time": "2026-11-15T08:12:41.769000Z",
+      "end_time": "2026-11-15T08:12:41.769000Z",
+      "duration_ms": 0.0,
+      "status": "observed_same_topic_record",
+      "error": null,
+      "topic": "s8844_drafts",
+      "partition": 0,
+      "offset": 42,
+      "message_type": "writer_message",
+      "cache_status": "miss",
+      "similarity": 0.726885,
+      "threshold": 0.85,
+      "entry_id": "50e25adf33684ab7bb8278c6b35b9705",
+      "report_id": 5005,
+      "details": {
+        "draft": "Draft based on Plan: answer Open-source vulnerability trace selection nonce 10930467adb04aa09258c868ee157af6 artifact marker 0a043dceef22485daa75c12abdb43f27: document the package security evidence.",
+        "question": "Open-source vulnerability trace selection nonce 10930467adb04aa09258c868ee157af6 artifact marker 0a043dceef22485daa75c12abdb43f27: document the package security evidence."
+      }
+    },
+    {
+      "stage": "reviewer",
+      "start_time": "2026-11-15T08:12:41.769000Z",
+      "end_time": "2026-11-15T08:12:41.774000Z",
+      "duration_ms": 5.0,
+      "status": "observed",
+      "error": null,
+      "topic": "s8844_final",
+      "partition": 1,
+      "offset": 29,
+      "message_type": "reviewer_message",
+      "cache_status": "miss",
+      "similarity": 0.726885,
+      "threshold": 0.85,
+      "entry_id": "50e25adf33684ab7bb8278c6b35b9705",
+      "report_id": 5005,
+      "details": {
+        "answer": "Draft based on Plan: answer Open-source vulnerability trace selection nonce 10930467adb04aa09258c868ee157af6 artifact marker 0a043dceef22485daa75c12abdb43f27: document the package security evidence.",
+        "status": "approved"
+      }
+    },
+    {
+      "stage": "final",
+      "start_time": "2026-11-15T08:12:41.774000Z",
+      "end_time": "2026-11-15T08:12:41.774000Z",
+      "duration_ms": 0.0,
+      "status": "observed_same_topic_record",
+      "error": null,
+      "topic": "s8844_final",
+      "partition": 1,
+      "offset": 29,
+      "message_type": "reviewer_message",
+      "cache_status": "miss",
+      "similarity": 0.726885,
+      "threshold": 0.85,
+      "entry_id": "50e25adf33684ab7bb8278c6b35b9705",
+      "report_id": 5005,
+      "details": {
+        "answer": "Draft based on Plan: answer Open-source vulnerability trace selection nonce 10930467adb04aa09258c868ee157af6 artifact marker 0a043dceef22485daa75c12abdb43f27: document the package security evidence.",
+        "status": "approved"
+      }
+    },
+    {
+      "stage": "evaluation",
+      "start_time": null,
+      "end_time": null,
+      "duration_ms": null,
+      "status": "not_executed",
+      "error": "Phase 3 judge was not executed per-request during this live experiment",
+      "topic": null,
+      "partition": null,
+      "offset": null,
+      "message_type": null,
+      "cache_status": "miss",
+      "similarity": 0.726885,
+      "threshold": 0.85,
+      "entry_id": "50e25adf33684ab7bb8278c6b35b9705",
+      "report_id": 5005,
+      "details": {}
+    }
+  ],
+  "source": {
+    "api": "http://127.0.0.1:8745/api/agent/ask",
+    "kafka_bootstrap": "127.0.0.1:29092",
+    "redis": "127.0.0.1:16379"
+  },
+  "time_convention": "UTC ISO-8601 Z timestamps; monotonic time.perf_counter_ns for wall-clock durations"
+}

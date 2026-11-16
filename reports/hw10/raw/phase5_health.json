@@ -1,0 +1,10 @@
+{
+  "captured_at": "2026-11-15T08:14:13.922727Z",
+  "api_url": "http://127.0.0.1:8745/api/agent/ask",
+  "redis": "127.0.0.1:16379",
+  "kafka_bootstrap": "127.0.0.1:29092",
+  "redis_ping": true,
+  "kafka_observer": "started_read_only",
+  "trace_index": "reports\\hw10\\raw\\traces\\trace_index.json",
+  "confirmed_miss_count": 50
+}

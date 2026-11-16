@@ -1,0 +1,722 @@
+{
+  "trial_number": 2,
+  "status": "completed_with_bounded_case_results",
+  "started_at": "2026-11-15T06:00:42.365658+00:00",
+  "completed_at": "2026-11-15T06:32:14.085623+00:00",
+  "model": "qwen3:8b",
+  "endpoint": "http://127.0.0.1:11434",
+  "prompt_version": "hw10-geval-v1",
+  "criteria": "Judge the helpfulness of the candidate Writer draft for the vulnerability question. The draft must answer the question using the supplied reference context. A draft that only repeats or paraphrases the question without the requested answer is not helpful. Do not reward stylistic fluency over factual coverage.",
+  "evaluation_steps": [
+    "Identify the requested vulnerability fact in the question.",
+    "Compare the candidate Writer draft with the supplied reference context.",
+    "Check whether the draft provides the requested answer rather than repeating the question.",
+    "Assign a helpfulness score from 0 to 1 and explain the decision."
+  ],
+  "temperature": 0.0,
+  "seed": 8844,
+  "generation_settings": {
+    "seed": 8844,
+    "num_predict": 1024
+  },
+  "timeout_seconds": 180,
+  "score_normalization": "floor(clamp(raw_geval_score,0,1)*4+1.5), clamped to integer 1..5",
+  "cases": [
+    {
+      "case_id": "hw10-case-01",
+      "question": "Which versions of package alpha are affected by CVE-2026-0001?",
+      "candidate_writer_draft": "Draft based on Plan: answer Which versions of package alpha are affected by CVE-2026-0001?",
+      "reference_context": {
+        "fact_id": "alpha",
+        "keywords": [
+          "alpha",
+          "cve-2026-0001",
+          "versions",
+          "affected",
+          "releases"
+        ],
+        "fact": "Package alpha is affected through version 1.4.2 by CVE-2026-0001.",
+        "baseline_failure": true,
+        "incomplete_fact": "Package alpha is affected by CVE-2026-0001."
+      },
+      "expected_answer": "Package alpha is affected through version 1.4.2 by CVE-2026-0001.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The draft fails to provide the requested answer about affected versions of package alpha, instead repeating the input question. The retrieval context contains the specific fact (version 1.4.2) but the draft does not leverage it to answer the query, violating step 3 of the evaluation.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:00:48.046927+00:00",
+      "latency_seconds": 89.253,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:02:17.300252+00:00"
+    },
+    {
+      "case_id": "hw10-case-02",
+      "question": "Which versions of package beta are affected by CVE-2026-0002?",
+      "candidate_writer_draft": "Draft based on Plan: answer Which versions of package beta are affected by CVE-2026-0002?",
+      "reference_context": {
+        "fact_id": "beta",
+        "keywords": [
+          "beta",
+          "cve-2026-0002",
+          "versions",
+          "affected",
+          "releases"
+        ],
+        "fact": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002."
+      },
+      "expected_answer": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The Actual Output merely restates the input question instead of providing the specific answer about affected versions from the retrieval context. The expected output included the fact from the context, but the draft failed to deliver this information.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:02:26.938875+00:00",
+      "latency_seconds": 78.354,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:03:45.292493+00:00"
+    },
+    {
+      "case_id": "hw10-case-03",
+      "question": "What is the severity of CVE-2026-0003?",
+      "candidate_writer_draft": "Draft based on Plan: answer What is the severity of CVE-2026-0003?",
+      "reference_context": {
+        "fact_id": "severity-0003",
+        "keywords": [
+          "severity",
+          "cve-2026-0003"
+        ],
+        "fact": "CVE-2026-0003 has High severity."
+      },
+      "expected_answer": "CVE-2026-0003 has High severity.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The actual output simply repeated the input question instead of providing the severity fact from the retrieval context. The expected answer was the severity of CVE-2026-0003, which is explicitly stated in the retrieval context, but the draft failed to incorporate this information.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:03:52.286473+00:00",
+      "latency_seconds": 94.308,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:05:26.594708+00:00"
+    },
+    {
+      "case_id": "hw10-case-04",
+      "question": "Which package has the path traversal vulnerability?",
+      "candidate_writer_draft": "Draft based on Plan: answer Which package has the path traversal vulnerability?",
+      "reference_context": {
+        "fact_id": "traversal",
+        "keywords": [
+          "gamma",
+          "path",
+          "traversal",
+          "vulnerability"
+        ],
+        "fact": "Package gamma has the documented path traversal vulnerability."
+      },
+      "expected_answer": "Package gamma has the documented path traversal vulnerability.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The actual output failed to provide the requested answer and instead repeated the input question. The expected output correctly identified 'Package gamma' from the retrieval context, which directly answers the vulnerability fact query. The draft did not leverage the provided context to deliver the solution.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:05:33.627117+00:00",
+      "latency_seconds": 98.799,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:07:12.426473+00:00"
+    },
+    {
+      "case_id": "hw10-case-05",
+      "question": "What is the patched version for package gamma?",
+      "candidate_writer_draft": "Draft based on Plan: answer What is the patched version for package gamma?",
+      "reference_context": {
+        "fact_id": "gamma-fix",
+        "keywords": [
+          "patched",
+          "version",
+          "gamma",
+          "fixes"
+        ],
+        "fact": "Package gamma is patched in version 4.2.0.",
+        "baseline_failure": true,
+        "incomplete_fact": "Package gamma has a patched release."
+      },
+      "expected_answer": "Package gamma is patched in version 4.2.0.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The actual output simply repeats the input question instead of providing the requested patched version fact from the retrieval context. The expected answer was directly available in the context but was not included in the draft, resulting in no helpful response.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:07:17.942781+00:00",
+      "latency_seconds": 91.466,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:08:49.408854+00:00"
+    },
+    {
+      "case_id": "hw10-case-06",
+      "question": "Does CVE-2026-0006 require local access?",
+      "candidate_writer_draft": "Draft based on Plan: answer Does CVE-2026-0006 require local access?",
+      "reference_context": {
+        "fact_id": "local",
+        "keywords": [
+          "cve-2026-0006",
+          "local",
+          "access"
+        ],
+        "fact": "CVE-2026-0006 requires local access."
+      },
+      "expected_answer": "CVE-2026-0006 requires local access.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The actual output merely restates the input question without providing the requested answer or utilizing the retrieval context containing the relevant fact about CVE-2026-0006. This fails to address the vulnerability fact directly, resulting in no helpfulness.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:08:58.439416+00:00",
+      "latency_seconds": 92.797,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:10:31.236363+00:00"
+    },
+    {
+      "case_id": "hw10-case-07",
+      "question": "Is CVE-2026-0007 an injection vulnerability?",
+      "candidate_writer_draft": "Draft based on Plan: answer Is CVE-2026-0007 an injection vulnerability?",
+      "reference_context": {
+        "fact_id": "injection",
+        "keywords": [
+          "cve-2026-0007",
+          "injection"
+        ],
+        "fact": "CVE-2026-0007 is an injection vulnerability."
+      },
+      "expected_answer": "CVE-2026-0007 is an injection vulnerability.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The draft failed to provide the requested answer and instead repeated the question, which violates step 3 of the evaluation. The retrieval context explicitly contains the fact that CVE-2026-0007 is an injection vulnerability, but the draft did not communicate this information.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:10:38.408617+00:00",
+      "latency_seconds": 82.859,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:12:01.267216+00:00"
+    },
+    {
+      "case_id": "hw10-case-08",
+      "question": "What ecosystem contains package delta?",
+      "candidate_writer_draft": "Draft based on Plan: answer What ecosystem contains package delta?",
+      "reference_context": {
+        "fact_id": "delta",
+        "keywords": [
+          "ecosystem",
+          "delta"
+        ],
+        "fact": "Package delta is in the PyPI ecosystem."
+      },
+      "expected_answer": "Package delta is in the PyPI ecosystem.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The actual output repeats the question instead of providing the answer 'Package delta is in the PyPI ecosystem.' as required by the retrieval context, failing to address the requested vulnerability fact.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:12:08.121491+00:00",
+      "latency_seconds": 61.567,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:13:09.688857+00:00"
+    },
+    {
+      "case_id": "hw10-case-09",
+      "question": "Which CVE affects package epsilon?",
+      "candidate_writer_draft": "Draft based on Plan: answer Which CVE affects package epsilon?",
+      "reference_context": {
+        "fact_id": "epsilon",
+        "keywords": [
+          "cve",
+          "epsilon"
+        ],
+        "fact": "Package epsilon is affected by CVE-2026-0009."
+      },
+      "expected_answer": "Package epsilon is affected by CVE-2026-0009.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The draft repeats the input question instead of providing the CVE answer from the retrieval context. It fails to address the requested vulnerability fact about package epsilon.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:13:16.884154+00:00",
+      "latency_seconds": 100.227,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:14:57.110885+00:00"
+    },
+    {
+      "case_id": "hw10-case-10",
+      "question": "What mitigation is recommended for package zeta?",
+      "candidate_writer_draft": "Draft based on Plan: answer What mitigation is recommended for package zeta?",
+      "reference_context": {
+        "fact_id": "zeta",
+        "keywords": [
+          "mitigation",
+          "zeta",
+          "upgrade"
+        ],
+        "fact": "Users should upgrade package zeta and reject untrusted input.",
+        "baseline_failure": true,
+        "incomplete_fact": "Users should upgrade package zeta."
+      },
+      "expected_answer": "Users should upgrade package zeta and reject untrusted input.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The actual output simply repeats the input question without providing the requested mitigation details. The retrieval context explicitly states the correct answer as upgrading package zeta and rejecting untrusted input, but the draft fails to include this information, instead restating the question verbatim.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:15:05.980788+00:00",
+      "latency_seconds": 90.919,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:16:36.900344+00:00"
+    },
+    {
+      "case_id": "hw10-case-11",
+      "question": "What releases of alpha are vulnerable to CVE-2026-0001?",
+      "candidate_writer_draft": "Draft based on Plan: answer What releases of alpha are vulnerable to CVE-2026-0001?",
+      "reference_context": {
+        "fact_id": "alpha",
+        "keywords": [
+          "alpha",
+          "cve-2026-0001",
+          "versions",
+          "affected",
+          "releases"
+        ],
+        "fact": "Package alpha is affected through version 1.4.2 by CVE-2026-0001.",
+        "baseline_failure": true,
+        "incomplete_fact": "Package alpha is affected by CVE-2026-0001."
+      },
+      "expected_answer": "Package alpha is affected through version 1.4.2 by CVE-2026-0001.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The draft fails to provide the requested answer about vulnerable releases of alpha, instead repeating the question. It does not utilize the retrieval context which contains the specific fact about version 1.4.2 being affected by CVE-2026-0001.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:16:44.126138+00:00",
+      "latency_seconds": 66.677,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:17:50.803577+00:00"
+    },
+    {
+      "case_id": "hw10-case-12",
+      "question": "Which beta releases contain CVE-2026-0002?",
+      "candidate_writer_draft": "Draft based on Plan: answer Which beta releases contain CVE-2026-0002?",
+      "reference_context": {
+        "fact_id": "beta",
+        "keywords": [
+          "beta",
+          "cve-2026-0002",
+          "versions",
+          "affected",
+          "releases"
+        ],
+        "fact": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002."
+      },
+      "expected_answer": "Package beta is affected from version 2.0.0 through 2.3.1 by CVE-2026-0002.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The draft fails to provide the requested answer about which beta releases contain CVE-2026-0002. Instead, it merely repeats the question, demonstrating no alignment with the retrieval context containing the specific affected version range.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:17:59.492834+00:00",
+      "latency_seconds": 83.88,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:19:23.372757+00:00"
+    },
+    {
+      "case_id": "hw10-case-13",
+      "question": "How severe is CVE-2026-0003?",
+      "candidate_writer_draft": "Draft based on Plan: answer How severe is CVE-2026-0003?",
+      "reference_context": {
+        "fact_id": "severity-0003",
+        "keywords": [
+          "severity",
+          "cve-2026-0003"
+        ],
+        "fact": "CVE-2026-0003 has High severity."
+      },
+      "expected_answer": "CVE-2026-0003 has High severity.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The draft fails to provide the requested severity fact about CVE-2026-0003, instead repeating the question verbatim. It does not utilize the retrieval context containing the 'High severity' fact to answer the query.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:19:35.292018+00:00",
+      "latency_seconds": 80.302,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:20:55.593966+00:00"
+    },
+    {
+      "case_id": "hw10-case-14",
+      "question": "Name the package exposed to path traversal.",
+      "candidate_writer_draft": "Draft based on Plan: answer Name the package exposed to path traversal.",
+      "reference_context": {
+        "fact_id": "traversal",
+        "keywords": [
+          "gamma",
+          "path",
+          "traversal",
+          "vulnerability"
+        ],
+        "fact": "Package gamma has the documented path traversal vulnerability."
+      },
+      "expected_answer": "Package gamma has the documented path traversal vulnerability.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The actual output merely repeats the input question without providing the requested answer about the vulnerable package. It fails to leverage the retrieval context containing the correct fact about 'gamma' and instead offers no substantive information.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:21:03.118533+00:00",
+      "latency_seconds": 76.348,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:22:19.466452+00:00"
+    },
+    {
+      "case_id": "hw10-case-15",
+      "question": "What release fixes gamma?",
+      "candidate_writer_draft": "Draft based on Plan: answer What release fixes gamma?",
+      "reference_context": {
+        "fact_id": "gamma-fix",
+        "keywords": [
+          "patched",
+          "version",
+          "gamma",
+          "fixes"
+        ],
+        "fact": "Package gamma is patched in version 4.2.0.",
+        "baseline_failure": true,
+        "incomplete_fact": "Package gamma has a patched release."
+      },
+      "expected_answer": "Package gamma is patched in version 4.2.0.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The actual output simply repeats the input question rather than providing the requested vulnerability fact about gamma's patched release. The retrieval context contains the correct answer 'Package gamma is patched in version 4.2.0.' which was not included in the draft, failing to address the question with the required specific information.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:22:26.424609+00:00",
+      "latency_seconds": 91.767,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:23:58.191396+00:00"
+    },
+    {
+      "case_id": "hw10-case-16",
+      "question": "Is local access needed for CVE-2026-0006?",
+      "candidate_writer_draft": "Draft based on Plan: answer Is local access needed for CVE-2026-0006?",
+      "reference_context": {
+        "fact_id": "local",
+        "keywords": [
+          "cve-2026-0006",
+          "local",
+          "access"
+        ],
+        "fact": "CVE-2026-0006 requires local access."
+      },
+      "expected_answer": "CVE-2026-0006 requires local access.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The actual output failed to provide the requested answer and instead repeated the question. The retrieval context contained the correct fact that \"CVE-2026-0006 requires local access,\" but the draft did not incorporate this information. The response lacks helpfulness by not answering the question directly using the available context.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:24:05.862895+00:00",
+      "latency_seconds": 97.676,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:25:43.539000+00:00"
+    },
+    {
+      "case_id": "hw10-case-17",
+      "question": "Does CVE-2026-0007 involve injection?",
+      "candidate_writer_draft": "Draft based on Plan: answer Does CVE-2026-0007 involve injection?",
+      "reference_context": {
+        "fact_id": "injection",
+        "keywords": [
+          "cve-2026-0007",
+          "injection"
+        ],
+        "fact": "CVE-2026-0007 is an injection vulnerability."
+      },
+      "expected_answer": "CVE-2026-0007 is an injection vulnerability.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The actual output merely restates the input question without providing the requested answer about CVE-2026-0007 being an injection vulnerability. The retrieval context explicitly contains the correct fact, but the draft fails to incorporate it, instead repeating the question verbatim.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:25:50.772966+00:00",
+      "latency_seconds": 99.33,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:27:30.103234+00:00"
+    },
+    {
+      "case_id": "hw10-case-18",
+      "question": "Which ecosystem is delta from?",
+      "candidate_writer_draft": "Draft based on Plan: answer Which ecosystem is delta from?",
+      "reference_context": {
+        "fact_id": "delta",
+        "keywords": [
+          "ecosystem",
+          "delta"
+        ],
+        "fact": "Package delta is in the PyPI ecosystem."
+      },
+      "expected_answer": "Package delta is in the PyPI ecosystem.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The actual output merely repeats the input question instead of providing the answer 'Package delta is in the PyPI ecosystem.' This fails step 3 of the evaluation, as it does not deliver the requested fact from the retrieval context.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:27:39.119116+00:00",
+      "latency_seconds": 70.456,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:28:49.574972+00:00"
+    },
+    {
+      "case_id": "hw10-case-19",
+      "question": "Identify the CVE assigned to epsilon.",
+      "candidate_writer_draft": "Draft based on Plan: answer Identify the CVE assigned to epsilon.",
+      "reference_context": {
+        "fact_id": "epsilon",
+        "keywords": [
+          "cve",
+          "epsilon"
+        ],
+        "fact": "Package epsilon is affected by CVE-2026-0009."
+      },
+      "expected_answer": "Package epsilon is affected by CVE-2026-0009.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The draft fails to provide the requested CVE information and instead repeats the input question. The retrieval context contains the correct fact about CVE-2026-0009 for epsilon, but the draft does not utilize this information to answer the query.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:28:56.092384+00:00",
+      "latency_seconds": 102.004,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:30:38.096318+00:00"
+    },
+    {
+      "case_id": "hw10-case-20",
+      "question": "How should users mitigate zeta?",
+      "candidate_writer_draft": "Draft based on Plan: answer How should users mitigate zeta?",
+      "reference_context": {
+        "fact_id": "zeta",
+        "keywords": [
+          "mitigation",
+          "zeta",
+          "upgrade"
+        ],
+        "fact": "Users should upgrade package zeta and reject untrusted input.",
+        "baseline_failure": true,
+        "incomplete_fact": "Users should upgrade package zeta."
+      },
+      "expected_answer": "Users should upgrade package zeta and reject untrusted input.",
+      "human_score": 1,
+      "judge_score": 1,
+      "raw_geval_score": 0.0,
+      "judge_reason": "The actual output merely repeats the input question without providing the requested mitigation steps for zeta, failing to incorporate the relevant fact from the retrieval context about upgrading the package and rejecting untrusted input.",
+      "judge_model": "qwen3:8b",
+      "prompt_version": "hw10-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "generation_settings": {
+        "seed": 8844,
+        "num_predict": 1024
+      },
+      "timeout_seconds": 180,
+      "timestamp": "2026-11-15T06:30:46.515371+00:00",
+      "latency_seconds": 86.697,
+      "error_status": "none",
+      "error": null,
+      "repeatability_trial_number": 2,
+      "completed_timestamp": "2026-11-15T06:32:13.212507+00:00"
+    }
+  ]
+}

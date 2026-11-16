@@ -1,0 +1,54 @@
+{
+  "phase": "phase-5",
+  "status": "completed",
+  "trace_ids": {
+    "cache_hit": "hw10-live-hit-b1d5e1ae95ad",
+    "cache_miss": "hw10-live-miss-e56b8558868c",
+    "failed": "hw10-live-failed-120deeaa2ee1",
+    "end_to_end_evaluation": "hw10-live-e2e-eval-fdc655292734"
+  },
+  "trace_files": {
+    "cache_hit": "reports\\hw10\\raw\\traces\\cache_hit_hw10-live-hit-b1d5e1ae95ad.json",
+    "cache_miss": "reports\\hw10\\raw\\traces\\cache_miss_hw10-live-miss-e56b8558868c.json",
+    "failed": "reports\\hw10\\raw\\traces\\failed_hw10-live-failed-120deeaa2ee1.json",
+    "end_to_end_evaluation": "reports\\hw10\\raw\\end_to_end\\live_evaluation_trace.json"
+  },
+  "correlation_id_is_trace_id": true,
+  "failure_stage": "validation/report_lookup",
+  "failure_class": "validation",
+  "trace_selection_attempts": [
+    {
+      "attempt": 1,
+      "trace_id": "hw10-live-miss-e56b8558868c",
+      "question": "Open-source vulnerability trace selection nonce b13ce601047a4f2fb4482893037da213 artifact marker f42fbb40c8b043de8455547beadf72e2: document the package security evidence.",
+      "http_status": 200,
+      "cache_status": "miss",
+      "is_cached": false,
+      "similarity": 0.0,
+      "selected": true
+    }
+  ],
+  "end_to_end_evaluation": {
+    "trace_id": "hw10-live-e2e-eval-fdc655292734",
+    "status": "completed_with_errors",
+    "evidence_path": "reports\\hw10\\raw\\end_to_end\\live_evaluation_trace.json",
+    "evaluation_span": {
+      "trace_id": "hw10-live-e2e-eval-fdc655292734",
+      "correlation_id": "hw10-live-e2e-eval-fdc655292734",
+      "stage": "evaluation",
+      "start_time": "2026-11-15T10:19:21.973314Z",
+      "end_time": "2026-11-15T10:29:44.747720Z",
+      "duration_ms": 622774.407,
+      "status": "completed_with_errors",
+      "error": "ResponseError: llama-server process no longer running: exit status 0xc0000409: The system detected an overrun of a stack-based buffer in this application. This overrun could potentially allow a malicious user to gain control of this application. CUDA error: shared object initialization failed (status code: 500); TimeoutError: call timed out after 88.5s (per attempt). Increase DEEPEVAL_PER_ATTEMPT_TIMEOUT_SECONDS_OVERRIDE (None disables) or reduce work per attempt.; TimeoutError: call timed out after 88.5s (per attempt). Increase DEEPEVAL_PER_ATTEMPT_TIMEOUT_SECONDS_OVERRIDE (None disables) or reduce work per attempt.; TimeoutError: call timed out after 88.5s (per attempt). Increase DEEPEVAL_PER_ATTEMPT_TIMEOUT_SECONDS_OVERRIDE (None disables) or reduce work per attempt.",
+      "judge_model": "qwen3:8b",
+      "endpoint": "http://127.0.0.1:11434",
+      "prompt_version": "hw10-live-geval-v1",
+      "temperature": 0.0,
+      "seed": 8844,
+      "timeout_seconds": 180,
+      "evidence_path": "reports\\hw10\\raw\\end_to_end\\live_evaluation_trace.json",
+      "timing_provenance": "instrumented span using UTC datetime and monotonic perf_counter_ns"
+    }
+  }
+}

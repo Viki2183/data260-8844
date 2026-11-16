@@ -1,0 +1,96 @@
+DATA260 HOMEWORK 10 RUN LOG
+Student: Vrishin KunnathamParambath
+SID4: 8844
+Branch: hw6-development
+
+1. Read-only report-convention audit.
+   Result: reports/hw01 through reports/hw09, source formats, verification files,
+   AI-use disclosures, metrics, run logs, raw evidence, screenshots, and PDFs
+   were inspected. HW1–HW9 files were not modified.
+
+2. HW10 evidence boundary review.
+   Result: frozen cases and human labels remained unchanged. Existing Phase 3
+   judge evidence, Phase 4 dashboard evidence, and Phase 5 live evidence were
+   used as the source of truth.
+
+3. Screenshot capture.
+   Result: an earlier local Streamlit screenshot attempt was blocked because the
+   browser access host and local browser URL could not be verified. A subsequent
+   verified local capture produced genuine PNG screenshots for Summary,
+   Evaluation, cache-hit Trace Lookup, cache-miss Trace Lookup, and failed Trace
+   Lookup under reports/hw10/screenshots/. No old screenshots were copied.
+
+4. Report artifacts.
+   Result: report.md, verification.md, AI_USE.md, METRICS.md, RUN_LOG.txt, and
+   the rendered report.pdf were prepared under reports/hw10 only.
+
+5. HW6–HW9 formatting alignment and PDF review.
+   Result: the HW10 source/HTML/PDF were reformatted to the established Letter,
+   Arial, blue-heading, blue-gray-table, cover, screenshot-sizing, and centered
+   italic-caption conventions. The regenerated report.pdf contains 11 pages.
+   All five genuine HW10 screenshots appear with Figures 1–5 captions. A
+   page-by-page visual reinspection of this regenerated PDF was attempted, but
+   Edge launched with an application error and the browser access host was
+   unavailable. Structural PDF checks passed; no unsupported visual no-clipping
+   claim is made. No standalone page-PNG rasterizer was available, so no extra
+   render artifacts were added to the repository.
+
+6. Factual judge summary.
+   Result: 20 frozen cases, 3 repeatability trials of one judge (not 3 different
+   judges), 60/60 total local qwen3:8b GEval evaluations, MAD 0.0, zero score
+   changes, 100% repeatability, and undefined Spearman because the human-label
+   vector is constant at 1. These results do not establish judge reliability
+   and the judge should not be trusted for deployment gating.
+
+7. Factual live-trace summary.
+   Result: one cache hit, one complete cache miss through inbox/planner/tasks/
+   writer/drafts/reviewer/final, and one safe validation/report-lookup HTTP 404.
+
+8. Factual latency summary.
+   Result: 50 total requests, 50 confirmed misses, zero accidental hits, zero
+   failed requests, p50 3109.722 ms, p95 3179.057 ms. Queue wait was the
+   dominant observable contributor at 98.445% of p50 cache-miss end-to-end.
+
+9. Final protection boundary.
+   Result: no HW1–HW9 files, frozen input files, dependency files, existing
+   workers, compose files, or unrelated pre-existing files were intentionally
+   modified. No stage, commit, or push was performed.
+
+10. Part 2 live end-to-end evaluation and evaluator tracing.
+   Result: trace hw10-live-e2e-eval-fdc655292734 completed the existing
+   cache_lookup -> inbox -> planner -> tasks -> writer -> drafts -> reviewer
+   -> final -> evaluation path with correlation_id used directly as trace_id.
+   The live pipeline trace succeeded through the evaluator stage, but judge
+   execution did not complete successfully; evaluation status was
+   completed_with_errors. The captured
+    question, plan, Writer draft, Reviewer/final answer, Kafka metadata, and
+    derived stage boundaries are in raw/end_to_end/live_evaluation_trace.json.
+    All four GEval criteria were attempted with local qwen3:8b, temperature 0,
+    seed 8844, prompt version hw10-live-geval-v1, and a 180-second timeout.
+    Plan Quality recorded an Ollama process/CUDA initialization error; the
+    other three criteria recorded bounded timeouts. No scores were fabricated.
+
+11. Dashboard/report correction.
+    Result: the Evaluation page now displays the live plan, Writer draft,
+    Reviewer/final answer, four criterion outcomes, and draft/final comparison
+    as unavailable when not scored. Trace Lookup uses the real evaluator span.
+    Summary error rate uses the live Phase 5 evidence window: 0 failed / 50
+    requests = 0%. The report preserves the original degenerate judge result,
+    records the one-genuine-draft limitation, and states that the judge should
+    not gate deployment.
+
+12. Validation.
+    Result: 8/8 offline dashboard tests passed. Frozen eval_cases.json and
+    human_labels.csv were not modified. No HW1-HW9 files, HW8 workers, HW9
+    cache behavior, requirements, pyproject, compose files, or Git history
+    were changed. No stage, commit, or push was performed.
+
+13. Honest limitation documentation update.
+    Result: documentation now identifies the only genuine raw Writer draft as
+    reports/hw08/raw/part2_agent_journey.jsonl, identifies the other 20 cases as
+    offline reconstructions, and records that no diverse v2 set was created.
+    It explicitly lists all four live GEval criteria as unavailable, preserves
+    the evaluator failure and timeout reasons, marks evaluation latency
+    unavailable for the 50-request experiment, defines the Summary error rate
+    as 0 failed requests / 50 total requests = 0%, and states that the judge is
+    not suitable for deployment gating based on this evidence.

@@ -1,0 +1,21 @@
+{
+  "homework": 10,
+  "phase": "phase-2-preparation",
+  "student": "Vrishin KunnathamParambath",
+  "sid4": "8844",
+  "domain": "Open-source package vulnerabilities",
+  "case_count": 20,
+  "source_file": "reports/hw09/cases/cache_cases.yaml",
+  "source_sha256": "4BB63A41026FF3D8A881F22014D0D2E819808FB380DC9FEACB356F10962AA7FF",
+  "source_selection": "first 10 exact_duplicate queries followed by first 10 paraphrase queries",
+  "draft_generation": "offline replay of the unchanged transform_stage writer rule",
+  "writer_rule": "Draft based on Plan: answer {question}",
+  "direct_live_writer_records_available": 1,
+  "candidate_records_are_live": false,
+  "candidate_records_are_offline_reconstructions": true,
+  "correlation_id_is_trace_id": true,
+  "second_identifier_introduced": false,
+  "labels_frozen": false,
+  "manual_student_confirmation_required": true,
+  "protected_existing_paths": ["code/hw08_*", "code/hw09/*", "reports/hw01/*", "reports/hw02/*", "reports/hw03/*", "reports/hw04/*", "reports/hw05/*", "reports/hw06/*", "reports/hw07/*", "reports/hw08/*", "reports/hw09/*"]
+}

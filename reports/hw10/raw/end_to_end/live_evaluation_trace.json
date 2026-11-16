@@ -1,0 +1,600 @@
+{
+  "trace_id": "hw10-live-e2e-eval-fdc655292734",
+  "correlation_id": "hw10-live-e2e-eval-fdc655292734",
+  "question": "Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b.",
+  "start_time": "2026-11-15T10:19:16.649985Z",
+  "end_time": "2026-11-15T10:19:21.438540Z",
+  "duration_ms": 4482.372,
+  "status": "success",
+  "error": null,
+  "failure_stage": null,
+  "failure_class": null,
+  "cache_status": "miss",
+  "is_cached": false,
+  "similarity": 0.696236,
+  "threshold": 0.85,
+  "threshold_source": "HW9_SEMANTIC_THRESHOLD environment variable or existing code default 0.85",
+  "entry_id": "7773c476eb284e6abf32a676d857e7a7",
+  "report_id": 5005,
+  "http_status": 200,
+  "response": {
+    "answer": "Draft based on Plan: answer Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b.",
+    "is_cached": false,
+    "similarity": 0.696236,
+    "latency_ms": 4482.372,
+    "cache_status": "miss",
+    "correlation_id": "hw10-live-e2e-eval-fdc655292734",
+    "timings_ms": {
+      "embedding": 751.284,
+      "redis_search": 105.913,
+      "agent": 3526.17,
+      "finalization": 33.615
+    }
+  },
+  "timings_ms": {
+    "embedding": 751.284,
+    "redis_search": 105.913,
+    "agent": 3526.17,
+    "finalization": 33.615
+  },
+  "stages": [
+    {
+      "stage": "cache_lookup",
+      "start_time": "2026-11-15T10:19:16.649985Z",
+      "end_time": "2026-11-15T10:19:17.507182Z",
+      "duration_ms": 857.197,
+      "status": "cache_miss",
+      "error": null,
+      "topic": null,
+      "partition": null,
+      "offset": null,
+      "message_type": null,
+      "cache_status": "miss",
+      "similarity": 0.696236,
+      "threshold": 0.85,
+      "entry_id": "7773c476eb284e6abf32a676d857e7a7",
+      "report_id": 5005,
+      "details": {
+        "timings_ms": {
+          "embedding": 751.284,
+          "redis_search": 105.913,
+          "agent": 3526.17,
+          "finalization": 33.615
+        }
+      },
+      "timing_provenance": "derived from HW9 response timings_ms.embedding + timings_ms.redis_search"
+    },
+    {
+      "stage": "inbox",
+      "start_time": "2026-11-15T10:19:16.649985Z",
+      "end_time": "2026-11-15T10:19:21.010000Z",
+      "duration_ms": 4360.015,
+      "status": "observed",
+      "error": null,
+      "topic": "s8844_inbox",
+      "partition": 0,
+      "offset": 58,
+      "message_type": "agent_request",
+      "cache_status": "miss",
+      "similarity": 0.696236,
+      "threshold": 0.85,
+      "entry_id": "7773c476eb284e6abf32a676d857e7a7",
+      "report_id": 5005,
+      "details": {
+        "question": "Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b.",
+        "report_id": 5005
+      },
+      "timing_provenance": "derived from API request start and Kafka inbox record timestamp"
+    },
+    {
+      "stage": "planner",
+      "start_time": "2026-11-15T10:19:21.010000Z",
+      "end_time": "2026-11-15T10:19:21.251000Z",
+      "duration_ms": 241.0,
+      "status": "observed",
+      "error": null,
+      "topic": "s8844_tasks",
+      "partition": 1,
+      "offset": 62,
+      "message_type": "planner_message",
+      "cache_status": "miss",
+      "similarity": 0.696236,
+      "threshold": 0.85,
+      "entry_id": "7773c476eb284e6abf32a676d857e7a7",
+      "report_id": 5005,
+      "details": {
+        "plan": "Plan: answer Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b.",
+        "question": "Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b."
+      },
+      "timing_provenance": "derived from matching Kafka inbox/tasks record timestamps"
+    },
+    {
+      "stage": "tasks",
+      "start_time": "2026-11-15T10:19:21.251000Z",
+      "end_time": "2026-11-15T10:19:21.251000Z",
+      "duration_ms": 0.0,
+      "status": "observed_same_topic_record",
+      "error": null,
+      "topic": "s8844_tasks",
+      "partition": 1,
+      "offset": 62,
+      "message_type": "planner_message",
+      "cache_status": "miss",
+      "similarity": 0.696236,
+      "threshold": 0.85,
+      "entry_id": "7773c476eb284e6abf32a676d857e7a7",
+      "report_id": 5005,
+      "details": {
+        "plan": "Plan: answer Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b.",
+        "question": "Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b."
+      },
+      "timing_provenance": "derived from matching Kafka tasks record timestamp; zero-duration topic marker"
+    },
+    {
+      "stage": "writer",
+      "start_time": "2026-11-15T10:19:21.251000Z",
+      "end_time": "2026-11-15T10:19:21.321000Z",
+      "duration_ms": 70.0,
+      "status": "observed",
+      "error": null,
+      "topic": "s8844_drafts",
+      "partition": 1,
+      "offset": 63,
+      "message_type": "writer_message",
+      "cache_status": "miss",
+      "similarity": 0.696236,
+      "threshold": 0.85,
+      "entry_id": "7773c476eb284e6abf32a676d857e7a7",
+      "report_id": 5005,
+      "details": {
+        "draft": "Draft based on Plan: answer Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b.",
+        "question": "Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b."
+      },
+      "timing_provenance": "derived from matching Kafka tasks/drafts record timestamps"
+    },
+    {
+      "stage": "drafts",
+      "start_time": "2026-11-15T10:19:21.321000Z",
+      "end_time": "2026-11-15T10:19:21.321000Z",
+      "duration_ms": 0.0,
+      "status": "observed_same_topic_record",
+      "error": null,
+      "topic": "s8844_drafts",
+      "partition": 1,
+      "offset": 63,
+      "message_type": "writer_message",
+      "cache_status": "miss",
+      "similarity": 0.696236,
+      "threshold": 0.85,
+      "entry_id": "7773c476eb284e6abf32a676d857e7a7",
+      "report_id": 5005,
+      "details": {
+        "draft": "Draft based on Plan: answer Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b.",
+        "question": "Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b."
+      },
+      "timing_provenance": "derived from matching Kafka drafts record timestamp; zero-duration topic marker"
+    },
+    {
+      "stage": "reviewer",
+      "start_time": "2026-11-15T10:19:21.321000Z",
+      "end_time": "2026-11-15T10:19:21.364000Z",
+      "duration_ms": 43.0,
+      "status": "observed",
+      "error": null,
+      "topic": "s8844_final",
+      "partition": 0,
+      "offset": 68,
+      "message_type": "reviewer_message",
+      "cache_status": "miss",
+      "similarity": 0.696236,
+      "threshold": 0.85,
+      "entry_id": "7773c476eb284e6abf32a676d857e7a7",
+      "report_id": 5005,
+      "details": {
+        "answer": "Draft based on Plan: answer Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b.",
+        "status": "approved"
+      },
+      "timing_provenance": "derived from matching Kafka drafts/final record timestamps"
+    },
+    {
+      "stage": "final",
+      "start_time": "2026-11-15T10:19:21.364000Z",
+      "end_time": "2026-11-15T10:19:21.364000Z",
+      "duration_ms": 0.0,
+      "status": "observed_same_topic_record",
+      "error": null,
+      "topic": "s8844_final",
+      "partition": 0,
+      "offset": 68,
+      "message_type": "reviewer_message",
+      "cache_status": "miss",
+      "similarity": 0.696236,
+      "threshold": 0.85,
+      "entry_id": "7773c476eb284e6abf32a676d857e7a7",
+      "report_id": 5005,
+      "details": {
+        "answer": "Draft based on Plan: answer Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b.",
+        "status": "approved"
+      },
+      "timing_provenance": "derived from matching Kafka final record timestamp; zero-duration topic marker"
+    },
+    {
+      "stage": "evaluation",
+      "start_time": "2026-11-15T10:19:21.973314Z",
+      "end_time": "2026-11-15T10:29:44.747720Z",
+      "duration_ms": 622774.407,
+      "status": "completed_with_errors",
+      "error": "ResponseError: llama-server process no longer running: exit status 0xc0000409: The system detected an overrun of a stack-based buffer in this application. This overrun could potentially allow a malicious user to gain control of this application. CUDA error: shared object initialization failed (status code: 500); TimeoutError: call timed out after 88.5s (per attempt). Increase DEEPEVAL_PER_ATTEMPT_TIMEOUT_SECONDS_OVERRIDE (None disables) or reduce work per attempt.; TimeoutError: call timed out after 88.5s (per attempt). Increase DEEPEVAL_PER_ATTEMPT_TIMEOUT_SECONDS_OVERRIDE (None disables) or reduce work per attempt.; TimeoutError: call timed out after 88.5s (per attempt). Increase DEEPEVAL_PER_ATTEMPT_TIMEOUT_SECONDS_OVERRIDE (None disables) or reduce work per attempt.",
+      "topic": null,
+      "partition": null,
+      "offset": null,
+      "message_type": null,
+      "cache_status": "miss",
+      "similarity": 0.696236,
+      "threshold": 0.85,
+      "entry_id": "7773c476eb284e6abf32a676d857e7a7",
+      "report_id": 5005,
+      "timing_provenance": "instrumented span using UTC datetime and monotonic perf_counter_ns",
+      "details": {
+        "model": "qwen3:8b",
+        "prompt_version": "hw10-live-geval-v1",
+        "criterion_count": 4
+      }
+    }
+  ],
+  "source": {
+    "api": "http://127.0.0.1:8745/api/agent/ask",
+    "kafka_bootstrap": "127.0.0.1:29092",
+    "redis": "127.0.0.1:16379"
+  },
+  "time_convention": "UTC ISO-8601 Z timestamps; monotonic time.perf_counter_ns for wall-clock durations",
+  "capture_kind": "live_end_to_end_observation",
+  "kafka_records": [
+    {
+      "observed_stage": "inbox",
+      "topic": "s8844_inbox",
+      "partition": 0,
+      "offset": 58,
+      "kafka_timestamp_ms": 1794737961010,
+      "message_type": "agent_request",
+      "payload": {
+        "attempt": 1,
+        "correlation_id": "hw10-live-e2e-eval-fdc655292734",
+        "data": {
+          "question": "Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b.",
+          "report_id": 5005
+        },
+        "message_type": "agent_request",
+        "metadata": {
+          "hw9_ingress": true,
+          "producer_application_retries": 0
+        },
+        "reply_to": "s8844_final",
+        "timestamp": "2026-11-15T10:19:20.996979Z"
+      }
+    },
+    {
+      "observed_stage": "tasks",
+      "topic": "s8844_tasks",
+      "partition": 1,
+      "offset": 62,
+      "kafka_timestamp_ms": 1794737961251,
+      "message_type": "planner_message",
+      "payload": {
+        "attempt": 1,
+        "correlation_id": "hw10-live-e2e-eval-fdc655292734",
+        "data": {
+          "plan": "Plan: answer Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b.",
+          "question": "Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b."
+        },
+        "message_type": "planner_message",
+        "metadata": {
+          "hw9_ingress": true,
+          "processed_timestamp": "2026-11-15T10:19:21.241498Z",
+          "producer_application_retries": 0,
+          "source_offset": 58,
+          "source_partition": 0,
+          "source_topic": "s8844_inbox",
+          "stage": "planner",
+          "writer_consumer": "planner"
+        },
+        "timestamp": "2026-11-15T10:19:20.996979Z"
+      }
+    },
+    {
+      "observed_stage": "drafts",
+      "topic": "s8844_drafts",
+      "partition": 1,
+      "offset": 63,
+      "kafka_timestamp_ms": 1794737961321,
+      "message_type": "writer_message",
+      "payload": {
+        "attempt": 1,
+        "correlation_id": "hw10-live-e2e-eval-fdc655292734",
+        "data": {
+          "draft": "Draft based on Plan: answer Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b.",
+          "question": "Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b."
+        },
+        "message_type": "writer_message",
+        "metadata": {
+          "hw9_ingress": true,
+          "processed_timestamp": "2026-11-15T10:19:21.313686Z",
+          "producer_application_retries": 0,
+          "source_offset": 62,
+          "source_partition": 1,
+          "source_topic": "s8844_tasks",
+          "stage": "writer",
+          "writer_consumer": "writer-2"
+        },
+        "timestamp": "2026-11-15T10:19:20.996979Z"
+      }
+    },
+    {
+      "observed_stage": "final",
+      "topic": "s8844_final",
+      "partition": 0,
+      "offset": 68,
+      "kafka_timestamp_ms": 1794737961364,
+      "message_type": "reviewer_message",
+      "payload": {
+        "attempt": 1,
+        "correlation_id": "hw10-live-e2e-eval-fdc655292734",
+        "data": {
+          "answer": "Draft based on Plan: answer Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b.",
+          "status": "approved"
+        },
+        "message_type": "reviewer_message",
+        "metadata": {
+          "hw9_ingress": true,
+          "processed_timestamp": "2026-11-15T10:19:21.359031Z",
+          "producer_application_retries": 0,
+          "source_offset": 63,
+          "source_partition": 1,
+          "source_topic": "s8844_drafts",
+          "stage": "reviewer",
+          "writer_consumer": "reviewer"
+        },
+        "timestamp": "2026-11-15T10:19:20.996979Z"
+      }
+    }
+  ],
+  "stage_payloads": {
+    "inbox": {
+      "attempt": 1,
+      "correlation_id": "hw10-live-e2e-eval-fdc655292734",
+      "data": {
+        "question": "Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b.",
+        "report_id": 5005
+      },
+      "message_type": "agent_request",
+      "metadata": {
+        "hw9_ingress": true,
+        "producer_application_retries": 0
+      },
+      "reply_to": "s8844_final",
+      "timestamp": "2026-11-15T10:19:20.996979Z"
+    },
+    "tasks": {
+      "attempt": 1,
+      "correlation_id": "hw10-live-e2e-eval-fdc655292734",
+      "data": {
+        "plan": "Plan: answer Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b.",
+        "question": "Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b."
+      },
+      "message_type": "planner_message",
+      "metadata": {
+        "hw9_ingress": true,
+        "processed_timestamp": "2026-11-15T10:19:21.241498Z",
+        "producer_application_retries": 0,
+        "source_offset": 58,
+        "source_partition": 0,
+        "source_topic": "s8844_inbox",
+        "stage": "planner",
+        "writer_consumer": "planner"
+      },
+      "timestamp": "2026-11-15T10:19:20.996979Z"
+    },
+    "drafts": {
+      "attempt": 1,
+      "correlation_id": "hw10-live-e2e-eval-fdc655292734",
+      "data": {
+        "draft": "Draft based on Plan: answer Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b.",
+        "question": "Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b."
+      },
+      "message_type": "writer_message",
+      "metadata": {
+        "hw9_ingress": true,
+        "processed_timestamp": "2026-11-15T10:19:21.313686Z",
+        "producer_application_retries": 0,
+        "source_offset": 62,
+        "source_partition": 1,
+        "source_topic": "s8844_tasks",
+        "stage": "writer",
+        "writer_consumer": "writer-2"
+      },
+      "timestamp": "2026-11-15T10:19:20.996979Z"
+    },
+    "final": {
+      "attempt": 1,
+      "correlation_id": "hw10-live-e2e-eval-fdc655292734",
+      "data": {
+        "answer": "Draft based on Plan: answer Which version fixes CVE-2026-1001 in package alpha? HW10 live evaluation nonce fdc655292734479d846ea715f557b81b.",
+        "status": "approved"
+      },
+      "message_type": "reviewer_message",
+      "metadata": {
+        "hw9_ingress": true,
+        "processed_timestamp": "2026-11-15T10:19:21.359031Z",
+        "producer_application_retries": 0,
+        "source_offset": 63,
+        "source_partition": 1,
+        "source_topic": "s8844_drafts",
+        "stage": "reviewer",
+        "writer_consumer": "reviewer"
+      },
+      "timestamp": "2026-11-15T10:19:20.996979Z"
+    }
+  },
+  "evaluation_span": {
+    "trace_id": "hw10-live-e2e-eval-fdc655292734",
+    "correlation_id": "hw10-live-e2e-eval-fdc655292734",
+    "stage": "evaluation",
+    "start_time": "2026-11-15T10:19:21.973314Z",
+    "end_time": "2026-11-15T10:29:44.747720Z",
+    "duration_ms": 622774.407,
+    "status": "completed_with_errors",
+    "error": "ResponseError: llama-server process no longer running: exit status 0xc0000409: The system detected an overrun of a stack-based buffer in this application. This overrun could potentially allow a malicious user to gain control of this application. CUDA error: shared object initialization failed (status code: 500); TimeoutError: call timed out after 88.5s (per attempt). Increase DEEPEVAL_PER_ATTEMPT_TIMEOUT_SECONDS_OVERRIDE (None disables) or reduce work per attempt.; TimeoutError: call timed out after 88.5s (per attempt). Increase DEEPEVAL_PER_ATTEMPT_TIMEOUT_SECONDS_OVERRIDE (None disables) or reduce work per attempt.; TimeoutError: call timed out after 88.5s (per attempt). Increase DEEPEVAL_PER_ATTEMPT_TIMEOUT_SECONDS_OVERRIDE (None disables) or reduce work per attempt.",
+    "judge_model": "qwen3:8b",
+    "endpoint": "http://127.0.0.1:11434",
+    "prompt_version": "hw10-live-geval-v1",
+    "temperature": 0.0,
+    "seed": 8844,
+    "timeout_seconds": 180,
+    "evidence_path": "reports\\hw10\\raw\\end_to_end\\live_evaluation_trace.json",
+    "timing_provenance": "instrumented span using UTC datetime and monotonic perf_counter_ns"
+  },
+  "evaluation": {
+    "status": "completed_with_errors",
+    "model": "qwen3:8b",
+    "prompt_version": "hw10-live-geval-v1",
+    "temperature": 0.0,
+    "seed": 8844,
+    "timeout_seconds": 180,
+    "reference_context": {
+      "fact_id": "alpha-fix-1001",
+      "keywords": [
+        "alpha",
+        "cve-2026-1001",
+        "versions",
+        "fixed"
+      ],
+      "fact": "CVE-2026-1001 fixes package alpha in version 1.5.0."
+    },
+    "criteria": [
+      {
+        "criterion": "Plan Quality",
+        "score": null,
+        "raw_geval_score": null,
+        "reason": null,
+        "model": "qwen3:8b",
+        "endpoint": "http://127.0.0.1:11434",
+        "prompt_version": "hw10-live-geval-v1",
+        "temperature": 0.0,
+        "seed": 8844,
+        "generation_settings": {
+          "seed": 8844,
+          "num_predict": 1024
+        },
+        "timeout_seconds": 180,
+        "start_time": "2026-11-15T10:19:34.700251Z",
+        "end_time": "2026-11-15T10:20:39.372085Z",
+        "duration_ms": 64671.911,
+        "status": "error",
+        "error": "ResponseError: llama-server process no longer running: exit status 0xc0000409: The system detected an overrun of a stack-based buffer in this application. This overrun could potentially allow a malicious user to gain control of this application. CUDA error: shared object initialization failed (status code: 500)",
+        "criteria": "Judge whether the Planner plan is coherent, relevant to the vulnerability question, and sufficient to guide a correct answer.",
+        "evaluation_steps": [
+          "Identify the requested vulnerability fact.",
+          "Check whether the plan addresses the question and uses the supplied reference context.",
+          "Score the plan from 0 to 1 based on relevance and answerability."
+        ],
+        "draft_score": null,
+        "final_score": null,
+        "score_difference": null
+      },
+      {
+        "criterion": "Writer Helpfulness",
+        "score": null,
+        "raw_geval_score": null,
+        "reason": null,
+        "model": "qwen3:8b",
+        "endpoint": "http://127.0.0.1:11434",
+        "prompt_version": "hw10-live-geval-v1",
+        "temperature": 0.0,
+        "seed": 8844,
+        "generation_settings": {
+          "seed": 8844,
+          "num_predict": 1024
+        },
+        "timeout_seconds": 180,
+        "start_time": "2026-11-15T10:20:39.372379Z",
+        "end_time": "2026-11-15T10:23:40.165477Z",
+        "duration_ms": 180793.51,
+        "status": "error",
+        "error": "TimeoutError: call timed out after 88.5s (per attempt). Increase DEEPEVAL_PER_ATTEMPT_TIMEOUT_SECONDS_OVERRIDE (None disables) or reduce work per attempt.",
+        "criteria": "Judge whether the Writer draft directly answers the vulnerability question using the supplied reference context rather than merely repeating the question.",
+        "evaluation_steps": [
+          "Identify the requested vulnerability fact.",
+          "Compare the Writer draft with the supplied reference context.",
+          "Score helpfulness from 0 to 1."
+        ],
+        "draft_score": null,
+        "final_score": null,
+        "score_difference": null
+      },
+      {
+        "criterion": "Final Answer Helpfulness",
+        "score": null,
+        "raw_geval_score": null,
+        "reason": null,
+        "model": "qwen3:8b",
+        "endpoint": "http://127.0.0.1:11434",
+        "prompt_version": "hw10-live-geval-v1",
+        "temperature": 0.0,
+        "seed": 8844,
+        "generation_settings": {
+          "seed": 8844,
+          "num_predict": 1024
+        },
+        "timeout_seconds": 180,
+        "start_time": "2026-11-15T10:23:40.168919Z",
+        "end_time": "2026-11-15T10:26:41.264636Z",
+        "duration_ms": 181098.522,
+        "status": "error",
+        "error": "TimeoutError: call timed out after 88.5s (per attempt). Increase DEEPEVAL_PER_ATTEMPT_TIMEOUT_SECONDS_OVERRIDE (None disables) or reduce work per attempt.",
+        "criteria": "Judge whether the Reviewer final answer directly and accurately answers the vulnerability question using the supplied reference context.",
+        "evaluation_steps": [
+          "Identify the requested vulnerability fact.",
+          "Compare the final answer with the supplied reference context.",
+          "Score helpfulness from 0 to 1."
+        ],
+        "draft_score": null,
+        "final_score": null,
+        "score_difference": null
+      },
+      {
+        "criterion": "Final-vs-Draft Improvement",
+        "score": null,
+        "raw_geval_score": null,
+        "reason": null,
+        "model": "qwen3:8b",
+        "endpoint": "http://127.0.0.1:11434",
+        "prompt_version": "hw10-live-geval-v1",
+        "temperature": 0.0,
+        "seed": 8844,
+        "generation_settings": {
+          "seed": 8844,
+          "num_predict": 1024
+        },
+        "timeout_seconds": 180,
+        "start_time": "2026-11-15T10:26:41.274501Z",
+        "end_time": "2026-11-15T10:29:44.746412Z",
+        "duration_ms": 183471.941,
+        "status": "error",
+        "error": "TimeoutError: call timed out after 88.5s (per attempt). Increase DEEPEVAL_PER_ATTEMPT_TIMEOUT_SECONDS_OVERRIDE (None disables) or reduce work per attempt.",
+        "criteria": "Judge whether the Reviewer final answer improves on the Writer draft for factual coverage, directness, and usefulness without inventing unsupported claims.",
+        "evaluation_steps": [
+          "Compare the Writer draft and Reviewer final answer.",
+          "Use the supplied reference context to determine whether the final is more helpful.",
+          "Score the improvement from 0 to 1; a final answer identical to an unhelpful draft should not receive improvement credit."
+        ],
+        "draft_score": null,
+        "final_score": null,
+        "score_difference": null
+      }
+    ],
+    "draft_score": null,
+    "final_score": null,
+    "score_difference": null,
+    "interpretation": "The final answer is compared with the Writer draft using the same reference context. This is one live trace and is not evidence for deployment gating."
+  }
+}

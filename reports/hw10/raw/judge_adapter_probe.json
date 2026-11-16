@@ -1,0 +1,34 @@
+{
+  "diagnostic": "HW10 judge adapter compatibility probe",
+  "environment": ".venv-hw10",
+  "model": "qwen3:8b",
+  "endpoint": "http://127.0.0.1:11434",
+  "prompt": "Return exactly OK",
+  "temperature": 0,
+  "stream": false,
+  "timeout_seconds": 180,
+  "judge_executed": false,
+  "evaluation_cases_run": false,
+  "repeatability_trials_run": false,
+  "direct_ollama": {
+    "start_timestamp": "2026-11-15T04:51:48.094427+00:00",
+    "end_timestamp": "2026-11-15T04:52:55.489335+00:00",
+    "latency_seconds": 67.395,
+    "status": "completed",
+    "generation_completed": true,
+    "response": "OK",
+    "error": null
+  },
+  "deepeval_ollama_adapter": {
+    "adapter": "deepeval.models.OllamaModel",
+    "start_timestamp": "2026-11-15T04:53:17.804605+00:00",
+    "end_timestamp": "2026-11-15T04:53:47.912561+00:00",
+    "latency_seconds": 30.108,
+    "status": "completed",
+    "generation_completed": true,
+    "response": "OK",
+    "adapter_returned_score": 0,
+    "error": null
+  },
+  "interpretation": "Direct Ollama and DeepEval OllamaModel generation both completed. The adapter_returned_score is adapter metadata from the non-judge generation call, not an evaluation score."
+}

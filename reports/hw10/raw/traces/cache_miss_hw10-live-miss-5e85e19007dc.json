@@ -1,0 +1,238 @@
+{
+  "trace_id": "hw10-live-miss-5e85e19007dc",
+  "correlation_id": "hw10-live-miss-5e85e19007dc",
+  "question": "Phase5 live successful miss 7f70bd73980846a0a5c55811816c452c: Which package release contains CVE-2026-0001?",
+  "start_time": "2026-11-15T08:02:34.762696Z",
+  "end_time": "2026-11-15T08:02:37.919565Z",
+  "duration_ms": 3133.154,
+  "status": "success",
+  "error": null,
+  "failure_stage": null,
+  "failure_class": null,
+  "cache_status": "miss",
+  "is_cached": false,
+  "similarity": 0.0,
+  "threshold": 0.85,
+  "threshold_source": "HW9_SEMANTIC_THRESHOLD environment variable or existing code default 0.85",
+  "entry_id": "25ea242641bd44c18d202507589a218d",
+  "report_id": 5005,
+  "http_status": 200,
+  "response": {
+    "answer": "Draft based on Plan: answer Phase5 live successful miss 7f70bd73980846a0a5c55811816c452c: Which package release contains CVE-2026-0001?",
+    "is_cached": false,
+    "similarity": 0.0,
+    "latency_ms": 3133.154,
+    "cache_status": "miss",
+    "correlation_id": "hw10-live-miss-5e85e19007dc",
+    "timings_ms": {
+      "embedding": 20.048,
+      "redis_search": 17.898,
+      "agent": 3090.494,
+      "finalization": 2.724
+    }
+  },
+  "timings_ms": {
+    "embedding": 20.048,
+    "redis_search": 17.898,
+    "agent": 3090.494,
+    "finalization": 2.724
+  },
+  "stages": [
+    {
+      "stage": "cache_lookup",
+      "start_time": "2026-11-15T08:02:34.762696Z",
+      "end_time": "2026-11-15T08:02:34.800642Z",
+      "duration_ms": 37.946,
+      "status": "cache_miss",
+      "error": null,
+      "topic": null,
+      "partition": null,
+      "offset": null,
+      "message_type": null,
+      "cache_status": "miss",
+      "similarity": 0.0,
+      "threshold": 0.85,
+      "entry_id": "25ea242641bd44c18d202507589a218d",
+      "report_id": 5005,
+      "details": {
+        "timings_ms": {
+          "embedding": 20.048,
+          "redis_search": 17.898,
+          "agent": 3090.494,
+          "finalization": 2.724
+        }
+      }
+    },
+    {
+      "stage": "inbox",
+      "start_time": "2026-11-15T08:02:34.762696Z",
+      "end_time": "2026-11-15T08:02:37.866000Z",
+      "duration_ms": 3103.304,
+      "status": "observed",
+      "error": null,
+      "topic": "s8844_inbox",
+      "partition": 1,
+      "offset": 8,
+      "message_type": "agent_request",
+      "cache_status": "miss",
+      "similarity": 0.0,
+      "threshold": 0.85,
+      "entry_id": "25ea242641bd44c18d202507589a218d",
+      "report_id": 5005,
+      "details": {
+        "question": "Phase5 live successful miss 7f70bd73980846a0a5c55811816c452c: Which package release contains CVE-2026-0001?",
+        "report_id": 5005
+      }
+    },
+    {
+      "stage": "planner",
+      "start_time": "2026-11-15T08:02:37.866000Z",
+      "end_time": "2026-11-15T08:02:37.874000Z",
+      "duration_ms": 8.0,
+      "status": "observed",
+      "error": null,
+      "topic": "s8844_tasks",
+      "partition": 1,
+      "offset": 4,
+      "message_type": "planner_message",
+      "cache_status": "miss",
+      "similarity": 0.0,
+      "threshold": 0.85,
+      "entry_id": "25ea242641bd44c18d202507589a218d",
+      "report_id": 5005,
+      "details": {
+        "plan": "Plan: answer Phase5 live successful miss 7f70bd73980846a0a5c55811816c452c: Which package release contains CVE-2026-0001?",
+        "question": "Phase5 live successful miss 7f70bd73980846a0a5c55811816c452c: Which package release contains CVE-2026-0001?"
+      }
+    },
+    {
+      "stage": "tasks",
+      "start_time": "2026-11-15T08:02:37.874000Z",
+      "end_time": "2026-11-15T08:02:37.874000Z",
+      "duration_ms": 0.0,
+      "status": "observed_same_topic_record",
+      "error": null,
+      "topic": "s8844_tasks",
+      "partition": 1,
+      "offset": 4,
+      "message_type": "planner_message",
+      "cache_status": "miss",
+      "similarity": 0.0,
+      "threshold": 0.85,
+      "entry_id": "25ea242641bd44c18d202507589a218d",
+      "report_id": 5005,
+      "details": {
+        "plan": "Plan: answer Phase5 live successful miss 7f70bd73980846a0a5c55811816c452c: Which package release contains CVE-2026-0001?",
+        "question": "Phase5 live successful miss 7f70bd73980846a0a5c55811816c452c: Which package release contains CVE-2026-0001?"
+      }
+    },
+    {
+      "stage": "writer",
+      "start_time": "2026-11-15T08:02:37.874000Z",
+      "end_time": "2026-11-15T08:02:37.888000Z",
+      "duration_ms": 14.0,
+      "status": "observed",
+      "error": null,
+      "topic": "s8844_drafts",
+      "partition": 1,
+      "offset": 5,
+      "message_type": "writer_message",
+      "cache_status": "miss",
+      "similarity": 0.0,
+      "threshold": 0.85,
+      "entry_id": "25ea242641bd44c18d202507589a218d",
+      "report_id": 5005,
+      "details": {
+        "draft": "Draft based on Plan: answer Phase5 live successful miss 7f70bd73980846a0a5c55811816c452c: Which package release contains CVE-2026-0001?",
+        "question": "Phase5 live successful miss 7f70bd73980846a0a5c55811816c452c: Which package release contains CVE-2026-0001?"
+      }
+    },
+    {
+      "stage": "drafts",
+      "start_time": "2026-11-15T08:02:37.888000Z",
+      "end_time": "2026-11-15T08:02:37.888000Z",
+      "duration_ms": 0.0,
+      "status": "observed_same_topic_record",
+      "error": null,
+      "topic": "s8844_drafts",
+      "partition": 1,
+      "offset": 5,
+      "message_type": "writer_message",
+      "cache_status": "miss",
+      "similarity": 0.0,
+      "threshold": 0.85,
+      "entry_id": "25ea242641bd44c18d202507589a218d",
+      "report_id": 5005,
+      "details": {
+        "draft": "Draft based on Plan: answer Phase5 live successful miss 7f70bd73980846a0a5c55811816c452c: Which package release contains CVE-2026-0001?",
+        "question": "Phase5 live successful miss 7f70bd73980846a0a5c55811816c452c: Which package release contains CVE-2026-0001?"
+      }
+    },
+    {
+      "stage": "reviewer",
+      "start_time": "2026-11-15T08:02:37.888000Z",
+      "end_time": "2026-11-15T08:02:37.897000Z",
+      "duration_ms": 9.0,
+      "status": "observed",
+      "error": null,
+      "topic": "s8844_final",
+      "partition": 0,
+      "offset": 6,
+      "message_type": "reviewer_message",
+      "cache_status": "miss",
+      "similarity": 0.0,
+      "threshold": 0.85,
+      "entry_id": "25ea242641bd44c18d202507589a218d",
+      "report_id": 5005,
+      "details": {
+        "answer": "Draft based on Plan: answer Phase5 live successful miss 7f70bd73980846a0a5c55811816c452c: Which package release contains CVE-2026-0001?",
+        "status": "approved"
+      }
+    },
+    {
+      "stage": "final",
+      "start_time": "2026-11-15T08:02:37.897000Z",
+      "end_time": "2026-11-15T08:02:37.897000Z",
+      "duration_ms": 0.0,
+      "status": "observed_same_topic_record",
+      "error": null,
+      "topic": "s8844_final",
+      "partition": 0,
+      "offset": 6,
+      "message_type": "reviewer_message",
+      "cache_status": "miss",
+      "similarity": 0.0,
+      "threshold": 0.85,
+      "entry_id": "25ea242641bd44c18d202507589a218d",
+      "report_id": 5005,
+      "details": {
+        "answer": "Draft based on Plan: answer Phase5 live successful miss 7f70bd73980846a0a5c55811816c452c: Which package release contains CVE-2026-0001?",
+        "status": "approved"
+      }
+    },
+    {
+      "stage": "evaluation",
+      "start_time": null,
+      "end_time": null,
+      "duration_ms": null,
+      "status": "not_executed",
+      "error": "Phase 3 judge was not executed per-request during this live experiment",
+      "topic": null,
+      "partition": null,
+      "offset": null,
+      "message_type": null,
+      "cache_status": "miss",
+      "similarity": 0.0,
+      "threshold": 0.85,
+      "entry_id": "25ea242641bd44c18d202507589a218d",
+      "report_id": 5005,
+      "details": {}
+    }
+  ],
+  "source": {
+    "api": "http://127.0.0.1:8745/api/agent/ask",
+    "kafka_bootstrap": "127.0.0.1:29092",
+    "redis": "127.0.0.1:16379"
+  },
+  "time_convention": "UTC ISO-8601 Z timestamps; monotonic time.perf_counter_ns for wall-clock durations"
+}

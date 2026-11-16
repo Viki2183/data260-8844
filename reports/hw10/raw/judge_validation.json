@@ -1,0 +1,341 @@
+{
+  "phase": "phase-3",
+  "status": "completed",
+  "automated_judge_executed": true,
+  "frozen_inputs": [
+    "reports\\hw10\\eval_cases.json",
+    "reports\\hw10\\human_labels.csv"
+  ],
+  "reference_context": "reports\\hw09\\cases\\reference_data.json",
+  "model": "qwen3:8b",
+  "endpoint": "http://127.0.0.1:11434",
+  "prompt_version": "hw10-geval-v1",
+  "temperature": 0.0,
+  "seed": 8844,
+  "generation_settings": {
+    "seed": 8844,
+    "num_predict": 1024
+  },
+  "timeout_seconds": 180,
+  "score_scale": "integer 1..5",
+  "normalization": "floor(clamp(raw_geval_score,0,1)*4+1.5), clamped to integer 1..5",
+  "statistics": {
+    "trial_count": 3,
+    "case_count": 20,
+    "mean_absolute_difference_by_trial": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "mean_absolute_difference": 0.0,
+    "per_case_score_changes_across_trials": [
+      {
+        "from_trial": 1,
+        "to_trial": 2,
+        "changed_score_count": 0,
+        "mean_absolute_change": 0.0,
+        "maximum_absolute_change": 0,
+        "repeatability_percentage": 100.0,
+        "per_case_score_changes": [
+          {
+            "case_id": "hw10-case-01",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-02",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-03",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-04",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-05",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-06",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-07",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-08",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-09",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-10",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-11",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-12",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-13",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-14",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-15",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-16",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-17",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-18",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-19",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-20",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          }
+        ]
+      },
+      {
+        "from_trial": 2,
+        "to_trial": 3,
+        "changed_score_count": 0,
+        "mean_absolute_change": 0.0,
+        "maximum_absolute_change": 0,
+        "repeatability_percentage": 100.0,
+        "per_case_score_changes": [
+          {
+            "case_id": "hw10-case-01",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-02",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-03",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-04",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-05",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-06",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-07",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-08",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-09",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-10",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-11",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-12",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-13",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-14",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-15",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-16",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-17",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-18",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-19",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          },
+          {
+            "case_id": "hw10-case-20",
+            "before": 1,
+            "after": 1,
+            "absolute_change": 0,
+            "changed": false
+          }
+        ]
+      }
+    ],
+    "number_of_changed_scores": 0,
+    "mean_absolute_change": 0.0,
+    "maximum_absolute_change": 0,
+    "repeatability_percentage": 100.0,
+    "spearman_correlation": null,
+    "spearman_status": "undefined_constant_human_labels",
+    "explanation": "Rank correlation cannot be estimated from constant human labels."
+  }
+}

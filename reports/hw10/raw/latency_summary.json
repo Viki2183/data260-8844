@@ -1,0 +1,78 @@
+{
+  "phase": "phase-5",
+  "status": "completed",
+  "total_requests": 50,
+  "target_confirmed_misses": 50,
+  "confirmed_misses": 50,
+  "accidental_hits": 0,
+  "failed_requests": 0,
+  "included_requests": 50,
+  "excluded_requests": 0,
+  "timestamp_convention": "UTC ISO-8601 Z",
+  "duration_time_source": "time.perf_counter_ns",
+  "stage_boundaries": {
+    "cache_lookup": "HW9 response timings_ms.embedding + timings_ms.redis_search",
+    "planner": "Kafka tasks publication timestamp minus matching inbox publication timestamp; includes observable queue/processing interval",
+    "writer": "Kafka drafts publication timestamp minus matching tasks publication timestamp; includes observable queue/processing interval",
+    "reviewer": "Kafka final publication timestamp minus matching drafts publication timestamp; includes observable queue/processing interval",
+    "queue_wait_total": "max(0, HW9 timings_ms.agent - planner_ms - writer_ms - reviewer_ms); residual after observed stage intervals",
+    "evaluation": "not executed per request; no latency fabricated",
+    "total": "HW9 response latency_ms, with monotonic wall-clock fallback only for failures"
+  },
+  "percentile_method": "linear interpolation on sorted values at index (n-1)*p/100",
+  "cache_miss_end_to_end_percentage": "p50 stage latency divided by p50 total latency, multiplied by 100",
+  "latency_table": [
+    {
+      "stage": "Cache lookup",
+      "p50_ms": 30.663,
+      "p95_ms": 66.376,
+      "percent_of_cache_miss_end_to_end": 0.986,
+      "status": "observed"
+    },
+    {
+      "stage": "Planner",
+      "p50_ms": 4.0,
+      "p95_ms": 6.55,
+      "percent_of_cache_miss_end_to_end": 0.129,
+      "status": "observed"
+    },
+    {
+      "stage": "Writer",
+      "p50_ms": 3.0,
+      "p95_ms": 8.1,
+      "percent_of_cache_miss_end_to_end": 0.096,
+      "status": "observed"
+    },
+    {
+      "stage": "Reviewer",
+      "p50_ms": 3.0,
+      "p95_ms": 6.55,
+      "percent_of_cache_miss_end_to_end": 0.096,
+      "status": "observed"
+    },
+    {
+      "stage": "Queue wait (total)",
+      "p50_ms": 3061.381,
+      "p95_ms": 3081.447,
+      "percent_of_cache_miss_end_to_end": 98.445,
+      "status": "observed"
+    },
+    {
+      "stage": "Evaluation",
+      "p50_ms": null,
+      "p95_ms": null,
+      "percent_of_cache_miss_end_to_end": null,
+      "status": "unavailable"
+    }
+  ],
+  "p50_total_latency_ms": 3109.722,
+  "p95_total_latency_ms": 3179.057,
+  "evaluation_status": "unavailable_not_executed_per_request",
+  "attempt_classifications": {
+    "confirmed_miss": 50,
+    "accidental_hit": 0,
+    "failed": 0
+  },
+  "trace_index": "reports\\hw10\\raw\\traces\\trace_index.json",
+  "raw_jsonl": "reports\\hw10\\raw\\latency_50_cache_misses.jsonl"
+}
